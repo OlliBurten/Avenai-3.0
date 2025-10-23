@@ -281,7 +281,7 @@ export default function OnboardingPage() {
           <label className="flex flex-col gap-1">
             Company name
             <input
-              className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200"
+              className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200 bg-white text-gray-900 placeholder-gray-500"
               value={companyName}
               onChange={(e)=>setCompanyName(e.target.value)}
               placeholder="e.g. Acme Corp"
@@ -292,7 +292,7 @@ export default function OnboardingPage() {
           <label className="flex flex-col gap-1">
             Website (optional)
             <input
-              className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200"
+              className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200 bg-white text-gray-900 placeholder-gray-500"
               value={website}
               onChange={(e)=>setWebsite(e.target.value)}
               placeholder="https://acme.com"
@@ -301,7 +301,7 @@ export default function OnboardingPage() {
           </label>
           <label className="flex flex-col gap-1">
             Team size
-            <select className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200" value={teamSize} onChange={(e)=>setTeamSize(e.target.value)}>
+            <select className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200 bg-white text-gray-900" value={teamSize} onChange={(e)=>setTeamSize(e.target.value)}>
               <option value="">Select team size</option>
               {TEAM_OPTS.map((opt)=>(
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -352,7 +352,7 @@ export default function OnboardingPage() {
             <label className="flex flex-col gap-1 mt-2">
               Other (please specify)
               <textarea
-                className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200"
+                className="px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-300 focus:outline-none transition-all duration-200 bg-white text-gray-900 placeholder-gray-500"
                 value={otherUseCase}
                 onChange={(e) => setOtherUseCase(e.target.value)}
                 placeholder="e.g. Automate internal knowledge sharing"

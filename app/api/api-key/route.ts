@@ -171,7 +171,7 @@ async function handleGetApiKeyInfo(req: NextRequest, session: any) {
           console.log('❌ No users found in database');
         }
       } catch (error) {
-        console.log('❌ Database error:', error.message);
+        console.log('❌ Database error:', (error as any).message);
       }
     }
 
@@ -211,7 +211,7 @@ async function handleGetApiKeyInfo(req: NextRequest, session: any) {
         
         console.log('✅ Created organization and linked user');
       } catch (error) {
-        console.error('❌ Failed to create organization:', error.message);
+        console.error('❌ Failed to create organization:', (error as any).message);
         return createErrorResponse({
           code: 'INTERNAL_ERROR',
           message: 'Failed to create organization',

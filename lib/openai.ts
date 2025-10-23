@@ -1,5 +1,4 @@
 import OpenAI from 'openai'
-import { generateCodeExample, CodeExample } from './code-generator'
 
 // Lazy initialization to avoid "self is not defined" errors during build
 let _openaiClient: OpenAI | null = null;

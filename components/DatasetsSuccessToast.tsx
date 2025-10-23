@@ -41,9 +41,11 @@ export default function DatasetsSuccessToast() {
       }, 5000);
 
       // Clean up URL without reload
-      const url = new URL(window.location.href);
-      url.searchParams.delete(created ? 'created' : 'sample');
-      window.history.replaceState({}, '', url.pathname);
+      if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href);
+        url.searchParams.delete(created ? 'created' : 'sample');
+        window.history.replaceState({}, '', url.pathname);
+      }
     }
   }, [searchParams]);
 

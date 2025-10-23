@@ -24,6 +24,8 @@ export function useDashboardTour() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const sp = new URLSearchParams(window.location.search);
     const force = sp.get('tour') === '1';
     const tourSeen = getCookie(TOUR_COOKIE) === '1';

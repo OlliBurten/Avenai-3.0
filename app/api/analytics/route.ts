@@ -155,7 +155,7 @@ async function handleGetAnalytics(req: NextRequest, session: any) {
     }
 
     // Get organization via membership (same pattern as chat route)
-    const membership = await prisma.membership.findFirst({
+    const membership = await prisma.memberships.findFirst({
       where: { userId: session.user.id },
       select: {
         role: true,

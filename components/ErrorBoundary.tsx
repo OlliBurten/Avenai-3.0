@@ -113,7 +113,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 
                 <Button
                   variant="outline"
-                  onClick={() => window.location.reload()}
+                  onClick={() => typeof window !== 'undefined' && window.location.reload()}
                 >
                   Reload Page
                 </Button>

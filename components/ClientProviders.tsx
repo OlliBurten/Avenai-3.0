@@ -19,10 +19,8 @@ export default function ClientProviders({ children }: { children: React.ReactNod
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider refetchInterval={0} refetchOnWindowFocus={false}>
-        <AuthProvider>
-          {children}
-          {/* <Toaster /> */}
-        </AuthProvider>
+        {children}
+        {/* <Toaster /> */}
       </SessionProvider>
     </QueryClientProvider>
   )

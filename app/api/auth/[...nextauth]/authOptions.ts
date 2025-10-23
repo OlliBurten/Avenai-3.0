@@ -4,15 +4,12 @@
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import AzureADProvider from "next-auth/providers/azure-ad";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import { prisma } from "@/lib/prisma";
 
 // Check if we have OAuth credentials
 const hasGoogleCredentials = !!(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 const hasAzureCredentials = !!(process.env.AZURE_AD_CLIENT_ID && process.env.AZURE_AD_CLIENT_SECRET);
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
   providers: [
     // Only add providers if credentials are available
     ...(hasGoogleCredentials ? [
@@ -30,7 +27,7 @@ export const authOptions: NextAuthOptions = {
     ] : []),
   ],
   session: { 
-    strategy: "database",
+    strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   pages: {

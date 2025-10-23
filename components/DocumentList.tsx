@@ -464,7 +464,7 @@ export default function DocumentList({ refreshTrigger, onRefresh }: DocumentList
             <Button onClick={() => fetchDocuments()} variant="outline">
               Try Again
             </Button>
-            <Button onClick={() => window.location.reload()} variant="outline">
+            <Button onClick={() => typeof window !== 'undefined' && window.location.reload()} variant="outline">
               Refresh Page
             </Button>
           </div>

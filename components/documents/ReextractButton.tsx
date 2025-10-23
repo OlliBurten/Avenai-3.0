@@ -25,7 +25,9 @@ export const ReextractButton: React.FC<{ documentId: string }> = ({ documentId }
       
       // Refresh page after 2 seconds to show updated status
       setTimeout(() => {
-        window.location.reload();
+        if (typeof window !== 'undefined') {
+          window.location.reload();
+        }
       }, 2000);
       
     } catch (e: any) {

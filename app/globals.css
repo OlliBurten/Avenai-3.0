@@ -434,6 +434,23 @@ a { text-decoration: none !important; }
 :root { --safe-bottom: env(safe-area-inset-bottom); }
 .safe-bottom { padding-bottom: max(16px, var(--safe-bottom)); }
 
+/* Force light theme for form inputs to prevent dark theme inheritance */
+input, select, textarea {
+  background-color: white !important;
+  color: #111827 !important;
+  border-color: #d1d5db !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  background-color: white !important;
+  color: #111827 !important;
+  border-color: #a78bfa !important;
+}
+
 /* Remove any leftover inner card wrappers for chat */
 .chat-answer, .assistant-content, .markdown-box {
   background: transparent !important;

@@ -17,7 +17,7 @@ export const DELETE = dataExportRateLimit(async (request: NextRequest) => {
     const user = session.user
     
     // Get organization from user membership
-    const membership = await prisma.membership.findFirst({
+    const membership = await prisma.memberships.findFirst({
       where: { userId: (user as any).id },
       include: { org: true }
     })
@@ -182,7 +182,7 @@ export const POST = dataExportRateLimit(async (request: NextRequest) => {
     const user = session.user
     
     // Get organization from user membership
-    const membership = await prisma.membership.findFirst({
+    const membership = await prisma.memberships.findFirst({
       where: { userId: (user as any).id },
       include: { org: true }
     })

@@ -12,7 +12,7 @@ export async function GET() {
     }
 
     // Get organization through membership
-    const membership = await prisma.membership.findFirst({
+    const membership = await prisma.memberships.findFirst({
       where: { userId: (session.user as any).id },
       include: { org: true },
     });

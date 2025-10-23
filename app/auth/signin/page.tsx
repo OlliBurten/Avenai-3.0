@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { signIn, getSession } from 'next-auth/react'
+import { signIn, getSession, getProviders } from 'next-auth/react'
 import { Bot, Github } from 'lucide-react'
 
 export default function SignInPage() {
@@ -31,11 +31,12 @@ export default function SignInPage() {
       console.error('Error getting session:', error)
     })
     
-    // Check available providers
+    // Check available providers using direct API call
     fetch('/api/auth/providers')
       .then(res => res.json())
       .then(providers => {
-        setProviders(providers);
+        console.log('Providers fetched:', providers);
+        setProviders(providers || {});
       })
       .catch((error) => {
         console.error('Error fetching providers:', error)
@@ -98,21 +99,6 @@ export default function SignInPage() {
           </p>
         </div>
 
-        {/* Development Bypass */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <h3 className="text-sm font-medium text-yellow-800 mb-2">Development Mode</h3>
-            <p className="text-xs text-yellow-700 mb-3">
-              OAuth credentials not configured. Use the bypass to access the dashboard.
-            </p>
-            <button
-              onClick={() => window.location.href = '/dev-bypass'}
-              className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-md text-sm transition-colors"
-            >
-              🚀 Development Bypass
-            </button>
-          </div>
-        )}
 
         {/* Error Message */}
         {error && (
@@ -124,7 +110,7 @@ export default function SignInPage() {
         {/* Sign In Buttons */}
         <div className="space-y-4">
           {/* Google Sign In */}
-          {providers.google && (
+          {(providers.google || Object.keys(providers).length === 0) && (
             <button
               onClick={() => handleProviderSignIn('google')}
               disabled={loading === 'google'}
@@ -155,7 +141,7 @@ export default function SignInPage() {
           )}
 
           {/* Microsoft Sign In */}
-          {providers['azure-ad'] && (
+          {(providers['azure-ad'] || Object.keys(providers).length === 0) && (
             <button
               onClick={() => handleProviderSignIn('azure-ad')}
               disabled={loading === 'azure-ad'}

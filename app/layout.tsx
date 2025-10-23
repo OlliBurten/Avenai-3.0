@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import ClientProviders from '@/components/ClientProviders'
-import { ThemeProvider } from '@/components/theme/ThemeProvider'
 
 export const metadata: Metadata = {
   title: 'Avenai - AI-Powered API Documentation Support',
@@ -21,13 +20,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className="bg-background text-foreground antialiased">
-        <ThemeProvider>
-          <ClientProviders>
-            {children}
-          </ClientProviders>
-        </ThemeProvider>
+        <ClientProviders>
+          {children}
+        </ClientProviders>
       </body>
     </html>
   )

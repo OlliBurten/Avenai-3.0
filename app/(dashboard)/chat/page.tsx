@@ -3,7 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import ChatClient from '@/components/ChatClient';
+import { SharedChatState } from '@/components/workspace';
 import { Database, MessageSquare, Plus } from "lucide-react";
 
 export default async function ChatPage({
@@ -92,5 +92,5 @@ export default async function ChatPage({
     }
   }
 
-  return <ChatClient />;
+  return <SharedChatState datasetId={selectedDataset?.id || datasets[0]?.id || ''} />;
 }

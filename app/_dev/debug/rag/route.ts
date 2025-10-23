@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   if (!session?.user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   
   // Get organization from user membership
-  const membership = await prisma.membership.findFirst({
+  const membership = await prisma.memberships.findFirst({
     where: { userId: (session.user as any).id },
     include: { org: true }
   })
