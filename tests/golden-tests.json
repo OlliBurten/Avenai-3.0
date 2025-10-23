@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Approve merchant — exact JSON body",
+    "prompt": "Give me the exact JSON body to approve a merchant.",
+    "assert": {
+      "kind": "json-contains",
+      "mustHaveKeys": ["actionId", "reasonId", "destinationMerchantGroupId"]
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Action reasons endpoint — method + path only",
+    "prompt": "Which endpoint lists action reasons? Provide method + path only.",
+    "assert": {
+      "kind": "regex",
+      "pattern": "^GET\\s+/v1/risk-evaluation/action-reasons\\s*$",
+      "flags": "i"
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Components table — markdown",
+    "prompt": "Show me a markdown table listing all the component names (like MERCHANT_RISK_HISTORY, CONTENT_COMPLIANCE, etc) returned by the /boarding-case/components endpoint. Format as a table with pipes.",
+    "assert": {
+      "kind": "contains-all",
+      "needles": [
+        "MERCHANT_RISK_HISTORY",
+        "CONTENT_COMPLIANCE",
+        "CONSUMER_RATINGS_AND_ADVERSE_MEDIA",
+        "WATCHLIST_SANCTIONS_AND_LEGAL",
+        "OPERATIONAL_RISK",
+        "|"
+      ]
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Global Onboarding contact email",
+    "prompt": "What's the contact email for Global Onboarding?",
+    "assert": {
+      "kind": "regex",
+      "pattern": "clientservices@g2risksolutions\\.com",
+      "flags": "i"
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Retrieve existing report by boardingCaseID",
+    "prompt": "Which endpoint retrieves an existing report by boardingCaseID? Method + path only.",
+    "assert": {
+      "kind": "regex",
+      "pattern": "^GET\\s+/v1/risk-evaluation/boarding-case/\\{boardingcaseid\\}\\s*$",
+      "flags": "i"
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Components array — JSON only",
+    "prompt": "Extract the components array from the sample response. It should be an array of objects where each object has name, status, failureResponse, and results properties. Return just the JSON array.",
+    "assert": {
+      "kind": "json-array-of-objects",
+      "mustHaveKeysPerObject": ["name", "status"]
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Valid component names — flat list",
+    "prompt": "What component names can be included in the components array when creating a boarding case? Return them as a simple list (not a table).",
+    "assert": {
+      "kind": "contains-all",
+      "needles": [
+        "MERCHANT_RISK_HISTORY",
+        "CONTENT_COMPLIANCE",
+        "CONSUMER_RATINGS_AND_ADVERSE_MEDIA",
+        "WATCHLIST_SANCTIONS_AND_LEGAL",
+        "OPERATIONAL_RISK"
+      ]
+    },
+    "minConfidence": "medium",
+    "timeoutMs": 35000
+  },
+  {
+    "name": "Sample POST body — pretty JSON",
+    "prompt": "Return only the sample POST body to create a boarding case (pretty-printed).",
+    "assert": {
+      "kind": "json-contains",
+      "mustHaveKeys": ["merchantName", "components"]
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Authorization header (one line)",
+    "prompt": "What goes in the Authorization header for GO API calls? One line only.",
+    "assert": {
+      "kind": "regex",
+      "pattern": "Authorization:\\s*Bearer|Bearer\\s*<",
+      "flags": "i"
+    },
+    "minConfidence": "high"
+  },
+  {
+    "name": "Approve merchant — required fields (3)",
+    "prompt": "Which 3 fields must be present in the body when approving a merchant?",
+    "assert": {
+      "kind": "contains-all",
+      "needles": ["actionId", "reasonId", "destinationMerchantGroupId"]
+    },
+    "minConfidence": "medium"
+  }
+]
+

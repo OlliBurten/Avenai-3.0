@@ -1,0 +1,5 @@
+This is a test document.
+
+It contains multiple paragraphs and should be processed as plain text.
+
+The content should be preserved exactly as written.

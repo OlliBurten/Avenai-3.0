@@ -1,0 +1,541 @@
+from fastapi import FastAPI, UploadFile
+import fitz  # PyMuPDF
+# import pytesseract
+# from PIL import Image
+import io, base64
+
+app = FastAPI()
+
+def extract_tables_from_page(page):
+  """Extract tables and convert to readable text format"""
+  tables = []
+  try:
+    # Try to find tables using text analysis
+    blocks = page.get_text("dict")["blocks"]
+    
+    # Look for table-like structures (multiple lines with similar x-coordinates)
+    table_candidates = []
+    for block in blocks:
+      if "lines" in block:
+        for line in block["lines"]:
+          if len(line.get("spans", [])) >= 2:  # Multiple columns
+            table_candidates.append(line)
+    
+    # If we found potential tables, extract them
+    if table_candidates:
+      for i, line in enumerate(table_candidates):
+        spans = line.get("spans", [])
+        if len(spans) >= 2:
+          # Format as: Column1 | Column2 | Column3
+          row_text = " | ".join([span.get("text", "").strip() for span in spans if span.get("text", "").strip()])
+          if row_text:
+            tables.append(row_text)
+  except Exception as e:
+    print(f"Table extraction error: {e}")
+  
+  return tables
+
+def page_blocks_to_md(page):
+  """Enhanced extraction with table support"""
+  blocks = page.get_text("blocks")  # (x0,y0,x1,y1,text, block_no, ...)
+  blocks.sort(key=lambda b: (b[1], b[0]))
+  md_parts = []
+  
+  # First, try to extract tables
+  tables = extract_tables_from_page(page)
+  if tables:
+    md_parts.append("\n".join(tables))
+  
+  # Then extract regular text blocks
+  for b in blocks:
+    txt = (b[4] or "").strip()
+    if not txt: continue
+    md_parts.append(txt)
+  
+  # Also capture footer text (last 200px of page)
+  page_height = page.rect.height
+  footer_rect = fitz.Rect(0, page_height - 200, page.rect.width, page_height)
+  footer_text = page.get_text(clip=footer_rect).strip()
+  if footer_text and footer_text not in "\n\n".join(md_parts):
+    md_parts.append(f"[Footer: {footer_text}]")
+  
+  return "\n\n".join(md_parts)
+
+@app.post("/extract")
+async def extract(file: UploadFile):
+  """Enhanced extraction endpoint with element tagging and JSON detection"""
+  data = await file.read()
+  doc = fitz.open(stream=data, filetype="pdf")
+  
+  # Extract all text from all pages with metadata
+  text_parts = []
+  chunks_metadata = []
+  
+  for page_num, page in enumerate(doc):
+    page_text = page.get_text().strip()
+    if not page_text:
+      continue
+    
+    # Detect element types on this page
+    element_type = detect_element_type(page_text)
+    
+    # Extract verbatim blocks (JSON/code)
+    verbatim_blocks = extract_verbatim_blocks(page_text)
+    has_json = len(verbatim_blocks) > 0
+    
+    # Extract tables
+    tables = extract_tables_from_page(page)
+    
+    # Build page metadata
+    page_metadata = {
+      "page": page_num + 1,
+      "element_type": element_type,
+      "has_json": has_json,
+      "has_tables": len(tables) > 0,
+      "table_count": len(tables),
+      "verbatim_block": verbatim_blocks[0]["payload"] if verbatim_blocks else None,
+      "verbatim_hash": verbatim_blocks[0]["hash"] if verbatim_blocks else None,
+      "verbatim_type": verbatim_blocks[0]["type"] if verbatim_blocks else None
+    }
+    
+    chunks_metadata.append(page_metadata)
+    text_parts.append(page_text)
+  
+  full_text = "\n\n".join(text_parts)
+  
+  return {
+    "text": full_text,
+    "pages": len(doc),
+    "success": True,
+    "metadata": {
+      "chunks": chunks_metadata,
+      "total_pages": len(doc)
+    }
+  }
+
+def detect_element_type(text: str) -> str:
+  """Detect the primary element type in text"""
+  # Check for JSON
+  if '{' in text and '"' in text and ':' in text:
+    return 'json'
+  
+  # Check for tables (pipe-separated or method/endpoint patterns)
+  if '|' in text or any(method in text for method in ['GET /', 'POST /', 'PUT /', 'DELETE /']):
+    return 'table'
+  
+  # Check for code
+  if any(keyword in text for keyword in ['function', 'class', 'import', 'const', 'let', 'var']):
+    return 'code'
+  
+  # Check for lists
+  if text.count('\n• ') > 2 or text.count('\n- ') > 2:
+    return 'list'
+  
+  # Default to paragraph
+  return 'paragraph'
+
+def detect_json_block(text: str) -> bool:
+  """Detect if text contains substantial JSON"""
+  if '{' not in text or '}' not in text:
+    return False
+  
+  # Count JSON-like patterns
+  json_indicators = text.count('":') + text.count('" :')
+  return json_indicators >= 3
+
+def extract_verbatim_blocks(text: str) -> list:
+  """Extract verbatim JSON/code blocks with 32KB limit and SHA-1 hash"""
+  import re
+  import hashlib
+  
+  blocks = []
+  MAX_BLOCK_SIZE = 32768  # 32 KB limit
+  
+  # 1. Fenced code blocks (```json ... ```)
+  fences = re.findall(r"```(?:json|javascript|code|python|typescript)?\s*([\s\S]*?)```", text, flags=re.IGNORECASE)
+  for blob in fences:
+    trimmed = blob[:MAX_BLOCK_SIZE]
+    hash_val = hashlib.sha1(trimmed.encode('utf-8')).hexdigest()[:16]
+    blocks.append({
+      "type": "fenced",
+      "payload": trimmed,
+      "hash": hash_val,
+      "size": len(trimmed)
+    })
+  
+  # 2. Inline JSON (curly braces with structure)
+  inline = re.findall(r"\{[\s\S]{50,5000}\}", text)
+  for blob in inline:
+    # Validate it's likely JSON (has colons and quotes)
+    if blob.count(":") >= 3 and blob.count('"') >= 6:
+      trimmed = blob[:MAX_BLOCK_SIZE]
+      hash_val = hashlib.sha1(trimmed.encode('utf-8')).hexdigest()[:16]
+      blocks.append({
+        "type": "inline",
+        "payload": trimmed,
+        "hash": hash_val,
+        "size": len(trimmed)
+      })
+  
+  return blocks
+
+@app.post("/pdf/extract")
+async def pdf_extract(file: UploadFile):
+  data = await file.read()
+  doc = fitz.open(stream=data, filetype="pdf")
+  md_pages = []
+  pages = []
+  headings = []
+  has_text_layer = False
+
+  for i, p in enumerate(doc):
+    text = p.get_text().strip()
+    if text: has_text_layer = True
+    page_md = page_blocks_to_md(p) if text else ""
+    if page_md:
+      md_pages.append(f"<!-- page {i+1} -->\n{page_md}")
+      pages.append({ "index": i+1, "text": page_md })
+
+  md = "\n\n---\n\n".join(md_pages)
+  suspected_scanned = not has_text_layer
+  return {
+    "ok": True,
+    "udoc": {
+      "md": md,
+      "pages": pages,
+      "structure": { "headings": headings },
+      "meta": {
+        "pages": len(doc),
+        "ocrUsed": False,
+        "extractor": "pdf-text",
+        "quality": {
+          "coveragePct": 1 if has_text_layer else 0.05,
+          "hasTextLayer": has_text_layer,
+          "suspectedScanned": suspected_scanned,
+          "warnings": [] if has_text_layer else ["No text layer; OCR recommended."]
+        }
+      }
+    }
+  }
+
+def pix_to_png_bytes(pix):
+  img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+  out = io.BytesIO()
+  img.save(out, format="PNG")
+  return out.getvalue()
+
+@app.post("/pdf/ocr")
+async def pdf_ocr(file: UploadFile):
+  # OCR endpoint disabled - pytesseract not installed
+  return {
+    "ok": False,
+    "error": "OCR not available - pytesseract not installed",
+    "udoc": None
+  }
+
+# ==================== V2 ENDPOINT ====================
+# PR-2: Doc-Worker V2 with structured metadata extraction
+
+from pydantic import BaseModel
+from typing import List, Optional, Literal
+import os
+import re
+import hashlib
+
+# Feature flag for V2 endpoint
+DOC_WORKER_V2_ENABLED = os.getenv('DOC_WORKER_V2', 'true').lower() == 'true'
+
+# Element type enum
+ElementType = Literal["table", "code", "header", "paragraph", "footer", "list"]
+
+# V2 chunk item with metadata
+class ChunkItemV2(BaseModel):
+    text: str
+    page: int
+    section_path: Optional[str] = None
+    element_type: ElementType = "paragraph"
+    has_verbatim: bool = False
+    verbatim_block: Optional[str] = None
+
+# V2 extraction response
+class ExtractionResponseV2(BaseModel):
+    items: List[ChunkItemV2]
+    pages: int
+    metadata: dict = {}
+
+class DocumentState:
+    """Track document structure during extraction"""
+    def __init__(self):
+        self.header_stack: List[str] = []
+        self.current_section: Optional[str] = None
+    
+    def update_headers(self, text: str, element_type: ElementType, font_size: float = 12):
+        """Update header stack when a header is detected"""
+        if element_type != "header":
+            return
+        
+        # Determine header level based on font size or formatting
+        level = self.detect_header_level(text, font_size)
+        
+        # Update header stack (trim to current level)
+        self.header_stack = self.header_stack[:level-1]
+        self.header_stack.append(text.strip())
+        
+        # Build section path
+        self.current_section = self.get_section_path()
+    
+    def get_section_path(self) -> str:
+        """Build hierarchical section path from header stack"""
+        path = " > ".join(h for h in self.header_stack if h.strip())
+        # Truncate to avoid database index size limit (2704 bytes max)
+        # Leave some buffer for other fields, aim for ~2000 chars max
+        if len(path) > 2000:
+            path = path[:2000] + "..."
+        return path
+    
+    def detect_header_level(self, text: str, font_size: float) -> int:
+        """Detect header level (1-6) based on formatting"""
+        # Check for markdown-style headers
+        if text.strip().startswith('#'):
+            match = re.match(r'^#+', text.strip())
+            if match:
+                return min(len(match.group()), 6)
+        
+        # Font size heuristic
+        if font_size >= 24:
+            return 1
+        elif font_size >= 18:
+            return 2
+        elif font_size >= 14:
+            return 3
+        else:
+            return 4
+
+def detect_element_type_v2(text: str, bbox: dict, page_height: float) -> ElementType:
+    """
+    Detect the type of content based on text and position
+    """
+    # Footer detection (last 200px of page + contact markers)
+    if bbox.get('y1', 0) > (page_height - 200):
+        if any(marker in text.lower() for marker in ['@', 'contact', 'email', 'phone', 'support']):
+            return "footer"
+    
+    # Header detection (all caps, short, large font)
+    if text.isupper() and len(text) < 100 and bbox.get('font_size', 0) > 14:
+        return "header"
+    
+    if text.strip().startswith('#') or bbox.get('font_size', 0) > 16:
+        return "header"
+    
+    # Code detection (monospaced fonts or fenced blocks)
+    if text.strip().startswith('```'):
+        return "code"
+    
+    font_name = bbox.get('font_name', '').lower()
+    if any(mono in font_name for mono in ['courier', 'consolas', 'monaco', 'menlo', 'mono']):
+        # Check if it has code-like content
+        if any(marker in text for marker in ['{', '}', ';', '=>', 'function', 'const', 'let']):
+            return "code"
+    
+    # Table detection (multiple strategies)
+    # Strategy 1: Pipe-delimited tables
+    if '|' in text:
+        pipe_count = text.count('|')
+        lines = text.split('\n')
+        if pipe_count >= 4 and len(lines) >= 2:
+            return "table"
+    
+    # Strategy 2: Grid/aligned data (multiple spaces between columns)
+    if re.search(r'\w+\s{3,}\w+\s{3,}\w+', text):
+        return "table"
+    
+    # Strategy 3: Parameter tables (common in API docs)
+    if re.search(r'(parameter|field|column|property|attribute)\s*:\s*\w+', text, re.IGNORECASE):
+        return "table"
+    
+    # Strategy 4: Key-value pairs in structured format
+    lines = text.split('\n')
+    if len(lines) >= 3:
+        kv_pattern = re.compile(r'^\s*[\w\s]+\s*[:\-]\s*.+$')
+        kv_lines = sum(1 for line in lines if kv_pattern.match(line))
+        if kv_lines >= 3:
+            return "table"
+    
+    # Strategy 5: API endpoint patterns (very common in technical docs)
+    if re.search(r'(GET|POST|PUT|DELETE|PATCH)\s+/\w+', text):
+        return "table"
+    
+    # Strategy 6: Structured lists with consistent formatting
+    if re.search(r'^\s*\w+\s*[:\-]\s*.+$', text, re.MULTILINE):
+        lines = text.split('\n')
+        structured_lines = sum(1 for line in lines if re.match(r'^\s*\w+\s*[:\-]\s*.+$', line))
+        if structured_lines >= 3:
+            return "table"
+    
+    # List detection
+    if re.match(r'^\s*[•\-\*\d+\.]\s', text):
+        return "list"
+    
+    # Default to paragraph
+    return "paragraph"
+
+def detect_verbatim_v2(text: str) -> tuple[bool, Optional[str]]:
+    """
+    Detect if content is verbatim JSON/code that should be preserved
+    Returns (has_verbatim, verbatim_block)
+    """
+    # Check for fenced code blocks (```json, ```python, etc)
+    fenced_match = re.search(r'```[\w]*\s*(.*?)\s*```', text, re.DOTALL)
+    if fenced_match:
+        return True, fenced_match.group(1).strip()
+    
+    # Check for JSON objects/arrays with better pattern matching
+    if '{' in text and ':' in text and '"' in text:
+        # Try to extract complete JSON object (including nested)
+        json_match = re.search(r'(\{(?:[^{}]|(?:\{[^{}]*\}))*\})', text, re.DOTALL)
+        if json_match:
+            potential_json = json_match.group(1)
+            # Validate it has JSON-like structure
+            colon_count = potential_json.count(':')
+            quote_count = potential_json.count('"')
+            if colon_count >= 2 and quote_count >= 4:
+                return True, potential_json.strip()
+    
+    # Check for JSON arrays
+    if '[' in text and ']' in text and '"' in text:
+        array_match = re.search(r'(\[(?:[^\[\]]|(?:\[[^\[\]]*\]))*\])', text, re.DOTALL)
+        if array_match:
+            potential_array = array_match.group(1)
+            if potential_array.count('"') >= 2:
+                return True, potential_array.strip()
+    
+    # Check for API endpoint patterns (common in technical docs)
+    if re.search(r'(GET|POST|PUT|DELETE|PATCH)\s+/\w+', text):
+        return True, text.strip()
+    
+    # Check for structured data patterns (key-value pairs, parameters)
+    if re.search(r'\w+\s*[:\-]\s*\w+', text) and text.count(':') >= 3:
+        return True, text.strip()
+    
+    # Check for high JSON/code density (many braces, colons, semicolons)
+    brace_count = text.count('{') + text.count('}')
+    colon_count = text.count(':')
+    semicolon_count = text.count(';')
+    quote_count = text.count('"')
+    
+    # If we have significant JSON/code markers and the text is long enough
+    if len(text) > 50:
+        char_density = (brace_count + colon_count + semicolon_count) / len(text)
+        if char_density > 0.05 and quote_count >= 4:
+            return True, text.strip()
+    
+    # More aggressive: Check for any structured content that looks like it should be preserved
+    if len(text) > 100 and any(pattern in text for pattern in ['endpoint', 'parameter', 'response', 'request', 'API', 'JSON']):
+        return True, text.strip()
+    
+    return False, None
+
+@app.post("/extract/v2")
+async def extract_v2(file: UploadFile):
+    """V2 endpoint with structured metadata extraction"""
+    if not DOC_WORKER_V2_ENABLED:
+        return {
+            "error": "V2 endpoint is currently disabled",
+            "message": "Set DOC_WORKER_V2=true to enable"
+        }, 503
+    
+    data = await file.read()
+    doc = fitz.open(stream=data, filetype="pdf")
+    
+    state = DocumentState()
+    items = []
+    
+    for page_num, page in enumerate(doc, start=1):
+        page_height = page.rect.height
+        blocks = page.get_text("dict")["blocks"]
+        
+        for block in blocks:
+            if block["type"] != 0:  # Skip non-text blocks
+                continue
+            
+            # Aggregate all text in this block for better detection
+            block_lines = []
+            block_bbox = block.get("bbox", [0, 0, 0, 0])
+            max_font_size = 0
+            font_names = []
+            
+            for line in block["lines"]:
+                line_text_parts = []
+                for span in line["spans"]:
+                    span_text = span.get("text", "")
+                    if span_text:
+                        line_text_parts.append(span_text)
+                        max_font_size = max(max_font_size, span.get("size", 12))
+                        font_name = span.get("font", "")
+                        if font_name and font_name not in font_names:
+                            font_names.append(font_name)
+                
+                if line_text_parts:
+                    block_lines.append(" ".join(line_text_parts))
+            
+            # Combine all lines in the block
+            text = "\n".join(block_lines).strip()
+            if not text or len(text) < 10:
+                continue
+            
+            # Get aggregated bounding box and font info
+            bbox = {
+                'x0': block_bbox[0],
+                'y0': block_bbox[1],
+                'x1': block_bbox[2],
+                'y1': block_bbox[3],
+                'font_size': max_font_size,
+                'font_name': font_names[0] if font_names else ""
+            }
+            
+            # Detect element type
+            element_type = detect_element_type_v2(text, bbox, page_height)
+            
+            # Update section tracking
+            state.update_headers(text, element_type, bbox['font_size'])
+            
+            # Detect verbatim content
+            has_verbatim, verbatim_block = detect_verbatim_v2(text)
+            
+            # Truncate verbatim_block to avoid database size limits
+            if verbatim_block and len(verbatim_block) > 2000:
+                verbatim_block = verbatim_block[:2000] + "..."
+            
+            # Create chunk item
+            item = ChunkItemV2(
+                text=text,
+                page=page_num,
+                section_path=state.current_section,
+                element_type=element_type,
+                has_verbatim=has_verbatim,
+                verbatim_block=verbatim_block
+            )
+            items.append(item)
+    
+    return ExtractionResponseV2(
+        items=items,
+        pages=len(doc),
+        metadata={
+            "extractor": "pymupdf_v2",
+            "total_items": len(items)
+        }
+    )
+
+@app.get("/health")
+async def health():
+    """Health check endpoint"""
+    return {
+        "status": "ok",
+        "version": "2.0" if DOC_WORKER_V2_ENABLED else "1.0",
+        "endpoints": {
+            "/extract": "v1 (legacy)",
+            "/extract/v2": "v2 (metadata-rich)" if DOC_WORKER_V2_ENABLED else "disabled",
+            "/pdf/extract": "udoc format",
+            "/pdf/ocr": "disabled"
+        }
+    }

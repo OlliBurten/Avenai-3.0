@@ -1,0 +1,372 @@
+diff --git a/lib/generation/structuredAnswer.ts b/lib/generation/structuredAnswer.ts
+new file mode 100644
+index 0000000..aaaaaaa
+--- /dev/null
++++ b/lib/generation/structuredAnswer.ts
+@@ -0,0 +1,145 @@
++/**
++ * Structured Answer Helpers - Beautiful, Copyable Blocks
++ * Creates crisp markdown blocks for HTTP, JSON, cURL, tables
++ */
++
++/**
++ * HTTP request block with syntax highlighting
++ */
++export function httpBlock(
++  method: string,
++  path: string,
++  headers?: Record<string, string>,
++  body?: any
++): string {
++  const lines: string[] = [`${method.toUpperCase()} ${path}`];
++  
++  if (headers) {
++    for (const [key, value] of Object.entries(headers)) {
++      lines.push(`${key}: ${value}`);
++    }
++  }
++  
++  if (body) {
++    lines.push('');
++    lines.push(typeof body === 'string' ? body : JSON.stringify(body, null, 2));
++  }
++  
++  return '```http\n' + lines.join('\n') + '\n```';
++}
++
++/**
++ * JSON block (verbatim)
++ */
++export function jsonBlock(objOrString: any): string {
++  const json = typeof objOrString === 'string' 
++    ? objOrString 
++    : JSON.stringify(objOrString, null, 2);
++  
++  return '```json\n' + json.trim() + '\n```';
++}
++
++/**
++ * cURL command block (copy-ready)
++ */
++export function curlBlock(opts: {
++  method: string;
++  url: string;
++  headers?: Record<string, string>;
++  data?: any;
++}): string {
++  const { method, url, headers, data } = opts;
++  
++  const lines: string[] = [`curl -X ${method.toUpperCase()} ${url}`];
++  
++  if (headers) {
++    for (const [key, value] of Object.entries(headers)) {
++      lines.push(`  -H "${key}: ${value}"`);
++    }
++  }
++  
++  if (data) {
++    const json = typeof data === 'string' ? data : JSON.stringify(data);
++    lines.push(`  -d '${json}'`);
++  }
++  
++  return '```bash\n' + lines.join(' \\\n') + '\n```';
++}
++
++/**
++ * Endpoint list (bullet format)
++ */
++export function endpointList(items: Array<{
++  method: string;
++  path: string;
++  purpose?: string;
++}>): string {
++  return items
++    .map(item => `• **${item.method.toUpperCase()}** \`${item.path}\`${item.purpose ? ` — ${item.purpose}` : ''}`)
++    .join('\n');
++}
++
++/**
++ * Markdown table
++ */
++export function tableMd(opts: {
++  headers: string[];
++  rows: string[][];
++}): string {
++  const { headers, rows } = opts;
++  
++  const lines: string[] = [];
++  
++  // Header row
++  lines.push('| ' + headers.join(' | ') + ' |');
++  
++  // Separator
++  lines.push('|' + headers.map(() => '---').join('|') + '|');
++  
++  // Data rows
++  for (const row of rows) {
++    lines.push('| ' + row.join(' | ') + ' |');
++  }
++  
++  return lines.join('\n');
++}
++
++/**
++ * Bullet list
++ */
++export function bullets(lines: string[]): string {
++  return lines.map(line => `• ${line}`).join('\n');
++}
++
++/**
++ * Note/info block
++ */
++export function note(text: string): string {
++  return `> **Note:** ${text}`;
++}
++
++/**
++ * Contact line (email with context)
++ */
++export function contactLine(email: string, context?: string): string {
++  const ctx = context || 'found in footer';
++  return `**Email:** \`${email}\` _(${ctx})_`;
++}
++
++/**
++ * Error help block
++ */
++export function errorHelp(opts: {
++  code: string;
++  meaning: string;
++  fixes: string[];
++}): string {
++  const { code, meaning, fixes } = opts;
++  
++  return [
++    `### \`${code}\``,
++    '',
++    `**Meaning:** ${meaning}`,
++    '',
++    '**How to fix:**',
++    ...fixes.map((fix, i) => `${i + 1}. ${fix}`),
++    ''
++  ].join('\n');
++}
+diff --git a/lib/programmatic-responses.ts b/lib/programmatic-responses.ts
+index bbbbbbb..ccccccc 100644
+--- a/lib/programmatic-responses.ts
++++ b/lib/programmatic-responses.ts
+@@ -1,6 +1,14 @@
+ // Programmatic response generation
+ import { NormalizedContext } from './chat/types';
+ import { Intent } from './chat/intent';
++import {
++  httpBlock,
++  jsonBlock,
++  curlBlock,
++  endpointList,
++  tableMd,
++  contactLine,
++  errorHelp
++} from './generation/structuredAnswer';
+ 
+ // ... existing code ...
+ 
+@@ -10,30 +18,120 @@ export async function generateProgrammaticResponse(
+   options?: { intent?: Intent; /* ... */ }
+ ): Promise<string> {
+   const intent = options?.intent;
++  
++  // ===== Phase-4: Intent-specific structured formatting =====
+   
+   switch (intent) {
+     case 'JSON': {
+-      // Old: return raw context or generic message
+-      // New: extract verbatim JSON or explicit "not found"
+-      
+-      const jsonChunk = context.find(c => 
+-        c.metadata?.has_verbatim === true || 
+-        c.metadata?.verbatim_block
+-      );
+-      
+-      if (jsonChunk?.metadata?.verbatim_block) {
+-        return jsonChunk.metadata.verbatim_block;
+-      }
+-      
+-      // Look for JSON in content
+-      const jsonMatch = context.map(c => c.content).join('\n').match(/\{[\s\S]*\}/);
+-      if (jsonMatch) {
+-        return jsonMatch[0];
++      // Extract verbatim JSON from metadata
++      for (const ctx of context) {
++        if (ctx.metadata?.verbatim_block) {
++          return [
++            '**Sample JSON:**',
++            '',
++            jsonBlock(ctx.metadata.verbatim_block),
++            '',
++            note(`From ${ctx.title || 'documentation'}${ctx.metadata?.page ? `, page ${ctx.metadata.page}` : ''}`)
++          ].join('\n');
++        }
+       }
+       
+-      return 'No JSON sample available in docs.';
++      // Look for JSON in content as fallback
++      for (const ctx of context) {
++        const match = ctx.content.match(/\{[\s\S]{20,500}\}/);
++        if (match) {
++          return [
++            '**Sample JSON:**',
++            '',
++            jsonBlock(match[0]),
++            '',
++            note(`From ${ctx.title || 'documentation'}`)
++          ].join('\n');
++        }
++      }
++      
++      // Explicit "not found"
++      return '**No JSON sample available in the documentation.**\n\n' +
++             'The structure may be described in text. Try asking:\n' +
++             '• "What fields are in the request body?"\n' +
++             '• "What\'s the structure of the response?"';
+     }
+     
+     case 'ENDPOINT': {
+-      // Old: generic endpoint description
+-      // New: crisp bullets with METHOD /path
+-      
+-      const endpoints: string[] = [];
+-      for (const ctx of context) {
+-        const matches = ctx.content.matchAll(/^(GET|POST|PUT|PATCH|DELETE)\s+(\/\S+)/gm);
+-        for (const match of matches) {
+-          endpoints.push(`${match[1]} ${match[2]}`);
++      // Extract endpoints with METHOD + path
++      const foundEndpoints: Array<{ method: string; path: string; context: string }> = [];
++      
++      for (const ctx of context) {
++        // Check metadata first
++        if (ctx.metadata?.endpoint) {
++          const [method, path] = ctx.metadata.endpoint.split(' ');
++          foundEndpoints.push({ 
++            method, 
++            path,
++            context: ctx.content.substring(0, 150)
++          });
++        }
++        
++        // Also scan content
++        const matches = Array.from(ctx.content.matchAll(/^(GET|POST|PUT|PATCH|DELETE)\s+(\/[A-Za-z0-9._\-/:{}]+)/gm));
++        for (const match of matches) {
++          if (!foundEndpoints.some(e => e.method === match[1] && e.path === match[2])) {
++            foundEndpoints.push({
++              method: match[1],
++              path: match[2],
++              context: ctx.content.substring(0, 150)
++            });
++          }
+         }
+       }
+       
+-      if (endpoints.length === 0) {
+-        return 'No specific endpoints found. Please check the API documentation.';
++      if (foundEndpoints.length === 0) {
++        return '**Endpoint not found in documentation.**\n\n' +
++               'Try asking:\n' +
++               '• "What endpoints are available for authentication?"\n' +
++               '• "Show me the API reference"';
+       }
+       
+-      return endpoints.join('\n');
++      // Format as clean bullets
++      const formatted = foundEndpoints.slice(0, 6).map(ep => {
++        // Extract brief purpose from context
++        const purposeMatch = ep.context.match(/(?:initiates?|starts?|creates?|retrieves?|polls?|cancels?)\s+[a-z\s]+/i);
++        const purpose = purposeMatch ? purposeMatch[0].trim() : undefined;
++        
++        return { method: ep.method, path: ep.path, purpose };
++      });
++      
++      return '**Endpoints:**\n\n' + endpointList(formatted);
++    }
++    
++    case 'WORKFLOW': {
++      // Keep existing workflow logic but ensure multi-section coverage note
++      const sections = new Set(context.map(c => c.sectionPath).filter(Boolean));
++      
++      // ... existing workflow generation ...
++      
++      const coverageNote = sections.size >= 3 
++        ? `\n\n${note(`Based on ${sections.size} sections from the documentation`)}`
++        : '';
++      
++      return workflowAnswer + coverageNote;
++    }
++    
++    case 'CONTACT': {
++      // Extract emails from footer chunks
++      const emails: Array<{ email: string; source: string }> = [];
++      
++      for (const ctx of context) {
++        if (ctx.metadata?.element_type === 'footer' || ctx.metadata?.emails) {
++          const emailMatches = ctx.content.matchAll(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g);
++          for (const match of emailMatches) {
++            emails.push({
++              email: match[1],
++              source: `footer, page ${ctx.metadata?.page || '?'}`
++            });
++          }
++        }
++      }
++      
++      if (emails.length === 0) {
++        return '**Contact information not found in documentation.**\n\n' +
++               'Try checking the footer sections or support pages.';
++      }
++      
++      // Deduplicate
++      const unique = Array.from(new Set(emails.map(e => e.email)));
++      
++      return '**Contact:**\n\n' + 
++             unique.map(email => contactLine(email, 'found in footer')).join('\n');
++    }
++    
++    case 'TABLE': {
++      // Look for table in metadata or reconstruct from content
++      for (const ctx of context) {
++        if (ctx.metadata?.table_md) {
++          return '**Table:**\n\n' + ctx.metadata.table_md;
++        }
++        
++        // Look for pipe-delimited tables
++        const lines = ctx.content.split('\n').filter(line => line.includes('|'));
++        if (lines.length >= 3) {
++          return '**Table:**\n\n' + lines.join('\n');
++        }
++      }
++      
++      return '**No table found in documentation.**';
++    }
+     
+     default: {
+-      // Old: basic concatenation
+-      // New: concise paragraph with optional example
+-      
+-      const answer = context.slice(0, 3).map(c => c.content).join('\n\n');
+-      return answer.substring(0, 500) + '...';
++      // Concise answer with context
++      const topContexts = context.slice(0, 3);
++      const answer = topContexts.map(c => c.content.trim()).join('\n\n');
++      
++      // Add source note
++      const sources = topContexts
++        .map(c => c.title || 'documentation')
++        .filter((v, i, arr) => arr.indexOf(v) === i)
++        .join(', ');
++      
++      return answer.substring(0, 600).trim() + 
++             `\n\n${note(`Based on: ${sources}`)}`;
+     }
+   }
+ }
+

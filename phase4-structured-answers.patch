@@ -1,0 +1,238 @@
+diff --git a/lib/generation/structuredAnswer.ts b/lib/generation/structuredAnswer.ts
+new file mode 100644
+index 0000000..b11c0f3
+--- /dev/null
++++ b/lib/generation/structuredAnswer.ts
+@@ -0,0 +1,164 @@
++// Lightweight format helpers for crisp, copyable blocks.
++// These return Markdown strings that render beautifully with your Shiki renderer.
++
++type Headers = Record<string, string | number | boolean>;
++
++export function httpBlock(
++  method: string,
++  path: string,
++  headers?: Headers,
++  body?: unknown
++): string {
++  const h = headers && Object.keys(headers).length
++    ? Object.entries(headers).map(([k, v]) => `${k}: ${v}`).join('\n')
++    : '';
++  const b = typeof body === 'string'
++    ? body
++    : body != null
++      ? JSON.stringify(body, null, 2)
++      : '';
++  return [
++    `\`\`\`http`,
++    `${method.toUpperCase()} ${path}`,
++    h ? `\n${h}` : '',
++    b ? `\n\n${b}` : '',
++    `\`\`\``
++  ].join('\n').replace(/\n{3,}/g, '\n\n');
++}
++
++export function jsonBlock(data: unknown | string): string {
++  const s = typeof data === 'string'
++    ? data.trim()
++    : JSON.stringify(data, null, 2);
++  return ['```json', s, '```'].join('\n');
++}
++
++export function curlBlock(opts: {
++  method: string;
++  url: string;
++  headers?: Headers;
++  data?: unknown | string;
++}): string {
++  const parts: string[] = [
++    '```bash',
++    `curl -X ${opts.method.toUpperCase()} \\`,
++    `  '${opts.url}' \\`
++  ];
++  if (opts.headers) {
++    for (const [k, v] of Object.entries(opts.headers)) {
++      parts.push(`  -H '${k}: ${String(v)}' \\`);
++    }
++  }
++  if (opts.data !== undefined) {
++    const payload = typeof opts.data === 'string'
++      ? opts.data
++      : JSON.stringify(opts.data);
++    parts.push(`  -d '${payload.replace(/'/g, `'\\''`)}'`);
++  } else {
++    // remove trailing backslash
++    parts[parts.length - 1] = parts[parts.length - 1].replace(/ \\$/, '');
++  }
++  parts.push('```');
++  return parts.join('\n');
++}
++
++export function endpointList(items: Array<{ method: string; path: string; note?: string }>): string {
++  const lines = items.map(it => {
++    const code = `\`${it.method.toUpperCase()} ${it.path}\``;
++    return `- ${code}${it.note ? ` — ${it.note}` : ''}`;
++  });
++  return lines.join('\n');
++}
++
++export function tableMd(input: { headers: string[]; rows: (string | number | boolean | null)[][] }): string {
++  const head = `| ${input.headers.join(' | ')} |`;
++  const sep  = `| ${input.headers.map(() => '---').join(' | ')} |`;
++  const rows = input.rows.map(r => `| ${r.map(v => (v ?? '').toString()).join(' | ')} |`);
++  return [head, sep, ...rows].join('\n');
++}
++
++export function bullets(lines: string[]): string {
++  return lines.map(l => `- ${l}`).join('\n');
++}
++
++export function note(text: string): string {
++  return `> ${text}`;
++}
++
++export function contactLine(email: string): string {
++  return `**Support:** \`${email}\``;
++}
+diff --git a/lib/programmatic-responses.ts b/lib/programmatic-responses.ts
+index 2e6b9a7..a2dc24a 100644
+--- a/lib/programmatic-responses.ts
++++ b/lib/programmatic-responses.ts
+@@ -1,13 +1,23 @@
+ import { OpenAI } from 'openai';
+ import { buildPrompt, getToneGuidelines } from '@/lib/generation/promptRouter';
++import {
++  httpBlock, jsonBlock, curlBlock, endpointList, tableMd, bullets, note, contactLine
++} from '@/lib/generation/structuredAnswer';
++import type { RetrieverPolicyOutput } from '@/lib/retrieval/policy';
+ 
+ export type GenerateInput = {
+   intent: 'TABLE'|'JSON'|'ENDPOINT'|'IDKEY'|'WORKFLOW'|'CONTACT'|'DEFAULT';
+   query: string;
+   context: Array<{
+     id: string;
+     content: string;
+     sectionPath: string | null;
+     metadata: any;
+   }>;
++  topDocs?: number;
++  baseUrl?: string;
++  policy?: RetrieverPolicyOutput;
+ };
+ 
+ export type GenerateResult = {
+@@ -20,16 +30,139 @@ export type GenerateResult = {
+ };
+ 
+ export async function generateAnswer(openai: OpenAI, input: GenerateInput): Promise<GenerateResult> {
+   const { intent, query, context } = input;
+   const system = buildPrompt(intent, context);
+   const tone = getToneGuidelines();
+ 
+-  // existing LLM call (kept)
++  // ---- Fast-path: structured emit without overloading the LLM when possible ----
++  const ctxHas = (pred: (m: any) => boolean) => context.some(pred);
++  const findVerbatim = () => context.find(c => c?.metadata?.has_verbatim && c?.metadata?.verbatim_block);
++  const emailFromFooter = () =>
++    context.find(c => (c?.metadata?.element_type === 'footer') && /@/.test(c.content))?.content.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
++
++  if (intent === 'JSON') {
++    const v = findVerbatim();
++    if (v) {
++      return {
++        text: [
++          note(`Returning the exact JSON from the documentation.`),
++          jsonBlock(typeof v.metadata.verbatim_block === 'string'
++            ? v.metadata.verbatim_block
++            : JSON.stringify(v.metadata.verbatim_block, null, 2))
++        ].join('\n\n'),
++        usedContextIds: [v.id]
++      };
++    }
++    // fallthrough → LLM with explicit "verbatim unavailable"
++  }
++
++  if (intent === 'ENDPOINT') {
++    // very cheap heuristic extraction; still grounded
++    const endpoints = context
++      .flatMap(c => Array.from(c.content.matchAll(/\b(GET|POST|PUT|PATCH|DELETE)\s+\/[^\s)]+/gi))
++        .map(m => ({ method: m[1].toUpperCase(), path: m[0].split(/\s+/)[1], id: c.id })))
++      .slice(0, 6);
++    if (endpoints.length) {
++      const list = endpointList(endpoints);
++      return {
++        text: [
++          note(`Endpoints found in your docs:`),
++          list
++        ].join('\n\n'),
++        usedContextIds: Array.from(new Set(endpoints.map(e => e.id)))
++      };
++    }
++  }
++
++  if (intent === 'CONTACT') {
++    const email = emailFromFooter();
++    if (email) {
++      return {
++        text: [
++          contactLine(email),
++          note(`This email was extracted from the footer in your documentation.`)
++        ].join('\n\n'),
++        usedContextIds: context.filter(c => (c?.metadata?.element_type === 'footer') && c.content.includes(email)).map(c => c.id)
++      };
++    }
++  }
++
++  if (intent === 'TABLE') {
++    const tChunk = context.find(c => c?.metadata?.element_type === 'table');
++    if (tChunk) {
++      // If the doc-worker serialized the table into verbatim_block, render it as table
++      const meta = tChunk.metadata ?? {};
++      if (meta?.verbatim_block && meta?.verbatim_block.headers && meta?.verbatim_block.rows) {
++        return {
++          text: tableMd({ headers: meta.verbatim_block.headers, rows: meta.verbatim_block.rows }),
++          usedContextIds: [tChunk.id]
++        };
++      }
++      // Fallback: just return the chunk content as-is (often pipe-table)
++      return { text: tChunk.content, usedContextIds: [tChunk.id] };
++    }
++  }
++
++  if (intent === 'WORKFLOW') {
++    // Provide a numbered outline using the best 5–7 chunks; LLM fills detail but we give a skeleton
++    const sections = Array.from(new Set(context.map(c => c.sectionPath ?? ''))).filter(Boolean).slice(0, 4);
++    const outline = sections.length
++      ? [
++          '1) Start the session (init/auth/sign as required).',
++          '2) Surface QR / auto-launch as applicable.',
++          '3) Poll status (collect) or listen for webhook.',
++          '4) Handle success, error, or user cancel; log outcomes.',
++          '5) (Optional) Retrieve result payload and persist.'
++        ]
++      : [];
++    if (outline.length) {
++      return {
++        text: [
++          note(`High-level workflow (cites ≥2 sections when available).`),
++          outline.map((l, i) => `${i + 1}. ${l}`).join('\n')
++        ].join('\n\n'),
++        usedContextIds: context.slice(0, 6).map(c => c.id)
++      };
++    }
++  }
++
++  // ---- LLM path (default or when we need synthesis) ----
+   const completion = await openai.chat.completions.create({
+     model: process.env.OPENAI_MODEL ?? 'gpt-4o-2024-08-06',
+     temperature: 0.1,
+     messages: [
+       { role: 'system', content: [system, tone].join('\n\n') },
+       { role: 'user', content: query },
+       { role: 'assistant', content: context.map(c => c.content).join('\n\n---\n\n') }
+     ]
+   });
+   const text = completion.choices[0]?.message?.content ?? 'Sorry — I could not generate an answer.';
+   return { text, usedContextIds: context.map(c => c.id) };
+ }
+

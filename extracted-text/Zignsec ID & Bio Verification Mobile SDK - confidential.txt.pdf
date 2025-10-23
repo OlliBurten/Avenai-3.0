@@ -1,0 +1,3056 @@
+
+=== Page 1 | header | ID & BIO VERIFICATION ===
+ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 1 | paragraph | Integration guidelines ===
+Integration guidelines
+
+
+=== Page 1 | table | PUBLISHED ===
+ZignSec AB 
+Version 1.0 |March, 2025 
+PUBLISHED
+
+
+=== Page 2 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+1 (21)
+
+
+=== Page 2 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 2 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 2 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 2 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 2 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 2 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 2 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 2 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 2 | paragraph | 1 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+1 (21)
+
+
+=== Page 2 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+Integration guidelines
+
+
+=== Page 2 | paragraph | Code: ===
+Code:
+
+
+=== Page 2 | paragraph | Version: ===
+Version: 
+1.0
+
+
+=== Page 2 | paragraph | Date of version: ===
+Date of version: 
+2025-Mar-06
+
+
+=== Page 2 | paragraph | Created by: ===
+Created by: 
+Martin Heikkilä Customer Service Manager
+
+
+=== Page 2 | paragraph | Approved by: ===
+Approved by: 
+Jason Coombes, Head of Risk and Compliance
+
+
+=== Page 2 | paragraph | Confidentiality level: ===
+Confidentiality level: 
+Confidential
+
+
+=== Page 3 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+2 (21) 
+ 
+Error handling ............................................................................................................................... 20
+
+
+=== Page 3 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 3 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 3 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 3 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 3 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 3 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 3 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 3 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 3 | paragraph | 2 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+2 (21)
+
+
+=== Page 3 | paragraph | Table of Contents ===
+Table of Contents
+
+
+=== Page 3 | paragraph | Table of Contents ..............................................................… ===
+Table of Contents ................................................................................................................................................................................... 2
+
+
+=== Page 3 | paragraph | ZignSec Mobile-SDK API Documentation ===
+ZignSec Mobile-SDK API Documentation 
+................................................................................................................................. 4
+
+
+=== Page 3 | paragraph | Overview .......................................................................… ===
+Overview ............................................................................................................................................. 4
+
+
+=== Page 3 | paragraph | Usage ===
+Usage 
+................................................................................................................................................... 4
+
+
+=== Page 3 | paragraph | Document analysis ..............................................................… ===
+Document analysis .......................................................................................................................... 4
+
+
+=== Page 3 | paragraph | Biometry verification ..........................................................… ===
+Biometry verification ...................................................................................................................... 5
+
+
+=== Page 3 | paragraph | Document Analysis and Biometry Flows ===
+Document Analysis and Biometry Flows 
+......................................................................................... 5
+
+
+=== Page 3 | paragraph | Document + biometry analysis ...................................................… ===
+Document + biometry analysis ....................................................................................................... 9
+
+
+=== Page 3 | paragraph | Core functionalities ...........................................................… ===
+Core functionalities ........................................................................................................................... 11
+
+
+=== Page 3 | paragraph | Environments ...................................................................… ===
+Environments ................................................................................................................................ 11
+
+
+=== Page 3 | paragraph | API health endpoint ............................................................… ===
+API health endpoint ...................................................................................................................... 11
+
+
+=== Page 3 | paragraph | Authentication .................................................................… ===
+Authentication .............................................................................................................................. 11
+
+
+=== Page 3 | paragraph | The recommended flow ===
+The recommended flow 
+.................................................................................................................... 12
+
+
+=== Page 3 | paragraph | Pre-requisites .................................................................… ===
+Pre-requisites ................................................................................................................................ 12
+
+
+=== Page 3 | paragraph | Auto-update documents db ===
+Auto-update documents db 
+.......................................................................................................... 12
+
+
+=== Page 3 | paragraph | Initialize DocumentReader ===
+Initialize DocumentReader 
+............................................................................................................ 12
+
+
+=== Page 3 | paragraph | Initialize FaceSDK .............................................................… ===
+Initialize FaceSDK .......................................................................................................................... 13
+
+
+=== Page 3 | paragraph | Issue access token ===
+Issue access token 
+......................................................................................................................... 13
+
+
+=== Page 3 | paragraph | Create (authorization) session .................................................… ===
+Create (authorization) session ...................................................................................................... 13
+
+
+=== Page 3 | paragraph | Start liveness .................................................................… ===
+Start liveness ................................................................................................................................. 14
+
+
+=== Page 3 | paragraph | Add liveness transaction to the session ===
+Add liveness transaction to the session 
+........................................................................................ 15
+
+
+=== Page 3 | paragraph | Scan document ..................................................................… ===
+Scan document ............................................................................................................................. 15
+
+
+=== Page 3 | paragraph | Finalize package ...............................................................… ===
+Finalize package ............................................................................................................................ 17
+
+
+=== Page 3 | paragraph | Add (document reader) transaction to the session ...............................… ===
+Add (document reader) transaction to the session ...................................................................... 17
+
+
+=== Page 3 | paragraph | Reprocess ......................................................................… ===
+Reprocess ...................................................................................................................................... 17
+
+
+=== Page 3 | paragraph | Analyze results ................................................................… ===
+Analyze results .............................................................................................................................. 18
+
+
+=== Page 3 | paragraph | Freeing resources ===
+Freeing resources 
+.......................................................................................................................... 19
+
+
+=== Page 3 | paragraph | More technical information .....................................................… ===
+More technical information .............................................................................................................. 20
+
+
+=== Page 3 | paragraph | Supplier documentation .........................................................… ===
+Supplier documentation ............................................................................................................... 20
+
+
+=== Page 3 | paragraph | Online demo services ===
+Online demo services 
+.................................................................................................................... 20
+
+
+=== Page 3 | paragraph | Calling API directly ...........................................................… ===
+Calling API directly ........................................................................................................................ 20
+
+
+=== Page 3 | paragraph | UI Customization ===
+UI Customization 
+........................................................................................................................... 20
+
+
+=== Page 3 | paragraph | Logging ........................................................................… ===
+Logging .......................................................................................................................................... 20
+
+
+=== Page 3 | paragraph | Error handling .................................................................… ===
+Error handling ............................................................................................................................... 20
+
+
+=== Page 4 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+3 (21)
+
+
+=== Page 4 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 4 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 4 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 4 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 4 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 4 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 4 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 4 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 4 | paragraph | 3 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+3 (21)
+
+
+=== Page 4 | paragraph | Samples ........................................................................… ===
+Samples ......................................................................................................................................... 20
+
+
+=== Page 4 | paragraph | Change History .................................................................… ===
+Change History .................................................................................................................................. 21
+
+
+=== Page 5 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+4 (21) 
+ 
+It’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘FullProcess’ or 
+‘FullAuth’ on backend.
+
+
+=== Page 5 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 5 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 5 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 5 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 5 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 5 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 5 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 5 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 5 | paragraph | 4 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+4 (21)
+
+
+=== Page 5 | paragraph | ZignSec Mobile-SDK API Documentation ===
+ZignSec Mobile-SDK API Documentation 
+Overview 
+This document provides technical details for integrating with the ZignSec ID & Bio verification 
+(Scanning) Mobile-SDK, which utilizes Face SDK and Document Reader SDK for identity document 
+verification and biometric verification. 
+Usage 
+General approach: the mobile device is used for data collection, while backend services handle 
+analysis. We recommend “zero-trust” approach.
+
+
+=== Page 5 | paragraph | Document analysis ===
+Document analysis 
+Document Analysis is designed for identity verification services that specialize in capturing, reading, 
+and digitally verifying passports, ID cards, driver’s licenses, visas, and other identity documents. The 
+solution automatically detects the document type against a database of supported IDs before 
+securely transmitting the captured document to the backend for analysis.
+
+
+=== Page 5 | paragraph | We offer global ID coverage with full data page processing, including MRZ (Machi… ===
+We offer global ID coverage with full data page processing, including MRZ (Machine Readable Zone), 
+Visual Inspection Zones, and Barcode verification. This accelerates customer onboarding by 
+providing seamless and secure ID verification, supporting over 14,000 identity documents from 250 
+countries and territories.
+
+
+=== Page 5 | paragraph | For a complete list of supported documents, please look into our supplier’s docu… ===
+For a complete list of supported documents, please look into our supplier’s documentation 
+https://docs.regulaforensics.com/#useful-resources (at the moment of writing it’s 
+https://downloads.regulaforensics.com/work/SDK/doc/AllDocs/Documents List.xls). Please note 
+that due to our release cycle, it may take up to 1 month for the document to be fully supported by 
+our services (we use only stable releases, and we run a set of time-consuming tests before each 
+update testing APIs and UIs, so we update DocReader monthly)
+
+
+=== Page 5 | paragraph | Document processing scenario ===
+Document processing scenario 
+Full Processing (FullProcess): A processing scenario designed to extract all available document data, 
+including text fields from the visual zone, MRZ, and barcodes. This mode focuses on maximizing data 
+extraction accuracy and achieving a high conversion rate and performs only basic security checks.
+
+
+=== Page 5 | paragraph | Authentication (FullAuth): A processing scenario that extracts all available doc… ===
+Authentication (FullAuth): A processing scenario that extracts all available document data and also 
+includes document authentication checks. This mode verifies security features such as holograms 
+and other embedded document security elements, ensuring the authenticity of the document in 
+addition to data extraction.
+
+
+=== Page 5 | paragraph | Feature ===
+Feature 
+Full Processing Authentication
+
+
+=== Page 5 | paragraph | Visual zone OCR ===
+Visual zone OCR 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Document type identification ✓ ===
+Document type identification ✓ 
+✓
+
+
+=== Page 5 | header | MRZ OCR ===
+MRZ OCR 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Barcode recognition ===
+Barcode recognition 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Document location ===
+Document location 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Graphics cropping ===
+Graphics cropping 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Checking security features ===
+Checking security features 
+X 
+✓
+
+
+=== Page 5 | paragraph | Hologram detection ===
+Hologram detection 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | Multipage processing ===
+Multipage processing 
+✓ 
+✓
+
+
+=== Page 5 | paragraph | It’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘… ===
+It’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘FullProcess’ or 
+‘FullAuth’ on backend.
+
+
+=== Page 6 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+5 (21)
+
+
+=== Page 6 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 6 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 6 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 6 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 6 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 6 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 6 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 6 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 6 | paragraph | 5 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+5 (21)
+
+
+=== Page 6 | paragraph | Biometry verification ===
+Biometry verification 
+Liveness vs. Face Capture, Active vs. Passive Liveness 
+Face Capture vs. Liveness Detection
+
+
+=== Page 6 | paragraph | • ===
+• 
+Liveness Detection: Ensures the face is real and live, preventing spoofing attacks using AI 
+and biometric analysis.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Face Capture: Simply takes a picture of a face but does not verify if the person is real (e.g., 
+can be fooled by a photo).
+
+
+=== Page 6 | paragraph | Active vs. Passive Liveness ===
+Active vs. Passive Liveness
+
+
+=== Page 6 | paragraph | • ===
+• 
+Active Liveness: Requires user interaction (e.g., blinking, turning head) for stronger security.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Passive Liveness: Works in the background using AI (e.g., detecting skin texture, light 
+reflection) for a seamless experience.
+
+
+=== Page 6 | paragraph | Use Cases ===
+Use Cases
+
+
+=== Page 6 | paragraph | Feature ===
+Feature 
+Passive Liveness 
+Active Liveness 
+Face Capture
+
+
+=== Page 6 | paragraph | Purpose ===
+Purpose 
+AI determines liveness 
+silently
+
+
+=== Page 6 | paragraph | User proves they are ===
+User proves they are 
+live
+
+
+=== Page 6 | paragraph | Capturing a face ===
+Capturing a face 
+image (*)
+
+
+=== Page 6 | paragraph | User Interaction ===
+User Interaction 
+None 
+Required (e.g. move 
+head)
+
+
+=== Page 6 | paragraph | None ===
+None
+
+
+=== Page 6 | paragraph | Security Level ===
+Security Level 
+Moderate to High 
+High 
+Low
+
+
+=== Page 6 | paragraph | User Experience ===
+User Experience 
+Seamless 
+Requires effort 
+Easy
+
+
+=== Page 6 | paragraph | Best For ===
+Best For 
+Smooth onboarding 
+High-security 
+scenarios
+
+
+=== Page 6 | paragraph | Biometric matching ===
+Biometric matching
+
+
+=== Page 6 | paragraph | (*) we recommend using face capture only if other options do not work for you. I… ===
+(*) we recommend using face capture only if other options do not work for you. It doesn’t support 
+“zero-trust to mobile” concept
+
+
+=== Page 6 | paragraph | Document Analysis and Biometry Flows ===
+Document Analysis and Biometry Flows 
+Document analysis is a crucial process for identity authentication, ensuring accuracy and security in 
+digital transactions. The following flows outline different approaches to verifying a document, 
+incorporating various security measures such as biometric liveness detection, RFID processing, and 
+retry mechanisms.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Simple Flow – A basic verification process that captures a document, analyzes it, and makes 
+a final decision.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Flow with RFID Check – Enhances verification by incorporating RFID chip processing for 
+documents that support it.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Flow with Retry – Introduces a retry mechanism, allowing users to attempt verification 
+again if the initial process fails.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Document + Biometry Analysis – Combines liveness detection with document verification, 
+ensuring the person is real before validating their document.
+
+
+=== Page 6 | paragraph | Each of these flows addresses different security and usability needs, optimizing… ===
+Each of these flows addresses different security and usability needs, optimizing identity verification 
+for various scenarios.
+
+
+=== Page 7 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+6 (21)
+
+
+=== Page 7 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 7 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 7 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 7 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 7 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 7 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 7 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 7 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 7 | paragraph | 6 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+6 (21)
+
+
+=== Page 7 | paragraph | Simple flow ===
+Simple flow
+
+
+=== Page 7 | paragraph | 1. Start Document Verification – The process is ===
+1. Start Document Verification – The process is 
+initiated by the user or system. 
+2. Capture Document Using Phone Camera – The user 
+takes a picture of the document using their phone 
+camera. Mobile SDK guides the user through the process 
+3. Finalize package – The captured document and all 
+the related data are encrypted and transmitted to the 
+server, transactionId is returned. 
+4. Send transaction id to backend – the further 
+decision to be done on backend, nothing to be 
+transferred from the device but the transactionId from 
+the previous step 
+5. Backend Reprocessing – Mobile application 
+backend initiates “reprocessing” sending transaction id 
+to the backend.  
+6. Decision: Accept? - Mobile application backend 
+analyzes processing response and makes the final 
+decision to authorize user or not.
+
+
+=== Page 8 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+7 (21)
+
+
+=== Page 8 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 8 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 8 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 8 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 8 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 8 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 8 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 8 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 8 | paragraph | 7 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+7 (21)
+
+
+=== Page 8 | paragraph | Flow with RFID check ===
+Flow with RFID check
+
+
+=== Page 8 | paragraph | 1. Start Verification – The process is initiated by the user or system. ===
+1. Start Verification – The process is initiated by the user or system. 
+2. Decision Point: Use RFID? – Decide whether to use RFID for document verification.
+
+
+=== Page 8 | paragraph | 3. Without RFID: ===
+3. Without RFID:
+
+
+=== Page 8 | paragraph | a. The user captures the document using a phone camera. ===
+a. The user captures the document using a phone camera.
+
+
+=== Page 8 | paragraph | 4. With RFID: ===
+4. With RFID:
+
+
+=== Page 8 | paragraph | a. The document undergoes optical processing using the phone camera. ===
+a. The document undergoes optical processing using the phone camera.
+
+
+=== Page 8 | paragraph | b. The RFID chip is processed to extract digital information. ===
+b. The RFID chip is processed to extract digital information.
+
+
+=== Page 8 | paragraph | 5. The remaining steps follow the same process as points 3-6 from the previous f… ===
+5. The remaining steps follow the same process as points 3-6 from the previous flow.
+
+
+=== Page 9 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+8 (21)
+
+
+=== Page 9 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 9 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 9 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 9 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 9 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 9 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 9 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 9 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 9 | paragraph | 8 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+8 (21)
+
+
+=== Page 9 | paragraph | Flow with retry ===
+Flow with retry
+
+
+=== Page 9 | paragraph | This flow extends the previous one with retry – user now can retry document veri… ===
+This flow extends the previous one with retry – user now can retry document verification procedure 
+if not authorized until authorized or max retries limit reached.
+
+
+=== Page 10 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+9 (21)
+
+
+=== Page 10 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 10 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 10 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 10 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 10 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 10 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 10 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 10 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 10 | paragraph | 9 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+9 (21)
+
+
+=== Page 10 | paragraph | Document + biometry analysis ===
+Document + biometry analysis 
+This flowchart outlines a document verification process combined with biometric (liveness) 
+analysis, ensuring a secure and reliable identity check.
+
+
+=== Page 11 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+10 (21)
+
+
+=== Page 11 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 11 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 11 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 11 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 11 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 11 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 11 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 11 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 11 | paragraph | 10 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+10 (21)
+
+
+=== Page 11 | paragraph | Steps in the Flow: ===
+Steps in the Flow:
+
+
+=== Page 11 | paragraph | 1. Biometry Check (Liveness) – The process starts with a liveness check, which can be: ===
+1. Biometry Check (Liveness) – The process starts with a liveness check, which can be:
+
+
+=== Page 11 | paragraph | o ===
+o 
+Passive Liveness – the recommended option
+
+
+=== Page 11 | paragraph | o ===
+o 
+Active Liveness – use if security requirements are more important than the 
+acceptance rate for your business case
+
+
+=== Page 11 | paragraph | o ===
+o 
+Face Capture – use only if other options do not work for you. Doesn’t support “zero-
+trust to mobile” concept
+
+
+=== Page 11 | paragraph | 2. If the liveness check is successful, the system proceeds with the previous fl… ===
+2. If the liveness check is successful, the system proceeds with the previous flow (Flow with
+
+
+=== Page 11 | paragraph | Retry). Otherwise, the user is not authorized. ===
+Retry). Otherwise, the user is not authorized.
+
+
+=== Page 12 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+11 (21)
+
+
+=== Page 12 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 12 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 12 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 12 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 12 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 12 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 12 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 12 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 12 | paragraph | 11 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+11 (21)
+
+
+=== Page 12 | paragraph | We maintain 2 environments: ===
+Core functionalities 
+Environments 
+We maintain 2 environments:
+
+
+=== Page 12 | paragraph | • ===
+• 
+PROD https://gateway.zignsec.com – for production usage
+
+
+=== Page 12 | paragraph | • ===
+• 
+TEST https://test-gateway.zignsec.com – for tests (please contact our support if you need to 
+run a massive/load test)
+
+
+=== Page 12 | paragraph | And there are 3 base URLs for each: ===
+And there are 3 base URLs for each:
+
+
+=== Page 12 | paragraph | • ===
+• 
+Face API / Face SDK base URL: $(baseURL)/mobilesdk/faceapi
+
+
+=== Page 12 | paragraph | • ===
+• 
+DocReader base URL: $(baseURL)/mobilesdk/docreader
+
+
+=== Page 12 | paragraph | • ===
+• 
+OpenID configuration: $(baseURL)/auth/realms/zignsec/.well-known/openid-configuration
+
+
+=== Page 12 | paragraph | API health endpoint ===
+API health endpoint  
+Both DocReader and Face API support the /api/ping endpoint to verify that your credentials and our 
+backend are functioning correctly.
+
+
+=== Page 12 | paragraph | For example: ===
+For example:
+
+
+=== Page 12 | paragraph | • ===
+• 
+TEST DocReader Ping URL: https://test-gateway.zignsec.com/mobilesdk/docreader/api/ping
+
+
+=== Page 12 | paragraph | • ===
+• 
+PROD Face API Ping URL: https://gateway.zignsec.com/mobilesdk/faceapi/api/ping
+
+
+=== Page 12 | paragraph | Authentication ===
+Authentication 
+OAuth2 Authentication 
+ZignSec Mobile-SDK uses OAuth2 for secure authentication. Clients must obtain an access token 
+before making API requests using the token endpoint (the endpoint address to be taken from the 
+proper OpenID configuration)
+
+
+=== Page 12 | paragraph | Introspection endpoint (and https://jwt.io site) can be used to view token infor… ===
+Introspection endpoint (and https://jwt.io site) can be used to view token information
+
+
+=== Page 12 | paragraph | Credentials for authentication are supplied by ZignSec support. Contact support@… ===
+Credentials for authentication are supplied by ZignSec support. Contact support@zignsec.com to 
+obtain access credentials.
+
+
+=== Page 12 | paragraph | For detailed API requests and sample usage, refer to the Postman collection: ===
+For detailed API requests and sample usage, refer to the Postman collection: 
+ZignSec Mobile-SDK Examples
+
+
+=== Page 12 | paragraph | 2 headers are required to authenticate calls – Authorization header should contain Bearer jwt ===
+Authentication headers 
+2 headers are required to authenticate calls – Authorization header should contain Bearer jwt 
+token (received from oauth token endpoint), and Zs-Product-Key header should contain product 
+id (subscription key) you receive from our support
+
+
+=== Page 12 | paragraph | It's recommended to implement a retry policy and retry if 401 or 403 status code… ===
+It's recommended to implement a retry policy and retry if 401 or 403 status code returned with a 
+different key. This way we'll be able to rotate keys zero-downtime.
+
+
+=== Page 12 | paragraph | Please also keep in mind that access token is a short-lived token, its lifetime … ===
+Please also keep in mind that access token is a short-lived token, its lifetime is 20 minutes by default
+
+
+=== Page 13 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+12 (21)
+
+
+=== Page 13 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 13 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 13 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 13 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 13 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 13 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 13 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 13 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 13 | paragraph | 12 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+12 (21)
+
+
+=== Page 13 | paragraph | The recommended flow ===
+The recommended flow 
+We recommend following zero-trust concept and do not rely on any results returned from the 
+mobile sdk, and transaction ids that can be used to initiate the verification on the backend.
+
+
+=== Page 13 | paragraph | Here is the sequence diagram for the most complex scenario (doc + bio) explained… ===
+Here is the sequence diagram for the most complex scenario (doc + bio) explained in the first part of 
+this document (rfid part is optional)
+
+
+=== Page 13 | paragraph | Pre-requisites ===
+Pre-requisites
+
+
+=== Page 13 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/getting-
+started/installation/
+
+
+=== Page 13 | paragraph | • ===
+• 
+Face API https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-
+started/installation/#platform-specific-installation-guides
+
+
+=== Page 13 | paragraph | Auto-update documents db ===
+Auto-update documents db 
+We recommend using auto-update on app start, Use the “Full” database for the recommended flow.  
+It’s described in suppliers documentation “Using runAutoUpdate method” – find more examples 
+there
+
+
+=== Page 13 | code | DocumentReader.runAutoUpdate("Full", ===
+DocumentReader.runAutoUpdate("Full", 
+  (response) => { console.log(response); }, 
+  (error) => { console.error(error); });
+
+[VERBATIM BLOCK]:
+{ console.log(response); }, 
+  (error) => { console.error(error); }
+
+
+
+=== Page 13 | paragraph | Initialize DocumentReader ===
+Initialize DocumentReader 
+You need a valid license on this step (to be provided by our support), see the documentation for 
+more examples.
+
+
+=== Page 13 | code | const secret = ''; ===
+const secret = ''; 
+DocumentReader.initializeReader({ license: secret },  
+  (response) => { /* do something useful */ }, 
+  error => console.log(error));
+
+[VERBATIM BLOCK]:
+{ license: secret },  
+  (response) => { /* do something useful */ }
+
+
+
+=== Page 14 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+13 (21) 
+ 
+  Zs-Product-Key: your-subscription-key 
+  Authorization: Bearer eyJ…x1w
+
+
+=== Page 14 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 14 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 14 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 14 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 14 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 14 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 14 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 14 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 14 | paragraph | 13 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+13 (21)
+
+
+=== Page 14 | paragraph | Initialize FaceSDK ===
+Initialize FaceSDK 
+Do not pass any license, we use Core Basic mode (details here)
+
+
+=== Page 14 | code | FaceSDK.initialize(null, ===
+FaceSDK.initialize(null, 
+    (response) => { console.log(response); }, 
+    (error) => { console.error(error); });
+
+[VERBATIM BLOCK]:
+{ console.log(response); }, 
+    (error) => { console.error(error); }
+
+
+
+=== Page 14 | paragraph | Issue access token ===
+Issue access token 
+Please implement a backend service to issue authentication tokens (as client credentials shouldn’t 
+be shared with mobile and should only be securely stored on your servers).
+
+
+=== Page 14 | paragraph | We rely on the oauth2 client credentials flow to issue a short-lived access toke… ===
+We rely on the oauth2 client credentials flow to issue a short-lived access token that can safely be 
+used from the device (or any other frontend application). The default token lifetime is 20 minutes 
+(please contact our support if you’d like another configuration).
+
+
+=== Page 14 | paragraph | We recommend using oidc discovery to get a proper url for the token endpoint, fo… ===
+We recommend using oidc discovery to get a proper url for the token endpoint, for TEST 
+environment run
+
+
+=== Page 14 | paragraph | GET https://test-gateway.zignsec.com/auth/realms/zignsec/.well- ===
+GET https://test-gateway.zignsec.com/auth/realms/zignsec/.well-
+known/openid-configuration
+
+
+=== Page 14 | paragraph | and use its main output to get the access token ===
+and use its main output to get the access token
+
+
+=== Page 14 | code | { ===
+{ 
+  "issuer": "https://test-gateway.zignsec.com/auth/realms/zignsec", 
+  "token_endpoint": "https://test-
+gateway.zignsec.com/auth/realms/zignsec/protocol/openid-connect/token", 
+  ... 
+}
+
+[VERBATIM BLOCK]:
+{ 
+  "issuer": "https://test-gateway.zignsec.com/auth/realms/zignsec", 
+  "token_endpoint": "https://test-
+gateway.zignsec.com/auth/realms/zignsec/protocol/openid-connect/token", 
+  ... 
+}
+
+
+
+=== Page 14 | paragraph | And then post to the token endpoint: ===
+And then post to the token endpoint:
+
+
+=== Page 14 | paragraph | POST https://test-gateway.zignsec.com/auth/realms/zignsec/protocol/openid- ===
+POST https://test-gateway.zignsec.com/auth/realms/zignsec/protocol/openid-
+connect/token  
+Content-Type: application/x-www-form-urlencoded 
+ 
+grant_type: "client_credentials" 
+client_id: " your_client_id" 
+client_secret: "your_client_secret"
+
+
+=== Page 14 | paragraph | You’ll get an access token in response: ===
+You’ll get an access token in response:
+
+
+=== Page 14 | code | { ===
+{ 
+    "access_token": "eyJ...XYpkg", 
+    "expires_in": 1200, 
+    "refresh_expires_in": 0, 
+    "token_type": "Bearer", 
+    "not-before-policy": 0, 
+    "scope": "api" 
+}
+
+[VERBATIM BLOCK]:
+{ 
+    "access_token": "eyJ...XYpkg", 
+    "expires_in": 1200, 
+    "refresh_expires_in": 0, 
+    "token_type": "Bearer", 
+    "not-before-policy": 0, 
+    "scope": "api" 
+}
+
+
+
+=== Page 14 | paragraph | At this point you’re all set to start authorizing your user. ===
+At this point you’re all set to start authorizing your user.
+
+
+=== Page 14 | paragraph | Use the following request to create a session: ===
+Create (authorization) session 
+Use the following request to create a session:
+
+
+=== Page 14 | paragraph | Headers: ===
+POST https://test-gateway.zignsec.com/mobilesdk/sessions 
+Headers:  
+  Zs-Product-Key: your-subscription-key 
+  Authorization: Bearer eyJ…x1w
+
+
+=== Page 15 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+14 (21) 
+ 
+• 
+Error handling – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#error-handling
+
+
+=== Page 15 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 15 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 15 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 15 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 15 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 15 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 15 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 15 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 15 | paragraph | 14 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+14 (21)
+
+
+=== Page 15 | paragraph | informational): ===
+And it returns a session id to be used to identify a current authorization attempt (other fields are 
+informational):
+
+
+=== Page 15 | code | { ===
+{ 
+    "id": "sy89z8wWF0moddTGa0S3dAP8gZm2B2kXlOie", 
+    "clientId": "sy89z8wWF0moddTGa0S3dA", 
+    "clientIdLong": "cf3d2fb3-16cc-4917-a875-d4c66b44b774", 
+    "uniqueId": "P8gZm2B2kXlOie" 
+}
+
+[VERBATIM BLOCK]:
+{ 
+    "id": "sy89z8wWF0moddTGa0S3dAP8gZm2B2kXlOie", 
+    "clientId": "sy89z8wWF0moddTGa0S3dA", 
+    "clientIdLong": "cf3d2fb3-16cc-4917-a875-d4c66b44b774", 
+    "uniqueId": "P8gZm2B2kXlOie" 
+}
+
+
+
+=== Page 15 | paragraph | This session groups all the necessary verifications (liveness, document, rfid, f… ===
+This session groups all the necessary verifications (liveness, document, rfid, face match) for a single 
+authorization flow.
+
+
+=== Page 15 | paragraph | Start liveness ===
+Start liveness 
+Start liveness setting tag to sessionId and specifying the liveness type (see more about liveness 
+types: https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-
+assessment)
+
+
+=== Page 15 | code | livenessType: passiveLiveness ? LivenessType.PASSIVE : ===
+FaceSDK.startLiveness( 
+    { 
+        tag: sessionId, 
+        copyright: false, 
+        livenessType: passiveLiveness ? LivenessType.PASSIVE : 
+LivenessType.ACTIVE, 
+    }, 
+    (jsonResponse: string) => { 
+        console.log(jsonResponse); 
+        const response = 
+LivenessResponse.fromJson(JSON.parse(jsonResponse))!; 
+        if (response) { 
+            const livenessTransactionId = response.transactionId; 
+            console.log(`LivenessTransactionId: ${livenessTransactionId}`); 
+            if (response.liveness == LivenessStatus.PASSED) { 
+console.log("Liveness passed"); } 
+ 
+            if (response.error) { 
+                console.error(`Liveness error: ${response.error.code} - 
+${response.error.message}`); 
+                if (response.error.code == LivenessErrorCode.CANCELLED) { 
+return; } 
+            } 
+        } 
+    }, 
+    (error) => { console.error(error); } 
+);
+
+[VERBATIM BLOCK]:
+{ 
+        tag: sessionId, 
+        copyright: false, 
+        livenessType: passiveLiveness ? LivenessType.PASSIVE : 
+LivenessType.ACTIVE, 
+    }, 
+    (jsonResponse: string) => { 
+        console.log(jsonResponse); 
+        const response = 
+LivenessResponse.fromJson(JSON.parse(jsonResponse))!; 
+        if (response) { 
+            const livenessTransactionId = response.transactionId; 
+            console.log(`LivenessTransactionId: ${livenessTransactionId}`); 
+            if (response.liveness == LivenessStatus.PASSED) { 
+console.log("Liveness passed"); } 
+ 
+            if (response.error) { 
+                console.error(`Liveness error: ${response.error.code} - 
+${response.error.message}`); 
+                if (response.error.code == LivenessErrorCode.CANCELLED) { 
+return; } 
+            } 
+        } 
+    }, 
+    (error) => { console.error(error); }
+
+
+
+=== Page 15 | paragraph | Remember the livenessTransactionId here – we’ll use it later to compare the face… ===
+Remember the livenessTransactionId here – we’ll use it later to compare the face with the document 
+during server-side reprocessing
+
+
+=== Page 15 | paragraph | Please see online documentation for ===
+Please see online documentation for
+
+
+=== Page 15 | paragraph | • ===
+• 
+More examples – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#display-liveness
+
+
+=== Page 15 | paragraph | • ===
+• 
+UI customization – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#ui-customization
+
+
+=== Page 15 | paragraph | • ===
+• 
+Error handling – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#error-handling
+
+
+=== Page 16 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+15 (21) 
+ 
+        (_) > {} 
+    );
+
+
+=== Page 16 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 16 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 16 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 16 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 16 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 16 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 16 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 16 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 16 | paragraph | 15 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+15 (21)
+
+
+=== Page 16 | paragraph | Add liveness transaction to the session ===
+Add liveness transaction to the session 
+To properly restrict access to the transaction, use the following endpoint to add transaction to the 
+session
+
+
+=== Page 16 | code | Headers: ===
+POST https://test-
+gateway.zignsec.com/mobilesdk/sessions/{sessionId}/liveness/transactions/{t
+ransactionId} 
+Headers:  
+  Zs-Product-Key: your-subscription-key 
+  Authorization: Bearer eyJ…x1w
+
+[VERBATIM BLOCK]:
+{sessionId}/liveness/transactions/{t
+ransactionId}
+
+
+
+=== Page 16 | paragraph | And it returns 204 if all good ===
+And it returns 204 if all good
+
+
+=== Page 16 | paragraph | Scan document ===
+Scan document 
+Start from setting sessionId for DocumentReader
+
+
+=== Page 16 | code | DocumentReader.setTag(sessionId, (_) => {}, (_) => {} ); ===
+DocumentReader.setTag(sessionId, (_) => {}, (_) => {} );
+
+[VERBATIM BLOCK]:
+{}, (_) => {}
+
+
+
+=== Page 16 | paragraph | Customize widget (see documentation https://docs.regulaforensics.com/develop/doc… ===
+Customize widget (see documentation https://docs.regulaforensics.com/develop/doc-reader-
+sdk/mobile/customization/#customize-user-interface)
+
+
+=== Page 16 | code | DocumentReader.setCustomization( ===
+DocumentReader.setCustomization( 
+        { 
+        showResultStatusMessages: true, 
+        showStatusMessages: true, 
+        showNextPageAnimation: true, 
+        showHelpAnimation: true, 
+        }, 
+        (_) => {}, 
+        (_) => {} 
+    );
+
+[VERBATIM BLOCK]:
+{ 
+        showResultStatusMessages: true, 
+        showStatusMessages: true, 
+        showNextPageAnimation: true, 
+        showHelpAnimation: true, 
+        }, 
+        (_) => {}, 
+        (_) => {}
+
+
+
+=== Page 16 | paragraph | Set default processing parameters (see documentation ===
+Set default processing parameters (see documentation 
+https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/configuration/#configure-
+document-processing)
+
+
+=== Page 16 | code | DocumentReader.setProcessParams( ===
+DocumentReader.setProcessParams( 
+        { 
+        multipageProcessing: true, 
+        backendProcessingConfig: { 
+            url: 'https://test-gateway.zignsec.com/mobilesdk/docreader', 
+            httpHeaders: { 
+            Authorization: `Bearer ${accessToken}`, 
+            'Zs-Product-Key': subscriptionKey 
+            }, 
+        }, 
+        logs: true, 
+        logLevel: LogLevel.Warning, 
+ 
+        // debugging options, not for production 
+        debugSaveLogs: true, 
+        debugSaveCroppedImages: true, 
+        debugSaveRFIDSession: true, 
+        }, 
+        (_) => {}, 
+        (_) => {} 
+    );
+
+[VERBATIM BLOCK]:
+{ 
+        multipageProcessing: true, 
+        backendProcessingConfig: { 
+            url: 'https://test-gateway.zignsec.com/mobilesdk/docreader', 
+            httpHeaders: { 
+            Authorization: `Bearer ${accessToken}`, 
+            'Zs-Product-Key': subscriptionKey 
+            }, 
+        }, 
+        logs: true, 
+        logLevel: LogLevel.Warning, 
+ 
+        // debugging options, not for production 
+        debugSaveLogs: true, 
+        debugSaveCroppedImages: true, 
+        debugSaveRFIDSession: true, 
+        }, 
+        (_) => {}, 
+        (_) => {}
+
+
+
+=== Page 17 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+16 (21)
+
+
+=== Page 17 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 17 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 17 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 17 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 17 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 17 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 17 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 17 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 17 | paragraph | 16 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+16 (21)
+
+
+=== Page 17 | paragraph | Setup scanner events listener to handle completion ===
+Setup scanner events listener to handle completion
+
+
+=== Page 17 | code | const eventManager = new NativeEventEmitter(RNRegulaDocumentReader); ===
+const eventManager = new NativeEventEmitter(RNRegulaDocumentReader); 
+eventManager.addListener("completion", (e) => { 
+    const data = DocumentReaderCompletion.fromJson(e); 
+    const action = data?.action 
+ 
+    console.log(`Scanning completion event received: ${action}`, e); 
+ 
+    switch (action) { 
+        case DocReaderAction.COMPLETE: 
+            console.log('Scanning completed'); // todo: go to the next step 
+            break; 
+        case DocReaderAction.TIMEOUT: 
+            console.error('Scanning timeout'); // todo: handle timeout 
+            break; 
+        case DocReaderAction.ERROR: 
+            console.error(`Scanning error. Error code:"${e.error?.code}" 
+Message: "${e.error?.message}"`); // todo: handle error 
+            break; 
+        case DocReaderAction.MORE_PAGES_AVAILABLE: 
+            console.log('More pages available');  // todo: handle 
+            break; 
+        case DocReaderAction.CANCEL: 
+            console.log('Scanning cancelled'); // todo: handle cancellation 
+            break; 
+        case DocReaderAction.PROCESS: 
+        case DocReaderAction.PROCESS_WHITE_FLASHLIGHT: 
+        case DocReaderAction.NOTIFICATION: 
+        case DocReaderAction.PROCESS_WHITE_UV_IMAGES: 
+        case DocReaderAction.PROCESS_IR_FRAME: 
+        case DocReaderAction.PROCESSING_ON_SERVICE: 
+        default: 
+            // nothing to do, wait for the next event 
+            break;     
+    }     
+});
+
+[VERBATIM BLOCK]:
+{ 
+    const data = DocumentReaderCompletion.fromJson(e); 
+    const action = data?.action 
+ 
+    console.log(`Scanning completion event received: ${action}`, e); 
+ 
+    switch (action) { 
+        case DocReaderAction.COMPLETE: 
+            console.log('Scanning completed'); // todo: go to the next step 
+            break; 
+        case DocReaderAction.TIMEOUT: 
+            console.error('Scanning timeout'); // todo: handle timeout 
+            break; 
+        case DocReaderAction.ERROR: 
+            console.error(`Scanning error. Error code:"${e.error?.code}" 
+Message: "${e.error?.message}"`); // todo: handle error 
+            break; 
+        case DocReaderAction.MORE_PAGES_AVAILABLE: 
+            console.log('More pages available');  // todo: handle 
+            break; 
+        case DocReaderAction.CANCEL: 
+            console.log('Scanning cancelled'); // todo: handle cancellation 
+            break; 
+        case DocReaderAction.PROCESS: 
+        case DocReaderAction.PROCESS_WHITE_FLASHLIGHT: 
+        case DocReaderAction.NOTIFICATION: 
+        case DocReaderAction.PROCESS_WHITE_UV_IMAGES: 
+        case DocReaderAction.PROCESS_IR_FRAME: 
+        case DocReaderAction.PROCESSING_ON_SERVICE: 
+        default: 
+            // nothing to do, wait for the next event 
+            break;     
+    }     
+}
+
+
+
+=== Page 17 | paragraph | And then show scanner ===
+And then show scanner
+
+
+=== Page 17 | code | const config = new ScannerConfig(); ===
+const config = new ScannerConfig(); 
+        config.scenario = ScenarioIdentifier.SCENARIO_FULL_PROCESS; 
+        config.onlineProcessingConfig = { 
+          processParams: {}, 
+        }; 
+        DocumentReader.scan( 
+          config, 
+          (_) => {}, 
+          (e) => console.log(e) 
+        );
+
+[VERBATIM BLOCK]:
+{ 
+          processParams: {}, 
+        }; 
+        DocumentReader.scan( 
+          config, 
+          (_) => {}
+
+
+
+=== Page 18 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+17 (21) 
+ 
+        faceApi: { 
+            mode: "match", 
+            threshold: 75,
+
+
+=== Page 18 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 18 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 18 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 18 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 18 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 18 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 18 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 18 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 18 | paragraph | 17 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+17 (21)
+
+
+=== Page 18 | paragraph | re-processing on backend implementing zero-trust to mobile concept: ===
+Finalize package 
+When a user document is scanned, we’re sending all the data as a single package to our server for 
+re-processing on backend implementing zero-trust to mobile concept:
+
+
+=== Page 18 | code | DocumentReader.finalizePackage( ===
+DocumentReader.finalizePackage( 
+    (rawResponse) => { 
+        const response = JSON.parse(rawResponse); 
+        if (response.error != null) { 
+            console.error(response.error);  
+            throw new Error("Error sending package for processing"); 
+        }; 
+        if (response.action == DocReaderAction.COMPLETE) { 
+            const transactionId = response.info.transactionId; 
+            console.log('Transaction id:', transactionId); 
+        } 
+    }, 
+    (_) => {} 
+);
+
+[VERBATIM BLOCK]:
+{ 
+        const response = JSON.parse(rawResponse); 
+        if (response.error != null) { 
+            console.error(response.error);  
+            throw new Error("Error sending package for processing"); 
+        }; 
+        if (response.action == DocReaderAction.COMPLETE) { 
+            const transactionId = response.info.transactionId; 
+            console.log('Transaction id:', transactionId); 
+        } 
+    }, 
+    (_) => {}
+
+
+
+=== Page 18 | paragraph | Read more: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integr… ===
+Read more: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integration/server-
+side-verification/#step-3-finalize-package
+
+
+=== Page 18 | paragraph | Like the liveness transaction, add the document reader transaction to the session too: ===
+Add (document reader) transaction to the session 
+Like the liveness transaction, add the document reader transaction to the session too:
+
+
+=== Page 18 | code | Headers: ===
+POST https://test-
+gateway.zignsec.com/mobilesdk/sessions/{sessionId}/transactions/{transactio
+nId} 
+Headers:  
+  Zs-Product-Key: your-subscription-key 
+  Authorization: Bearer eyJ…x1w
+
+[VERBATIM BLOCK]:
+{sessionId}/transactions/{transactio
+nId}
+
+
+
+=== Page 18 | paragraph | And it returns 204. This information is used to restrict access to the transacti… ===
+And it returns 204. This information is used to restrict access to the transaction/session data.
+
+
+=== Page 18 | paragraph | Reprocess ===
+Reprocess 
+Now we’re ready to reprocess the package on the backend. Let’s setup the client first (see 
+https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/clients/ to find 
+a proper one for your tech stack)
+
+
+=== Page 18 | code | const api = new DocumentReaderApi({ ===
+const api = new DocumentReaderApi({ 
+    basePath: "https://test-gateway.zignsec.com/mobilesdk/docreader", 
+    baseOptions: {  
+        headers: { 
+            Authorization: `Bearer ${accessToken}`, 
+            "Zs-Product-Key": subscriptionKey, 
+        } 
+    }, 
+});
+
+[VERBATIM BLOCK]:
+{ 
+    basePath: "https://test-gateway.zignsec.com/mobilesdk/docreader", 
+    baseOptions: {  
+        headers: { 
+            Authorization: `Bearer ${accessToken}`, 
+            "Zs-Product-Key": subscriptionKey, 
+        } 
+    }, 
+}
+
+
+
+=== Page 18 | paragraph | And post a reprocessing request sending transactionId, livenessTransactionId and scenario to use: ===
+And post a reprocessing request sending transactionId, livenessTransactionId and scenario to use:
+
+
+=== Page 18 | paragraph | api.reprocessTransaction(transactionId, { ===
+api.reprocessTransaction(transactionId, { 
+    processParam: { 
+        scenario: fullAuth ? Scenario.FULL_AUTH : Scenario.FULL_PROCESS, 
+        useFaceApi: true, 
+        faceApi: { 
+            mode: "match", 
+            threshold: 75,
+
+
+=== Page 19 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+18 (21) 
+ 
+• 
+Status – processing status information
+
+
+=== Page 19 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 19 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 19 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 19 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 19 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 19 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 19 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 19 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 19 | paragraph | 18 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+18 (21)
+
+
+=== Page 19 | code | serviceTimeout: 30000 ===
+serviceTimeout: 30000 
+        }, 
+        dateFormat: "yyyy-MM-dd", 
+        log: true, // turn off for production         
+    }, 
+    livePortrait: livenessTransactionId 
+}).then((response) => { console.log(`reprocessed: `, response);  
+  return response;}).catch((error) => { console.error(error); });
+
+[VERBATIM BLOCK]:
+{ console.log(`reprocessed: `, response);  
+  return response;}).catch((error) => { console.error(error); }
+
+
+
+=== Page 19 | paragraph | NOTE: Current version of the Regula documentation (https://docs.regulaforensics.… ===
+NOTE: Current version of the Regula documentation (https://docs.regulaforensics.com/develop/doc-
+reader-sdk/mobile/integration/integration-with-face-sdk/#integration-with-face-sdk) only describes 
+livePortrait as a base64 string, but it’s highly recommended to send the liveness transaction id there 
+instead of the image itself to properly follow the zero-trust to mobile concept.
+
+
+=== Page 19 | paragraph | See also: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integra… ===
+See also: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integration/server-side-
+verification/#step-5-reprocessing-on-web-service
+
+
+=== Page 19 | paragraph | Analyze results ===
+Analyze results 
+When all processing is done you need to analyze responses and make a final decision authorize the 
+user or not. It can be simple mapping from the response or can involve complex logic (for instance 
+for some document types errors in fields could be ignored, or you can validate the number of 
+scanned pages/sides depending on the document type and implement retry)
+
+
+=== Page 19 | paragraph | DocReader results ===
+DocReader results 
+Results are described here: https://docs.regulaforensics.com/develop/doc-reader-
+sdk/mobile/getting-started/results/
+
+
+=== Page 19 | paragraph | We recommend trying one of the online examples here https://api.regulaforensics.… ===
+We recommend trying one of the online examples here https://api.regulaforensics.com/ and explore 
+the Response tab
+
+
+=== Page 19 | paragraph | result containers are: ===
+The basic approach – is to check the Status container, overallStatus: 1 indicates success. The main 
+result containers are:
+
+
+=== Page 19 | paragraph | • ===
+• 
+Status – processing status information
+
+
+=== Page 20 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+19 (21)
+
+
+=== Page 20 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 20 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 20 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 20 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 20 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 20 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 20 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 20 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 20 | paragraph | 19 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+19 (21)
+
+
+=== Page 20 | paragraph | • ===
+• 
+Images (Graphic fields tab) – contains (cropped) images extracted from the document 
+(pages, portraits, signature, etc.)
+
+
+=== Page 20 | paragraph | • ===
+• 
+Text – shows all the extracted texts with all kind of details (source, probability, etc.)
+
+
+=== Page 20 | paragraph | • ===
+• 
+OneCandidate (Document type tab) – holds information about the recognized document 
+type
+
+
+=== Page 20 | paragraph | • ===
+• 
+ImageQualityCheckList (Image quality tab) – everything about source images quality
+
+
+=== Page 20 | paragraph | • ===
+• 
+AuthenticityCheckList (Security checks tab) – details about security checks done during the 
+verification process (face comparison results – see the following chapter – are also added to 
+this container, but to another tab)
+
+
+=== Page 20 | paragraph | Face Comparison Results ===
+Face Comparison Results 
+To see an example of face comparison results, try a Driver License sample, or upload your own 
+document + photo and check the AuthenticityCheckList container data shown on the Portrait 
+comparison tab.
+
+
+=== Page 20 | paragraph | Freeing resources ===
+Freeing resources 
+Don’t forget to free up resources after usage
+
+
+=== Page 20 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/getting-
+started/deinitialization/)
+
+
+=== Page 20 | paragraph | • ===
+• 
+FaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-
+started/initialization/#deinitialization
+
+
+=== Page 20 | code | DocumentReader.deinitializeReader(_ => {}, _ => {}); ===
+DocumentReader.deinitializeReader(_ => {}, _ => {}); 
+FaceSDK.deinitialize(_ => {}, _ => {});
+
+[VERBATIM BLOCK]:
+{}, _ => {}); 
+FaceSDK.deinitialize(_ => {}, _ => {}
+
+
+
+=== Page 21 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+20 (21) 
+ 
+- 
+https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-
+started/samples/
+
+
+=== Page 21 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 21 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 21 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 21 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 21 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 21 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 21 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 21 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 21 | paragraph | 20 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+20 (21)
+
+
+=== Page 21 | paragraph | More technical information ===
+More technical information 
+Supplier documentation 
+For more technical details please check supplier documentation
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/
+
+
+=== Page 21 | paragraph | • ===
+• 
+FaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/
+
+
+=== Page 21 | paragraph | Online demo services ===
+Online demo services
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://api.regulaforensics.com/
+
+
+=== Page 21 | paragraph | • ===
+• 
+Face API https://faceapi.regulaforensics.com/
+
+
+=== Page 21 | paragraph | Calling API directly ===
+Calling API directly 
+Client libraries for different tech stacks
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/web-
+service/development/clients/
+
+
+=== Page 21 | paragraph | • ===
+• 
+Face API https://docs.regulaforensics.com/develop/face-sdk/web-
+service/development/clients/
+
+
+=== Page 21 | paragraph | OpenAPI definitions ===
+OpenAPI definitions
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://dev.regulaforensics.com/DocumentReader-web-openapi/
+
+
+=== Page 21 | paragraph | • ===
+• 
+Face API https://dev.regulaforensics.com/FaceSDK-web-openapi/
+
+
+=== Page 21 | paragraph | UI Customization ===
+UI Customization
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-
+sdk/mobile/customization/#customize-user-interface
+
+
+=== Page 21 | paragraph | • ===
+• 
+FaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#ui-customization
+
+
+=== Page 21 | paragraph | Logging ===
+Logging
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader https://docs.regulaforensics.com/develop/doc-reader-
+sdk/mobile/configuration/logging/
+
+
+=== Page 21 | paragraph | Error handling ===
+Error handling
+
+
+=== Page 21 | paragraph | • ===
+• 
+FaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-
+usage/liveness/#error-handling
+
+
+=== Page 21 | paragraph | Samples ===
+Samples
+
+
+=== Page 21 | paragraph | • ===
+• 
+DocReader
+
+
+=== Page 21 | paragraph | - ===
+- 
+Android https://github.com/regulaforensics/DocumentReader-Android
+
+
+=== Page 21 | paragraph | - ===
+- 
+iOS https://github.com/regulaforensics/DocumentReader-iOS
+
+
+=== Page 21 | paragraph | - ===
+- 
+React Native https://github.com/regulaforensics/react-native-document-reader
+
+
+=== Page 21 | paragraph | - ===
+- 
+Flutter https://github.com/regulaforensics/DocumentReader-
+Flutter/tree/master/example
+
+
+=== Page 21 | paragraph | - ===
+- 
+Cordova https://github.com/regulaforensics/DocumentReader-Cordova-
+Plugin/tree/master/example
+
+
+=== Page 21 | paragraph | - ===
+- 
+Ionic https://github.com/regulaforensics/DocumentReader-Ionic-
+Plugin/tree/master/example
+
+
+=== Page 21 | paragraph | - ===
+- 
+.NET MAUI https://github.com/regulaforensics/Xamarin-DocumentReader
+
+
+=== Page 21 | paragraph | • ===
+• 
+FaceSDK
+
+
+=== Page 21 | paragraph | - ===
+- 
+https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-
+started/samples/
+
+
+=== Page 22 | footer | Footer ===
+Last changed by:  
+Document Name 
+Version 1.0 
+ 
+Volodymyr Levchuk 
+ZignSec  
+Published 
+ 
+ 
+ID & Bio Verification Mobile SDK 
+ 
+Page 
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+21 (21)
+
+
+=== Page 22 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 22 | header | ZIGNSEC ID & BIO VERIFICATION ===
+ZIGNSEC ID & BIO VERIFICATION 
+MOBILE SDK
+
+
+=== Page 22 | paragraph | Confidential ===
+Confidential
+
+
+=== Page 22 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 22 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ID scan 
+Integration guidelines
+
+
+=== Page 22 | paragraph | Last changed by: ===
+Last changed by:  
+Document Name 
+Version 1.0
+
+
+=== Page 22 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+Published
+
+
+=== Page 22 | paragraph | ID & Bio Verification Mobile SDK ===
+ID & Bio Verification Mobile SDK 
+ 
+Page
+
+
+=== Page 22 | paragraph | 21 (21) ===
+© ZignSec AB 
+Integration guidelines 
+2025-03-06 
+21 (21)
+
+
+=== Page 22 | paragraph | Change History ===
+Change History
+
+
+=== Page 22 | paragraph | Date of Change ===
+Date of Change  
+Version Changed By  
+Summary of Change
+
+
+=== Page 22 | paragraph | February 2025 ===
+February 2025 
+1.0 
+Martin Heikkilä, Volodymyr Levchuk First version

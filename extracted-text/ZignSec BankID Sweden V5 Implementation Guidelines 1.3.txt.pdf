@@ -1,0 +1,6384 @@
+
+=== Page 1 | footer | Footer ===
+Version 1.3 | Updated September 2024
+
+
+=== Page 1 | header | BANKID SWEDEN V5 ===
+BANKID SWEDEN V5 
+IMPLEMENTATION GUIDELINES
+
+
+=== Page 1 | paragraph | ZignSec AB (publ) ===
+ZignSec AB (publ)
+
+
+=== Page 1 | paragraph | Version 1.3 | Updated September 2024 ===
+Version 1.3 | Updated September 2024
+
+
+=== Page 2 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+2 /38
+
+
+=== Page 2 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 2 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 2 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 2 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 2 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 2 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 2 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 2 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 2 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 2 | paragraph | 2 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+2 /38
+
+
+=== Page 2 | paragraph | BankID Sweden v5 Implementation Guidelines ===
+BankID Sweden v5 Implementation Guidelines
+
+
+=== Page 2 | paragraph | Code: ===
+Code:
+
+
+=== Page 2 | paragraph | Version: ===
+Version: 
+1.3
+
+
+=== Page 2 | paragraph | Date of version: ===
+Date of version: 
+2024-September-25
+
+
+=== Page 2 | paragraph | Created by: ===
+Created by: 
+Martin Heikkilä, Head of Support
+
+
+=== Page 2 | paragraph | Approved by: ===
+Approved by: 
+Jason Coombes, Head of Risk and Compliance
+
+
+=== Page 2 | paragraph | Confidentiality level: ===
+Confidentiality level: 
+PUBLIC
+
+
+=== Page 3 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+3 /38
+
+
+=== Page 3 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 3 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 3 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 3 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 3 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 3 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 3 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 3 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 3 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 3 | paragraph | 3 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+3 /38
+
+
+=== Page 3 | paragraph | Table of Contents ===
+Table of Contents 
+ ................................................................................................................................................................ 1
+
+
+=== Page 3 | paragraph | BankID Sweden v5 Implementation Guidelines .....................................… ===
+BankID Sweden v5 Implementation Guidelines ................................................................................... 2
+
+
+=== Page 3 | paragraph | BankID ===
+BankID 
+................................................................................................................................................. 4
+
+
+=== Page 3 | paragraph | Secure start to be mandatory ===
+Secure start to be mandatory 
+......................................................................................................... 5
+
+
+=== Page 3 | paragraph | Ways of integration BankID ===
+Ways of integration BankID 
+............................................................................................................ 5
+
+
+=== Page 3 | paragraph | Use cases ......................................................................… ===
+Use cases ........................................................................................................................................ 5
+
+
+=== Page 3 | paragraph | Authentication or Sign ===
+Authentication or Sign 
+.................................................................................................................... 5
+
+
+=== Page 3 | paragraph | Browser Flow ...................................................................… ===
+Browser Flow .................................................................................................................................. 6
+
+
+=== Page 3 | paragraph | API Flow .......................................................................… ===
+API Flow ........................................................................................................................................ 17
+
+
+=== Page 3 | paragraph | Launching the BankID app .......................................................… ===
+Launching the BankID app ............................................................................................................ 23
+
+
+=== Page 3 | paragraph | QR code ........................................................................… ===
+QR code ........................................................................................................................................ 24
+
+
+=== Page 3 | paragraph | Phone Flow .....................................................................… ===
+Phone Flow ................................................................................................................................... 26
+
+
+=== Page 3 | paragraph | User Messages ===
+User Messages 
+.............................................................................................................................. 28
+
+
+=== Page 3 | paragraph | Recommended terminology ........................................................… ===
+Recommended terminology ......................................................................................................... 36
+
+
+=== Page 3 | paragraph | Change History .................................................................… ===
+Change History ..................................................................................................................................... 38
+
+
+=== Page 4 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+4 /38
+
+
+=== Page 4 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 4 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 4 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 4 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 4 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 4 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 4 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 4 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 4 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 4 | paragraph | 4 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+4 /38
+
+
+=== Page 4 | paragraph | BankID ===
+BankID 
+BankID is a trusted electronic identification system in Sweden, built on a Public Key Infrastructure (PKI). It 
+provides secure authentication and non-repudiation for online transactions. The system employs two-factor 
+authentication (2FA), combining a personal certificate tied to an individual's social security number with a 
+PIN or password. End-to-end encryption ensures data security. As of September 2021, it was a fundamental 
+part of Sweden's digital infrastructure with over 8 million active users, regulated by the Swedish Financial 
+Supervisory Authority.
+
+
+=== Page 5 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+5 /38 
+ 
+ 
+the same parameters this is a change from previous versions when there was limitations to adding text in 
+the BankID app.
+
+
+=== Page 5 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 5 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 5 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 5 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 5 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 5 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 5 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 5 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 5 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 5 | paragraph | 5 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+5 /38
+
+
+=== Page 5 | paragraph | Secure start to be mandatory ===
+Secure start to be mandatory 
+In order to protect both users and e-services,
+
+
+=== Page 5 | paragraph | the secure start of BankID becomes mandatory for all authorities, ===
+the secure start of BankID becomes mandatory for all authorities,
+
+
+=== Page 5 | paragraph | companies and organizations that use BankID in their e-services. ===
+companies and organizations that use BankID in their e-services.
+
+
+=== Page 5 | paragraph | Please update as soon as possible. ===
+Please update as soon as possible.
+
+
+=== Page 5 | paragraph | To meet the requirements for secure start you need to implement the changes list… ===
+To meet the requirements for secure start you need to implement the changes listed below. By updating to 
+the latest version of ZignSec implementation you will meet all requirements.
+
+
+=== Page 5 | paragraph | 1. Use autostart for BankID on the same device ===
+1. Use autostart for BankID on the same device
+
+
+=== Page 5 | paragraph | 2. Use animated QR code for BankID on another device ===
+2. Use animated QR code for BankID on another device
+
+
+=== Page 5 | paragraph | 3. Remove start with personal identity numbers ===
+3. Remove start with personal identity numbers
+
+
+=== Page 5 | paragraph | ZignSec provides two ways for implementing Swedish BankID: ===
+Ways of integration BankID 
+ZignSec provides two ways for implementing Swedish BankID:
+
+
+=== Page 5 | paragraph | • ===
+• 
+Browser Flow- The workflow is executed within a ZignSec-controlled browser session.
+
+
+=== Page 5 | paragraph | • ===
+• 
+API Flow - A backend without a user interface, suitable for server, mobile, desktop app, or custom 
+scenarios. This flow also includes the Phone Flow - An authentication process when the user is 
+engaged in a telephone conversation.
+
+
+=== Page 5 | paragraph | The use cases are: ===
+Use cases 
+Swedish BankID can be implemented in different ways, depending on the device initiating the flow. 
+The use cases are:
+
+
+=== Page 5 | paragraph | • ===
+• 
+The user aims to authenticate using an app on the same device where the BankID app is installed.
+
+
+=== Page 5 | paragraph | • ===
+• 
+The user aims to authenticate using a web browser running on other device than the one the BankID 
+app is installed on. For this use case, QR code is the recommended way to trigger authentication.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Please find more details in the references
+
+
+=== Page 5 | paragraph | Here are examples of the links showing the visual flow. ===
+Here are examples of the links showing the visual flow.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Mobile device - same device flow where the app is installed and triggered from the mobile.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Desktop to mobile device - other device flow where the app is triggered on the desktop to the 
+mobile by QR-code.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Desktop same device - same device flow when the app is installed on the desktop and triggered 
+there. This flow is the least common since most users have the BankID installed on their mobile.
+
+
+=== Page 5 | paragraph | Note! More than 80% of BankID users are only using the BankID mobile app. ===
+Note! More than 80% of BankID users are only using the BankID mobile app.
+
+
+=== Page 5 | paragraph | Authentication or Sign ===
+Authentication or Sign 
+Authentication is aimed for identification and sign to be used for digital signatures. But both methods except 
+the same parameters this is a change from previous versions when there was limitations to adding text in 
+the BankID app.
+
+
+=== Page 6 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+6 /38
+
+
+=== Page 6 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 6 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 6 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 6 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 6 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 6 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 6 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 6 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 6 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 6 | paragraph | 6 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+6 /38
+
+
+=== Page 6 | paragraph | Browser Flow ===
+Browser Flow 
+Execution Sequence 
+The initial call triggers the end user's operation - either authenticate or sign. This call instantly activates the 
+authenticate or sign process, and the BankID app is immediately notified to display either authenticate or 
+sign. To avoid continuous polling, consider configuring a webhook for “completed/error”. Execution 
+Sequence
+
+
+=== Page 6 | paragraph | 1. Request Creation: Set up the POST-request for the product. Use the redirect U… ===
+1. Request Creation: Set up the POST-request for the product. Use the redirect URL returned in the 
+response to start the browser workflow, identified by sessionID. (Link Sample request)
+
+
+=== Page 6 | paragraph | 2. Running the Login Process: Simply navigate to the redirect URL in a web brows… ===
+2. Running the Login Process: Simply navigate to the redirect URL in a web browser. The workflow may 
+involve specific user interactions and an external device, such as the Swedish mobile BankID, may be 
+necessary.(Link to Sample response containing redirect URL)
+
+
+=== Page 6 | paragraph | 3. Retrieving Status/Results: Get status and individual data using the unique wo… ===
+3. Retrieving Status/Results: Get status and individual data using the unique workflow sessionID code. 
+Make this call during or after the workflow is completed. The workflow can indicate pending, 
+completed, or error status (exception, user cancel, timeout) via a browser redirect to the redirect 
+success (or failure) URL and/or through a webhook. (Link to Sample Result response)
+
+
+=== Page 6 | paragraph | Find below the sequence diagram for Browser flow on the same device. ===
+Find below the sequence diagram for Browser flow on the same device.
+
+
+=== Page 7 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+7 /38 
+ 
+ 
+POST - BankID SE Auth - Browser Flow Same Device
+
+
+=== Page 7 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 7 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 7 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 7 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 7 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 7 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 7 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 7 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 7 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 7 | paragraph | 7 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+7 /38
+
+
+=== Page 7 | paragraph | And here is the sequence diagram for Browser flow on other device. ===
+And here is the sequence diagram for Browser flow on other device.
+
+
+=== Page 7 | paragraph | Swagger for Browser flow ===
+Swagger for Browser flow
+
+
+=== Page 7 | paragraph | • ===
+• 
+Test BankId SE - Browser Flow: Swagger UI (zignsec.com)
+
+
+=== Page 7 | paragraph | • ===
+• 
+Production BankId SE - Browser Flow: Swagger UI (zignsec.com)
+
+
+=== Page 7 | paragraph | API Endpoint ===
+API Endpoint
+
+
+=== Page 7 | paragraph | • ===
+• 
+Base URL for Test: https://test-gateway.zignsec.com/core/api/sessions/
+
+
+=== Page 7 | paragraph | • ===
+• 
+Base URL for Production: https://gateway.zignsec.com/core/api/sessions/
+
+
+=== Page 7 | paragraph | Important Note: For customers using Two-Way SSL certificates, they need to call … ===
+Important Note: For customers using Two-Way SSL certificates, they need to call different endpoints 
+base URL like mentioned below
+
+
+=== Page 7 | paragraph | • ===
+• 
+Test: https://api-test.zignsec.com
+
+
+=== Page 7 | paragraph | • ===
+• 
+Prod: https://api-prod.zignsec.com
+
+
+=== Page 7 | paragraph | Authenticate ===
+Authenticate 
+Used for electronic identifying a person
+
+
+=== Page 7 | paragraph | POST - BankID SE Auth - Browser Flow Same Device ===
+POST - BankID SE Auth - Browser Flow Same Device
+
+
+=== Page 8 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+8 /38 
+ 
+ 
+p
+_
+,
+      "pin_code": false 
+    }
+
+
+=== Page 8 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 8 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 8 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 8 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 8 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 8 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 8 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 8 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 8 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 8 | paragraph | 8 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+8 /38
+
+
+=== Page 8 | paragraph | Endpoint: /bankidse/browser/same-device/auth ===
+Endpoint: /bankidse/browser/same-device/auth
+
+
+=== Page 8 | paragraph | GET - Get Session Data (BankID SE Auth - Browser Flow Same Device) ===
+GET - Get Session Data (BankID SE Auth - Browser Flow Same Device)
+
+
+=== Page 8 | code | Endpoint: /bankidse/browser/same-device/auth/{id} ===
+Endpoint: /bankidse/browser/same-device/auth/{id}
+
+[VERBATIM BLOCK]:
+{id}
+
+
+
+=== Page 8 | paragraph | POST - BankID SE Auth - Browser Flow Other Device ===
+POST - BankID SE Auth - Browser Flow Other Device
+
+
+=== Page 8 | paragraph | Endpoint: /bankidse/browser/auth ===
+Endpoint: /bankidse/browser/auth
+
+
+=== Page 8 | paragraph | GET - Get Session Data (BankID SE Auth - Browser Flow Other Device) ===
+GET - Get Session Data (BankID SE Auth - Browser Flow Other Device)
+
+
+=== Page 8 | code | Endpoint: /bankidse/browser/auth/{id} ===
+Endpoint: /bankidse/browser/auth/{id}
+
+[VERBATIM BLOCK]:
+{id}
+
+
+
+=== Page 8 | paragraph | Sign ===
+Sign 
+Used for electronic signatures
+
+
+=== Page 8 | paragraph | POST – BankID SE Sign – Browser Flow Same Device ===
+POST – BankID SE Sign – Browser Flow Same Device
+
+
+=== Page 8 | paragraph | Endpoint: /bankidse/browser/same-device/sign ===
+Endpoint: /bankidse/browser/same-device/sign
+
+
+=== Page 8 | paragraph | GET – Get Session Data (BankID SE Sign – Browser Flow Same Device) ===
+GET – Get Session Data (BankID SE Sign – Browser Flow Same Device)
+
+
+=== Page 8 | code | Endpoint: /bankidse/browser/same-device/sign/{id} ===
+Endpoint: /bankidse/browser/same-device/sign/{id}
+
+[VERBATIM BLOCK]:
+{id}
+
+
+
+=== Page 8 | paragraph | POST - BankID SE Sign - Browser Flow Other Device ===
+POST - BankID SE Sign - Browser Flow Other Device
+
+
+=== Page 8 | paragraph | Endpoint: /bankidse/browser/sign ===
+Endpoint: /bankidse/browser/sign
+
+
+=== Page 8 | paragraph | GET - Get Session Data (BankID SE Sign - Browser Flow Other Device) ===
+GET - Get Session Data (BankID SE Sign - Browser Flow Other Device)
+
+
+=== Page 8 | paragraph | Endpoint: /browser/sign/id ===
+Endpoint: /browser/sign/id
+
+
+=== Page 8 | paragraph | Sample of BankID SE Auth - Browser Flow Other Device ===
+Sample of BankID SE Auth - Browser Flow Other Device
+
+
+=== Page 8 | paragraph | curl -X 'POST' \ ===
+curl -X 'POST' \
+
+
+=== Page 8 | paragraph | 'https://test-gateway.zignsec.com/core/api/sessions/bankidse/browser/auth' \ ===
+'https://test-gateway.zignsec.com/core/api/sessions/bankidse/browser/auth' \
+
+
+=== Page 8 | paragraph | -H 'accept: application/json' \ ===
+-H 'accept: application/json' \
+
+
+=== Page 8 | paragraph | -H 'authorization: Your-Subscription-Key' \ ===
+-H 'authorization: Your-Subscription-Key' \
+
+
+=== Page 8 | paragraph | -H 'Content-Type: application/json' \ ===
+-H 'Content-Type: application/json' \
+
+
+=== Page 8 | paragraph | -d '{ ===
+-d '{
+
+
+=== Page 8 | paragraph | "locale": "En", ===
+"locale": "En",
+
+
+=== Page 8 | paragraph | "metadata": { ===
+"metadata": {
+
+
+=== Page 8 | paragraph | "language": "en", ===
+"language": "en",
+
+
+=== Page 8 | paragraph | "requirement": { ===
+"requirement": {
+
+
+=== Page 8 | paragraph | "certificate_policies": [ ===
+"certificate_policies": [
+
+
+=== Page 8 | paragraph | "1.2.752.78.1.5", ===
+"1.2.752.78.1.5",
+
+
+=== Page 8 | paragraph | "1.2.752.60.1.6" ===
+"1.2.752.60.1.6"
+
+
+=== Page 8 | paragraph | ], ===
+],
+
+
+=== Page 8 | paragraph | "mrtd": false, ===
+"mrtd": false,
+
+
+=== Page 8 | paragraph | "personal_number": "194911201111", ===
+"personal_number": "194911201111",
+
+
+=== Page 8 | paragraph | "pin_code": false ===
+"pin_code": false
+
+
+=== Page 8 | paragraph | } ===
+}
+
+
+=== Page 9 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+9 /38 
+ 
+ 
+certificate_policies 
+string 
+1.2.752.78.1.1  - BankID on file 
+"1.2.752.78.1.2" - BankID on smart card 
+no
+
+
+=== Page 9 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 9 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 9 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 9 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 9 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 9 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 9 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 9 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 9 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 9 | paragraph | 9 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+9 /38
+
+
+=== Page 9 | paragraph | }, ===
+},
+
+
+=== Page 9 | paragraph | "redirect_failure": "https://my_failure_url.com", ===
+"redirect_failure": "https://my_failure_url.com",
+
+
+=== Page 9 | paragraph | "redirect_success": "https://my_success_url.com", ===
+"redirect_success": "https://my_success_url.com",
+
+
+=== Page 9 | paragraph | "relay_state": "my-unique-customer-id", ===
+"relay_state": "my-unique-customer-id",
+
+
+=== Page 9 | paragraph | "webhook": "https://my_webhook_url.com" ===
+"webhook": "https://my_webhook_url.com"
+
+
+=== Page 9 | paragraph | }' ===
+}'
+
+
+=== Page 9 | paragraph | Request Parameters ===
+Request Parameters
+
+
+=== Page 9 | paragraph | Parameter ===
+Parameter 
+Type 
+Description 
+Required
+
+
+=== Page 9 | paragraph | Locale ===
+Locale 
+string 
+Preferred Language to Use. Example: En 
+no
+
+
+=== Page 9 | paragraph | metadata ===
+metadata 
+list 
+Sign request 
+yes
+
+
+=== Page 9 | paragraph | language ===
+language 
+string
+
+
+=== Page 9 | paragraph | Decides web form user interface language. The ===
+Decides web form user interface language. The 
+default language is taken from the merchants 
+setting ‘DefaultLanguage’ or EN = English if none 
+is set there. Language can be changed both on a 
+request level here, or on setting level. 
+no
+
+
+=== Page 9 | paragraph | requirement ===
+requirement 
+list
+
+
+=== Page 9 | paragraph | RP may use the requirement parameter to ===
+RP may use the requirement parameter to 
+describe how a signature must be created and 
+verified. A typical use case is to require Mobile 
+BankID or a certain card reader. 
+no
+
+
+=== Page 9 | paragraph | card_reader ===
+card_reader
+
+
+=== Page 9 | paragraph | Enum: [ ===
+Enum: [ 
+Class1, 
+Class2 ]
+
+
+=== Page 9 | paragraph | Class1 - Default. The transaction must be ===
+Class1 - Default. The transaction must be 
+performed using a card reader where the PIN 
+code is entered on the computers keyboard, or a 
+card reader of higher class., Class2 - The 
+transaction must be performed using a card 
+reader where the PIN code is entered on the 
+reader, or a reader of higher class 
+no
+
+
+=== Page 9 | paragraph | certificate_policies ===
+certificate_policies 
+string
+
+
+=== Page 9 | paragraph | The values for production BankIDs are: ===
+The oid in certificate policies in the user 
+certificate. List of String. One wildcard "" is 
+allowed from position 5 and forward i.e.. 
+1.2.752.78. 
+The values for production BankIDs are: 
+"1.2.752.78.1.1" - BankID on file 
+"1.2.752.78.1.2" - BankID on smart card 
+no
+
+
+=== Page 10 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+10 /38
+
+
+=== Page 10 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 10 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 10 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 10 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 10 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 10 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 10 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 10 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 10 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 10 | paragraph | 10 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+10 /38
+
+
+=== Page 10 | paragraph | Parameter ===
+Parameter 
+Type 
+Description 
+Required
+
+
+=== Page 10 | paragraph | The values for test BankIDs are: ===
+"1.2.752.78.1.5" - Mobile BankID 
+"1.2.752.71.1.3" - Nordea e-id on file and on 
+smart card. 
+The values for test BankIDs are: 
+"1.2.3.4.5" - BankID on file 
+"1.2.3.4.10" - BankID on smart card 
+"1.2.3.4.25" - Mobile BankID 
+"1.2.752.71.1.3" - Nordea e-id on file and on 
+smart card. 
+"1.2.752.60.1.6" - Test BankID for some BankID 
+Banks 
+If no certificate policies is set the following are 
+default in the production system: 
+1.2.752.78.1.1, 1.2.752.78.1.2, 1.2.752.78.1.5, 
+1.2.752.71.1.3 
+The following are default in the test system: 
+1.2.3.4.5, 1.2.3.4.10, 1.2.3.4.25, 1.2.752.60.1.6, 
+1.2.752.71.1.3 
+If one certificate policy is set all the default 
+policies are dismissed.
+
+
+=== Page 10 | paragraph | Mrtd ===
+Mrtd 
+boolean
+
+
+=== Page 10 | paragraph | If present, and set to true, the client needs to ===
+If present, and set to true, the client needs to 
+provide MRTD (Machine readable travel 
+document) information. 
+no
+
+
+=== Page 10 | paragraph | personal_number ===
+personal_number 
+string
+
+
+=== Page 10 | paragraph | A personal number to be used to complete the ===
+A personal number to be used to complete the 
+transaction. If a BankID with another personal 
+number attempts to sign the transaction, it fails. 
+no
+
+
+=== Page 10 | paragraph | pin_code ===
+pin_code 
+boolean
+
+
+=== Page 10 | paragraph | Users are required to sign the transaction with ===
+Users are required to sign the transaction with 
+their PIN code, even if they have biometrics 
+activated. 
+no
+
+
+=== Page 10 | paragraph | Theme ===
+Theme
+
+
+=== Page 10 | paragraph | Enum ===
+Enum 
+Default, 
+Light, 
+Dark
+
+
+=== Page 10 | paragraph | Default - Default theme, Light - Light theme, Dark ===
+Default - Default theme, Light - Light theme, Dark 
+- Dark theme 
+no
+
+
+=== Page 11 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+11 /38 
+ 
+ 
+webhook 
+string 
+p
+https://my_webhook_url.com 
+no
+
+
+=== Page 11 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 11 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 11 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 11 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 11 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 11 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 11 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 11 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 11 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 11 | paragraph | 11 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+11 /38
+
+
+=== Page 11 | paragraph | Parameter ===
+Parameter 
+Type 
+Description 
+Required
+
+
+=== Page 11 | paragraph | user_non_visible_data ===
+user_non_visible_data 
+string
+
+
+=== Page 11 | paragraph | Data not displayed to the user. base-64 string. 1- ===
+Data not displayed to the user. base-64 string. 1-
+200,000 characters after base 64-encoding 
+no
+
+
+=== Page 11 | paragraph | user_non_visible_text ===
+user_non_visible_text 
+string
+
+
+=== Page 11 | paragraph | The text to be displayed and signed. string. 1-- ===
+The text to be displayed and signed. string. 1--
+40,000 characters after base 64 encoding 
+no
+
+
+=== Page 11 | paragraph | user_visible_data ===
+user_visible_data 
+string
+
+
+=== Page 11 | paragraph | 40 000 characters after base 64 encoding ===
+The text to be displayed and signed. base-64 
+string. The text can be formatted using CR, LF 
+and CRLF for new lines. The text must be 
+encoded as UTF-8 and then base 64 encoded. 1--
+40 000 characters after base 64 encoding 
+no
+
+
+=== Page 11 | paragraph | user_visible_data_format ===
+user_visible_data_format 
+string
+
+
+=== Page 11 | paragraph | If present, and set to simpleMarkdownV1, this ===
+If present, and set to simpleMarkdownV1, this 
+parameter indicates that userVisibleData holds 
+formatting characters which, will potentially 
+make the text displayed to the user nicer to look 
+at. For further information of formatting options, 
+please see the guidelines for formatting text. 
+no
+
+
+=== Page 11 | paragraph | user_visible_text ===
+user_visible_text 
+string
+
+
+=== Page 11 | paragraph | The text to be displayed and signed. string. ===
+The text to be displayed and signed. string. 
+Converted to UserVisibleData. If both 
+UserVisibleData and UserVisibleText sent, the 
+UserVisibleData will be used. 1--40 000 
+characters after base 64 encoding 
+no
+
+
+=== Page 11 | paragraph | redirect_failure ===
+redirect_failure 
+string
+
+
+=== Page 11 | paragraph | URL to redirect the end-user to on failure. ===
+URL to redirect the end-user to on failure. 
+Example: https://my_failure_url.com 
+no
+
+
+=== Page 11 | paragraph | redirect_success ===
+redirect_success 
+string
+
+
+=== Page 11 | paragraph | URL to redirect the end-user to on success. ===
+URL to redirect the end-user to on success. 
+Example: https://my_success_url.com 
+no
+
+
+=== Page 11 | paragraph | relay_state ===
+relay_state 
+string
+
+
+=== Page 11 | paragraph | Optional Custom Parameter. Example: my- ===
+Optional Custom Parameter. Example: my-
+unique-customer-id 
+no
+
+
+=== Page 11 | paragraph | webhook ===
+webhook 
+string
+
+
+=== Page 11 | paragraph | session events. Example: ===
+Webhook URL where your backend will receive 
+session events. Example: 
+https://my_webhook_url.com 
+no
+
+
+=== Page 12 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+12 /38
+
+
+=== Page 12 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 12 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 12 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 12 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 12 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 12 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 12 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 12 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 12 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 12 | paragraph | 12 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+12 /38
+
+
+=== Page 13 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+13 /38 
+ 
+ 
+        "identity": { 
+            "addressInfoRaw": "",
+
+
+=== Page 13 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 13 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 13 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 13 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 13 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 13 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 13 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 13 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 13 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 13 | paragraph | 13 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+13 /38
+
+
+=== Page 13 | paragraph | Sample Response ===
+Sample Response
+
+
+=== Page 13 | paragraph | { ===
+{
+
+
+=== Page 13 | paragraph | "data": { ===
+"data": {
+
+
+=== Page 13 | paragraph | "errors": [], ===
+"errors": [],
+
+
+=== Page 13 | paragraph | "id": "8bd5f1bf-3239-4f17-8ed6-fc620b05884c", ===
+"id": "8bd5f1bf-3239-4f17-8ed6-fc620b05884c",
+
+
+=== Page 13 | paragraph | "redirect_url": "https://test-gateway.zignsec.com/ui/bankidse/8bd5f1bf-3239-4f17… ===
+"redirect_url": "https://test-gateway.zignsec.com/ui/bankidse/8bd5f1bf-3239-4f17-8ed6-fc620b05884c/?otp=Z_6-
+zcEsoUane_-Wjcf-DQ&language=en&theme=Light",
+
+
+=== Page 13 | paragraph | "status": "GeneratedLink" ===
+"status": "GeneratedLink"
+
+
+=== Page 13 | paragraph | } ===
+}
+
+
+=== Page 13 | paragraph | } ===
+}
+
+
+=== Page 13 | paragraph | Response parameters ===
+Response parameters
+
+
+=== Page 13 | paragraph | Parameter ===
+Parameter 
+Description
+
+
+=== Page 13 | paragraph | Id ===
+Id 
+A unique session identifier generated for each workflow instance
+
+
+=== Page 13 | paragraph | Errors ===
+Errors 
+A JSON array of error conditions
+
+
+=== Page 13 | paragraph | redirect_url ===
+redirect_url 
+The URL that the user needs to be redirected to complete the data via the web interface.
+
+
+=== Page 13 | paragraph | Sample Response after completing workflow. ===
+Sample Response after completing workflow.
+
+
+=== Page 13 | paragraph | { ===
+{
+
+
+=== Page 13 | paragraph | "errors": [], ===
+"errors": [],
+
+
+=== Page 13 | paragraph | "id": "ca1d0bcd-94e3-483d-a4dc-f207eb248a29", ===
+"id": "ca1d0bcd-94e3-483d-a4dc-f207eb248a29",
+
+
+=== Page 13 | paragraph | "result": { ===
+"result": {
+
+
+=== Page 13 | paragraph | "bankIDSE": { ===
+"bankIDSE": {
+
+
+=== Page 13 | paragraph | "ocspResponse": "MIIHdgo….JQ4N/A+RoS4…", ===
+"ocspResponse": "MIIHdgo….JQ4N/A+RoS4…",
+
+
+=== Page 13 | paragraph | "orderRef": "458727f9-82f6-45ba-be86-5ca692ff851f", ===
+"orderRef": "458727f9-82f6-45ba-be86-5ca692ff851f",
+
+
+=== Page 13 | paragraph | "signature": "PD94bWwgdm….mVkRGF0Y5hdHVyZT4=", ===
+"signature": "PD94bWwgdm….mVkRGF0Y5hdHVyZT4=",
+
+
+=== Page 13 | paragraph | "userInfo": { ===
+"userInfo": {
+
+
+=== Page 13 | paragraph | "givenName": "Erik Lennart", ===
+"givenName": "Erik Lennart",
+
+
+=== Page 13 | paragraph | "ipAddress": "109.228.185.130", ===
+"ipAddress": "109.228.185.130",
+
+
+=== Page 13 | paragraph | "name": "Erik Lennart Eriksson", ===
+"name": "Erik Lennart Eriksson",
+
+
+=== Page 13 | paragraph | "personalNumber": "194911201111", ===
+"personalNumber": "194911201111",
+
+
+=== Page 13 | paragraph | "surname": "Eriksson" ===
+"surname": "Eriksson"
+
+
+=== Page 13 | paragraph | } ===
+}
+
+
+=== Page 13 | paragraph | }, ===
+},
+
+
+=== Page 13 | paragraph | "identity": { ===
+"identity": {
+
+
+=== Page 13 | paragraph | "addressInfoRaw": "", ===
+"addressInfoRaw": "",
+
+
+=== Page 14 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+14 /38
+
+
+=== Page 14 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 14 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 14 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 14 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 14 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 14 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 14 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 14 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 14 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 14 | paragraph | 14 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+14 /38
+
+
+=== Page 14 | paragraph | "age": 74, ===
+"age": 74,
+
+
+=== Page 14 | paragraph | "countryCode": "SE", ===
+"countryCode": "SE",
+
+
+=== Page 14 | paragraph | "customerPersonId": "my-unique-customer-id", ===
+"customerPersonId": "my-unique-customer-id",
+
+
+=== Page 14 | paragraph | "dateOfBirth": "1949-11-20", ===
+"dateOfBirth": "1949-11-20",
+
+
+=== Page 14 | paragraph | "email": "", ===
+"email": "",
+
+
+=== Page 14 | paragraph | "firstName": "Erik Lennart", ===
+"firstName": "Erik Lennart",
+
+
+=== Page 14 | paragraph | "fullName": "Erik Lennart Eriksson", ===
+"fullName": "Erik Lennart Eriksson",
+
+
+=== Page 14 | paragraph | "gender": "M", ===
+"gender": "M",
+
+
+=== Page 14 | paragraph | "idProviderName": "BankIDSE", ===
+"idProviderName": "BankIDSE",
+
+
+=== Page 14 | paragraph | "idProviderPersonId": "", ===
+"idProviderPersonId": "",
+
+
+=== Page 14 | paragraph | "idProviderRequestId": "1b2e07e5-2f26-4d9e-904c-2ed73f9cbdc8", ===
+"idProviderRequestId": "1b2e07e5-2f26-4d9e-904c-2ed73f9cbdc8",
+
+
+=== Page 14 | paragraph | "identificationDate": "2023-12-14T11:40:53.2316596Z", ===
+"identificationDate": "2023-12-14T11:40:53.2316596Z",
+
+
+=== Page 14 | paragraph | "lastName": "Eriksson", ===
+"lastName": "Eriksson",
+
+
+=== Page 14 | paragraph | "personalNumber": "194911201111", ===
+"personalNumber": "194911201111",
+
+
+=== Page 14 | paragraph | "phone": "", ===
+"phone": "",
+
+
+=== Page 14 | paragraph | "resultReportPdf": "" ===
+"resultReportPdf": ""
+
+
+=== Page 14 | paragraph | } ===
+}
+
+
+=== Page 14 | paragraph | "method": "Auth", ===
+"method": "Auth",
+
+
+=== Page 14 | paragraph | "userMessage": "NoMessage" ===
+"userMessage": "NoMessage"
+
+
+=== Page 14 | paragraph | }, ===
+},
+
+
+=== Page 14 | paragraph | "status": "Finished" ===
+"status": "Finished"
+
+
+=== Page 14 | paragraph | } ===
+}
+
+
+=== Page 14 | paragraph | Sample of Error response ===
+Sample of Error response
+
+
+=== Page 14 | paragraph | { ===
+{
+
+
+=== Page 14 | paragraph | "errors": [ ===
+"errors": [
+
+
+=== Page 14 | paragraph | { ===
+{
+
+
+=== Page 14 | paragraph | "code": "CANCELLED_BY_USER", ===
+"code": "CANCELLED_BY_USER",
+
+
+=== Page 14 | paragraph | "description": "Action cancelled by user" ===
+"description": "Action cancelled by user"
+
+
+=== Page 14 | paragraph | } ===
+}
+
+
+=== Page 14 | paragraph | ], ===
+],
+
+
+=== Page 14 | paragraph | "id": "2cab790d-d0d6-4aa5-9d94-c08caab5dfba", ===
+"id": "2cab790d-d0d6-4aa5-9d94-c08caab5dfba",
+
+
+=== Page 14 | paragraph | "result": { ===
+"result": {
+
+
+=== Page 14 | paragraph | "method": "Auth", ===
+"method": "Auth",
+
+
+=== Page 14 | paragraph | "userMessage": "NoMessage" ===
+"userMessage": "NoMessage"
+
+
+=== Page 14 | paragraph | }, ===
+},
+
+
+=== Page 14 | paragraph | "status": "Cancelled" ===
+"status": "Cancelled"
+
+
+=== Page 14 | paragraph | } ===
+}
+
+
+=== Page 15 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+15 /38 
+ 
+ 
+identity 
+Object 
+our eIDs products.
+
+
+=== Page 15 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 15 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 15 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 15 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 15 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 15 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 15 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 15 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 15 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 15 | paragraph | 15 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+15 /38
+
+
+=== Page 15 | paragraph | Response Parameters ===
+Response Parameters
+
+
+=== Page 15 | paragraph | Parameter ===
+Parameter 
+Type 
+Description
+
+
+=== Page 15 | paragraph | Errors ===
+Errors 
+list 
+list of errors see separate table
+
+
+=== Page 15 | paragraph | Id ===
+Id 
+string 
+UUID for the session used to fetch the status and result of a session
+
+
+=== Page 15 | paragraph | Result ===
+Result 
+list 
+Contains the result of the session more details below
+
+
+=== Page 15 | paragraph | ocspResponse ===
+ocspResponse 
+String
+
+
+=== Page 15 | paragraph | OSCP response has an extension for Nonce. The nonce is calculated as: ===
+The OCSP response. Base64-encoded. The OCSP response is signed by a 
+certificate that has the same issuer as the certificate being verified. The 
+OSCP response has an extension for Nonce. The nonce is calculated as:
+
+
+=== Page 15 | paragraph | • ===
+• 
+SHA-1 hash over the base 64 XML signature encoded as UTF-8.
+
+
+=== Page 15 | paragraph | 12 random bytes is added after the hash. ===
+• 
+12 random bytes is added after the hash.
+
+
+=== Page 15 | paragraph | • ===
+• 
+The nonce is 32 bytes (20 + 12).
+
+
+=== Page 15 | paragraph | orderRef ===
+orderRef 
+string
+
+
+=== Page 15 | paragraph | Idprovider UUID for the session, used when communicating issues with ===
+Idprovider UUID for the session, used when communicating issues with 
+specific session with provider
+
+
+=== Page 15 | paragraph | signature ===
+signature 
+String
+
+
+=== Page 15 | paragraph | The signature as described in the BankID Signature Profile specification. ===
+The signature as described in the BankID Signature Profile specification. 
+Base64-encoded. XML signature.
+
+
+=== Page 15 | paragraph | userInfo ===
+userInfo 
+Object
+
+
+=== Page 15 | paragraph | Information related to the user: ===
+Information related to the user:
+
+
+=== Page 15 | paragraph | • ===
+• 
+personalNumber: The personal identity number.
+
+
+=== Page 15 | paragraph | • ===
+• 
+name: The given name and surname of the user.
+
+
+=== Page 15 | paragraph | • ===
+• 
+givenName: The given name of the user.
+
+
+=== Page 15 | paragraph | • ===
+• 
+surname: The surname of the user.
+
+
+=== Page 15 | paragraph | • ===
+• 
+ipAddress: The IP address of the user agent as the BankID server 
+discovers it.
+
+
+=== Page 15 | paragraph | method ===
+method 
+String 
+The method used: "Auth" for Authentication and "Sign" for signature.
+
+
+=== Page 15 | paragraph | identity ===
+identity 
+Object
+
+
+=== Page 15 | paragraph | Identity structure: Our main id data holder found in the responses from all ===
+Identity structure: Our main id data holder found in the responses from all 
+our eIDs products.
+
+
+=== Page 16 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+16 /38
+
+
+=== Page 16 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 16 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 16 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 16 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 16 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 16 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 16 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 16 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 16 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 16 | paragraph | 16 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+16 /38
+
+
+=== Page 16 | paragraph | Parameter ===
+Parameter 
+Type 
+Description
+
+
+=== Page 16 | paragraph | • ===
+• 
+countryCode: Indicates the country the identification is performed 
+in.
+
+
+=== Page 16 | paragraph | • ===
+• 
+customerPersonId: Optional Custom Parameter. Example: my-
+unique-customer-id
+
+
+=== Page 16 | paragraph | • ===
+• 
+dateOfBirth: In the format YYYY-MM-DD
+
+
+=== Page 16 | paragraph | • ===
+• 
+gender: Male(M) or Female(F)
+
+
+=== Page 16 | paragraph | • ===
+• 
+personalNumber: Availability depends on the underlying identity 
+provider in the respective country. In Denmark (MitID) and Norway 
+(BankID) it is normally not delivered.
+
+
+=== Page 16 | paragraph | • ===
+• 
+idProviderName: IDP data. ZignSec´s name of the underlying identity 
+provider, for example MitID, BankIDSE, BankIDNO
+
+
+=== Page 16 | paragraph | • ===
+• 
+idProviderPersonId: IDP data. A provider specific unique identifier 
+for the person identified
+
+
+=== Page 16 | paragraph | • ===
+• 
+idProviderRequestId: IDP data. A provider specific unique identifier 
+for the transaction, if available. (for traceability)
+
+
+=== Page 16 | paragraph | • ===
+• 
+identificationDate: IDP data. A datetime for when the identification 
+took place.
+
+
+=== Page 16 | paragraph | userMessage ===
+userMessage 
+String
+
+
+=== Page 16 | paragraph | RFA14, RFA14A, RFA14B, RFA15, RFA15A, RFA15B, RFA16, RFA17, RFA17A, ===
+NoMessage, RFA1, RFA2, RFA3, RFA4, RFA5, RFA6, RFA8, RFA9, RFA13, 
+RFA14, RFA14A, RFA14B, RFA15, RFA15A, RFA15B, RFA16, RFA17, RFA17A, 
+RFA17B, RFA18, RFA19, RFA20, RFA21, RFA22, RFA23
+
+
+=== Page 16 | paragraph | Status ===
+Status 
+String 
+GeneratedLink, Pending, Finished, Failed, Cancelled, Timeout.
+
+
+=== Page 16 | paragraph | Errors ===
+Errors
+
+
+=== Page 16 | paragraph | Parameter ===
+Parameter 
+Type 
+Description
+
+
+=== Page 16 | paragraph | Code ===
+Code 
+string 
+Error code. Can be used for automatic error processing.
+
+
+=== Page 16 | paragraph | description ===
+description 
+string 
+Error description. Human readable text.
+
+
+=== Page 16 | paragraph | Details ===
+Details 
+string 
+Error details. Might contain technical information.
+
+
+=== Page 17 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+17 /38
+
+
+=== Page 17 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 17 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 17 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 17 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 17 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 17 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 17 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 17 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 17 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 17 | paragraph | 17 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+17 /38
+
+
+=== Page 17 | paragraph | API Flow ===
+API Flow
+
+
+=== Page 17 | paragraph | Execution Sequence ===
+Execution Sequence 
+The opening call initiates the desired end user operation - Authenticate or Sign.
+
+
+=== Page 17 | paragraph | 1. This initial call triggers the authenticate or sign process on the BankID bac… ===
+1. This initial call triggers the authenticate or sign process on the BankID backend instantly, alerting the 
+BankID app to display the authenticate or sign page. It's advisable to have a web hook set up for 
+“completion/error” to bypass frequent checks. 
+Establish a login session and launch BankID backend and app for the designated operation - 
+Authenticate or Sign. This will result in a new BankID session token. (Link to Sample request)
+
+
+=== Page 17 | paragraph | 2. Commence the login procedure in a BankID app, you find details in the Launchi… ===
+2. Commence the login procedure in a BankID app, you find details in the Launching paragraph below.
+
+
+=== Page 17 | paragraph | 3. To retrieve the Final Results, ProgressStatus, or Errors, call the API in any of the following ways: ===
+3. To retrieve the Final Results, ProgressStatus, or Errors, call the API in any of the following ways: 
+-Automate the posting of results to the client's webhooks for success and error, previously 
+registered with ZignSec. 
+-Continually monitor the progress status, errors, and ultimately get the results. (Link to Sample 
+Result response)
+
+
+=== Page 17 | paragraph | 4. Cancel request terminates an ongoing sign, auth or phone order. This is gener… ===
+4. Cancel request terminates an ongoing sign, auth or phone order. This is generally utilized when the
+
+
+=== Page 17 | paragraph | user discontinues the order within your service or application ===
+user discontinues the order within your service or application
+
+
+=== Page 17 | paragraph | Here is the sequence diagrams related to the API flow ===
+Here is the sequence diagrams related to the API flow
+
+
+=== Page 18 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+18 /38
+
+
+=== Page 18 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 18 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 18 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 18 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 18 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 18 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 18 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 18 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 18 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 18 | paragraph | 18 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+18 /38
+
+
+=== Page 19 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+19 /38 
+ 
+ 
+Sign 
+POST - BankID SE (Create Signing Session)
+
+
+=== Page 19 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 19 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 19 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 19 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 19 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 19 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 19 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 19 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 19 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 19 | paragraph | 19 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+19 /38
+
+
+=== Page 19 | paragraph | Swagger for API flow ===
+Swagger for API flow
+
+
+=== Page 19 | paragraph | • ===
+• 
+Test BankId SE - API Flow: Swagger UI (zignsec.com)
+
+
+=== Page 19 | paragraph | • ===
+• 
+Production BankId SE - API Flow: Swagger UI (zignsec.com)
+
+
+=== Page 19 | paragraph | API Endpoints ===
+API Endpoints
+
+
+=== Page 19 | paragraph | • ===
+• 
+Base URL for Test: https://test-gateway.zignsec.com/core/api/sessions/
+
+
+=== Page 19 | paragraph | • ===
+• 
+Base URL for Production: https://gateway.zignsec.com/core/api/sessions/
+
+
+=== Page 19 | paragraph | Authenticate ===
+Authenticate 
+POST - BankID SE (Create Authentication Session)
+
+
+=== Page 19 | paragraph | Endpoint: /bankidse/auth ===
+Endpoint: /bankidse/auth
+
+
+=== Page 19 | paragraph | GET - Get Session Data (BankID SE (Create Authentication Session)) ===
+GET - Get Session Data (BankID SE (Create Authentication Session))
+
+
+=== Page 19 | paragraph | Endpoint: /bankidse/auth/{id} ===
+Endpoint: /bankidse/auth/{id}
+
+
+=== Page 19 | paragraph | Sign ===
+Sign 
+POST - BankID SE (Create Signing Session)
+
+
+=== Page 20 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+20 /38
+
+
+=== Page 20 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 20 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 20 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 20 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 20 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 20 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 20 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 20 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 20 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 20 | paragraph | 20 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+20 /38
+
+
+=== Page 20 | paragraph | Endpoint: /bankidse/sign ===
+Endpoint: /bankidse/sign
+
+
+=== Page 20 | paragraph | GET - Get Session Data (BankID SE (Create Signing Session)) ===
+GET - Get Session Data (BankID SE (Create Signing Session))
+
+
+=== Page 20 | paragraph | Endpoint: bankidse/sign/{id} ===
+Endpoint: bankidse/sign/{id}
+
+
+=== Page 20 | paragraph | Sample of a BankID SE Auth Request ===
+Sample of a BankID SE Auth Request
+
+
+=== Page 20 | paragraph | curl -X 'POST' \ ===
+curl -X 'POST' \
+
+
+=== Page 20 | paragraph | 'https://test-gateway.zignsec.com/core/api/sessions/bankidse/auth' \ ===
+'https://test-gateway.zignsec.com/core/api/sessions/bankidse/auth' \
+
+
+=== Page 20 | paragraph | -H 'accept: application/json' \ ===
+-H 'accept: application/json' \
+
+
+=== Page 20 | paragraph | -H 'authorization: Your-Subscription-Key' \ ===
+-H 'authorization: Your-Subscription-Key' \
+
+
+=== Page 20 | paragraph | -H 'Content-Type: application/json' \ ===
+-H 'Content-Type: application/json' \
+
+
+=== Page 20 | paragraph | -d '{ ===
+-d '{
+
+
+=== Page 20 | paragraph | "locale": "En", ===
+"locale": "En",
+
+
+=== Page 20 | paragraph | "metadata": { ===
+"metadata": {
+
+
+=== Page 20 | paragraph | "end_user_ip": "127.0.0.1", ===
+"end_user_ip": "127.0.0.1",
+
+
+=== Page 20 | paragraph | "requirement": { ===
+"requirement": {
+
+
+=== Page 20 | paragraph | "certificate_policies": [ ===
+"certificate_policies": [
+
+
+=== Page 20 | paragraph | "1.2.3.4.5", ===
+"1.2.3.4.5",
+
+
+=== Page 20 | paragraph | "1.2.3.4.10", ===
+"1.2.3.4.10",
+
+
+=== Page 20 | paragraph | "1.2.3.4.25", ===
+"1.2.3.4.25",
+
+
+=== Page 20 | paragraph | "1.2.752.60.1.6", ===
+"1.2.752.60.1.6",
+
+
+=== Page 20 | paragraph | "1.2.752.78.1.1", ===
+"1.2.752.78.1.1",
+
+
+=== Page 20 | paragraph | "1.2.752.78.1.2", ===
+"1.2.752.78.1.2",
+
+
+=== Page 20 | paragraph | "1.2.752.78.1.5", ===
+"1.2.752.78.1.5",
+
+
+=== Page 20 | paragraph | "1.2.752.71.1.3" ===
+"1.2.752.71.1.3"
+
+
+=== Page 20 | paragraph | ], ===
+],
+
+
+=== Page 20 | paragraph | "mrtd": false, ===
+"mrtd": false,
+
+
+=== Page 20 | paragraph | "pin_code": false ===
+"pin_code": false
+
+
+=== Page 20 | paragraph | }, ===
+},
+
+
+=== Page 20 | paragraph | "user_non_visible_text": "The text you'\''ll never see", ===
+"user_non_visible_text": "The text you'\''ll never see",
+
+
+=== Page 20 | paragraph | "user_visible_text": "Please authorize the TEST" ===
+"user_visible_text": "Please authorize the TEST"
+
+
+=== Page 20 | paragraph | }, ===
+},
+
+
+=== Page 20 | paragraph | "redirect_failure": "https://my_failure_url.com", ===
+"redirect_failure": "https://my_failure_url.com",
+
+
+=== Page 20 | paragraph | "redirect_success": "https://my_success_url.com", ===
+"redirect_success": "https://my_success_url.com",
+
+
+=== Page 20 | paragraph | "relay_state": "my-unique-customer-id", ===
+"relay_state": "my-unique-customer-id",
+
+
+=== Page 20 | paragraph | "webhook": "https://my_webhook_url.com" ===
+"webhook": "https://my_webhook_url.com"
+
+
+=== Page 20 | paragraph | }' ===
+}' 
+Request parameters 
+Additional request parameter (Here is a link to the other request parameters)
+
+
+=== Page 21 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+21 /38 
+ 
+ 
+            }, 
+            "orderRef": "e719a549-dc96-448a-a3fd-77769afd7df3",
+
+
+=== Page 21 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 21 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 21 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 21 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 21 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 21 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 21 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 21 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 21 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 21 | paragraph | 21 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+21 /38
+
+
+=== Page 21 | paragraph | Parameter ===
+Parameter 
+Type 
+Description 
+Required
+
+
+=== Page 21 | paragraph | end_user_ip ===
+end_user_ip 
+string
+
+
+=== Page 21 | paragraph | The user IP address as seen by RP. String. IPv4 and IPv6 is allowed. ===
+The user IP address as seen by RP. String. IPv4 and IPv6 is allowed. 
+Note the importance of using the correct IP address. It must be 
+the IP address representing the user agent (the end user device) 
+as seen by the RP. If there is a proxy for inbound traffic, special 
+considerations may need to be taken to get the correct address. In 
+some use cases the IP address is not available, for instance for 
+voice-based services. In this case, the internal representation of 
+those systems IP address is ok to use. 
+yes
+
+
+=== Page 21 | paragraph | useCase ===
+useCase
+
+
+=== Page 21 | paragraph | To be used to get more accurate userMessage depending on the ===
+To be used to get more accurate userMessage depending on the 
+useCase that is being used. (This setting can be set on account 
+level if required, just contact support@zignsec.com for assistance)  
+Possible values: SameDevice and OtherDevice
+
+
+=== Page 21 | paragraph | Example: ===
+Example:
+
+
+=== Page 21 | paragraph | • ===
+• 
+SameDevice + outstandingTransaction -> RFA13
+
+
+=== Page 21 | paragraph | • ===
+• 
+OtherDevice + outstandingTransaction -> RFA1 
+no
+
+
+=== Page 21 | paragraph | Sample Response for BankID API auth ===
+Sample Response for BankID API auth 
+This response has an onboarding setting turned on. This setting gives you ready examples to add to your 
+code depending on the device. Read more about launching the app in the following part.
+
+
+=== Page 21 | paragraph | { ===
+{
+
+
+=== Page 21 | paragraph | "data": { ===
+"data": {
+
+
+=== Page 21 | paragraph | "errors": [], ===
+"errors": [],
+
+
+=== Page 21 | paragraph | "id": "00e3bbf4-a6b5-48e8-b5bb-2b4417be17f7", ===
+"id": "00e3bbf4-a6b5-48e8-b5bb-2b4417be17f7",
+
+
+=== Page 21 | paragraph | "result": { ===
+"result": {
+
+
+=== Page 21 | paragraph | "autoStartToken": "43181c31-a299-4af7-964f-9e84909efb39", ===
+"autoStartToken": "43181c31-a299-4af7-964f-9e84909efb39",
+
+
+=== Page 21 | paragraph | "devExamples": { ===
+"devExamples": {
+
+
+=== Page 21 | paragraph | "autoStartUrls": { ===
+"autoStartUrls": {
+
+
+=== Page 21 | paragraph | "android": "https://app.bankid.com/?autostarttoken=43181c31-a299-4af7-964f- ===
+"android": "https://app.bankid.com/?autostarttoken=43181c31-a299-4af7-964f-
+9e84909efb39&redirect=null",
+
+
+=== Page 21 | paragraph | "ios": "https://app.bankid.com/?autostarttoken=43181c31-a299-4af7-964f- ===
+"ios": "https://app.bankid.com/?autostarttoken=43181c31-a299-4af7-964f-
+9e84909efb39&redirect=https://translate.google.com/?sl=auto&tl=sv&text=All%20right!&op=translate",
+
+
+=== Page 21 | paragraph | "pc": "bankid:///?autostarttoken=43181c31-a299-4af7-964f-9e84909efb39&redirect=n… ===
+"pc": "bankid:///?autostarttoken=43181c31-a299-4af7-964f-9e84909efb39&redirect=null",
+
+
+=== Page 21 | paragraph | "pcWithReturn": "bankid:///?autostarttoken=43181c31-a299-4af7-964f- ===
+"pcWithReturn": "bankid:///?autostarttoken=43181c31-a299-4af7-964f-
+9e84909efb39&redirect=https://translate.google.com/?sl=auto&tl=sv&text=All%20right!&op=translate"
+
+
+=== Page 21 | paragraph | } ===
+}
+
+
+=== Page 21 | paragraph | }, ===
+},
+
+
+=== Page 21 | paragraph | "orderRef": "e719a549-dc96-448a-a3fd-77769afd7df3", ===
+"orderRef": "e719a549-dc96-448a-a3fd-77769afd7df3",
+
+
+=== Page 22 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+22 /38 
+ 
+ 
+    session_id : 18511c63-5849-469b-bfec-6f1229a5997b  
+  } 
+}'
+
+
+=== Page 22 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 22 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 22 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 22 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 22 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 22 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 22 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 22 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 22 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 22 | paragraph | 22 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+22 /38
+
+
+=== Page 22 | paragraph | "qrCodeLink": "https://test-gateway.zignsec.com/ui/bankidseweb/00e3bbf4-a6b5-48e… ===
+"qrCodeLink": "https://test-gateway.zignsec.com/ui/bankidseweb/00e3bbf4-a6b5-48e8-b5bb-
+2b4417be17f7/qr?otp=KpIDtL2pbUCu0pqIkylCSg",
+
+
+=== Page 22 | paragraph | "qrStartToken": "88a0a376-8809-42e0-9b90-117252ed3b31" ===
+"qrStartToken": "88a0a376-8809-42e0-9b90-117252ed3b31"
+
+
+=== Page 22 | paragraph | }, ===
+},
+
+
+=== Page 22 | paragraph | "status": "Pending" ===
+"status": "Pending"
+
+
+=== Page 22 | paragraph | } ===
+}
+
+
+=== Page 22 | paragraph | } ===
+}
+
+
+=== Page 22 | paragraph | Sample response with onboarding setting turned off ===
+Sample response with onboarding setting turned off 
+Same response as above with onboarding setting set to false. Just reach out to us and we will set the setting 
+per your request.
+
+
+=== Page 22 | paragraph | { ===
+{
+
+
+=== Page 22 | paragraph | "data": { ===
+"data": {
+
+
+=== Page 22 | paragraph | "errors": [], ===
+"errors": [],
+
+
+=== Page 22 | paragraph | "id": "df0bc372-a5c7-482c-8289-be73ad34ffde", ===
+"id": "df0bc372-a5c7-482c-8289-be73ad34ffde",
+
+
+=== Page 22 | paragraph | "result": { ===
+"result": {
+
+
+=== Page 22 | paragraph | "autoStartToken": "99890334-5ace-451d-8449-00e0a34ef94a", ===
+"autoStartToken": "99890334-5ace-451d-8449-00e0a34ef94a",
+
+
+=== Page 22 | paragraph | "orderRef": "572941e9-020a-431e-b161-f34589e4770b", ===
+"orderRef": "572941e9-020a-431e-b161-f34589e4770b",
+
+
+=== Page 22 | paragraph | "qrCodeLink": "https://test-gateway.zignsec.com/ui/bankidseweb/df0bc372-a5c7-482… ===
+"qrCodeLink": "https://test-gateway.zignsec.com/ui/bankidseweb/df0bc372-a5c7-482c-8289-
+be73ad34ffde/qr?otp=f71NR5LX9EatG4IyGV9HTQ",
+
+
+=== Page 22 | paragraph | "qrStartToken": "01c0a40f-5e38-4757-b314-f772430ca264" ===
+"qrStartToken": "01c0a40f-5e38-4757-b314-f772430ca264"
+
+
+=== Page 22 | paragraph | }, ===
+},
+
+
+=== Page 22 | paragraph | "status": "Pending" ===
+"status": "Pending"
+
+
+=== Page 22 | paragraph | } ===
+}
+
+
+=== Page 22 | paragraph | } ===
+}
+
+
+=== Page 22 | paragraph | Cancel ===
+Cancel 
+Cancels an ongoing sign or auth order. This is typically used if the user cancels the order in your service or 
+app.
+
+
+=== Page 22 | paragraph | POST - BankID SE Cancel ===
+POST - BankID SE Cancel
+
+
+=== Page 22 | paragraph | Endpoint: /bankidse/cancel ===
+Endpoint: /bankidse/cancel
+
+
+=== Page 22 | paragraph | Sample of cancel request ===
+Sample of cancel request
+
+
+=== Page 22 | paragraph | curl --location 'https://test-gateway.zignsec.com/core/api/sessions/bankidse/can… ===
+curl --location 'https://test-gateway.zignsec.com/core/api/sessions/bankidse/cancel' \
+
+
+=== Page 22 | paragraph | --header 'accept: application/json' \ ===
+--header 'accept: application/json' \
+
+
+=== Page 22 | paragraph | --header 'Authorization: Your-Subscription-Key ' \ ===
+--header 'Authorization: Your-Subscription-Key ' \
+
+
+=== Page 22 | paragraph | --header 'Content-Type: application/json' \ ===
+--header 'Content-Type: application/json' \
+
+
+=== Page 22 | paragraph | --data '{ ===
+--data '{
+
+
+=== Page 22 | paragraph | "metadata": { ===
+"metadata": {
+
+
+=== Page 22 | paragraph | "session_id": "18511c63-5849-469b-bfec-6f1229a5997b" ===
+"session_id": "18511c63-5849-469b-bfec-6f1229a5997b"
+
+
+=== Page 22 | paragraph | } ===
+}
+
+
+=== Page 22 | paragraph | }' ===
+}'
+
+
+=== Page 23 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+23 /38 
+ 
+ 
+If the BankID app is not installed on the device, "false" is returned. The application must inform the user and 
+use Message RFA2. The application must register a universal link or a custom URL scheme to allow the
+
+
+=== Page 23 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 23 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 23 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 23 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 23 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 23 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 23 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 23 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 23 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 23 | paragraph | 23 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+23 /38
+
+
+=== Page 23 | paragraph | Sample of response ===
+Sample of response
+
+
+=== Page 23 | paragraph | { ===
+{
+
+
+=== Page 23 | paragraph | "data": { ===
+"data": {
+
+
+=== Page 23 | paragraph | "errors": [ ===
+"errors": [
+
+
+=== Page 23 | paragraph | { ===
+{
+
+
+=== Page 23 | paragraph | "code": "CANCELLED_BY_USER", ===
+"code": "CANCELLED_BY_USER",
+
+
+=== Page 23 | paragraph | "description": "Action cancelled by user" ===
+"description": "Action cancelled by user"
+
+
+=== Page 23 | paragraph | } ===
+}
+
+
+=== Page 23 | paragraph | ], ===
+],
+
+
+=== Page 23 | paragraph | "id": "c788df2b-cc2e-45c0-bc87-b94cd503dbff", ===
+"id": "c788df2b-cc2e-45c0-bc87-b94cd503dbff",
+
+
+=== Page 23 | paragraph | "result": { ===
+"result": {
+
+
+=== Page 23 | paragraph | "method": "Auth", ===
+"method": "Auth",
+
+
+=== Page 23 | paragraph | "userMessage": "NoMessage" ===
+"userMessage": "NoMessage"
+
+
+=== Page 23 | paragraph | }, ===
+},
+
+
+=== Page 23 | paragraph | "status": "Cancelled" ===
+"status": "Cancelled"
+
+
+=== Page 23 | paragraph | } ===
+}
+
+
+=== Page 23 | paragraph | } ===
+} 
+ 
+Launching the BankID app 
+Launching from native app on mobile device
+
+
+=== Page 23 | paragraph | Android ===
+Android
+
+
+=== Page 23 | paragraph | Intent intent = new Intent(); ===
+Intent intent = new Intent();
+
+
+=== Page 23 | paragraph | intent.setAction(Intent.ACTION_VIEW); ===
+intent.setAction(Intent.ACTION_VIEW);
+
+
+=== Page 23 | paragraph | intent.setData(Uri.parse("https://app.bankid.com/?autostarttoken=&lt;INSERT AUTO… ===
+intent.setData(Uri.parse("https://app.bankid.com/?autostarttoken=&lt;INSERT AUTOSTARTTOKEN 
+HERE&gt;&amp;redirect=null"));
+
+
+=== Page 23 | paragraph | intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); ===
+intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+
+=== Page 23 | paragraph | startActivity(intent); ===
+startActivity(intent);
+
+
+=== Page 23 | paragraph | There is no guarantee that a valid result will be returned from the BankID app t… ===
+There is no guarantee that a valid result will be returned from the BankID app to the application's activity. 
+The application should rely on the collect call to obtain the authentication or signature result. If the BankID 
+app is not installed on the device, an android.content.ActivityNotFoundException is thrown. The application 
+must inform the user and use Message RFA2. On Android 5, the URI should use the "bankid" scheme instead 
+of the "https" scheme.
+
+
+=== Page 23 | paragraph | iOS ===
+iOS
+
+
+=== Page 23 | paragraph | YOUR LINK HERE>") ===
+let url = URL(string: "https://app.bankid.com/?autostarttoken=<INSERT AUTOSTARTTOKEN HERE>&redirect=<INSERT 
+YOUR LINK HERE>")
+
+
+=== Page 23 | code | UIApplication.shared.open(url!, options: [.universalLinksOnly:true]) { (success)… ===
+UIApplication.shared.open(url!, options: [.universalLinksOnly:true]) { (success) in
+
+[VERBATIM BLOCK]:
+[.universalLinksOnly:true]
+
+
+
+=== Page 23 | paragraph | // handle success/failure ===
+// handle success/failure
+
+
+=== Page 23 | paragraph | } ===
+}
+
+
+=== Page 23 | paragraph | If the BankID app is not installed on the device, "false" is returned. The appli… ===
+If the BankID app is not installed on the device, "false" is returned. The application must inform the user and 
+use Message RFA2. The application must register a universal link or a custom URL scheme to allow the
+
+
+=== Page 24 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+24 /38 
+ 
+ 
+let t = 0; 
+setInterval(function () { 
+  imageElement.setAttribute('src', qrCodeLink + "?t=" + t)
+
+
+=== Page 24 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 24 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 24 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 24 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 24 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 24 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 24 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 24 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 24 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 24 | paragraph | 24 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+24 /38
+
+
+=== Page 24 | paragraph | BankID app to relaunch the application. During the Apple App Store review proces… ===
+BankID app to relaunch the application. During the Apple App Store review process, the app requires login 
+information to a demo account. This demo account should either not require BankID for login or provide a 
+way to configure the app to use the BankID test environment.
+
+
+=== Page 24 | paragraph | Launching the BankID app from a browser ===
+Launching the BankID app from a browser 
+The "redirect" parameter should be placed last in the parameter list. The "autostarttoken" and "rpref" 
+parameters are optional. Parameter names should be in lowercase. If the BankID app is launched without 
+any matching web service calls for authentication or signature, an error message will be displayed in the app.
+
+
+=== Page 24 | paragraph | The syntax for the URL is as follows: ===
+App links and universal links on Android and iOS 
+The syntax for the URL is as follows:
+
+
+=== Page 24 | code | https://app.bankid.com/?autostarttoken=[TOKEN]&redirect=[RETURNURL] ===
+https://app.bankid.com/?autostarttoken=[TOKEN]&redirect=[RETURNURL]
+
+[VERBATIM BLOCK]:
+[TOKEN]&redirect=[RETURNURL]
+
+
+
+=== Page 24 | paragraph | The URL works on Chrome (Android) and Safari (iOS). ===
+The URL works on Chrome (Android) and Safari (iOS).
+
+
+=== Page 24 | paragraph | The syntax for the URL is as follows: ===
+Desktop and other mobile browsers 
+The syntax for the URL is as follows:
+
+
+=== Page 24 | code | bankid:///?autostarttoken=[TOKEN]&redirect=[RETURNURL] ===
+bankid:///?autostarttoken=[TOKEN]&redirect=[RETURNURL]
+
+[VERBATIM BLOCK]:
+[TOKEN]&redirect=[RETURNURL]
+
+
+
+=== Page 24 | paragraph | The URL works on PCs with all commonly used browsers. There may be variations on… ===
+The URL works on PCs with all commonly used browsers. There may be variations on different platforms.
+
+
+=== Page 24 | paragraph | QR code ===
+QR code 
+The typical use case for QR codes is when the user uses “Mobile BankID on other device” (see Use cases), 
+and there is a security concern that the user does not control both devices.
+
+
+=== Page 24 | paragraph | QR code generation ===
+QR code generation 
+The QR image needs to be updated once every 1-2 sec. (we use 2 sec. on our UI)
+
+
+=== Page 24 | paragraph | 1. When our Browser flow is used, it is handled by ZignSec. ===
+1. When our Browser flow is used, it is handled by ZignSec.
+
+
+=== Page 24 | paragraph | 2. When the Api flow is used, your will get a "qrCodeLink" in a response. Custom… ===
+2. When the Api flow is used, your will get a "qrCodeLink" in a response. Customers should display the
+
+
+=== Page 24 | paragraph | image "qrCodeLink" and re-render it every 1-2 sec ===
+image "qrCodeLink" and re-render it every 1-2 sec
+
+
+=== Page 24 | paragraph | Note: if you navigate to "qrCodeLink" and hit refresh the page you will see new … ===
+Note: if you navigate to "qrCodeLink" and hit refresh the page you will see new QR each time
+
+
+=== Page 24 | paragraph | Here an example on the html and JavaScript needed to make the QR code animated: ===
+Sample QR html and JavaScript code 
+Here an example on the html and JavaScript needed to make the QR code animated:
+
+
+=== Page 24 | paragraph | html ===
+html
+
+
+=== Page 24 | paragraph | ... ===
+...
+
+
+=== Page 24 | paragraph | <img id="qr-image" src="..." /> ===
+<img id="qr-image" src="..." />
+
+
+=== Page 24 | paragraph | ... ===
+...
+
+
+=== Page 24 | paragraph | JavaScript ===
+JavaScript
+
+
+=== Page 24 | paragraph | const qrCodeLink = '...'; // from bankidse/auth request ===
+const qrCodeLink = '...'; // from bankidse/auth request
+
+
+=== Page 24 | paragraph | const imageElement = document.getElementById('qr-image'); ===
+const imageElement = document.getElementById('qr-image');
+
+
+=== Page 24 | paragraph | const intervalInMilliseconds = 2000; // re-render QR every 2 seconds ===
+const intervalInMilliseconds = 2000; // re-render QR every 2 seconds
+
+
+=== Page 24 | paragraph | let t = 0; ===
+let t = 0;
+
+
+=== Page 24 | paragraph | setInterval(function () { ===
+setInterval(function () {
+
+
+=== Page 24 | paragraph | imageElement.setAttribute('src', qrCodeLink + "?t=" + t) ===
+imageElement.setAttribute('src', qrCodeLink + "?t=" + t)
+
+
+=== Page 25 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+25 /38
+
+
+=== Page 25 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 25 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 25 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 25 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 25 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 25 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 25 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 25 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 25 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 25 | paragraph | 25 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+25 /38
+
+
+=== Page 25 | paragraph | t++; ===
+t++;
+
+
+=== Page 25 | paragraph | }, intervalInMilliseconds) ===
+}, intervalInMilliseconds)
+
+
+=== Page 26 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+26 /38 
+ 
+ 
+_
+p
+y_
+_
+,
+  "redirect_success": "https://my_success_url.com", 
+  "relay_state": "my-unique-customer-id",
+
+
+=== Page 26 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 26 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 26 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 26 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 26 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 26 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 26 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 26 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 26 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 26 | paragraph | 26 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+26 /38
+
+
+=== Page 26 | paragraph | The process for initiating an authentication order over the phone and querying its status involves: ===
+Phone Flow 
+The process for initiating an authentication order over the phone and querying its status involves:
+
+
+=== Page 26 | paragraph | 1. Start: A user converses over the phone, typically with customer service. ===
+1. Start: A user converses over the phone, typically with customer service.
+
+
+=== Page 26 | paragraph | 2. Initiation: Authentication is initiated during the call as needed. ===
+2. Initiation: Authentication is initiated during the call as needed.
+
+
+=== Page 26 | paragraph | 3. User Action: The user is instructed to perform a task for authentication, suc… ===
+3. User Action: The user is instructed to perform a task for authentication, such as entering a one-time 
+password.
+
+
+=== Page 26 | paragraph | 4. Monitoring: The 'collect' function periodically checks the status of the auth… ===
+4. Monitoring: The 'collect' function periodically checks the status of the authentication process. 
+Please find more details about Collect status at the end of this document.
+
+
+=== Page 26 | paragraph | 5. Confirmation: Upon successful authentication, the system updates the status, … ===
+5. Confirmation: Upon successful authentication, the system updates the status, and the user is 
+notified.
+
+
+=== Page 26 | paragraph | 6. Completion: The call proceeds with the user now authenticated, enabling secur… ===
+6. Completion: The call proceeds with the user now authenticated, enabling secure interactions.
+
+
+=== Page 26 | paragraph | Swagger for Phone flow ===
+Swagger for Phone flow
+
+
+=== Page 26 | paragraph | • ===
+• 
+Test: Swagger UI (zignsec.com)
+
+
+=== Page 26 | paragraph | • ===
+• 
+Production: Swagger UI (zignsec.com)
+
+
+=== Page 26 | header | POST ===
+POST
+
+
+=== Page 26 | paragraph | BankID SE (Create Authentication Session over the Phone) ===
+BankID SE (Create Authentication Session over the Phone)
+
+
+=== Page 26 | paragraph | Endpoint: /bankidse/phone/auth/ ===
+Endpoint: /bankidse/phone/auth/
+
+
+=== Page 26 | paragraph | GET ===
+GET
+
+
+=== Page 26 | paragraph | Get Session Data (BankID SE (Create Authentication Session over the Phone)) ===
+Get Session Data (BankID SE (Create Authentication Session over the Phone))
+
+
+=== Page 26 | paragraph | Endpoint: /bankidse/phone/auth/id ===
+Endpoint: /bankidse/phone/auth/id
+
+
+=== Page 26 | paragraph | Sample of Phone auth request ===
+Sample of Phone auth request
+
+
+=== Page 26 | paragraph | curl -X 'POST' \ ===
+curl -X 'POST' \
+
+
+=== Page 26 | paragraph | 'https://test-gateway.zignsec.com/core/api/sessions/bankidse/phone/auth' \ ===
+'https://test-gateway.zignsec.com/core/api/sessions/bankidse/phone/auth' \
+
+
+=== Page 26 | paragraph | -H 'accept: application/json' \ ===
+-H 'accept: application/json' \
+
+
+=== Page 26 | paragraph | -H 'authorization: Your-Subscription-key' \ ===
+-H 'authorization: Your-Subscription-key' \
+
+
+=== Page 26 | paragraph | -H 'Content-Type: application/json' \ ===
+-H 'Content-Type: application/json' \
+
+
+=== Page 26 | paragraph | -d '{ ===
+-d '{
+
+
+=== Page 26 | paragraph | "locale": "En", ===
+"locale": "En",
+
+
+=== Page 26 | paragraph | "metadata": { ===
+"metadata": {
+
+
+=== Page 26 | paragraph | "call_initiator": "user", ===
+"call_initiator": "user",
+
+
+=== Page 26 | paragraph | "personal_number": "194610241111", ===
+"personal_number": "194610241111",
+
+
+=== Page 26 | paragraph | "user_non_visible_text": "The text you'\''ll never see", ===
+"user_non_visible_text": "The text you'\''ll never see",
+
+
+=== Page 26 | paragraph | "user_visible_text": "Please authorize yourself for the TEST call" ===
+"user_visible_text": "Please authorize yourself for the TEST call"
+
+
+=== Page 26 | paragraph | }, ===
+},
+
+
+=== Page 26 | paragraph | "redirect_failure": "https://my_failure_url.com", ===
+"redirect_failure": "https://my_failure_url.com",
+
+
+=== Page 26 | paragraph | "redirect_success": "https://my_success_url.com", ===
+"redirect_success": "https://my_success_url.com",
+
+
+=== Page 26 | paragraph | "relay_state": "my-unique-customer-id", ===
+"relay_state": "my-unique-customer-id",
+
+
+=== Page 27 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+27 /38
+
+
+=== Page 27 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 27 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 27 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 27 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 27 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 27 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 27 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 27 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 27 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 27 | paragraph | 27 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+27 /38
+
+
+=== Page 27 | paragraph | "webhook": "https://my_webhook_url.com" ===
+"webhook": "https://my_webhook_url.com"
+
+
+=== Page 27 | paragraph | }' ===
+}'
+
+
+=== Page 27 | paragraph | Additional request parameters ===
+Additional request parameters 
+(Here is a link to the other request parameters)
+
+
+=== Page 27 | paragraph | Parameter ===
+Parameter 
+Type 
+Description 
+Required
+
+
+=== Page 27 | paragraph | call_initiator ===
+call_initiator 
+string 
+Indicate if the user or the RP initiated the phone call. 
+yes
+
+
+=== Page 27 | paragraph | personal_number ===
+personal_number 
+string 
+The personal number of the user. 12 digits 
+yes
+
+
+=== Page 28 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+28 /38 
+ 
+ 
+-The user’s BankID is 
+invalid.
+
+
+=== Page 28 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 28 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 28 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 28 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 28 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 28 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 28 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 28 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 28 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 28 | paragraph | 28 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+28 /38
+
+
+=== Page 28 | paragraph | User Messages ===
+User Messages 
+When processing an order, the BankID service sends status updates through the Collect API. It's advisable to 
+present this order status , ensuring users stay informed and are notified of any possible errors.
+
+
+=== Page 28 | paragraph | BankId SE errors ===
+BankId SE errors
+
+
+=== Page 28 | paragraph | Errors will be returned when a session status is having one of the following val… ===
+Errors will be returned when a session status is having one of the following values: Failed, Timeout or 
+Cancelled
+
+
+=== Page 28 | paragraph | • ===
+• 
+In general case, it’s caused by
+
+
+=== Page 28 | paragraph | o ===
+o 
+COMMUNICATION_ERROR - rest call error - retry recommended
+
+
+=== Page 28 | paragraph | SERVER_ERROR - ===
+o 
+SERVER_ERROR -
+
+
+=== Page 28 | paragraph | o ===
+o 
+CONFIGURATION_ERROR - something is not configured on our side for your account, no 
+retry, please contact ZignSec support
+
+
+=== Page 28 | paragraph | o ===
+o 
+PROVIDER_BAD_REQUEST - provider returned "bad request" - no retries. Most probably the 
+underlying bankidse session (order) is already finished
+
+
+=== Page 28 | paragraph | o ===
+o 
+TIMEOUT - timeout elapsed, no retry, you need another session to authorize user
+
+
+=== Page 28 | paragraph | o ===
+o 
+CANCELLED_BY_USER - session is cancelled by user, no retry, you need another session to 
+authorize user
+
+
+=== Page 28 | paragraph | Specific case: ===
+• 
+Specific case:
+
+
+=== Page 28 | paragraph | o ===
+o 
+ERROR - error received while collecting data from BankId SE - rely on "Recommended user 
+message"
+
+
+=== Page 28 | paragraph |  ===
+ 
+description: BankIDSE_ERROR
+
+
+=== Page 28 | paragraph |  ===
+ 
+details: string details
+
+
+=== Page 28 | paragraph | Collect status can be : ===
+Collect Info Status 
+Collect status can be :
+
+
+=== Page 28 | paragraph | • pending: The order is being processed. hintCode describes the status of the or… ===
+• pending: The order is being processed. hintCode describes the status of the order.
+
+
+=== Page 28 | paragraph | • complete: The order is complete. completionData holds user information. ===
+• complete: The order is complete. completionData holds user information.
+
+
+=== Page 28 | paragraph | • failed: Something went wrong with the order. hintCode describes the error. ===
+• failed: Something went wrong with the order. hintCode describes the error.
+
+
+=== Page 28 | paragraph | Please note that the hintCode is only present for pending and failed orders. ===
+Please note that the hintCode is only present for pending and failed orders.
+
+
+=== Page 28 | paragraph | Status ===
+Status 
+User 
+Message
+
+
+=== Page 28 | paragraph | Hint Code ===
+Hint Code 
+Progress Status 
+Reason 
+Action by 
+RP
+
+
+=== Page 28 | paragraph | complete NoMessage ===
+complete NoMessage
+
+
+=== Page 28 | header | COMPLETE ===
+COMPLETE
+
+
+=== Page 28 | paragraph | RFA16 ===
+failed 
+RFA16 
+certificateErr 
+CERTIFICATE_ERR 
+This error is returned if: 
+-The user has entered 
+the wrong PIN code too 
+many times. The BnkID 
+cannot be used. 
+-The user’s BankID is 
+blocked. 
+-The user’s BankID is 
+invalid.
+
+
+=== Page 28 | paragraph | RFA16. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA16.
+
+
+=== Page 29 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+29 /38
+
+
+=== Page 29 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 29 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 29 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 29 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 29 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 29 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 29 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 29 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 29 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 29 | paragraph | 29 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+29 /38
+
+
+=== Page 29 | paragraph | RFA17A ===
+failed 
+RFA17A 
+startFailed 
+START_FAILED 
+The user did not provide 
+their ID or the client did 
+not launch within a 
+certain time limit. 
+Potential causes are: 
+RP did not use 
+autoStartToken when 
+launching the BankID 
+security app. RP must 
+correct this in their 
+implementation. 
+Client software was not 
+installed or other 
+problem with the user’s 
+device.
+
+
+=== Page 29 | paragraph | RFA17. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA17.
+
+
+=== Page 29 | paragraph | RFA17B ===
+failed 
+RFA17B 
+startFailed 
+START_FAILED 
+The user did not provide 
+their ID or the client did 
+not launch within a 
+certain time limit. 
+Potential causes are: 
+RP did not use 
+autoStartToken when 
+launching the BankID 
+security app. RP must 
+correct this in their 
+implementation. 
+Client software was not 
+installed or other 
+problem with the user’s 
+device.
+
+
+=== Page 29 | paragraph | RFA17. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA17.
+
+
+=== Page 29 | paragraph | RFA3 ===
+failed 
+RFA3 
+cancelled 
+CANCELLED 
+The order was cancelled. 
+The system received a 
+new order for the user.
+
+
+=== Page 29 | paragraph | RFA3. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA3.
+
+
+=== Page 29 | paragraph | RFA6 ===
+failed 
+RFA6 
+userCancel 
+USER_CAN
+CEL
+
+
+=== Page 29 | paragraph | The order was cancelled ===
+The order was cancelled 
+by the user. userCancel 
+may also be returned in 
+some rare cases related 
+to other user 
+interactions.
+
+
+=== Page 29 | paragraph | RFA6. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA6.
+
+
+=== Page 29 | paragraph | RFA8 ===
+failed 
+RFA8 
+expiredTransaction 
+EXPIRED_TRANSACTI
+ON
+
+
+=== Page 29 | paragraph | The order has expired. ===
+The order has expired. 
+The BankID security 
+app/program did not 
+launch, the user did not 
+finalize the signing or the 
+RP called collect too late.
+
+
+=== Page 29 | paragraph | RFA8. ===
+The RP must 
+inform the 
+user using 
+message 
+RFA8.
+
+
+=== Page 30 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+30 /38
+
+
+=== Page 30 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 30 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 30 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 30 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 30 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 30 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 30 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 30 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 30 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 30 | paragraph | 30 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+30 /38
+
+
+=== Page 30 | paragraph | RFA1 ===
+pending 
+RFA1 
+outstandingTransaction OUTSTANDING_TRAN
+
+
+=== Page 30 | header | SACTION ===
+SACTION
+
+
+=== Page 30 | paragraph | Order is pending. The ===
+Order is pending. The 
+BankID app has not yet 
+received the order. The 
+hintCode will later 
+change to noClient, 
+started or userSign.
+
+
+=== Page 30 | paragraph | If RP tried to ===
+If RP tried to 
+launch the 
+client 
+automatically, 
+the RP should 
+inform the 
+user that the 
+app is 
+launching. 
+Message 
+RFA13 should 
+be used. 
+If RP did not 
+try to start 
+the client 
+automatically, 
+the RP should 
+prompt user 
+to start the 
+app. Message 
+RFA1 should 
+be used.
+
+
+=== Page 30 | paragraph | RFA9 ===
+pending 
+RFA9 
+userSign 
+USER_SIGN 
+Order is pending. The 
+BankID client has 
+received the order.
+
+
+=== Page 30 | paragraph | RFA9. ===
+The RP should 
+inform the 
+user using 
+message 
+RFA9.
+
+
+=== Page 30 | paragraph | RFA15B ===
+pending 
+RFA15B 
+started 
+STARTED 
+Order is pending. A 
+BankID client has 
+launched with 
+autostarttoken but a 
+usable ID has not yet 
+been found in the client. 
+When the client launches 
+there may be a short 
+delay until all IDs are 
+registered. 
+The user may not have 
+any usable IDs, or is yet 
+to insert their smart 
+card.
+
+
+=== Page 30 | paragraph | The RP should ===
+The RP should 
+inform the 
+user of 
+possible 
+solutions. 
+Message 
+RFA15 should 
+be used. 
+Note: started 
+is not an 
+error, RP 
+should keep 
+on polling 
+using collect.
+
+
+=== Page 30 | paragraph | RFA23 ===
+pending 
+RFA23 
+userMrtd
+
+
+=== Page 30 | paragraph | Order is pending. A client ===
+Order is pending. A client 
+has launched and 
+received the order but 
+additional steps for 
+providing MRTD 
+information is required 
+to proceed with the 
+order.
+
+
+=== Page 30 | paragraph | RFA23. ===
+The RP should 
+inform the 
+user using 
+message 
+RFA23.
+
+
+=== Page 31 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+31 /38
+
+
+=== Page 31 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 31 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 31 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 31 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 31 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 31 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 31 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 31 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 31 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 31 | paragraph | 31 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+31 /38
+
+
+=== Page 31 | paragraph | RFA1 ===
+pending 
+RFA1 
+noClient
+
+
+=== Page 31 | paragraph | Order is pending. The ===
+Order is pending. The 
+client has not yet 
+received the order.
+
+
+=== Page 31 | paragraph | automatically: ===
+If RP tried to 
+launch the 
+client 
+automatically: 
+This status 
+indicates that 
+the launch 
+failed, or that 
+the user’s 
+BankID was 
+not available 
+in the client. 
+RP should 
+inform the 
+user. 
+Message 
+RFA1 should 
+be used. 
+If RP did not 
+try to launch 
+the client 
+automatically: 
+This status 
+indicates that 
+the user has 
+not yet 
+launched the 
+client. RP 
+should inform 
+the user. 
+Message 
+RFA1 should 
+be used.
+
+
+=== Page 32 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+32 /38
+
+
+=== Page 32 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 32 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 32 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 32 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 32 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 32 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 32 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 32 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 32 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 32 | paragraph | 32 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+32 /38
+
+
+=== Page 32 | paragraph | Recommended user messages ===
+Recommended user messages
+
+
+=== Page 32 | paragraph | Short ===
+Short 
+name 
+Swedish 
+English
+
+
+=== Page 32 | paragraph | Event, status, hintCode or ===
+Event, status, hintCode or 
+errorCode
+
+
+=== Page 32 | header | RFA1 ===
+RFA1 
+Starta BankID-appen. 
+Start your BankID app.
+
+
+=== Page 32 | paragraph | status=pending ===
+status=pending 
+hintCode=outstandingTransactio
+n 
+hintCode=noClient
+
+
+=== Page 32 | header | RFA2 ===
+RFA2
+
+
+=== Page 32 | paragraph | Du har inte BankID-appen ===
+Du har inte BankID-appen 
+installerad. Kontakta din 
+bank.
+
+
+=== Page 32 | paragraph | The BankID app is not ===
+The BankID app is not 
+installed. Please contact 
+your bank.
+
+
+=== Page 32 | paragraph | The BankID app is not installed in ===
+The BankID app is not installed in 
+the mobile device.
+
+
+=== Page 32 | header | RFA3 ===
+RFA3
+
+
+=== Page 32 | paragraph | Åtgärden avbruten. Försök ===
+Åtgärden avbruten. Försök 
+igen
+
+
+=== Page 32 | paragraph | Action cancelled. Please ===
+Action cancelled. Please 
+try again. 
+errorCode=cancelled
+
+
+=== Page 32 | header | RFA4 ===
+RFA4
+
+
+=== Page 32 | paragraph | En identifiering eller ===
+En identifiering eller 
+underskrift för det här 
+personnumret är redan 
+påbörjad. Försök igen.
+
+
+=== Page 32 | paragraph | An identification or ===
+An identification or 
+signing for this personal 
+number is already 
+started. Please try again. 
+errorCode=alreadyInProgress
+
+
+=== Page 32 | header | RFA5 ===
+RFA5
+
+
+=== Page 32 | paragraph | Internt tekniskt fel. Försök ===
+Internt tekniskt fel. Försök 
+igen.
+
+
+=== Page 32 | paragraph | Internal error. Please try ===
+Internal error. Please try 
+again.
+
+
+=== Page 32 | paragraph | errorCode=requestTimeout ===
+errorCode=requestTimeout 
+errorCode=maintenance 
+(repeatedly) 
+errorCode=internalError
+
+
+=== Page 32 | header | RFA6 ===
+RFA6 
+Åtgärden avbruten. 
+Action cancelled.
+
+
+=== Page 32 | paragraph | status=failed ===
+status=failed 
+hintCode=userCancel
+
+
+=== Page 32 | header | RFA8 ===
+RFA8
+
+
+=== Page 32 | paragraph | BankID-appen svarar inte. ===
+BankID-appen svarar inte. 
+Kontrollera att den är 
+startad och att du har 
+internetanslutning. Om du 
+inte har något giltigt BankID 
+kan du skaffa ett hos din 
+bank. Försök sedan igen.
+
+
+=== Page 32 | paragraph | The BankID app is not ===
+The BankID app is not 
+responding. Please check 
+that it’s started and that 
+you have internet access. 
+If you don’t have a valid 
+BankID you can get one 
+from your bank. Try 
+again.
+
+
+=== Page 32 | paragraph | status=failed ===
+status=failed 
+hintCode=expiredTransaction
+
+
+=== Page 33 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+33 /38 
+ 
+ 
+RFA14 
+(B) 
+skaffa ett hos din bank. Om 
+du har ett BankID på en 
+have a BankID you can 
+get one from your bank. 
+The user accesses the service 
+using a mobile device.
+
+
+=== Page 33 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 33 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 33 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 33 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 33 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 33 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 33 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 33 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 33 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 33 | paragraph | 33 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+33 /38
+
+
+=== Page 33 | paragraph | Short ===
+Short 
+name 
+Swedish 
+English
+
+
+=== Page 33 | paragraph | Event, status, hintCode or ===
+Event, status, hintCode or 
+errorCode
+
+
+=== Page 33 | header | RFA9 ===
+RFA9
+
+
+=== Page 33 | paragraph | Skriv in din säkerhetskod i ===
+Skriv in din säkerhetskod i 
+BankID-appen och välj 
+Identifiera eller Skriv under.
+
+
+=== Page 33 | paragraph | Enter your security code ===
+Enter your security code 
+in the BankID app and 
+select Identify or Sign.
+
+
+=== Page 33 | paragraph | status=pending ===
+status=pending 
+hintCode=userSign
+
+
+=== Page 33 | header | RFA13 ===
+RFA13
+
+
+=== Page 33 | paragraph | Försöker starta BankID- ===
+Försöker starta BankID-
+appen.
+
+
+=== Page 33 | paragraph | Trying to start your ===
+Trying to start your 
+BankID app.
+
+
+=== Page 33 | paragraph | status=pending ===
+status=pending 
+hintCode=outstandingTransactio
+n
+
+
+=== Page 33 | header | RFA14 ===
+RFA14 
+(A)
+
+
+=== Page 33 | paragraph | Söker efter BankID, det kan ===
+Söker efter BankID, det kan 
+ta en liten stund … Om det 
+har gått några sekunder och 
+inget BankID har hittats har 
+du sannolikt inget BankID 
+som går att använda för den 
+aktuella 
+identifieringen/underskrifte
+n i den här datorn. Om du 
+har ett BankID-kort, sätt in 
+det i kortläsaren. Om du inte 
+har något BankID kan du 
+skaffa ett hos din bank. Om 
+du har ett BankID på en 
+annan enhet kan du starta 
+din BankID-app där.
+
+
+=== Page 33 | paragraph | Searching for BankID, it ===
+Searching for BankID, it 
+may take a little while … 
+If a few seconds have 
+passed and still no 
+BankID has been found, 
+you probably don’t have 
+a BankID which can be 
+used for this 
+identification/signing on 
+this computer. If you 
+have a BankID card, 
+please insert it into your 
+card reader. If you don’t 
+have a BankID you can 
+get one from your bank. 
+If you have a BankID on 
+another device you can 
+start the BankID app on 
+that device.
+
+
+=== Page 33 | paragraph | status=pending ===
+status=pending 
+hintCode=started 
+The user accesses the service 
+using a personal computer.
+
+
+=== Page 33 | header | RFA14 ===
+RFA14 
+(B)
+
+
+=== Page 33 | paragraph | Söker efter BankID, det kan ===
+Söker efter BankID, det kan 
+ta en liten stund … Om det 
+har gått några sekunder och 
+inget BankID har hittats har 
+du sannolikt inget BankID 
+som går att använda för den 
+aktuella 
+identifieringen/underskrifte
+n i den här enheten. Om du 
+inte har något BankID kan du 
+skaffa ett hos din bank. Om 
+du har ett BankID på en
+
+
+=== Page 33 | paragraph | Searching for BankID, it ===
+Searching for BankID, it 
+may take a little while … 
+If a few seconds have 
+passed and still no 
+BankID has been found, 
+you probably don’t have 
+a BankID which can be 
+used for this 
+identification/signing on 
+this device. If you don’t 
+have a BankID you can 
+get one from your bank.
+
+
+=== Page 33 | paragraph | status=pending ===
+status=pending 
+hintCode=started 
+The user accesses the service 
+using a mobile device.
+
+
+=== Page 34 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+34 /38 
+ 
+ 
+RFA16 
+hos din bank. 
+from your bank. 
+hintCode=certificateErr
+
+
+=== Page 34 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 34 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 34 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 34 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 34 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 34 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 34 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 34 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 34 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 34 | paragraph | 34 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+34 /38
+
+
+=== Page 34 | paragraph | Short ===
+Short 
+name 
+Swedish 
+English
+
+
+=== Page 34 | paragraph | Event, status, hintCode or ===
+Event, status, hintCode or 
+errorCode
+
+
+=== Page 34 | paragraph | annan enhet kan du starta ===
+annan enhet kan du starta 
+din BankID-app där.
+
+
+=== Page 34 | paragraph | If you have a BankID on ===
+If you have a BankID on 
+another device you can 
+start the BankID app on 
+that device.
+
+
+=== Page 34 | header | RFA15 ===
+RFA15 
+(A)
+
+
+=== Page 34 | paragraph | Söker efter BankID, det kan ===
+Söker efter BankID, det kan 
+ta en liten stund … Om det 
+har gått några sekunder och 
+inget BankID har hittats har 
+du sannolikt inget BankID 
+som går att använda för den 
+aktuella 
+identifieringen/underskrifte
+n i den här datorn. Om du 
+har ett BankID-kort, sätt in 
+det i kortläsaren. Om du inte 
+har något BankID kan du 
+skaffa ett hos din bank.
+
+
+=== Page 34 | paragraph | Searching for BankID:s, it ===
+Searching for BankID:s, it 
+may take a little while … 
+If a few seconds have 
+passed and still no 
+BankID has been found, 
+you probably don’t have 
+a BankID which can be 
+used for this 
+identification/signing on 
+this computer. If you 
+have a BankID card, 
+please insert it into your 
+card reader. If you don’t 
+have a BankID you can 
+get one from your bank.
+
+
+=== Page 34 | paragraph | status=pending ===
+status=pending 
+hintCode=started 
+The user accesses the service 
+using a personal computer.
+
+
+=== Page 34 | header | RFA15 ===
+RFA15 
+(B)
+
+
+=== Page 34 | paragraph | Söker efter BankID, det kan ===
+Söker efter BankID, det kan 
+ta en liten stund … Om det 
+har gått några sekunder och 
+inget BankID har hittats har 
+du sannolikt inget BankID 
+som går att använda för den 
+aktuella 
+identifieringen/underskrifte
+n i den här enheten. Om du 
+inte har något BankID kan du 
+skaffa ett hos din bank.
+
+
+=== Page 34 | paragraph | Searching for BankID, it ===
+Searching for BankID, it 
+may take a little while … 
+If a few seconds have 
+passed and still no 
+BankID has been found, 
+you probably don’t have 
+a BankID which can be 
+used for this 
+identification/signing on 
+this device. If you don’t 
+have a BankID you can 
+get one from your bank.
+
+
+=== Page 34 | paragraph | status=pending ===
+status=pending 
+hintCode=started 
+The user accesses the service 
+using a mobile device.
+
+
+=== Page 34 | header | RFA16 ===
+RFA16
+
+
+=== Page 34 | paragraph | Det BankID du försöker ===
+Det BankID du försöker 
+använda är för gammalt eller 
+spärrat. Använd ett annat 
+BankID eller skaffa ett nytt 
+hos din bank.
+
+
+=== Page 34 | paragraph | The BankID you are trying ===
+The BankID you are trying 
+to use is blocked or too 
+old. Please use another 
+BankID or get a new one 
+from your bank.
+
+
+=== Page 34 | paragraph | status=failed ===
+status=failed 
+hintCode=certificateErr
+
+
+=== Page 35 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+35 /38
+
+
+=== Page 35 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 35 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 35 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 35 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 35 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 35 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 35 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 35 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 35 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 35 | paragraph | 35 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+35 /38
+
+
+=== Page 35 | paragraph | Short ===
+Short 
+name 
+Swedish 
+English
+
+
+=== Page 35 | paragraph | Event, status, hintCode or ===
+Event, status, hintCode or 
+errorCode
+
+
+=== Page 35 | header | RFA17 ===
+RFA17 
+(A)
+
+
+=== Page 35 | paragraph | BankID-appen verkar inte ===
+BankID-appen verkar inte 
+finnas i din dator eller mobil. 
+Installera den och skaffa ett 
+BankID hos din bank. 
+Installera appen från din 
+appbutik eller 
+https://install.bankid.com
+
+
+=== Page 35 | paragraph | The BankID app couldn’t ===
+The BankID app couldn’t 
+be found on your 
+computer or mobile 
+device. Please install it 
+and get a BankID from 
+your bank. Install the app 
+from your app store or 
+https://install.bankid.co
+m
+
+
+=== Page 35 | paragraph | status=failed ===
+status=failed 
+hintCode=startFailed 
+RP does not use QR code.
+
+
+=== Page 35 | header | RPA1 ===
+RPA1
+7 (B)
+
+
+=== Page 35 | paragraph | Misslyckades att läsa av QR- ===
+Misslyckades att läsa av QR-
+koden. Starta BankID-appen 
+och läs av QR-koden. 
+Kontrollera att BankID-
+appen är uppdaterad. Om du 
+inte har BankID-appen 
+måste du installera den och 
+skaffa ett BankID hos din 
+bank. Installera appen från 
+din appbutik eller 
+https://install.bankid.com
+
+
+=== Page 35 | paragraph | Failed to scan the QR ===
+Failed to scan the QR 
+code. Start the BankID 
+app and scan the QR 
+code. Check that the 
+BankID app is up to date. 
+If you don't have the 
+BankID app, you need to 
+install it and get a BankID 
+from your bank. Install 
+the app from your app 
+store or 
+https://install.bankid.co
+m
+
+
+=== Page 35 | paragraph | status=failed ===
+status=failed 
+hintCode=startFailed 
+RP uses QR code
+
+
+=== Page 35 | header | RFA18 ===
+RFA18 
+Starta BankID-appen. 
+Start the BankID app.
+
+
+=== Page 35 | paragraph | The name of the link or button ===
+The name of the link or button 
+used to start the BankID app.
+
+
+=== Page 35 | header | RFA19 ===
+RFA19
+
+
+=== Page 35 | paragraph | Vill du identifiera dig eller ===
+Vill du identifiera dig eller 
+skriva under med BankID på 
+den här datorn eller med ett 
+Mobilt BankID?
+
+
+=== Page 35 | paragraph | Would you like to identify ===
+Would you like to identify 
+yourself or sign with a 
+BankID on this computer, 
+or with a Mobile BankID?
+
+
+=== Page 35 | paragraph | The user accesses the service ===
+The user accesses the service 
+using a browser on a personal 
+computer.
+
+
+=== Page 35 | header | RFA20 ===
+RFA20
+
+
+=== Page 35 | paragraph | Vill du identifiera dig eller ===
+Vill du identifiera dig eller 
+skriva under med ett BankID 
+på den här enheten eller 
+med ett BankID på en annan 
+enhet?
+
+
+=== Page 35 | paragraph | Would you like to identify ===
+Would you like to identify 
+yourself or sign with a 
+BankID on this device, or 
+with a BankID on another 
+device?
+
+
+=== Page 35 | paragraph | The user accesses the service ===
+The user accesses the service 
+using a browser on a mobile 
+device.
+
+
+=== Page 36 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+36 /38
+
+
+=== Page 36 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 36 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 36 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 36 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 36 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 36 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 36 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 36 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 36 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 36 | paragraph | 36 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+36 /38
+
+
+=== Page 36 | paragraph | Short ===
+Short 
+name 
+Swedish 
+English
+
+
+=== Page 36 | paragraph | Event, status, hintCode or ===
+Event, status, hintCode or 
+errorCode
+
+
+=== Page 36 | header | RFA21 ===
+RFA21
+
+
+=== Page 36 | paragraph | Identifiering eller underskrift ===
+Identifiering eller underskrift 
+pågår.
+
+
+=== Page 36 | paragraph | Identification or signing ===
+Identification or signing 
+in progress.
+
+
+=== Page 36 | paragraph | status=pending ===
+status=pending 
+The hintCode is unknown.
+
+
+=== Page 36 | header | RFA22 ===
+RFA22 
+Okänt fel. Försök igen.
+
+
+=== Page 36 | paragraph | Unknown error. Please ===
+Unknown error. Please 
+try again.
+
+
+=== Page 36 | paragraph | status=failed ===
+status=failed 
+The hintCode is unknown. 
+An error occured. The errorCode 
+is unknown.
+
+
+=== Page 36 | header | RFA23 ===
+RFA23
+
+
+=== Page 36 | paragraph | Fotografera och läs av din ===
+Fotografera och läs av din 
+ID-handling med BankID-
+appen.
+
+
+=== Page 36 | paragraph | Process your machine- ===
+Process your machine-
+readable travel document 
+using the BankID app.
+
+
+=== Page 36 | paragraph | status=pending ===
+status=pending 
+hintCode=userMrtd
+
+
+=== Page 36 | paragraph | Recommended terminology ===
+Recommended terminology
+
+
+=== Page 36 | paragraph | Description ===
+Description 
+Swedish 
+English
+
+
+=== Page 36 | paragraph | Mobile BankID ===
+Mobile BankID 
+Mobilt BankID 
+Mobile BankID
+
+
+=== Page 36 | paragraph | BankID Security Application for mobile ===
+BankID Security Application for mobile 
+devices 
+BankID-appen 
+The BankID app
+
+
+=== Page 36 | paragraph | BankID Security Application for PCs ===
+BankID Security Application for PCs
+
+
+=== Page 36 | paragraph | BankID-appen eller BankID- ===
+BankID-appen eller BankID-
+programmet 
+The BankID app
+
+
+=== Page 36 | paragraph | Security code, password, PIN ===
+Security code, password, PIN
+
+
+=== Page 36 | paragraph | Säkerhetskod (för Mobilt ===
+Säkerhetskod (för Mobilt 
+BankID) 
+Lösenord (för BankID på fil) 
+PIN (för BankID på kort)
+
+
+=== Page 36 | paragraph | Security code (for Mobile ===
+Security code (for Mobile 
+BankID) 
+Password (for BankID on 
+file) 
+PIN (for BankID on card)
+
+
+=== Page 36 | paragraph | Sign ===
+Sign 
+Skriva under 
+Sign
+
+
+=== Page 36 | paragraph | Signature ===
+Signature 
+Underskrift 
+Signature
+
+
+=== Page 37 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+37 /38
+
+
+=== Page 37 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 37 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 37 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 37 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 37 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 37 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 37 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 37 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 37 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 37 | paragraph | 37 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+37 /38
+
+
+=== Page 37 | paragraph | Description ===
+Description 
+Swedish 
+English
+
+
+=== Page 37 | paragraph | Identify ===
+Identify 
+Identifiera 
+Identify
+
+
+=== Page 37 | paragraph | Identification/authentication ===
+Identification/authentication 
+Identifiering 
+Identification
+
+
+=== Page 37 | paragraph | Test BankID SE ===
+Test BankID SE
+
+
+=== Page 37 | paragraph | To get started, ===
+To get started, 
+1- Download the BankID app to your phone, or the program BankID Security Application to your computer. 
+2- Note that a reconfiguration  of the Bankid app is required. 
+3- Move ahead in this test guide and follow the instructions to get a BankID for test.
+
+
+=== Page 37 | paragraph | All details are mentioned in the BankID Test website ;  Here you find a demo and… ===
+All details are mentioned in the BankID Test website ;  Here you find a demo and more information on how 
+to integrate  the Swedish BankID. You can use one of these test users list .
+
+
+=== Page 37 | paragraph | ***Note that you can not use the test BankID app and real BankID app on the same… ===
+***Note that you can not use the test BankID app and real BankID app on the same device.
+
+
+=== Page 38 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 
+Tab 
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx 
+1.3 
+ 
+ 
+ 
+Date 
+Page 
+©ZignSec AB (publ) 
+Project ID 
+BankID Sweden 
+2024-09-25 
+38 /38
+
+
+=== Page 38 | paragraph | Project ===
+Project 
+Confidentiality Level
+
+
+=== Page 38 | paragraph | BankID Sweden ===
+BankID Sweden 
+Public
+
+
+=== Page 38 | paragraph | Author ===
+Author 
+Area 
+Function
+
+
+=== Page 38 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+V5 Implementation 
+Guide
+
+
+=== Page 38 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 
+Tab
+
+
+=== Page 38 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+ZignSec BankID Sweden V5 Implementation 
+Guidelines  1.3.docx
+
+
+=== Page 38 | paragraph | 1.3 ===
+1.3
+
+
+=== Page 38 | paragraph | Date ===
+Date 
+Page
+
+
+=== Page 38 | paragraph | ©ZignSec AB (publ) ===
+©ZignSec AB (publ)
+
+
+=== Page 38 | paragraph | 38 /38 ===
+Project ID 
+BankID Sweden 
+2024-09-25 
+38 /38
+
+
+=== Page 38 | paragraph | Change History ===
+Change History
+
+
+=== Page 38 | paragraph | Date of Change ===
+Date of Change  
+Changed By  
+Summary of Change
+
+
+=== Page 38 | paragraph | October 2023 ===
+October 2023 
+Martin Heikkilä 
+First version
+
+
+=== Page 38 | paragraph | December 2023 ===
+December 2023 
+Martin Heikkilä 
+Version 1.1
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added Swagger links
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added identity node in result response body
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added useCase parameter to API flow
+
+
+=== Page 38 | paragraph | April 2024 ===
+April 2024 
+Marwa Guellouz 
+Version 1.2
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added Sequence diagrams for Browser Flow on 
+same device and other device
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added Sequence diagrams for API Flow
+
+
+=== Page 38 | paragraph | • ===
+• 
+Added a table for the collect status
+
+
+=== Page 38 | paragraph | September 2024 ===
+September 2024 
+Liliane Umutoni 
+Version 1.3
+
+
+=== Page 38 | paragraph | • ===
+• 
+Updated the links to the developers page.

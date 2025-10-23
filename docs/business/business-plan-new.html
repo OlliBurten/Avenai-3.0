@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenai: Interactive Business Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'avenai-indigo': '#6D5EF9',
+                        'avenai-blue': '#A78BFA',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --avenai-indigo: #6D5EF9;
+            --avenai-soft-blue: #A78BFA;
+            --bg-light: #F8F9FB;
+            --surface: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B7280;
+            --success: #4ADE80;
+            --warning: #FACC15;
+            --error: #F87171;
+            --divider: #E5E7EB;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 450px;
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .nav-link.active, .nav-link:hover {
+            background: linear-gradient(90deg, var(--avenai-soft-blue) 0%, var(--avenai-indigo) 100%);
+            color: white;
+            transform: translateX(4px);
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(90deg, var(--avenai-soft-blue) 0%, var(--avenai-indigo) 100%);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FB] text-stone-800">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white shadow-md fixed top-0 left-0 h-full p-6 hidden lg:block">
+            <div class="mb-8">
+                <img src="Avenai Logo & Social Media Kit/Website optimized logo/horizontal logo/Avenai Logo Version 1-01.svg" alt="Avenai Logo" class="h-8 mb-2">
+                <p class="text-sm text-stone-500">Interactive Business Plan</p>
+            </div>
+            <nav id="desktop-nav" class="flex flex-col space-y-2">
+                <a href="#opportunity" class="nav-link p-3 rounded-lg font-medium">The Opportunity</a>
+                <a href="#solution" class="nav-link p-3 rounded-lg font-medium">Our Solution</a>
+                <a href="#strategy" class="nav-link p-3 rounded-lg font-medium">Growth & Strategy</a>
+                <a href="#team" class="nav-link p-3 rounded-lg font-medium">Team & Founders</a>
+                <a href="#financials" class="nav-link p-3 rounded-lg font-medium">Financials</a>
+                <a href="#investment" class="nav-link p-3 rounded-lg font-medium">The Investment</a>
+                <a href="#sources" class="nav-link p-3 rounded-lg font-medium">Sources & Citations</a>
+                <a href="#speaker-notes" class="nav-link p-3 rounded-lg font-medium">Speaker's Notes</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="lg:ml-64 flex-1 p-4 sm:p-6 md:p-10">
+            <!-- Mobile Navigation -->
+            <header class="lg:hidden mb-6">
+                <div class="flex justify-between items-center">
+                    <img src="Avenai Logo & Social Media Kit/Website optimized logo/horizontal logo/Avenai Logo Version 1-01.svg" alt="Avenai Logo" class="h-6">
+                    <select id="mobile-nav" class="bg-white border border-stone-300 rounded-lg p-2">
+                        <option value="#opportunity">The Opportunity</option>
+                        <option value="#solution">Our Solution</option>
+                        <option value="#strategy">Growth & Strategy</option>
+                        <option value="#team">Team & Founders</option>
+                        <option value="#financials">Financials</option>
+                        <option value="#investment">The Investment</option>
+                        <option value="#sources">Sources & Citations</option>
+                        <option value="#speaker-notes">Speaker's Notes</option>
+                    </select>
+                </div>
+            </header>
+            
+            <!-- The Opportunity -->
+            <section id="opportunity" class="mb-16">
+                <h2 class="text-4xl font-bold mb-4">Guaranteeing API Onboarding Success with AI-Powered Intelligence.</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Avenai is the first AI-powered platform that guarantees API customer onboarding success. We transform API documentation from static content into an intelligent onboarding copilot that ensures every developer succeeds in their first integration.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-[#6D5EF9] mb-2">The Core Problem</h3>
+                            <p class="text-stone-600">API companies lose customers not because of sales—but because onboarding fails. As a former Global Software Implementation Manager, our founder witnessed this firsthand: developers drop off when docs are poor, workflows are unclear, or support tickets pile up. Every week lost to integration = lost revenue, higher churn, and massive support costs.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm mt-6">
+                            <h3 class="text-xl font-semibold text-[#6D5EF9] mb-2">The Problem in Numbers</h3>
+                            <ul class="list-disc list-inside text-stone-600 space-y-3">
+                                <li><span class="font-bold text-stone-800">74% are API-first:</span> Yet 39% cite inconsistent docs as the top obstacle (Postman 2024)</li>
+                                <li><span class="font-bold text-stone-800">43% rely on colleagues:</span> Instead of self-serve onboarding—documentation fails them</li>
+                                <li><span class="font-bold text-stone-800">73% of churned customers:</span> Didn't see value early enough (TTFV failure)</li>
+                                <li><span class="font-bold text-stone-800">"Days" to working example:</span> Without streamlined onboarding, basic integration takes days</li>
+                            </ul>
+                        </div>
+                    </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-semibold text-[#6D5EF9] mb-4">Market Size Pyramid</h3>
+                    <div class="space-y-3">
+                        <div class="bg-gradient-to-r from-[#A78BFA]/20 to-[#6D5EF9]/20 p-4 rounded-lg border-l-4 border-[#6D5EF9]">
+                            <h4 class="font-bold text-lg mb-1">TAM: $6B</h4>
+                            <p class="text-stone-600 text-sm">Total Addressable Market - Developer tools, API management, and documentation platforms</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#A78BFA]/30 to-[#6D5EF9]/30 p-4 rounded-lg border-l-4 border-[#6D5EF9] ml-6">
+                            <h4 class="font-bold text-lg mb-1">SAM: $2.5B</h4>
+                            <p class="text-stone-600 text-sm">Serviceable Addressable Market - API-specific onboarding tools (docs + AI + analytics)<br><span class="text-xs italic">Based on 2024 API onboarding & documentation segments</span></p>
+                        </div>
+                        <div class="bg-gradient-to-r from-[#A78BFA]/40 to-[#6D5EF9]/40 p-4 rounded-lg border-l-4 border-[#6D5EF9] ml-12">
+                            <h4 class="font-bold text-lg mb-1">SOM: $250M</h4>
+                            <p class="text-stone-600 text-sm">Serviceable Obtainable Market - KYC/AML & fintech APIs (our initial vertical wedge)<br><span class="text-xs italic">~300 companies × $800K avg ARR potential</span></p>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-4 italic">Capturing 5% of our SOM ($12.5M ARR) represents a realistic venture-scale milestone.</p>
+                    <p class="text-stone-600 text-xs mt-3 opacity-75"><strong>Sources:</strong> Postman State of the API 2024, Fortune Business Insights, MarketsandMarkets API Management Market Report 2024</p>
+                </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-8 rounded-xl shadow-lg mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Why No One Owns This Category</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Docs Platforms</h4>
+                            <p class="text-sm opacity-90">ReadMe, GitBook, Swagger just host content—no onboarding success guarantee</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Support Platforms</h4>
+                            <p class="text-sm opacity-90">Zendesk, Intercom just answer tickets—reactive, not proactive onboarding</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">DevTools</h4>
+                            <p class="text-sm opacity-90">Copilot, Cursor help you build—don't focus on customer onboarding</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Our Solution -->
+            <section id="solution" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Our Solution: The Onboarding OS</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Avenai combines documentation, AI copilots, and onboarding analytics into a single platform that guarantees your customers integrate successfully. We're building the complete solution from docs → AI guidance → analytics → automation.</p>
+                <div class="bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-4 rounded-lg shadow-sm mb-8 text-center">
+                    <p class="text-lg font-semibold italic">"GPT is general intelligence — Avenai turns it into operational intelligence for API onboarding."</p>
+                </div>
+
+                <!-- Why Not Just Use GPT? -->
+                <div class="bg-gradient-to-r from-[#A78BFA]/10 to-[#6D5EF9]/10 p-8 rounded-xl shadow-sm mb-8 border-l-4 border-[#6D5EF9]">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#6D5EF9]">Why Not Just Use GPT?</h3>
+                    </div>
+                    <p class="text-stone-700 mb-4"><strong>Developers can ask GPT about APIs — but GPT isn't a product.</strong><br>It doesn't know your documentation, remember context, or measure success.</p>
+                    <p class="text-stone-700 mb-6"><strong>Avenai turns GPT's intelligence into a repeatable onboarding system:</strong></p>
+                    
+                    <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+                        <table class="min-w-full text-left text-sm">
+                            <thead>
+                                <tr class="bg-stone-50">
+                                    <th class="px-6 py-3 font-semibold text-stone-700">Problem</th>
+                                    <th class="px-6 py-3 font-semibold text-stone-700">GPT Alone</th>
+                                    <th class="px-6 py-3 font-semibold text-[#6D5EF9]">Avenai</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-stone-200">
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Context</td>
+                                    <td class="px-6 py-4 text-stone-600">Forgets after session</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>Persistent API knowledge base</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Accuracy</td>
+                                    <td class="px-6 py-4 text-stone-600">No confidence or verification</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>Source-linked, confidence-scored answers</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Output</td>
+                                    <td class="px-6 py-4 text-stone-600">Free-form text</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>Structured JSON, endpoints, and workflows</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Control</td>
+                                    <td class="px-6 py-4 text-stone-600">Lives in OpenAI's cloud</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>Private dataset under your control</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Analytics</td>
+                                    <td class="px-6 py-4 text-stone-600">None</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>Measures time-to-integration, satisfaction, usage</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="mt-6 bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-lg">
+                        <p class="text-lg font-semibold text-center"><strong>GPT is the raw brain.</strong><br>Avenai is the onboarding OS that wraps that intelligence in structure, context, and measurable outcomes.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Current MVP (Live Now)</h3>
+                    <p class="text-stone-600 mb-4"><strong>Upload docs + AI chat copilot</strong> - The foundation of our Onboarding OS</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-[#6D5EF9]">Core Features (Production-Ready)</h4>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                                <li>Multi-format document upload (PDF, MD, TXT, OpenAPI)</li>
+                                <li>AI-powered chat interface with document context</li>
+                                <li>Real-time processing and embedding generation</li>
+                                <li>Multi-tenant architecture with enterprise security</li>
+                                <li>Analytics dashboard for usage insights</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2 text-[#6D5EF9]">Performance Metrics</h4>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                                <li><strong>Sub-3 second</strong> average response times</li>
+                                <li><strong>99.9%</strong> uptime SLA</li>
+                                <li><strong>> 90%</strong> RAG retrieval accuracy</li>
+                                <li><strong>95%+</strong> document upload success rate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold mb-4">Pricing Tiers</h3>
+                    <p class="text-stone-600 mb-6 text-sm"><strong>Average expected ACV per paying client: $12K/year</strong> (mix of Pro annual subscriptions and custom Enterprise plans)</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl border border-stone-200">
+                            <h4 class="font-bold text-xl mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                                FREE
+                            </h4>
+                            <p class="text-sm text-stone-600 mb-4">For testing and validation</p>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                                <li>5 documents</li>
+                                <li>500 queries/month</li>
+                                <li>Basic chat features</li>
+                                <li>Community support</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-xl shadow-lg">
+                            <h4 class="font-bold text-xl mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                                PRO ($99/mo)
+                            </h4>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-xs font-bold bg-white/20 px-2 py-1 rounded">MOST POPULAR</span>
+                                <span class="text-xs opacity-90">For growing SaaS companies</span>
+                            </div>
+                            <ul class="list-disc list-inside space-y-2 text-sm">
+                                <li>50 documents</li>
+                                <li>10,000 queries/month</li>
+                                <li>Custom branding</li>
+                                <li>API access</li>
+                                <li>Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl border border-stone-200">
+                            <h4 class="font-bold text-xl mb-2 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                ENTERPRISE ($299/mo)
+                            </h4>
+                            <p class="text-sm text-stone-600 mb-4">For enterprises needing control</p>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                                <li>200+ documents</li>
+                                <li>100,000 queries/month</li>
+                                <li>White-label widget</li>
+                                <li>SSO integration</li>
+                                <li>Dedicated support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">The Four Pillars of Avenai</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="w-5 h-5 text-[#6D5EF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9]">AI-Generated Docs</h4>
+                            </div>
+                            <p class="text-stone-600 text-sm">Stripe-quality documentation created automatically from OpenAPI specs and notes</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="w-5 h-5 text-[#6D5EF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9]">Onboarding Copilot</h4>
+                            </div>
+                            <p class="text-stone-600 text-sm">Embeddable AI widget that generates code snippets, explains errors, and guides developers</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="w-5 h-5 text-[#6D5EF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9]">Analytics Dashboard</h4>
+                            </div>
+                            <p class="text-stone-600 text-sm">Measure time-to-first-call, integration errors, and churn risk during onboarding</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <svg class="w-5 h-5 text-[#6D5EF9]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9]">Workflow Automation</h4>
+                            </div>
+                            <p class="text-stone-600 text-sm">Auto-generate checklists, sandbox flows, and integration validators for complex APIs</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Growth & Strategy -->
+            <section id="strategy" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Growth & Strategy</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our strategy centers on a vertical wedge approach: dominate API onboarding for KYC/AML and fintech APIs first (where pain + budgets are highest), then expand horizontally to all API categories.</p>
+                
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">Product Roadmap</h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-[#6D5EF9] pl-4">
+                                <h4 class="font-bold text-lg">Now: MVP Foundation</h4>
+                                <p class="text-stone-600 text-sm">Upload docs + AI chat copilot. Production-ready with live customers.</p>
+                            </div>
+                            <div class="border-l-4 border-[#A78BFA] pl-4">
+                                <h4 class="font-bold text-lg">6-12 Months: Enhanced Copilot</h4>
+                                <p class="text-stone-600 text-sm">Code generation, error guidance, SDK integration, embeddable widgets.</p>
+                            </div>
+                            <div class="border-l-4 border-[#A78BFA] pl-4">
+                                <h4 class="font-bold text-lg">12-18 Months: Analytics & Insights</h4>
+                                <p class="text-stone-600 text-sm">Integration success dashboards, churn prediction, TTFC metrics.</p>
+                            </div>
+                            <div class="border-l-4 border-[#A78BFA]/50 pl-4">
+                                <h4 class="font-bold text-lg">2-3 Years: Learning Copilot</h4>
+                                <p class="text-stone-600 text-sm">Privacy-preserving learning that improves with each interaction. Each customer's copilot gets smarter over time.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-xl shadow-lg">
+                            <div class="flex items-center justify-center gap-3 mb-3">
+                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <h4 class="font-bold text-xl">The End Game</h4>
+                            </div>
+                            <p class="text-center text-lg leading-relaxed"><strong>GPT changed how developers ask questions.</strong><br><strong>Avenai changes how developers succeed with APIs.</strong></p>
+                            <p class="text-center mt-4 text-sm opacity-95">It's not another chatbot — it's the infrastructure layer every API company will depend on to guarantee onboarding success.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">Competitive Advantages</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Foundational AI vs. Vertical Intelligence</h4>
+                                    <p class="text-stone-600 text-sm">Foundational models like GPT are general-purpose. <strong>Avenai applies that intelligence vertically</strong> — purpose-built for API onboarding. We combine: <strong>(1)</strong> Domain context (your docs, SDKs, FAQs), <strong>(2)</strong> Deterministic extractors (for JSONs, endpoints, workflows), and <strong>(3)</strong> Analytics feedback loops (so the system learns from every integration). This vertical focus creates a <strong>data moat</strong> — every customer interaction makes Avenai smarter for that specific API, creating lock-in and compounding accuracy.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Full Loop</h4>
+                                    <p class="text-stone-600 text-sm">From docs → AI guidance → analytics → automation. Competitors do pieces, not the whole.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Learning Moats</h4>
+                                    <p class="text-stone-600 text-sm">Privacy-preserving learning creates continuous improvement and high switching costs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] flex items-center justify-center mr-4 flex-shrink-0">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Founder-Market Fit</h4>
+                                    <p class="text-stone-600 text-sm">Built by a Global Software Implementation Manager who lived this problem daily.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- GPT vs Avenai Visual Summary -->
+                    <div class="bg-gradient-to-r from-[#A78BFA]/10 to-[#6D5EF9]/10 p-6 rounded-xl shadow-sm mt-6 border-l-4 border-[#6D5EF9]">
+                        <h3 class="text-xl font-bold mb-4 text-center text-[#6D5EF9]">GPT is the Engine. Avenai is the Vehicle.</h3>
+                        <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+                            <table class="min-w-full text-left text-sm">
+                                <thead>
+                                    <tr class="bg-stone-50">
+                                        <th class="px-6 py-3 font-semibold text-stone-700">Layer</th>
+                                        <th class="px-6 py-3 font-semibold text-stone-700">GPT</th>
+                                        <th class="px-6 py-3 font-semibold text-[#6D5EF9]">Avenai</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-200">
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium text-stone-700">Core Intelligence</td>
+                                        <td class="px-6 py-4 text-stone-600">General-purpose LLM</td>
+                                        <td class="px-6 py-4 text-stone-800"><strong>Domain-tuned retrieval & extractors</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium text-stone-700">Memory</td>
+                                        <td class="px-6 py-4 text-stone-600">Stateless</td>
+                                        <td class="px-6 py-4 text-stone-800"><strong>Persistent onboarding knowledge</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium text-stone-700">UX</td>
+                                        <td class="px-6 py-4 text-stone-600">Chat</td>
+                                        <td class="px-6 py-4 text-stone-800"><strong>Embeddable developer copilot</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium text-stone-700">Metrics</td>
+                                        <td class="px-6 py-4 text-stone-600">None</td>
+                                        <td class="px-6 py-4 text-stone-800"><strong>Analytics & success tracking</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 font-medium text-stone-700">Ownership</td>
+                                        <td class="px-6 py-4 text-stone-600">OpenAI</td>
+                                        <td class="px-6 py-4 text-stone-800"><strong>Customer-controlled workspace</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Competitive Landscape</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-left text-sm">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-6 py-3 font-medium">Competitor Type</th>
+                                    <th class="px-6 py-3 font-medium">Examples</th>
+                                    <th class="px-6 py-3 font-medium">Pricing</th>
+                                    <th class="px-6 py-3 font-medium">What They Miss</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">API Documentation</td>
+                                    <td class="px-6 py-4">ReadMe, SwaggerHub, Redocly</td>
+                                    <td class="px-6 py-4">$10-399/mo</td>
+                                    <td class="px-6 py-4">No TTFC automation, no adaptive flows, no integration telemetry</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">Developer Onboarding</td>
+                                    <td class="px-6 py-4">Appcues, Userflow, Chameleon</td>
+                                    <td class="px-6 py-4">$249-279/mo</td>
+                                    <td class="px-6 py-4">UI-focused, not API-specific, no SDK setup automation</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">AI Developer Tools</td>
+                                    <td class="px-6 py-4">GitHub Copilot, Codeium</td>
+                                    <td class="px-6 py-4">$10-39/mo</td>
+                                    <td class="px-6 py-4">General coding, not purpose-built for API onboarding</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Feature Comparison: Why Avenai Wins</h3>
+                    <p class="text-stone-600 mb-4 text-sm">One glance shows why Avenai is the only complete API onboarding solution.</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-left text-sm">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-6 py-3 font-medium">Feature</th>
+                                    <th class="px-6 py-3 font-medium text-center bg-gradient-to-r from-[#A78BFA]/20 to-[#6D5EF9]/20">Avenai</th>
+                                    <th class="px-6 py-3 font-medium text-center">ReadMe</th>
+                                    <th class="px-6 py-3 font-medium text-center">Appcues</th>
+                                    <th class="px-6 py-3 font-medium text-center">Copilot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">API-aware onboarding</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="px-6 py-4 font-semibold">AI-generated docs</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-semibold">Partial</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">Integration analytics</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs font-semibold">Partial</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="px-6 py-4 font-semibold">TTFC automation</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">Workflow automation</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                </tr>
+                                <tr class="border-b bg-gray-50">
+                                    <td class="px-6 py-4 font-semibold">Churn prediction</td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">Yes</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                    <td class="px-6 py-4 text-center"><span class="inline-block px-2 py-1 bg-red-100 text-red-800 rounded text-xs font-semibold">No</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-center text-stone-700 mt-4 font-semibold">Avenai is the only platform delivering the complete API onboarding loop.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Go-to-Market Strategy</h3>
+                    <p class="text-stone-600 mb-6">Our GTM strategy focuses on a vertical wedge approach: dominate one high-value niche first, then expand horizontally.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-[#6D5EF9] mb-3">Target Customer Profile</h4>
+                            <ul class="space-y-2 text-stone-600 text-sm">
+                                <li><strong>Company Type:</strong> API-first SaaS in KYC/AML, fintech, compliance</li>
+                                <li><strong>Company Size:</strong> 5-50 developers, Series A-B stage</li>
+                                <li><strong>Buyer Persona:</strong> Head of Product, CTO, VP Engineering, Customer Success Lead</li>
+                                <li><strong>Pain Point:</strong> High integration churn, expensive support tickets, slow TTFC</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-[#6D5EF9] mb-3">Customer Acquisition Strategy</h4>
+                            <ul class="space-y-2 text-stone-600 text-sm">
+                                <li><strong>Direct Outreach:</strong> Founder-led sales to 50 target API companies</li>
+                                <li><strong>Content Marketing:</strong> Technical blog posts, case studies on API onboarding</li>
+                                <li><strong>Developer Communities:</strong> Presence in API-first Discord, Slack, Reddit communities</li>
+                                <li><strong>Partnership:</strong> Integration with ReadMe, Postman for distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-gradient-to-r from-[#A78BFA]/10 to-[#6D5EF9]/10 p-6 rounded-lg border-l-4 border-[#6D5EF9]">
+                        <h4 class="font-semibold text-lg mb-2">Pilot Program Structure</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <p class="font-semibold text-stone-800">Duration:</p>
+                                <p class="text-stone-600">3 months</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-stone-800">Pricing:</p>
+                                <p class="text-stone-600">$500/month (50% discount)</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-stone-800">Success Metrics:</p>
+                                <p class="text-stone-600">50% reduction in TTFC, 30% fewer support tickets</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Team & Founders -->
+            <section id="team" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Team & Founders</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Avenai is built by founders with the perfect combination of technical execution and market expertise. Our team has direct experience with the exact problem we're solving.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#6D5EF9]">
+                        <h3 class="text-xl font-bold mb-2">Technical Founder (25)</h3>
+                        <p class="text-[#6D5EF9] font-semibold mb-4">Serial Entrepreneur & Full-Stack Developer</p>
+                        <p class="text-stone-600 mb-4">Founded first business at 16, built multiple ventures across e-commerce, web design, and brand building. <strong>Avenai was born from personal frustration</strong> as a Global Software Implementation Manager at SaaS companies, being directly responsible for customer success across multiple markets.</p>
+                        <div class="bg-[#F8F9FB] p-4 rounded-lg mt-4">
+                            <p class="text-stone-700 italic">"As a Global Software Implementation Manager, I was the person customers called when integrations failed. I saw the same problem repeatedly: great APIs losing customers not because of sales, but because onboarding failed. I built Avenai to solve the problem I lived every day."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-[#6D5EF9]">
+                        <h3 class="text-xl font-bold mb-2">Marketing Co-Founder (24)</h3>
+                        <p class="text-[#6D5EF9] font-semibold mb-4">Influencer Marketing Expert & Sales Professional</p>
+                        <p class="text-stone-600 mb-4">Highly successful social media influencer with proven ability to build and engage large audiences. Combined experience in SaaS sales, telesales, and automotive sales. Expert in content creation and digital marketing strategies.</p>
+                        <div class="bg-[#F8F9FB] p-4 rounded-lg mt-4">
+                            <p class="text-stone-700 italic">"I know how to reach developers and API companies because I've been building audiences and selling to businesses for years. This is the perfect intersection of my skills."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Why This Team is Perfect for Avenai</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Problem-First Approach:</strong> Born from lived experience as Implementation Manager</span></li>
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Deep Customer Understanding:</strong> Both founders have SaaS experience</span></li>
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Technical Execution:</strong> Full-stack development proven track record</span></li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Marketing Expertise:</strong> Influencer background for developer audiences</span></li>
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Proven Resilience:</strong> Multiple ventures show adaptability</span></li>
+                            <li class="flex items-start gap-2"><span class="text-white font-bold">→</span> <span><strong>Young & Hungry:</strong> At 24-25, perfect stage for big risks</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Next Hires (Seed Allocation) -->
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Next Hires (Seed Allocation)</h3>
+                    <p class="text-stone-600 mb-6">These three hires represent <strong>~55% of seed spend</strong> and expand the team from 2 → 5 within 12 months.</p>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-left text-sm">
+                            <thead>
+                                <tr class="bg-stone-50">
+                                    <th class="px-6 py-3 font-semibold text-stone-700">Role</th>
+                                    <th class="px-6 py-3 font-semibold text-stone-700">Timing</th>
+                                    <th class="px-6 py-3 font-semibold text-stone-700">Focus</th>
+                                    <th class="px-6 py-3 font-semibold text-stone-700">Monthly Cost (SEK)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-stone-200">
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Backend Engineer</td>
+                                    <td class="px-6 py-4 text-stone-600">Month 3–6</td>
+                                    <td class="px-6 py-4 text-stone-600">Scale multi-tenant infra</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>60,000 SEK</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">Frontend Engineer</td>
+                                    <td class="px-6 py-4 text-stone-600">Month 6–9</td>
+                                    <td class="px-6 py-4 text-stone-600">Widget & dashboard polish</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>55,000 SEK</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-stone-700">ML Engineer</td>
+                                    <td class="px-6 py-4 text-stone-600">Month 9–12</td>
+                                    <td class="px-6 py-4 text-stone-600">Universal extractor tuning</td>
+                                    <td class="px-6 py-4 text-stone-800"><strong>60,000 SEK</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Financials -->
+            <section id="financials" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Financials</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our financial model projects sustainable growth with realistic customer acquisition assumptions. After the seed phase proves product-market fit, we're positioned for rapid scaling with Series A funding.</p>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-4">5-Year Revenue Growth Projection</h3>
+                    <p class="text-stone-600 mb-4">Conservative estimates based on $99 average customer value and gradual customer acquisition.</p>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm overflow-x-auto">
+                    <h3 class="text-2xl font-bold mb-4">Financial Forecast Summary</h3>
+                    <table class="min-w-full text-left text-sm whitespace-nowrap">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-6 py-3 font-medium">Year</th>
+                                <th class="px-6 py-3 font-medium">Customers</th>
+                                <th class="px-6 py-3 font-medium">Revenue</th>
+                                <th class="px-6 py-3 font-medium">Gross Margin</th>
+                                <th class="px-6 py-3 font-medium">OPEX</th>
+                                <th class="px-6 py-3 font-medium">Net Income</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1</td>
+                                <td class="px-6 py-4">10</td>
+                                <td class="px-6 py-4">$120K</td>
+                                <td class="px-6 py-4">80%</td>
+                                <td class="px-6 py-4">$130K</td>
+                                <td class="px-6 py-4 text-red-600">-$34K</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">2</td>
+                                <td class="px-6 py-4">50</td>
+                                <td class="px-6 py-4">$600K</td>
+                                <td class="px-6 py-4">85%</td>
+                                <td class="px-6 py-4">$400K</td>
+                                <td class="px-6 py-4 text-green-600">+$110K</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">3</td>
+                                <td class="px-6 py-4">120</td>
+                                <td class="px-6 py-4">$1.44M</td>
+                                <td class="px-6 py-4">85%</td>
+                                <td class="px-6 py-4">$800K</td>
+                                <td class="px-6 py-4 text-green-600">+$424K</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">5 (Goal)</td>
+                                <td class="px-6 py-4">500</td>
+                                <td class="px-6 py-4">$6M</td>
+                                <td class="px-6 py-4">85%</td>
+                                <td class="px-6 py-4">$3M</td>
+                                <td class="px-6 py-4 text-green-600 font-bold">+$2.1M</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-stone-600 text-sm mt-4 italic">Conservative model with realistic Year 1 burn and adjusted Year 3 targets. Year 5 shown as long-term goal, not projection. OPEX includes team scaling (2 → 5 people), infrastructure, and customer success.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-xl shadow-sm text-center">
+                        <h4 class="font-semibold mb-2">Year 1 ARR</h4>
+                        <p class="text-4xl font-bold">$120K</p>
+                        <p class="text-sm opacity-90 mt-2">10 pilot customers × $12K ACV</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-xl shadow-sm text-center">
+                        <h4 class="font-semibold mb-2">Year 3 ARR</h4>
+                        <p class="text-4xl font-bold">$1.44M</p>
+                        <p class="text-sm opacity-90 mt-2">120 customers × $12K ACV</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-[#A78BFA] to-[#6D5EF9] text-white p-6 rounded-xl shadow-sm text-center">
+                        <h4 class="font-semibold mb-2">Year 5 ARR Goal</h4>
+                        <p class="text-4xl font-bold">$6M</p>
+                        <p class="text-sm opacity-90 mt-2">500 customers × $12K ACV</p>
+                    </div>
+                </div>
+
+                <!-- KPI Metrics & Traction Indicators -->
+                <div class="bg-gradient-to-r from-[#A78BFA]/10 to-[#6D5EF9]/10 p-8 rounded-xl shadow-sm mt-8 border-l-4 border-[#6D5EF9]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#6D5EF9]">KPI Metrics & Traction Indicators</h3>
+                    <p class="text-stone-700 mb-6">Leading indicators showing product-market fit before reaching $120K ARR.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-stone-700">Average Response Time</h4>
+                                <span class="text-2xl font-bold text-[#6D5EF9]">&lt; 3s</span>
+                            </div>
+                            <p class="text-stone-600 text-sm">Performance proof — fast enough for production use</p>
+                            <div class="mt-3 bg-stone-100 rounded-full h-2">
+                                <div class="bg-[#6D5EF9] h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-stone-700">Confidence ≥ High %</h4>
+                                <span class="text-2xl font-bold text-[#6D5EF9]">≥ 60%</span>
+                            </div>
+                            <p class="text-stone-600 text-sm">Quality — majority of answers are high-confidence</p>
+                            <div class="mt-3 bg-stone-100 rounded-full h-2">
+                                <div class="bg-[#6D5EF9] h-2 rounded-full" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-stone-700">Pilot Satisfaction Rate</h4>
+                                <span class="text-2xl font-bold text-[#6D5EF9]">≥ 70%</span>
+                            </div>
+                            <p class="text-stone-600 text-sm">User ROI — customers see measurable value</p>
+                            <div class="mt-3 bg-stone-100 rounded-full h-2">
+                                <div class="bg-[#6D5EF9] h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-stone-700">Queries Per Session</h4>
+                                <span class="text-2xl font-bold text-[#6D5EF9]">&gt; 5</span>
+                            </div>
+                            <p class="text-stone-600 text-sm">Engagement — developers return and dig deeper</p>
+                            <div class="mt-3 bg-stone-100 rounded-full h-2">
+                                <div class="bg-[#6D5EF9] h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-6 italic text-center">Targets achievable by Month 6. Early leading indicators demonstrate product readiness even without revenue.</p>
+                </div>
+            </section>
+            
+            <!-- The Investment -->
+            <section id="investment" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">The Investment</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Avenai represents a unique and compelling investment opportunity. We are a first-mover in the $2.5B API onboarding market with a live MVP, authentic founder-market fit, and a clear path to $6M+ ARR by Year 5.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-[#6D5EF9] mb-2">Funding Required</h3>
+                        <p class="text-3xl font-bold">$125K Seed</p>
+                        <p class="text-stone-600 text-sm mt-1">18 months runway @ $7K USD/month burn</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-[#6D5EF9] mb-2">Target Milestones</h3>
+                        <p class="text-stone-600"><strong>10+</strong> paying pilot customers</p>
+                        <p class="text-stone-600"><strong>$120K</strong> ARR</p>
+                        <p class="text-stone-600"><strong>Proven</strong> product-market fit</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-[#6D5EF9] mb-2">Projected ROI</h3>
+                        <p class="text-stone-600"><strong class="text-stone-800 text-lg">5-8x ROI</strong> based on conservative growth projections</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-8 rounded-xl shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">The Clear Ask</h3>
+                    <p class="max-w-3xl mx-auto text-lg">We are seeking <span class="font-bold">$125K in seed funding via SAFE @ $2M cap</span> to validate product-market fit with pilot customers in the KYC/AML and fintech API space.</p>
+                    <p class="max-w-3xl mx-auto text-sm mt-4 opacity-90">This investment funds 18 months of focused product development and customer acquisition, positioning us for Series A after achieving 10+ paying customers and $120K ARR.</p>
+                    <p class="max-w-3xl mx-auto text-xs mt-4 opacity-80 italic">We're not competing with GPT; we're commercializing it for a vertical worth billions.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Use of Funds Breakdown ($125K)</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-48 font-semibold text-sm">Team Hires (55%)</div>
+                            <div class="flex-1 bg-gray-200 rounded-full h-8">
+                                <div class="bg-[#6D5EF9] h-8 rounded-full flex items-center px-4 text-white text-sm font-medium" style="width: 55%">$69K - Engineers: Backend, Frontend, ML</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-48 font-semibold text-sm">Founder Salaries (20%)</div>
+                            <div class="flex-1 bg-gray-200 rounded-full h-8">
+                                <div class="bg-[#A78BFA] h-8 rounded-full flex items-center px-4 text-white text-sm font-medium" style="width: 20%">$25K - Living expenses (Sweden)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-48 font-semibold text-sm">Infrastructure & AI (15%)</div>
+                            <div class="flex-1 bg-gray-200 rounded-full h-8">
+                                <div class="bg-[#6D5EF9] h-8 rounded-full flex items-center px-4 text-white text-sm font-medium" style="width: 15%">$19K - Cloud, AI APIs, hosting</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-48 font-semibold text-sm">Marketing & Pilots (10%)</div>
+                            <div class="flex-1 bg-gray-200 rounded-full h-8">
+                                <div class="bg-[#A78BFA] h-8 rounded-full flex items-center px-4 text-white text-sm font-medium" style="width: 10%">$12K - Content, outreach, pilots</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-stone-600 text-sm mt-4 italic">Team-focused allocation expanding from 2 → 5 people within 12 months. 55% of seed spend directly on engineering talent.</p>
+                </div>
+            </section>
+
+            <!-- Sources & Citations -->
+            <section id="sources" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Sources & Citations</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4">Market Data Sources</h3>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                        <li><strong>Postman State of the API 2024:</strong> API adoption statistics, documentation pain points, and developer behavior patterns</li>
+                        <li><strong>MarketsandMarkets:</strong> API Management Market Size projections and CAGR analysis</li>
+                        <li><strong>Fortune Business Insights:</strong> Digital onboarding software market analysis and growth forecasts</li>
+                        <li><strong>TechCrunch:</strong> Mintlify Series A funding announcement ($18M, a16z-led) - validates investor interest in AI documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-6">
+                    <h3 class="text-xl font-bold mb-4">Key Statistics & Sources</h3>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                        <li><strong>74% of organizations are API-first</strong> - Postman State of the API 2024</li>
+                        <li><strong>39% cite inconsistent docs as the top obstacle</strong> - Postman State of the API 2024</li>
+                        <li><strong>43% rely on colleagues to understand APIs</strong> - Postman State of the API 2024</li>
+                        <li><strong>73% of churned customers didn't see value early enough</strong> - Gainsight TTFV analysis</li>
+                        <li><strong>API Documentation Tools market: $1.3B (2024), 15% CAGR</strong> - Industry reports</li>
+                        <li><strong>Customer Onboarding Software: $2.1B (2024), 19% CAGR</strong> - Market research</li>
+                        <li><strong>AI Development Tools: $0.67B (2024), 42% CAGR</strong> - Technology sector analysis</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-6">
+                    <h3 class="text-xl font-bold mb-4">Competitive Pricing Research</h3>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                        <li><strong>ReadMe:</strong> Free → $99/mo (Startup) → $399/mo (Business) - publicly listed pricing</li>
+                        <li><strong>SwaggerHub / API Hub:</strong> $19-49/mo per user - SmartBear pricing pages</li>
+                        <li><strong>Redocly:</strong> $10/seat/mo (Pro) → $300/mo (Workflows Pro) - public pricing</li>
+                        <li><strong>GitBook:</strong> $65/site + $12/user/mo (Premium) - public pricing</li>
+                        <li><strong>Developer Onboarding Tools:</strong> Appcues, Userflow $249-279/mo entry tiers - vendor websites</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Speaker's Notes -->
+            <section id="speaker-notes" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Speaker's Notes: Pitch & Customer Strategy</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">For internal use only. High-level talking points for framing conversations with investors and potential pilot customers.</p>
+                
+                <div class="bg-gradient-to-r from-[#A78BFA] to-[#6D5EF9] text-white p-8 rounded-xl shadow-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-4">The Core Pitch (60 seconds)</h3>
+                    <p class="text-lg leading-relaxed">"I was a Global Software Implementation Manager at SaaS companies. I was the person customers called when API integrations failed. I saw the same problem repeatedly: <strong>great APIs losing customers—not because of sales, but because onboarding failed.</strong></p>
+                    <p class="text-lg leading-relaxed mt-4">74% of companies are API-first today, but 39% say documentation is their biggest obstacle. Developers spend days just to get a working example. 73% of customers who churn never saw value early enough.</p>
+                    <p class="text-lg leading-relaxed mt-4"><strong>I built Avenai to solve the problem I lived every day.</strong> We're the first platform that guarantees API onboarding success—from docs to AI guidance to analytics to automation. We're creating a new category: the Onboarding OS."</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">For Investor Conversations</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9] mb-2">Why Now?</h4>
+                                <ul class="list-disc list-inside text-stone-600 space-y-1 text-sm">
+                                    <li>74% of companies are API-first (2024)</li>
+                                    <li>AI development tools growing 42% annually</li>
+                                    <li>No one owns "API onboarding success"</li>
+                                    <li>Recent $18M funding for Mintlify validates AI docs space</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-[#6D5EF9] mb-2">The Ask</h4>
+                                <ul class="list-disc list-inside text-stone-600 space-y-1 text-sm">
+                                    <li><strong>$75K</strong> for 18 months runway</li>
+                                    <li><strong>Goal:</strong> 10+ pilot customers paying</li>
+                                    <li><strong>Milestone:</strong> Prove product-market fit</li>
+                                    <li><strong>Next:</strong> Series A with proven traction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">For Pilot Customer Conversations</h3>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-lg text-[#6D5EF9] mb-2">The Three-Step Approach</h4>
+                            <ol class="list-decimal list-inside text-stone-600 space-y-3 text-sm">
+                                <li><strong>Frame the Pain:</strong> "How many support tickets do you get about API integration? How many customers churn during onboarding?"</li>
+                                <li><strong>Show the Solution:</strong> Demo the AI copilot answering real questions from their docs. Show how it reduces time-to-first-call.</li>
+                                <li><strong>Pilot Proposal:</strong> "Let's run a 3-month pilot with your top 10 API customers. We'll measure TTFC, support ticket reduction, and customer satisfaction."</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mt-8">
+                    <h3 class="text-2xl font-bold mb-4">Addressing Common Objections</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full text-left text-sm">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-6 py-3 font-medium">Objection</th>
+                                    <th class="px-6 py-3 font-medium">Response</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">"We already have docs"</td>
+                                    <td class="px-6 py-4">Yes, but 39% of companies cite inconsistent docs as their top obstacle. Avenai doesn't replace your docs—it makes them actually work for onboarding.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">"This is too expensive"</td>
+                                    <td class="px-6 py-4">What's the cost of one churned customer? If you lose even 2 customers per year due to onboarding failures, Avenai pays for itself.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">"We need proof first"</td>
+                                    <td class="px-6 py-4">Perfect—that's exactly why we're offering pilots. Let's run a 3-month test with real customers and measure the results.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">"What about data security?"</td>
+                                    <td class="px-6 py-4">Multi-tenant architecture with row-level security, enterprise encryption, strict tenant isolation. Your data never touches other customers' data.</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-6 py-4 font-semibold">"Why not build in-house?"</td>
+                                    <td class="px-6 py-4">It would take 18+ months and $500K+ to build what we've already built. Plus ongoing maintenance, AI expertise, and continuous improvement.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5 (Goal)'],
+                datasets: [{
+                    label: 'Annual Recurring Revenue',
+                    data: [0.12, 0.6, 1.44, 3.0, 6.0],
+                    borderColor: '#6D5EF9',
+                    backgroundColor: 'rgba(167, 139, 250, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: (c) => `ARR: $${c.formattedValue}M`
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'USD (Millions)' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Year' }
+                    }
+                }
+            }
+        });
+
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile navigation
+        const mobileNav = document.getElementById('mobile-nav');
+        if (mobileNav) {
+            mobileNav.addEventListener('change', () => {
+                window.location.hash = mobileNav.value;
+            });
+        }
+    });
+    </script>
+</body>
+</html>
+

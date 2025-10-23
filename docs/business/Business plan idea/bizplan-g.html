@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solacia: Interactive Business Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link.active, .nav-link:hover {
+            background-color: #14b8a6;
+            color: white;
+            transform: translateX(4px);
+        }
+        .filter-btn.active {
+            background-color: #14b8a6;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .phase {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid #e5e7eb;
+        }
+        .phase:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        .phase::before {
+            content: '';
+            position: absolute;
+            left: -0.7rem;
+            top: 0.25rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 9999px;
+            background-color: white;
+            border: 2px solid #14b8a6;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div class="flex min-h-screen">
+        <aside class="w-64 bg-white shadow-md fixed top-0 left-0 h-full p-6 hidden lg:block">
+            <h1 class="text-2xl font-bold text-teal-600 mb-2">Solacia</h1>
+            <p class="text-sm text-stone-500 mb-8">Interactive Business Plan V2.7</p>
+            <nav id="desktop-nav" class="flex flex-col space-y-2">
+                <a href="#opportunity" class="nav-link p-3 rounded-lg font-medium">The Opportunity</a>
+                <a href="#solution" class="nav-link p-3 rounded-lg font-medium">Our Solution</a>
+                <a href="#strategy" class="nav-link p-3 rounded-lg font-medium">Growth & Strategy</a>
+                <a href="#operations" class="nav-link p-3 rounded-lg font-medium">Operations & Team</a>
+                <a href="#financials" class="nav-link p-3 rounded-lg font-medium">Financials</a>
+                <a href="#investment" class="nav-link p-3 rounded-lg font-medium">The Investment</a>
+                <a href="#appendix-a" class="nav-link p-3 rounded-lg font-medium">Appendix A: Analysis</a>
+                <a href="#appendix-b" class="nav-link p-3 rounded-lg font-medium">Appendix B: Partners</a>
+                <a href="#appendix-c" class="nav-link p-3 rounded-lg font-medium">Appendix C: Scenarios</a>
+                <a href="#appendix-d" class="nav-link p-3 rounded-lg font-medium">Appendix D: Financial Model</a>
+                <a href="#sources" class="nav-link p-3 rounded-lg font-medium">Sources & Citations</a>
+                <a href="#speaker-notes" class="nav-link p-3 rounded-lg font-medium">Speaker's Notes</a>
+            </nav>
+        </aside>
+
+        <main class="lg:ml-64 flex-1 p-4 sm:p-6 md:p-10">
+            <header class="lg:hidden mb-6">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold text-teal-600">Solacia</h1>
+                    <select id="mobile-nav" class="bg-white border border-stone-300 rounded-lg p-2">
+                        <option value="#opportunity">The Opportunity</option>
+                        <option value="#solution">Our Solution</option>
+                        <option value="#strategy">Growth & Strategy</option>
+                        <option value="#operations">Operations & Team</option>
+                        <option value="#financials">Financials</option>
+                        <option value="#investment">The Investment</option>
+                        <option value="#appendix-a">Appendix A: Analysis</option>
+                        <option value="#appendix-b">Appendix B: Partners</option>
+                        <option value="#appendix-c">Appendix C: Scenarios</option>
+                        <option value="#appendix-d">Appendix D: Financial Model</option>
+                        <option value="#sources">Sources & Citations</option>
+                        <option value="#speaker-notes">Speaker's Notes</option>
+                    </select>
+                </div>
+            </header>
+            
+            <section id="opportunity" class="mb-16">
+                <h2 class="text-4xl font-bold mb-4">Simplifying Post-Loss Administration with Empathy and Automation.</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Solacia is an online platform designed to alleviate the significant administrative burden on individuals following the death of a family member or legal partner. We replace a fragmented, emotionally draining, and bureaucratic process with a centralized, supportive, and efficient digital solution.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h3 class="text-xl font-semibold text-teal-600 mb-2">The Core Problem</h3>
+                            <p class="text-stone-600">Settling an estate is overwhelming. Survivors face a complex web of tasks, from contacting banks and insurers to managing government agencies, all while grieving. There is no existing holistic platform to guide them through this journey. We are a first-mover platform within a large, underserved market.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm mt-6">
+                            <h3 class="text-xl font-semibold text-teal-600 mb-2">The Problem in Numbers</h3>
+                            <ul class="list-disc list-inside text-stone-600 space-y-3">
+                                <li><span class="font-bold text-stone-800">100+ Hours Lost:</span> The average family spends over 100 hours on administrative tasks alone after a loss.<sup>3</sup></li>
+                                <li><span class="font-bold text-stone-800">€2,300+ in Avoidable Fees:</span> Many routine administrative tasks are unnecessarily outsourced to lawyers, leading to significant costs.<sup>5</sup></li>
+                                <li><span class="font-bold text-stone-800">Dozens of Digital Accounts:</span> The average person leaves behind 25-30 online accounts, creating a complex digital estate to manage.<sup>4</sup></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-600 mb-2">Initial Target Market</h3>
+                        <p class="text-stone-600 mb-4">The European digital legacy market is currently valued at approximately <strong>€4.5 billion</strong> and is projected to reach <strong>€7.5 billion by 2030</strong>. This growth is driven by Europe's aging population and the increasing need for digital solutions to manage post-loss administration.<sup>1,2</sup></p>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg text-teal-600">Phase 1 Markets: Sweden & Norway</h4>
+                                <p class="text-stone-600 text-sm">These countries are ideal first markets due to their high digital maturity. Sweden has an estimated <strong>92,000 deaths per year</strong>, while Norway has approximately <strong>45,000</strong>, representing a significant initial serviceable market. The total addressable market (TAM) for digital legacy administration is an estimated <strong>€200M per year</strong> across these two countries.<sup>9,10</sup></p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-teal-600">Phase 2 Markets: Denmark, Finland, Austria & Italy</h4>
+                                <p class="text-stone-600 text-sm">Our second phase targets countries with high digital readiness. Denmark has an estimated <strong>59,000 deaths per year</strong>, and Finland has ~<strong>57,000 deaths per year</strong>. The combined annual addressable market for these phase two countries is approximately <strong>€450M</strong>.<sup>11,12</sup></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="solution" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Our Solution: A Dual-Channel Platform</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our comprehensive product suite serves individual consumers directly (B2C) while also providing a powerful tool for institutional partners (B2B). This dual approach creates a robust ecosystem, capturing value from multiple points in the estate settlement process.</p>
+                <div id="solution-tabs" class="flex border-b border-stone-200 mb-6">
+                    <button data-tab="b2c" class="solution-tab-btn px-6 py-3 font-medium text-lg border-b-2 border-teal-600 text-teal-600">For Individuals (B2C)</button>
+                    <button data-tab="b2b" class="solution-tab-btn px-6 py-3 font-medium text-lg text-stone-500">For Institutions (B2B)</button>
+                </div>
+
+                <div id="b2c-content" class="solution-tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                            <h4 class="font-bold text-xl mb-2">Basic (Free)</h4>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2">
+                                <li>Guided checklists & templated communication letters.</li>
+                                <li>Secure document storage for essential paperwork.</li>
+                                <li>Basic progress tracking.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-teal-600 text-white p-6 rounded-xl shadow-lg border border-teal-700">
+                            <h4 class="font-bold text-xl mb-2">Premium (€149 one-time fee)</h4>
+                            <p class="text-sm mb-2">Provides complete access to all advanced features for a single, one-time payment per case, offering predictability and value.</p>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li>AI-powered institution identification & form completion.</li>
+                                <li>Direct Institution Contact Facilitation & Account Aggregation.</li>
+                                <li>Legal Resource Library & Priority Support.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                            <h4 class="font-bold text-xl mb-2">Concierge (€1,500/case)</h4>
+                            <ul class="list-disc list-inside text-stone-600 space-y-2">
+                                <li>Personalized support from experienced case managers.</li>
+                                <li>Assistance with probate filings and legal referrals.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-bold mb-4">The Value for Individuals: Quantifiable Outcomes</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Time Saved</h4><p class="text-stone-600 text-sm">Automating manual tasks can save an individual <span class="font-bold text-stone-800">over 100 hours</span> of administrative work.<sup>3</sup></p></div>
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Cost Savings</h4><p class="text-stone-600 text-sm">Helps users avoid common legal fees for basic tasks, which can total <span class="font-bold text-stone-800">€2,300 or more</span>.<sup>5</sup></p></div>
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Reduced Stress</h4><p class="text-stone-600 text-sm">A streamlined process, transparent communication, and empathetic support significantly reduces the emotional toll.</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="b2b-content" class="solution-tab-content hidden">
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-bold mb-4">A Seamless Conduit for Partners</h3>
+                        <p class="text-stone-600 mb-6">We offer annual, renewable licenses to institutional partners. For them, Solacia acts as a seamless conduit between their customers and the institution itself, all managed in a central, branded dashboard for clear oversight.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Key Features</h4>
+                                <ul class="list-disc list-inside text-stone-600 space-y-2">
+                                    <li>Branded employee dashboard & centralized customer oversight.</li>
+                                    <li><span class="font-bold text-stone-800">SolaciaKeep:</span> A highly secure vault for documents.</li>
+                                    <li>Digital identity integration (e.g., BankID).</li>
+                                    <li><strong>Value-Add for Customers:</strong> Offer the full Solacia Premium experience to your clients as a complimentary, branded service.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Pricing Tiers</h4>
+                                <ul class="list-disc list-inside text-stone-600 space-y-2">
+                                    <li><strong>Business (€9k/year):</strong> For smaller, regional partners.</li>
+                                    <li><strong>Professional (€25k/year):</strong> For mid-market and national partners.</li>
+                                    <li><strong>Enterprise (€50k+/year):</strong> For large institutions needing API integration and dedicated support.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-white p-6 rounded-xl shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-bold mb-4">The Value for Institutions: Quantifiable Outcomes</h3>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Operational Cost Reduction</h4><p class="text-stone-600 text-sm">Automating manual processes can reduce administrative overhead by <span class="font-bold text-stone-800">up to 75%</span>.<sup>6</sup></p></div>
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Improved Employee Efficiency</h4><p class="text-stone-600 text-sm">A centralized dashboard improves productivity by <span class="font-bold text-stone-800">over 50%</span>.<sup>7</sup></p></div>
+                            <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Customer Retention</h4><p class="text-stone-600 text-sm">A compassionate, efficient digital service builds brand loyalty and reduces customer churn.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="strategy" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Growth & Strategy</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our strategy is built on a phased rollout and strategic partnerships in key initial markets. This section provides an interactive look at our expansion timeline and partnership targets that will drive our growth.</p>
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">Rollout Plan</h3>
+                        <p class="text-stone-600 mb-4">Top markets were selected for their digital readiness and strong digital identity infrastructure. Our phased rollout is aligned with the EUDI wallet implementation across Europe, allowing us to leverage a harmonized framework to accelerate growth.</p>
+                        <div>
+                            <div class="phase"><h4 class="font-bold text-lg">Phase 1 (Years 1-2): Nordic Pilot & Launch</h4><p class="text-stone-600">Launch in <strong>Sweden</strong> and <strong>Norway</strong>. These markets' high digital maturity provides a perfect foundation for proving our model and building a strong B2B case study.</p></div>
+                            <div class="phase"><h4 class="font-bold text-lg">Phase 2 (Years 3-5): Expanded European Presence</h4><p class="text-stone-600">Expand into EUDI-ready markets like <strong>Denmark</strong>, <strong>Finland</strong>, <strong>Austria</strong>, and <strong>Italy</strong>, timed to align with the EUDI wallet's 2026/2027 rollout deadline.</p></div>
+                            <div class="phase"><h4 class="font-bold text-lg">Phase 3 (Years 6-10): Broad Market Penetration</h4><p class="text-stone-600">Scale across more of Europe, entering key markets like <strong>Germany</strong>, <strong>the Netherlands</strong>, and <strong>France</strong>, leveraging the brand and partner networks established in Phase 2.</p></div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">Strategic Partnership Targets</h3>
+                        <p class="text-stone-600 mb-4">Our rollout is timed to align with market readiness, leveraging existing eID systems and the EUDI wallet rollout to gain a first-mover advantage. Below are our key partner targets for each phase.</p>
+                        <div class="flex space-x-2 mb-4">
+                            <button class="filter-btn active px-4 py-2 rounded-lg font-medium bg-stone-200 text-stone-700" data-country="sweden">Sweden</button>
+                            <button class="filter-btn px-4 py-2 rounded-lg font-medium bg-stone-200 text-stone-700" data-country="norway">Norway</button>
+                            <button class="filter-btn px-4 py-2 rounded-lg font-medium bg-stone-200 text-stone-700" data-country="phase2">Phase 2</button>
+                            <button class="filter-btn px-4 py-2 rounded-lg font-medium bg-stone-200 text-stone-700" data-country="phase3">Phase 3</button>
+                        </div>
+                        <div id="partners-list" class="space-y-3 h-96 overflow-y-auto pr-2"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="operations" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Operations & Team</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our operational plan is designed for security, scalability, and maintaining our core value of empathy. We use a hybrid approach where AI handles automation and initial support, allowing our highly-trained human representatives to focus on sensitive cases where they are needed most.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-sm">
+                         <h3 class="text-2xl font-bold mb-4">Capital-Efficient Employee Growth</h3>
+                         <p class="text-stone-600 mb-4">Our staffing model is designed for capital efficiency. After an initial scaling phase to establish the platform and market presence, our engineering and sales teams will stabilize. By Year 5, the core platform will be mature, allowing the engineering team to focus on maintenance, security, and targeted R&D. Similarly, the sales team will transition to a leadership model, where experienced staff in established markets support expansion into new territories, rather than growing the team linearly. This ensures costs scale slower than revenue, driving profitability.</p>
+                        <div class="chart-container"><canvas id="staffingChart"></canvas></div>
+                    </div>
+                    <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-2xl font-bold mb-4">Technology & Security</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start"><span class="text-teal-500 text-2xl mr-4">&#128274;</span><div><h4 class="font-semibold">Europe-Optimized Infrastructure</h4><p class="text-stone-600 text-sm">Hosted on a multi-region AWS setup within the EU for reliability, low latency, and GDPR compliance. This focused approach is more cost-effective than a global footprint, with projected annual costs scaling from ~€300k in Year 1 to ~€2.5M by Year 10.</p></div></div>
+                            <div class="flex items-start"><span class="text-teal-500 text-2xl mr-4">&#129302;</span><div><h4 class="font-semibold">AI-Augmented Support</h4><p class="text-stone-600 text-sm">AI bots handle automation, while AI agents provide 24/7 guided chat, escalating to humans for sensitive cases.</p></div></div>
+                            <div class="flex items-start"><span class="text-teal-500 text-2xl mr-4">&#128100;</span><div><h4 class="font-semibold">Human Compassionate Reps</h4><p class="text-stone-600 text-sm">Grief-trained, multilingual support staff handle escalations and concierge clients. (1 rep per 1,500 active users).</p></div></div>
+                            <div class="flex items-start"><span class="text-teal-500 text-2xl mr-4">&#128272;</span><div><h4 class="font-semibold">EUDI Wallet Integration</h4><p class="text-stone-600 text-sm">We will leverage the EUDI wallet to streamline secure logins and identity verification across borders.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="financials" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Financials</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Our financial model projects strong, profitable growth driven by a capital-efficient staffing and infrastructure strategy. After the initial build and scale phase, operating leverage increases significantly as costs stabilize while revenue continues to climb, leading to higher margins and a stronger ROI. For a detailed breakdown of all revenue and cost drivers, please see <strong>Appendix D: Detailed Financial Model</strong>.</p>
+                
+                 <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-1">10-Year Financial Projections (Base Plan)</h3>
+                    <p class="text-stone-600 mb-4">This forecast reflects our revised, leaner staffing and infrastructure model. The stabilization of non-personnel costs post-Year 5 leads to significantly improved profitability and a more attractive investment profile.</p>
+                    <div class="chart-container"><canvas id="financialsChart"></canvas></div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm overflow-x-auto">
+                    <h3 class="text-2xl font-bold mb-4">Financial Forecast Summary (Base Plan)</h3>
+                    <p class="text-stone-600 mb-4">The following table summarizes our 10-year P&L forecast, which reflects our more efficient Swedish-based cost structure. The detailed model can be found in Appendix D.</p>
+                    <table class="min-w-full text-left text-sm whitespace-nowrap">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-6 py-3 font-medium text-gray-900">Year</th><th class="px-6 py-3 font-medium text-gray-900">Total Revenue</th><th class="px-6 py-3 font-medium text-gray-900">Total Costs</th><th class="px-6 py-3 font-medium text-gray-900">Net Income</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="px-6 py-4">1</td><td class="px-6 py-4">€0.14M</td><td class="px-6 py-4">€0.37M</td><td class="px-6 py-4 text-red-600">-€0.23M</td></tr>
+                            <tr class="border-b"><td class="px-6 py-4">2</td><td class="px-6 py-4">€0.9M</td><td class="px-6 py-4">€0.98M</td><td class="px-6 py-4 text-red-600">-€0.08M</td></tr>
+                            <tr class="border-b"><td class="px-6 py-4">3</td><td class="px-6 py-4">€7.5M</td><td class="px-6 py-4">€4.68M</td><td class="px-6 py-4 text-green-600">+€2.20M</td></tr>
+                            <tr class="border-b"><td class="px-6 py-4">5</td><td class="px-6 py-4">€22.7M</td><td class="px-6 py-4">€11.52M</td><td class="px-6 py-4 text-green-600">+€8.72M</td></tr>
+                            <tr class="border-b"><td class="px-6 py-4">10</td><td class="px-6 py-4">€95.4M</td><td class="px-6 py-4 text-green-600">€31.67M</td><td class="px-6 py-4 text-green-600 font-bold">+€49.71M</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="investment" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">The Investment</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">Solacia represents a unique and compelling investment opportunity due to our strategic position and a clear path to growth and profitability. We are not just another digital tool; we are a first-mover platform tackling a universal, emotionally charged, and highly underserved problem.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-600 mb-2">Funding Required</h3>
+                        <p class="text-2xl font-bold">€2.0M Seed</p>
+                        <p class="text-stone-600 text-sm mt-1">at €7.5M pre-money valuation</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-600 mb-2">Projected Investor ROI</h3>
+                        <p class="text-stone-600"><strong class="text-stone-800 text-lg">20x ROI</strong> for Seed investors by Year 10 (Base Plan).</p>
+                        <p class="text-stone-600 mt-2"><strong class="text-stone-800">~12x ROI</strong> in Conservative Scenario.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold text-teal-600 mb-2">Exit Strategy</h3>
+                        <p class="text-stone-600">Acquisition by a major insurer or fintech (€600M-€1.2B), or an IPO once revenue exceeds €180M.</p>
+                    </div>
+                </div>
+                <div class="mt-8 bg-teal-600 text-white p-8 rounded-xl shadow-lg text-center">
+                    <h3 class="text-2xl font-bold mb-2">The Clear Ask</h3>
+                    <p class="max-w-3xl mx-auto">We are seeking <span class="font-bold text-white">€2.0M in Seed funding</span> at a <span class="font-bold text-white">€7.5M pre-money valuation</span>. This investment will fund our pilot programs, finalize key platform features, and provide runway for our team, priming us for successful growth.</p>
+                </div>
+            </section>
+            
+            <section id="appendix-a" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Appendix A: Market & Competitive Analysis</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-4">The Demographic Imperative: Europe's Great Wealth Transfer</h3>
+                    <p class="text-stone-600 mb-4">The opportunity for Solacia is fundamentally driven by a massive, once-in-a-generation demographic shift. Europe's population is aging, a direct result of the high fertility rates during the "baby boom" of the 1950s and 1960s. As these <strong>Baby Boomers</strong> retire and age, they are set to transfer an unprecedented amount of wealth to their heirs, primarily <strong>Generation X</strong>. This "Great Wealth Transfer" creates an urgent and growing need for services that can simplify the complex process of estate administration.<sup>8</sup></p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Competitive Landscape</h3>
+                    <p class="text-stone-600 mb-4">The European market for digital bereavement services is nascent and highly fragmented. There is currently no single, dominant player offering a holistic, pan-European solution. The competition can be categorized as follows:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Indirect Competitors</h4><p class="text-stone-600 text-sm">Traditional law firms, accountants, and the internal, often manual, bereavement departments within banks and insurance companies.</p></div>
+                        <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Partial Digital Competitors</h4><p class="text-stone-600 text-sm">Startups offering point solutions like digital estate planning tools, password managers, and online will-creation services.</p></div>
+                        <div><h4 class="font-semibold text-lg text-teal-600 mb-2">Adjacent Support Services</h4><p class="text-stone-600 text-sm">Organizations like the <strong>Bereavement Network Europe</strong> and <strong>Cruse Bereavement Support (UK)</strong> who provide emotional support but not administrative tools.</p></div>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h3 class="text-2xl font-bold mb-4">SWOT Analysis</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div><h4 class="text-xl font-semibold text-teal-600 mb-2">Strengths</h4><ul class="list-disc list-inside text-stone-600 space-y-2"><li>First-mover advantage in a fragmented market</li><li>Holistic platform (not a point solution)</li><li>Dual B2C/B2B model creating a strong moat</li></ul></div>
+                        <div><h4 class="text-xl font-semibold text-teal-600 mb-2">Weaknesses</h4><ul class="list-disc list-inside text-stone-600 space-y-2"><li>B2C usage is finite by nature</li><li>Requires building a new, high-trust brand</li></ul></div>
+                        <div><h4 class="text-xl font-semibold text-teal-600 mb-2">Opportunities</h4><ul class="list-disc list-inside text-stone-600 space-y-2"><li>The "Great Wealth Transfer" from Baby Boomers</li><li>Government partnerships for digital identity (EUDI)</li><li>Expansion into adjacent financial planning services</li></ul></div>
+                        <div><h4 class="text-xl font-semibold text-teal-600 mb-2">Threats</h4><ul class="list-disc list-inside text-stone-600 space-y-2"><li>Cybersecurity and data privacy regulations</li><li>Large financial institutions building in-house solutions</li><li>Slow cultural adoption of digital solutions</li></ul></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold mb-4">Key Challenges & Mitigation Strategies</h3>
+                    <div class="space-y-6">
+                         <div>
+                            <h4 class="text-xl font-semibold text-teal-600 mb-2">Challenge: Justifying Aggressive Financial Projections</h4>
+                            <p class="text-stone-600 mb-2">The forecast's rapid scaling may be met with skepticism from investors accustomed to longer growth cycles for enterprise SaaS.</p>
+                            <p class="font-semibold text-stone-700">Mitigation Strategy:</p>
+                            <p class="text-stone-600 text-sm mb-2">Our model's feasibility is grounded in a capital-efficient, high-margin SaaS model and a unique B2C-to-B2B leverage strategy.</p>
+                             <ul class="list-disc list-inside text-stone-600 text-sm space-y-2">
+                                <li><strong>De-Risking Adoption:</strong> Pilot programs in Years 1-2 will validate the product and build powerful case studies to accelerate sales cycles.</li>
+                                <li><strong>B2C as Leverage:</strong> The B2C channel acts as a strategic customer acquisition funnel, providing a large user base that acts as leverage in B2B negotiations.</li>
+                                <li><strong>High-Margin Model:</strong> A lean, AI-augmented operational model ensures costs scale slower than the user base, allowing profits to accelerate quickly.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-600 mb-2">Challenge: Potentially High Customer Acquisition Cost (CAC)</h4>
+                            <p class="text-stone-600 mb-2">Acquiring customers for a sensitive, high-trust service can be expensive (Fintech CAC > €900).</p>
+                            <p class="font-semibold text-stone-700">Mitigation Strategy:</p>
+                             <ul class="list-disc list-inside text-stone-600 text-sm space-y-2">
+                               <li><strong>Partnerships as Primary Channel:</strong> Our B2B model is our core customer acquisition strategy, creating a "warm lead" funnel that bypasses the high costs of cold, top-of-funnel marketing.</li>
+                               <li><strong>Trust-Based Content Marketing:</strong> Our digital marketing will focus on high-quality content that establishes our expertise (E-E-A-T), attracting organic traffic at a lower cost.</li>
+                           </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-600 mb-2">Challenge: Long-Term Defensibility & Competition</h4>
+                             <p class="text-stone-600 mb-2">A first-mover advantage is temporary; a sustainable competitive moat is required.</p>
+                            <p class="font-semibold text-stone-700">Mitigation Strategy:</p>
+                            <ul class="list-disc list-inside text-stone-600 text-sm space-y-2">
+                                <li><strong>The B2B Partnership Moat:</strong> Our primary defense is our network of sticky, long-term B2B contracts with high switching costs.</li>
+                                <li><strong>The Empathy & UX Moat:</strong> Our human-first, compassionate UX builds a level of brand trust that is difficult for a purely tech-focused competitor to replicate.</li>
+                                <li><strong>The Regulatory & Operational Moat:</strong> Our strategic alignment with the EUDI wallet framework and deep expertise in European legal frameworks create an intellectual property moat that is not easily copied.</li>
+                           </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-teal-600 mb-2">Challenge: Securing a Venture-Scale "Home Run" Return</h4>
+                             <p class="text-stone-600 mb-2">Our base case 20x return is strong, but top-tier VCs often look for 50-100x opportunities.</p>
+                            <p class="font-semibold text-stone-700">Mitigation Strategy:</p>
+                             <p class="text-stone-600 text-sm mb-2">The 20x projection is the floor, not the ceiling. The path to a venture-scale return is clear:</p>
+                            <ul class="list-disc list-inside text-stone-600 text-sm space-y-2">
+                                <li><strong>Accelerated Exit:</strong> Our business is an ideal acquisition target for a global financial institution in Years 5-7, which would significantly boost the annualized return (IRR).</li>
+                                <li><strong>Geographic Expansion:</strong> A strategic investment could accelerate our entry into the multi-billion dollar North American market, creating a massive new growth curve not reflected in current projections.</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="appendix-b" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Appendix B: Detailed Partner Candidates (Phase 1)</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">This appendix provides an expanded list of potential institutional partners for our initial pilot markets. These organizations are prime candidates to license Solacia as a <strong>goodwill gesture</strong>, a <strong>value-add service</strong>, or a direct <strong>upsell opportunity</strong>. The likelihood rank indicates the strategic fit and potential ease of partnership (1 = Highest Likelihood).</p>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4 border-b pb-2">Sweden</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-sm">
+                        <div><h4 class="font-bold text-lg mb-2">Bank</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Swedbank (Rank: 2)</li><li>Handelsbanken (Rank: 2)</li><li>SEB (Rank: 3)</li><li>Nordea (Rank: 4)</li><li>ICA Banken (Rank: 5)</li><li>SBAB Bank (Rank: 6)</li><li>Länsförsäkringar Bank (Rank: 6)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Insurance</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Folksam (Rank: 1)</li><li>Länsförsäkringar (Rank: 2)</li><li>Trygg-Hansa (Rank: 4)</li><li>If P&C Insurance (Rank: 5)</li><li>Skandia (Rank: 5)</li><li>Euro Accident (Rank: 7)</li><li>Moderna Försäkringar (Rank: 7)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Pension</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Alecta (Rank: 3)</li><li>AMF Pension (Rank: 4)</li><li>SPP Pension & Försäkring (Rank: 5)</li><li>KPA Pension (Rank: 6)</li><li>Collectum (Rank: 7)</li><li>PRI Pensionsgaranti (Rank: 8)</li><li>Pensionsmyndigheten (Gov't) (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Telecom</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Telia (Rank: 6)</li><li>Tele2 (Rank: 7)</li><li>Telenor Sweden (Rank: 7)</li><li>Tre (3) (Rank: 8)</li><li>Com Hem (Rank: 8)</li><li>Bahnhof (Rank: 9)</li><li>Ownit (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Utility</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Vattenfall (Rank: 6)</li><li>E.ON (Rank: 7)</li><li>Fortum (Rank: 7)</li><li>Ellevio (Rank: 8)</li><li>Svenska Kraftnät (Rank: 8)</li><li>Göteborg Energi (Rank: 9)</li><li>Stockholm Exergi (Rank: 9)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Government</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Skatteverket (Tax Agency) (Rank: 8)</li><li>Försäkringskassan (Social Ins.) (Rank: 8)</li><li>Bolagsverket (Companies Reg.) (Rank: 9)</li><li>Lantmäteriet (Land Registry) (Rank: 9)</li><li>Transportstyrelsen (Transport) (Rank: 10)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Digital & Credit Card</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Klarna (Rank: 5)</li><li>Avanza (Rank: 6)</li><li>Nordnet (Rank: 6)</li><li>Trustly (Rank: 7)</li><li>American Express (Rank: 8)</li><li>Entercard (Rank: 8)</li><li>Resurs Bank (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Loan & Mortgage</h4><ul class="list-disc list-inside space-y-1">
+                            <li>SBAB Bank (Rank: 5)</li><li>Hypotekspension (Rank: 6)</li><li>Stabelo (Rank: 7)</li><li>Landshypotek Bank (Rank: 8)</li><li>Volvo Finans Bank (Auto) (Rank: 8)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Healthcare</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Capio (Rank: 5)</li><li>Kry (Digital) (Rank: 6)</li><li>Praktikertjänst (Rank: 7)</li><li>Doktor.se (Digital) (Rank: 7)</li><li>Region Stockholm (Gov't) (Rank: 8)</li><li>1177 Vårdguiden (Gov't) (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Employer & Associations</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Unionen (Association) (Rank: 6)</li><li>Svenskt Näringsliv (Employer Org) (Rank: 7)</li><li>Benify (Benefits Platform) (Rank: 7)</li><li>Akademikernas a-kassa (Unemp. Fund) (Rank: 8)</li><li>Ledarna (Association) (Rank: 8)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Property & Housing</h4><ul class="list-disc list-inside space-y-1">
+                            <li>HSB (Housing Coop) (Rank: 6)</li><li>Riksbyggen (Housing Coop) (Rank: 6)</li><li>Vasakronan (Commercial Prop) (Rank: 8)</li><li>Castellum (Commercial Prop) (Rank: 8)</li><li>Hemnet (Digital Listings) (Rank: 9)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Charity & Other</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Cancerfonden (Charity) (Rank: 7)</li><li>Radiohjälpen (Charity) (Rank: 8)</li><li>Fonus (Funeral Services) (Rank: 4)</li><li>Lavendla (Funeral Services) (Rank: 5)</li>
+                        </ul></div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4 border-b pb-2">Norway</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-sm">
+                        <div><h4 class="font-bold text-lg mb-2">Bank</h4><ul class="list-disc list-inside space-y-1">
+                            <li>DNB Bank ASA (Rank: 1)</li><li>SpareBank 1 Group (Rank: 3)</li><li>Nordea Norway (Rank: 4)</li><li>Danske Bank Norway (Rank: 5)</li><li>Handelsbanken Norway (Rank: 5)</li><li>Sbanken (Digital) (Rank: 6)</li><li>BN Bank (Rank: 7)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Insurance</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Gjensidige Forsikring (Rank: 2)</li><li>Tryg Forsikring (Rank: 4)</li><li>Frende Forsikring (Rank: 5)</li><li>If P&C Insurance (Rank: 5)</li><li>Codan Forsikring (Rank: 6)</li><li>Eika Forsikring (Rank: 7)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Pension</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Storebrand (Rank: 2)</li><li>KLP (Rank: 3)</li><li>DNB Livsforsikring (Rank: 4)</li><li>Gabler (Rank: 6)</li><li>Silver Pensjonsforsikring (Rank: 7)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Telecom</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Telenor (Rank: 6)</li><li>Telia Norway (Rank: 7)</li><li>Ice (Rank: 8)</li><li>NextGenTel (Rank: 9)</li><li>GlobalConnect (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Utility</h4><ul class="list-disc list-inside space-y-1">
+                             <li>Statkraft (Rank: 7)</li><li>Equinor (Rank: 8)</li><li>Hafslund Eco (Rank: 8)</li><li>Agder Energi (Rank: 9)</li><li>BKK (Rank: 9)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Government</h4><ul class="list-disc list-inside space-y-1">
+                            <li>NAV (Labour & Welfare) (Rank: 5)</li><li>Skatteetaten (Tax Admin) (Rank: 8)</li><li>Helsenorge.no (Health Portal) (Rank: 8)</li><li>Statens pensjonskasse (Pension Fund) (Rank: 9)</li><li>Altinn (Digital Services) (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Digital & Credit Card</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Vipps (Payments) (Rank: 4)</li><li>BankID (Identity) (Rank: 5)</li><li>Komplett Bank (Rank: 6)</li><li>Santander Consumer Bank (Rank: 7)</li><li>Bank Norwegian (Rank: 7)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Loan & Mortgage</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Husbanken (State Housing Bank) (Rank: 6)</li><li>Bulder Bank (Digital Mortgage) (Rank: 7)</li><li>MyBank (Rank: 8)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Healthcare</h4><ul class="list-disc list-inside space-y-1">
+                             <li>Aleris (Rank: 6)</li><li>Volvat Medisinske Senter (Rank: 7)</li><li>Dr.Dropin (Rank: 7)</li><li>Oslo Universitetssykehus (Public) (Rank: 8)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Employer & Associations</h4><ul class="list-disc list-inside space-y-1">
+                            <li>NHO (Employer Org) (Rank: 7)</li><li>LO (Trade Union) (Rank: 8)</li><li>Tekna (Association) (Rank: 8)</li><li>Den Norske Legeforening (Medical Assoc.) (Rank: 9)</li>
+                        </ul></div>
+                        <div><h4 class="font-bold text-lg mb-2">Property & Housing</h4><ul class="list-disc list-inside space-y-1">
+                            <li>OBOS (Housing Coop) (Rank: 4)</li><li>Eiendom Norge (Industry Org) (Rank: 7)</li><li>Entra ASA (Commercial Prop) (Rank: 8)</li><li>FINN.no (Listings) (Rank: 9)</li>
+                        </ul></div>
+                         <div><h4 class="font-bold text-lg mb-2">Charity & Other</h4><ul class="list-disc list-inside space-y-1">
+                            <li>Kreftforeningen (Cancer Society) (Rank: 7)</li><li>Røde Kors (Red Cross) (Rank: 8)</li><li>Jølstad (Funeral Services) (Rank: 3)</li><li>Verdig Begravelse (Funeral Services) (Rank: 4)</li>
+                        </ul></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="appendix-c" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Appendix C: Alternative Scenarios</h2>
+                <p class="text-lg text-stone-600 max-w-4xl mb-8">This appendix details alternative strategic scenarios, including a more conservative growth forecast and the triggers for an opportunistic North American launch.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4">Conservative Growth Scenario</h3>
+                    <p class="text-stone-600 mb-4">This forecast assumes a less aggressive B2B partner acquisition rate—approximately 60% of our base plan's target. It demonstrates the resilience of our model, which still achieves profitability in Year 3.</p>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 mb-4 text-sm">
+                        <li><strong>Break-Even Point:</strong> Profitability is achieved in <strong>Year 3</strong>, same as the base plan, demonstrating the model's resilience.</li>
+                        <li><strong>Impact on Investor ROI:</strong> The 10-year ROI remains highly attractive at <strong>~12x for Seed investors</strong> and <strong>~4.5x for Series A investors</strong>.</li>
+                    </ul>
+                     <div class="overflow-x-auto">
+                        <table class="min-w-full text-left text-sm whitespace-nowrap">
+                            <thead><tr class="bg-gray-100"><th class="px-6 py-3">Year</th><th class="px-6 py-3">Revenue</th><th class="px-6 py-3">B2B Partners</th><th class="px-6 py-3">B2C Customers</th><th class="px-6 py-3">Net Income</th></tr></thead>
+                            <tbody>
+                                <tr class="border-b"><td class="px-6 py-4">1</td><td class="px-6 py-4">€0.08M</td><td class="px-6 py-4">~7</td><td class="px-6 py-4">~120</td><td class="px-6 py-4 text-red-600">-€0.31M</td></tr>
+                                <tr class="border-b"><td class="px-6 py-4">3</td><td class="px-6 py-4">€4.5M</td><td class="px-6 py-4">~304</td><td class="px-6 py-4">~6,040</td><td class="px-6 py-4 text-green-600">+€0.12M</td></tr>
+                                <tr class="border-b"><td class="px-6 py-4">5</td><td class="px-6 py-4">€13.6M</td><td class="px-6 py-4">~920</td><td class="px-6 py-4">~18,282</td><td class="px-6 py-4 text-green-600">+€3.1M</td></tr>
+                                <tr class="border-b"><td class="px-6 py-4">10</td><td class="px-6 py-4">€57.2M</td><td class="px-6 py-4">~3,867</td><td class="px-6 py-4">~76,832</td><td class="px-6 py-4 text-green-600 font-bold">+€28.9M</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4">Triggers for Accelerated Canadian Launch</h3>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2">
+                        <li><strong>Strategic Investment:</strong> Securing seed/Series A funding from a major Canadian institutional investor.</li>
+                        <li><strong>Anchor Client:</strong> Signing a pilot or full-scale enterprise agreement with a "Big Five" Canadian bank or national insurer.</li>
+                        <li><strong>Regulatory Clarity:</strong> New Canadian policies that streamline digital identity or bereavement processes.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="appendix-d" class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Appendix D: Detailed Financial Model</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4">Financial Model Assumptions</h3>
+                    <p class="text-stone-600 mb-4 text-sm">The following model is based on our Base Plan forecast. The projections are built on a set of core assumptions grounded in market data and operational planning. All figures are in millions of EUR (€M) unless otherwise stated.</p>
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                        <li><strong>Revenue Mix:</strong> Assumes an 80/20 split between B2B and B2C revenue by Year 5, reflecting our partnership-led strategy.</li>
+                        <li><strong>Staff Costs:</strong> Based on a Sweden-centric model with a blended average loaded cost of <strong>~€95k per employee per year</strong>.<sup>14</sup></li>
+                        <li><strong>Infrastructure Costs:</strong> Based on an analysis of AWS EU-hosting costs for a SOC 2 compliant, scalable SaaS platform. Sourced from industry benchmarks and AWS pricing models.<sup>13</sup></li>
+                        <li><strong>S&M and G&A:</strong> Sales & Marketing (S&M) costs are modeled as a percentage of revenue, decreasing from 30% to 8% as the brand matures. General & Administrative (G&A) costs are modeled similarly, scaling from 15% to 5%.</li>
+                         <li><strong>Tax Rate:</strong> A standard corporate tax rate of 22% is assumed.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm overflow-x-auto">
+                    <h3 class="text-2xl font-bold mb-4">10-Year Detailed P&L Forecast (Base Plan, €M)</h3>
+                    <table class="min-w-full text-left text-sm whitespace-nowrap">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-4 py-2 font-semibold">Metric</th>
+                                <th class="px-4 py-2 text-center font-semibold">Y1</th><th class="px-4 py-2 text-center font-semibold">Y2</th><th class="px-4 py-2 text-center font-semibold">Y3</th><th class="px-4 py-2 text-center font-semibold">Y4</th><th class="px-4 py-2 text-center font-semibold">Y5</th><th class="px-4 py-2 text-center font-semibold">Y10</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="7">Revenue</td></tr>
+                            <tr class="border-b"><td class="px-4 py-2 pl-8">B2B Revenue</td>
+                                <td class="px-4 py-2 text-center">0.07</td><td class="px-4 py-2 text-center">0.54</td><td class="px-4 py-2 text-center">5.25</td><td class="px-4 py-2 text-center">8.18</td><td class="px-4 py-2 text-center">18.16</td><td class="px-4 py-2 text-center">76.32</td>
+                            </tr>
+                            <tr class="border-b"><td class="px-4 py-2 pl-8">B2C Revenue</td>
+                                <td class="px-4 py-2 text-center">0.07</td><td class="px-4 py-2 text-center">0.36</td><td class="px-4 py-2 text-center">2.25</td><td class="px-4 py-2 text-center">2.72</td><td class="px-4 py-2 text-center">4.54</td><td class="px-4 py-2 text-center">19.08</td>
+                            </tr>
+                            <tr class="border-b font-semibold"><td class="px-4 py-2">Total Revenue</td>
+                                <td class="px-4 py-2 text-center">0.14</td><td class="px-4 py-2 text-center">0.90</td><td class="px-4 py-2 text-center">7.50</td><td class="px-4 py-2 text-center">10.90</td><td class="px-4 py-2 text-center">22.70</td><td class="px-4 py-2 text-center">95.40</td>
+                            </tr>
+                             <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="7">Operating Expenses</td></tr>
+                             <tr class="border-b"><td class="px-4 py-2 pl-8">Staff Costs</td>
+                                <td class="px-4 py-2 text-center">0.17</td><td class="px-4 py-2 text-center">0.47</td><td class="px-4 py-2 text-center">2.08</td><td class="px-4 py-2 text-center">3.60</td><td class="px-4 py-2 text-center">5.86</td><td class="px-4 py-2 text-center">17.01</td>
+                            </tr>
+                            <tr class="border-b"><td class="px-4 py-2 pl-8">Infrastructure & Hosting</td>
+                                <td class="px-4 py-2 text-center">0.05</td><td class="px-4 py-2 text-center">0.15</td><td class="px-4 py-2 text-center">0.45</td><td class="px-4 py-2 text-center">0.65</td><td class="px-4 py-2 text-center">1.00</td><td class="px-4 py-2 text-center">2.50</td>
+                            </tr>
+                             <tr class="border-b"><td class="px-4 py-2 pl-8">Sales & Marketing</td>
+                                <td class="px-4 py-2 text-center">0.04</td><td class="px-4 py-2 text-center">0.23</td><td class="px-4 py-2 text-center">1.50</td><td class="px-4 py-2 text-center">1.96</td><td class="px-4 py-2 text-center">3.18</td><td class="px-4 py-2 text-center">7.63</td>
+                            </tr>
+                             <tr class="border-b"><td class="px-4 py-2 pl-8">General & Administrative</td>
+                                <td class="px-4 py-2 text-center">0.11</td><td class="px-4 py-2 text-center">0.13</td><td class="px-4 py-2 text-center">0.63</td><td class="px-4 py-2 text-center">0.93</td><td class="px-4 py-2 text-center">1.36</td><td class="px-4 py-2 text-center">4.77</td>
+                            </tr>
+                            <tr class="border-b font-semibold"><td class="px-4 py-2">Total Costs</td>
+                                <td class="px-4 py-2 text-center">0.37</td><td class="px-4 py-2 text-center">0.98</td><td class="px-4 py-2 text-center">4.66</td><td class="px-4 py-2 text-center">7.14</td><td class="px-4 py-2 text-center">11.40</td><td class="px-4 py-2 text-center">31.91</td>
+                            </tr>
+                             <tr class="border-b bg-gray-50"><td class="px-4 py-2 font-semibold" colspan="7">Profitability</td></tr>
+                             <tr class="border-b"><td class="px-4 py-2 font-semibold">EBITDA</td>
+                                <td class="px-4 py-2 text-center text-red-600">(0.23)</td><td class="px-4 py-2 text-center text-red-600">(0.08)</td><td class="px-4 py-2 text-center text-green-600">2.84</td><td class="px-4 py-2 text-center text-green-600">3.76</td><td class="px-4 py-2 text-center text-green-600">11.30</td><td class="px-4 py-2 text-center text-green-600">63.49</td>
+                            </tr>
+                            <tr class="border-b"><td class="px-4 py-2 pl-8">Taxes (22%)</td>
+                                <td class="px-4 py-2 text-center">0.00</td><td class="px-4 py-2 text-center">0.00</td><td class="px-4 py-2 text-center text-red-600">(0.62)</td><td class="px-4 py-2 text-center text-red-600">(0.83)</td><td class="px-4 py-2 text-center text-red-600">(2.49)</td><td class="px-4 py-2 text-center text-red-600">(13.97)</td>
+                            </tr>
+                            <tr class="border-b font-bold text-lg"><td class="px-4 py-2">Net Income</td>
+                                <td class="px-4 py-2 text-center text-red-600">(0.23)</td><td class="px-4 py-2 text-center text-red-600">(0.08)</td><td class="px-4 py-2 text-center text-green-600">2.22</td><td class="px-4 py-2 text-center text-green-600">2.93</td><td class="px-4 py-2 text-center text-green-600">8.81</td><td class="px-4 py-2 text-center text-green-600">49.52</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="sources" class="mb-16">
+                 <h2 class="text-3xl font-bold mb-6">Sources & Citations</h2>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <ul class="list-disc list-inside text-stone-600 space-y-2 text-sm">
+                        <li><sup id="fn1">1</sup> <a href="https://www.zionmarketresearch.com/report/digital-legacy-market" target="_blank" class="text-teal-600 underline">Zion Market Research - Digital Legacy Market Report (2024)</a>.</li>
+                        <li><sup id="fn2">2</sup> <a href="https://digital-strategy.ec.europa.eu/en/policies/digital-identity-wallet" target="_blank" class="text-teal-600 underline">European Commission - The EU Digital Identity Wallet</a>.</li>
+                        <li><sup id="fn3">3</sup> <a href="https://www.blakemorgan.co.uk/how-long-does-probate-take-and-other-frequently-asked-questions/" target="_blank" class="text-teal-600 underline">Blake Morgan LLP - "How long does probate take?" (2024 Analysis)</a>.</li>
+                        <li><sup id="fn4">4</sup> <a href="https://www.grandviewresearch.com/industry-analysis/digital-legacy-market-report" target="_blank" class="text-teal-600 underline">Grand View Research - Digital Legacy Market Size, Share & Trends Analysis Report (2024)</a>.</li>
+                        <li><sup id="fn5">5</sup> <a href="https://www.lawsociety.org.uk/public/for-public-visitors/using-a-solicitor/how-much-does-a-solicitor-cost" target="_blank" class="text-teal-600 underline">The Law Society (UK) - "How much does it cost to make a will?" (2024)</a>.</li>
+                        <li><sup id="fn6">6</sup> <a href="https://www.gocomet.com/blog/cost-impact-of-manual-vs-automated-invoice-processing/" target="_blank" class="text-teal-600 underline">GoComet - Cost Impact of Manual vs Automated Invoice Processing</a>.</li>
+                        <li><sup id="fn7">7</sup> <a href="https://www.researchgate.net/publication/389127886_Digital_Transformation_in_Banking_Management_Optimizing_Operational_Efficiency_and_Enhancing_Customer_Experience" target="_blank" class="text-teal-600 underline">ResearchGate - "Digital Transformation in Banking Management" (2024)</a>.</li>
+                        <li><sup id="fn8">8</sup> <a href="https://www.weforum.org/stories/2025/09/generation-x-world-consumer-spending/" target="_blank" class="text-teal-600 underline">World Economic Forum - "Gen X and their families are driving consumer spending" (2025)</a>.</li>
+                        <li><sup id="fn9">9</sup> <a href="https://www.scb.se/en/finding-statistics/statistics-by-subject-area/population/population-composition/population-statistics/" target="_blank" class="text-teal-600 underline">Statistics Sweden (SCB) - "Deaths per year"</a>.</li>
+                        <li><sup id="fn10">10</sup> <a href="https://www.ssb.no/en/befolkning/dode" target="_blank" class="text-teal-600 underline">Statistics Norway (SSB) - "Deaths"</a>.</li>
+                        <li><sup id="fn11">11</sup> <a href="https://www.dst.dk/en/Statistik/emner/befolkning-og-valg/doedsfald-og-middellevetid/doede" target="_blank" class="text-teal-600 underline">Statistics Denmark (DST) - "Deaths by time"</a>.</li>
+                        <li><sup id="fn12">12</sup> <a href="https://www.stat.fi/tup/tilastotietoa/tietoa-aiheittain/vaesto_en.html" target="_blank" class="text-teal-600 underline">Statistics Finland (Tilastokeskus) - "Population and Society"</a>.</li>
+                        <li><sup id="fn13">13</sup> <a href="https://aws.amazon.com/blogs/mt/calculating-the-total-cost-of-ownership-of-your-aws-infrastructure/" target="_blank" class="text-teal-600 underline">AWS Blog: "Calculating the Total Cost of Ownership of Your AWS Infrastructure"</a>. Based on analysis of TCO for EU-based, SOC 2 compliant SaaS platforms.</li>
+                        <li><sup id="fn14">14</sup> Based on analysis of publicly available salary data (e.g., Glassdoor, Levels.fyi) for software engineering roles in Sweden, factoring in ~31.42% for social security contributions (arbetsgivaravgifter) and other overheads.</li>
+                    </ul>
+                </div>
+            </section>
+                
+            <section id="speaker-notes" class="mb-16">
+                 <h2 class="text-3xl font-bold mb-6">Speaker's Notes: Pitch & Partnership Strategy</h2>
+                 <p class="text-lg text-stone-600 max-w-4xl mb-8">For internal use only. High-level talking points for framing conversations with investors and potential institutional partners.</p>
+                 <div class="bg-white p-6 rounded-xl shadow-sm mb-6">
+                    <h3 class="text-2xl font-bold mb-4">On Partnering with a Pilot Institution</h3>
+                    <p class="text-stone-600 mb-4">When discussing an equity stake with a potential pilot partner, it is crucial to frame the conversation strategically to ensure a mutually beneficial long-term relationship.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg text-teal-600 mb-2">Acknowledge Potential Drawbacks</h4>
+                             <p class="text-stone-600 text-sm">Proactively address concerns around conflicts of interest or becoming a "captive" vendor. This builds trust.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-teal-600 mb-2">Emphasize the Strategic Upside</h4>
+                             <p class="text-stone-600 text-sm">Focus on the immense benefits: market validation, a guaranteed first customer to de-risk adoption, and strategic access to their network and expertise.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="text-2xl font-bold mb-4">Pitching the Investment to a Partner</h3>
+                    <p class="text-stone-600 mb-4">Our approach should be a three-step process focused on mutual benefit and strategic foresight.</p>
+                    <ul class="list-decimal list-inside text-stone-600 space-y-4 text-sm">
+                        <li><strong>Frame it as a Partnership, not a Transaction:</strong> Emphasize that their brand and industry expertise are as valuable as their capital. The equity stake is about creating a deeper, synergistic relationship.</li>
+                        <li><strong>Proactively Address Conflicts:</strong> Propose a governance structure that ensures our neutrality, such as a non-exclusive agreement and an Advisory Board seat rather than a full Board seat.</li>
+                        <li><strong>Present a Clear ROI:</strong> Focus on how Solacia will help them <strong>reduce operational costs</strong>, <strong>improve customer retention</strong>, and gain a <strong>significant competitive edge</strong>. This is an investment in their own future efficiency and profitability.</li>
+                    </ul>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const financialData = {
+        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+        datasets: [
+            { label: 'Revenue', data: [0.14, 0.9, 7.5, 10.9, 22.7, 36.3, 54.5, 77.2, 86.3, 95.4], borderColor: '#0d9488', backgroundColor: '#0d948820', tension: 0.1, fill: true },
+            { label: 'Total Costs', data: [0.37, 0.98, 4.66, 7.14, 11.40, 17.13, 24.31, 32.7, 35.6, 36.98], borderColor: '#f97316', backgroundColor: '#f9731620', tension: 0.1, fill: true },
+            { label: 'Net Income', data: [-0.23, -0.08, 2.22, 2.93, 8.81, 14.95, 23.55, 34.71, 40.3, 45.57], borderColor: '#6b7280', backgroundColor: '#6b728020', tension: 0.1, fill: true }
+        ]
+    };
+
+    const staffingData = {
+        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 5', 'Year 10'],
+        datasets: [
+            { label: 'Engineering', data: [8, 12, 20, 40, 45], backgroundColor: '#0d9488' },
+            { label: 'Support', data: [5, 12, 25, 75, 250], backgroundColor: '#f97316' },
+            { label: 'Sales/BD', data: [2, 5, 10, 25, 35], backgroundColor: '#3b82f6' }
+        ]
+    };
+    
+    const partnersData = {
+        sweden: [
+            { group: 'Bank & Pension', name: 'Folksam', rank: 1 },
+            { group: '', name: 'Swedbank', rank: 2 },
+            { group: '', name: 'Handelsbanken', rank: 2 },
+            { group: '', name: 'SEB', rank: 3 },
+            { group: 'Insurance', name: 'Länsförsäkringar', rank: 2 },
+            { group: '', name: 'Trygg-Hansa', rank: 4 },
+        ],
+        norway: [
+            { group: 'Bank & Pension', name: 'DNB Bank ASA', rank: 1 },
+            { group: '', name: 'Storebrand', rank: 2 },
+            { group: '', name: 'KLP (Pension)', rank: 3 },
+            { group: 'Insurance', name: 'Gjensidige Forsikring', rank: 2 },
+            { group: '', name: 'Tryg Forsikring', rank: 4 },
+        ],
+        phase2: [
+            { group: 'Denmark', name: 'Danske Bank' }, { group: '', name: 'Nykredit' }, { group: '', name: 'Tryg' },
+            { group: 'Finland', name: 'OP Financial Group' }, { group: '', name: 'Sampo Group' },
+            { group: 'Austria', name: 'Raiffeisen Bank' },
+            { group: 'Italy', name: 'Intesa Sanpaolo' },
+        ],
+        phase3: [
+            { group: 'Germany', name: 'Deutsche Bank' },{ group: '', name: 'Allianz SE' },
+            { group: 'Netherlands', name: 'ING Group' },
+            { group: 'France', name: 'Crédit Agricole' },{ group: '', name: 'AXA' },
+        ]
+    };
+    
+    const chartOptions = {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: €${c.formattedValue}M` }}},
+        scales: { y: { title: { display: true, text: 'EUR (Millions)' }}, x: { title: { display: true, text: 'Year' }}}
+    };
+
+    const financialsCtx = document.getElementById('financialsChart').getContext('2d');
+    new Chart(financialsCtx, { type: 'line', data: financialData, options: chartOptions });
+
+    const staffingCtx = document.getElementById('staffingChart').getContext('2d');
+    new Chart(staffingCtx, { type: 'bar', data: staffingData,
+        options: { ...chartOptions, scales: { x: { stacked: true }, y: { stacked: true, title: { display: true, text: 'Employee Headcount' } }},
+        plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.formattedValue}` }}}
+    }});
+
+    const solutionTabs = document.getElementById('solution-tabs');
+    const solutionContents = document.querySelectorAll('.solution-tab-content');
+    const solutionTabBtns = document.querySelectorAll('.solution-tab-btn');
+
+    solutionTabs.addEventListener('click', (e) => {
+        if (!e.target.matches('.solution-tab-btn')) return;
+        const tab = e.target.dataset.tab;
+        solutionTabBtns.forEach(btn => {
+            btn.classList.remove('border-teal-600', 'text-teal-600');
+            btn.classList.add('text-stone-500', 'border-transparent');
+        });
+        e.target.classList.add('border-teal-600', 'text-teal-600');
+        solutionContents.forEach(c => c.id === `${tab}-content` ? c.classList.remove('hidden') : c.classList.add('hidden'));
+    });
+
+    const partnersList = document.getElementById('partners-list');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function renderPartners(country) {
+        partnersList.innerHTML = '';
+        let currentGroup = '';
+        partnersData[country].forEach(partner => {
+            if (partner.group && partner.group !== currentGroup) {
+                const groupHeader = document.createElement('h4');
+                groupHeader.className = 'font-bold text-lg text-teal-600 mt-4 mb-2';
+                groupHeader.textContent = partner.group;
+                partnersList.appendChild(groupHeader);
+                currentGroup = partner.group;
+            }
+            const div = document.createElement('div');
+            div.className = 'partner-card p-4 bg-stone-100 rounded-lg';
+            let rankText = partner.rank ? `<p class="text-xs font-medium text-stone-500 mb-1">Likelihood Rank: ${partner.rank}</p>` : '';
+            div.innerHTML = `
+                ${rankText}
+                <h5 class="font-semibold text-stone-800">${partner.name}</h5>
+            `;
+            partnersList.appendChild(div);
+        });
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderPartners(btn.dataset.country);
+        });
+    });
+
+    renderPartners('sweden');
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.addEventListener('change', () => { window.location.hash = mobileNav.value; });
+});
+</script>
+</body>
+</html>
+

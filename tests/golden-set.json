@@ -1,0 +1,54 @@
+[
+  {
+    "q": "How do I authenticate?",
+    "expectedDocs": ["Mobile SDK", "G2RS"],
+    "branch": "confident",
+    "minScore": 0.25
+  },
+  {
+    "q": "Initialize Mobile SDK",
+    "expectedDocs": ["Mobile SDK"],
+    "branch": "confident",
+    "minScore": 0.25
+  },
+  {
+    "q": "What is blockchain?",
+    "expectedDocs": [],
+    "branch": "out_of_scope",
+    "maxScore": 0.12
+  },
+  {
+    "q": "What are the retry mechanisms?",
+    "expectedDocs": ["G2RS", "MDMX"],
+    "branch": "confident",
+    "minScore": 0.20
+  },
+  {
+    "q": "Can you recreate the table comparing Passive Liveness, Active Liveness, and Face Capture?",
+    "expectedDocs": ["Mobile SDK"],
+    "branch": "confident",
+    "minScore": 0.20,
+    "expectsTable": true
+  },
+  {
+    "q": "What scopes are needed for NNIN?",
+    "expectedDocs": ["BankID"],
+    "branch": "confident",
+    "minScore": 0.25
+  },
+  {
+    "q": "TEST vs PROD base URLs",
+    "expectedDocs": ["Mobile SDK"],
+    "branch": "confident",
+    "minScore": 0.25
+  },
+  {
+    "q": "What is BankID Norway?",
+    "expectedDocs": ["BankID"],
+    "branch": "confident",
+    "minScore": 0.30
+  }
+]
+
+
+

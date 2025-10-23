@@ -1,0 +1,31 @@
+# Allow .env.local for development
+!.env.local
+
+# Block other sensitive files
+.env
+.env.production
+.env.staging
+*.key
+*.pem
+*.p12
+
+# Build artifacts (align with .gitignore)
+.next
+.vercel/output
+node_modules
+dist
+build
+out
+
+# Documentation noise
+docs/archive
+*.draft.md
+*.temp.md
+
+# Test artifacts
+tests/tmp
+tests/output
+
+# System files
+.DS_Store
+*.log

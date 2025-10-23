@@ -1,0 +1,3562 @@
+{
+  "items": [
+    {
+      "text": "ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 1,
+      "section_path": "ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Integration guidelines",
+      "page": 1,
+      "section_path": "Integration guidelines",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZignSec AB \nVersion 1.0 |March, 2025 \nPUBLISHED",
+      "page": 1,
+      "section_path": "PUBLISHED",
+      "element_type": "table",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n1 (21)",
+      "page": 2,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 2,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 2,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 2,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 2,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 2,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 2,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 2,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 2,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n1 (21)",
+      "page": 2,
+      "section_path": "1 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \nIntegration guidelines",
+      "page": 2,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Code:",
+      "page": 2,
+      "section_path": "Code:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Version: \n1.0",
+      "page": 2,
+      "section_path": "Version:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Date of version: \n2025-Mar-06",
+      "page": 2,
+      "section_path": "Date of version:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Created by: \nMartin Heikkilä Customer Service Manager",
+      "page": 2,
+      "section_path": "Created by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Approved by: \nJason Coombes, Head of Risk and Compliance",
+      "page": 2,
+      "section_path": "Approved by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidentiality level: \nConfidential",
+      "page": 2,
+      "section_path": "Confidentiality level:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n2 (21) \n \nError handling ............................................................................................................................... 20",
+      "page": 3,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 3,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 3,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 3,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 3,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 3,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 3,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 3,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 3,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n2 (21)",
+      "page": 3,
+      "section_path": "2 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Table of Contents",
+      "page": 3,
+      "section_path": "Table of Contents",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Table of Contents ................................................................................................................................................................................... 2",
+      "page": 3,
+      "section_path": "Table of Contents ..............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZignSec Mobile-SDK API Documentation \n................................................................................................................................. 4",
+      "page": 3,
+      "section_path": "ZignSec Mobile-SDK API Documentation",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Overview ............................................................................................................................................. 4",
+      "page": 3,
+      "section_path": "Overview .......................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Usage \n................................................................................................................................................... 4",
+      "page": 3,
+      "section_path": "Usage",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document analysis .......................................................................................................................... 4",
+      "page": 3,
+      "section_path": "Document analysis ..............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Biometry verification ...................................................................................................................... 5",
+      "page": 3,
+      "section_path": "Biometry verification ..........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document Analysis and Biometry Flows \n......................................................................................... 5",
+      "page": 3,
+      "section_path": "Document Analysis and Biometry Flows",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document + biometry analysis ....................................................................................................... 9",
+      "page": 3,
+      "section_path": "Document + biometry analysis ...................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Core functionalities ........................................................................................................................... 11",
+      "page": 3,
+      "section_path": "Core functionalities ...........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Environments ................................................................................................................................ 11",
+      "page": 3,
+      "section_path": "Environments ...................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "API health endpoint ...................................................................................................................... 11",
+      "page": 3,
+      "section_path": "API health endpoint ............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication .............................................................................................................................. 11",
+      "page": 3,
+      "section_path": "Authentication .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The recommended flow \n.................................................................................................................... 12",
+      "page": 3,
+      "section_path": "The recommended flow",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Pre-requisites ................................................................................................................................ 12",
+      "page": 3,
+      "section_path": "Pre-requisites .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Auto-update documents db \n.......................................................................................................... 12",
+      "page": 3,
+      "section_path": "Auto-update documents db",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Initialize DocumentReader \n............................................................................................................ 12",
+      "page": 3,
+      "section_path": "Initialize DocumentReader",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Initialize FaceSDK .......................................................................................................................... 13",
+      "page": 3,
+      "section_path": "Initialize FaceSDK .............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Issue access token \n......................................................................................................................... 13",
+      "page": 3,
+      "section_path": "Issue access token",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Create (authorization) session ...................................................................................................... 13",
+      "page": 3,
+      "section_path": "Create (authorization) session .................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Start liveness ................................................................................................................................. 14",
+      "page": 3,
+      "section_path": "Start liveness .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Add liveness transaction to the session \n........................................................................................ 15",
+      "page": 3,
+      "section_path": "Add liveness transaction to the session",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Scan document ............................................................................................................................. 15",
+      "page": 3,
+      "section_path": "Scan document ..................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Finalize package ............................................................................................................................ 17",
+      "page": 3,
+      "section_path": "Finalize package ...............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Add (document reader) transaction to the session ...................................................................... 17",
+      "page": 3,
+      "section_path": "Add (document reader) transaction to the session ...............................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Reprocess ...................................................................................................................................... 17",
+      "page": 3,
+      "section_path": "Reprocess ......................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Analyze results .............................................................................................................................. 18",
+      "page": 3,
+      "section_path": "Analyze results ................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Freeing resources \n.......................................................................................................................... 19",
+      "page": 3,
+      "section_path": "Freeing resources",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "More technical information .............................................................................................................. 20",
+      "page": 3,
+      "section_path": "More technical information .....................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Supplier documentation ............................................................................................................... 20",
+      "page": 3,
+      "section_path": "Supplier documentation .........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Online demo services \n.................................................................................................................... 20",
+      "page": 3,
+      "section_path": "Online demo services",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Calling API directly ........................................................................................................................ 20",
+      "page": 3,
+      "section_path": "Calling API directly ...........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "UI Customization \n........................................................................................................................... 20",
+      "page": 3,
+      "section_path": "UI Customization",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Logging .......................................................................................................................................... 20",
+      "page": 3,
+      "section_path": "Logging ........................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Error handling ............................................................................................................................... 20",
+      "page": 3,
+      "section_path": "Error handling .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n3 (21)",
+      "page": 4,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 4,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 4,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 4,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 4,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 4,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 4,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 4,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 4,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n3 (21)",
+      "page": 4,
+      "section_path": "3 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Samples ......................................................................................................................................... 20",
+      "page": 4,
+      "section_path": "Samples ........................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Change History .................................................................................................................................. 21",
+      "page": 4,
+      "section_path": "Change History .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n4 (21) \n \nIt’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘FullProcess’ or \n‘FullAuth’ on backend.",
+      "page": 5,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 5,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 5,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 5,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 5,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 5,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 5,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 5,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 5,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n4 (21)",
+      "page": 5,
+      "section_path": "4 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZignSec Mobile-SDK API Documentation \nOverview \nThis document provides technical details for integrating with the ZignSec ID & Bio verification \n(Scanning) Mobile-SDK, which utilizes Face SDK and Document Reader SDK for identity document \nverification and biometric verification. \nUsage \nGeneral approach: the mobile device is used for data collection, while backend services handle \nanalysis. We recommend “zero-trust” approach.",
+      "page": 5,
+      "section_path": "ZignSec Mobile-SDK API Documentation",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document analysis \nDocument Analysis is designed for identity verification services that specialize in capturing, reading, \nand digitally verifying passports, ID cards, driver’s licenses, visas, and other identity documents. The \nsolution automatically detects the document type against a database of supported IDs before \nsecurely transmitting the captured document to the backend for analysis.",
+      "page": 5,
+      "section_path": "Document analysis",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "We offer global ID coverage with full data page processing, including MRZ (Machine Readable Zone), \nVisual Inspection Zones, and Barcode verification. This accelerates customer onboarding by \nproviding seamless and secure ID verification, supporting over 14,000 identity documents from 250 \ncountries and territories.",
+      "page": 5,
+      "section_path": "We offer global ID coverage with full data page processing, including MRZ (Machi…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "For a complete list of supported documents, please look into our supplier’s documentation \nhttps://docs.regulaforensics.com/#useful-resources (at the moment of writing it’s \nhttps://downloads.regulaforensics.com/work/SDK/doc/AllDocs/Documents List.xls). Please note \nthat due to our release cycle, it may take up to 1 month for the document to be fully supported by \nour services (we use only stable releases, and we run a set of time-consuming tests before each \nupdate testing APIs and UIs, so we update DocReader monthly)",
+      "page": 5,
+      "section_path": "For a complete list of supported documents, please look into our supplier’s docu…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document processing scenario \nFull Processing (FullProcess): A processing scenario designed to extract all available document data, \nincluding text fields from the visual zone, MRZ, and barcodes. This mode focuses on maximizing data \nextraction accuracy and achieving a high conversion rate and performs only basic security checks.",
+      "page": 5,
+      "section_path": "Document processing scenario",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication (FullAuth): A processing scenario that extracts all available document data and also \nincludes document authentication checks. This mode verifies security features such as holograms \nand other embedded document security elements, ensuring the authenticity of the document in \naddition to data extraction.",
+      "page": 5,
+      "section_path": "Authentication (FullAuth): A processing scenario that extracts all available doc…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Feature \nFull Processing Authentication",
+      "page": 5,
+      "section_path": "Feature",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Visual zone OCR \n✓ \n✓",
+      "page": 5,
+      "section_path": "Visual zone OCR",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document type identification ✓ \n✓",
+      "page": 5,
+      "section_path": "Document type identification ✓",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "MRZ OCR \n✓ \n✓",
+      "page": 5,
+      "section_path": "MRZ OCR",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Barcode recognition \n✓ \n✓",
+      "page": 5,
+      "section_path": "Barcode recognition",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document location \n✓ \n✓",
+      "page": 5,
+      "section_path": "Document location",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Graphics cropping \n✓ \n✓",
+      "page": 5,
+      "section_path": "Graphics cropping",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Checking security features \nX \n✓",
+      "page": 5,
+      "section_path": "Checking security features",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Hologram detection \n✓ \n✓",
+      "page": 5,
+      "section_path": "Hologram detection",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Multipage processing \n✓ \n✓",
+      "page": 5,
+      "section_path": "Multipage processing",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "It’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘FullProcess’ or \n‘FullAuth’ on backend.",
+      "page": 5,
+      "section_path": "It’s recommended to use ‘FullProcess’ on a device (and a ‘Full’ database), and ‘…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n5 (21)",
+      "page": 6,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 6,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 6,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 6,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 6,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 6,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 6,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 6,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 6,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n5 (21)",
+      "page": 6,
+      "section_path": "5 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Biometry verification \nLiveness vs. Face Capture, Active vs. Passive Liveness \nFace Capture vs. Liveness Detection",
+      "page": 6,
+      "section_path": "Biometry verification",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nLiveness Detection: Ensures the face is real and live, preventing spoofing attacks using AI \nand biometric analysis.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace Capture: Simply takes a picture of a face but does not verify if the person is real (e.g., \ncan be fooled by a photo).",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Active vs. Passive Liveness",
+      "page": 6,
+      "section_path": "Active vs. Passive Liveness",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nActive Liveness: Requires user interaction (e.g., blinking, turning head) for stronger security.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nPassive Liveness: Works in the background using AI (e.g., detecting skin texture, light \nreflection) for a seamless experience.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Use Cases",
+      "page": 6,
+      "section_path": "Use Cases",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Feature \nPassive Liveness \nActive Liveness \nFace Capture",
+      "page": 6,
+      "section_path": "Feature",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Purpose \nAI determines liveness \nsilently",
+      "page": 6,
+      "section_path": "Purpose",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "User proves they are \nlive",
+      "page": 6,
+      "section_path": "User proves they are",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Capturing a face \nimage (*)",
+      "page": 6,
+      "section_path": "Capturing a face",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "User Interaction \nNone \nRequired (e.g. move \nhead)",
+      "page": 6,
+      "section_path": "User Interaction",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "None",
+      "page": 6,
+      "section_path": "None",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Security Level \nModerate to High \nHigh \nLow",
+      "page": 6,
+      "section_path": "Security Level",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "User Experience \nSeamless \nRequires effort \nEasy",
+      "page": 6,
+      "section_path": "User Experience",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Best For \nSmooth onboarding \nHigh-security \nscenarios",
+      "page": 6,
+      "section_path": "Best For",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Biometric matching",
+      "page": 6,
+      "section_path": "Biometric matching",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "(*) we recommend using face capture only if other options do not work for you. It doesn’t support \n“zero-trust to mobile” concept",
+      "page": 6,
+      "section_path": "(*) we recommend using face capture only if other options do not work for you. I…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document Analysis and Biometry Flows \nDocument analysis is a crucial process for identity authentication, ensuring accuracy and security in \ndigital transactions. The following flows outline different approaches to verifying a document, \nincorporating various security measures such as biometric liveness detection, RFID processing, and \nretry mechanisms.",
+      "page": 6,
+      "section_path": "Document Analysis and Biometry Flows",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nSimple Flow – A basic verification process that captures a document, analyzes it, and makes \na final decision.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFlow with RFID Check – Enhances verification by incorporating RFID chip processing for \ndocuments that support it.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFlow with Retry – Introduces a retry mechanism, allowing users to attempt verification \nagain if the initial process fails.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocument + Biometry Analysis – Combines liveness detection with document verification, \nensuring the person is real before validating their document.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Each of these flows addresses different security and usability needs, optimizing identity verification \nfor various scenarios.",
+      "page": 6,
+      "section_path": "Each of these flows addresses different security and usability needs, optimizing…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n6 (21)",
+      "page": 7,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 7,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 7,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 7,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 7,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 7,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 7,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 7,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 7,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n6 (21)",
+      "page": 7,
+      "section_path": "6 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Simple flow",
+      "page": 7,
+      "section_path": "Simple flow",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "1. Start Document Verification – The process is \ninitiated by the user or system. \n2. Capture Document Using Phone Camera – The user \ntakes a picture of the document using their phone \ncamera. Mobile SDK guides the user through the process \n3. Finalize package – The captured document and all \nthe related data are encrypted and transmitted to the \nserver, transactionId is returned. \n4. Send transaction id to backend – the further \ndecision to be done on backend, nothing to be \ntransferred from the device but the transactionId from \nthe previous step \n5. Backend Reprocessing – Mobile application \nbackend initiates “reprocessing” sending transaction id \nto the backend.  \n6. Decision: Accept? - Mobile application backend \nanalyzes processing response and makes the final \ndecision to authorize user or not.",
+      "page": 7,
+      "section_path": "1. Start Document Verification – The process is",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n7 (21)",
+      "page": 8,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 8,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 8,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 8,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 8,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 8,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 8,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 8,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 8,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n7 (21)",
+      "page": 8,
+      "section_path": "7 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Flow with RFID check",
+      "page": 8,
+      "section_path": "Flow with RFID check",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "1. Start Verification – The process is initiated by the user or system. \n2. Decision Point: Use RFID? – Decide whether to use RFID for document verification.",
+      "page": 8,
+      "section_path": "1. Start Verification – The process is initiated by the user or system.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "3. Without RFID:",
+      "page": 8,
+      "section_path": "3. Without RFID:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "a. The user captures the document using a phone camera.",
+      "page": 8,
+      "section_path": "a. The user captures the document using a phone camera.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "4. With RFID:",
+      "page": 8,
+      "section_path": "4. With RFID:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "a. The document undergoes optical processing using the phone camera.",
+      "page": 8,
+      "section_path": "a. The document undergoes optical processing using the phone camera.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "b. The RFID chip is processed to extract digital information.",
+      "page": 8,
+      "section_path": "b. The RFID chip is processed to extract digital information.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "5. The remaining steps follow the same process as points 3-6 from the previous flow.",
+      "page": 8,
+      "section_path": "5. The remaining steps follow the same process as points 3-6 from the previous f…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n8 (21)",
+      "page": 9,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 9,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 9,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 9,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 9,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 9,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 9,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 9,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 9,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n8 (21)",
+      "page": 9,
+      "section_path": "8 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Flow with retry",
+      "page": 9,
+      "section_path": "Flow with retry",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "This flow extends the previous one with retry – user now can retry document verification procedure \nif not authorized until authorized or max retries limit reached.",
+      "page": 9,
+      "section_path": "This flow extends the previous one with retry – user now can retry document veri…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n9 (21)",
+      "page": 10,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 10,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 10,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 10,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 10,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 10,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 10,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 10,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 10,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n9 (21)",
+      "page": 10,
+      "section_path": "9 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Document + biometry analysis \nThis flowchart outlines a document verification process combined with biometric (liveness) \nanalysis, ensuring a secure and reliable identity check.",
+      "page": 10,
+      "section_path": "Document + biometry analysis",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n10 (21)",
+      "page": 11,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 11,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 11,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 11,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 11,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 11,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 11,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 11,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 11,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n10 (21)",
+      "page": 11,
+      "section_path": "10 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Steps in the Flow:",
+      "page": 11,
+      "section_path": "Steps in the Flow:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "1. Biometry Check (Liveness) – The process starts with a liveness check, which can be:",
+      "page": 11,
+      "section_path": "1. Biometry Check (Liveness) – The process starts with a liveness check, which can be:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "o \nPassive Liveness – the recommended option",
+      "page": 11,
+      "section_path": "o",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "o \nActive Liveness – use if security requirements are more important than the \nacceptance rate for your business case",
+      "page": 11,
+      "section_path": "o",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "o \nFace Capture – use only if other options do not work for you. Doesn’t support “zero-\ntrust to mobile” concept",
+      "page": 11,
+      "section_path": "o",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "2. If the liveness check is successful, the system proceeds with the previous flow (Flow with",
+      "page": 11,
+      "section_path": "2. If the liveness check is successful, the system proceeds with the previous fl…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Retry). Otherwise, the user is not authorized.",
+      "page": 11,
+      "section_path": "Retry). Otherwise, the user is not authorized.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n11 (21)",
+      "page": 12,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 12,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 12,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 12,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 12,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 12,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 12,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 12,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 12,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n11 (21)",
+      "page": 12,
+      "section_path": "11 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Core functionalities \nEnvironments \nWe maintain 2 environments:",
+      "page": 12,
+      "section_path": "We maintain 2 environments:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nPROD https://gateway.zignsec.com – for production usage",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nTEST https://test-gateway.zignsec.com – for tests (please contact our support if you need to \nrun a massive/load test)",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "And there are 3 base URLs for each:",
+      "page": 12,
+      "section_path": "And there are 3 base URLs for each:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace API / Face SDK base URL: $(baseURL)/mobilesdk/faceapi",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader base URL: $(baseURL)/mobilesdk/docreader",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nOpenID configuration: $(baseURL)/auth/realms/zignsec/.well-known/openid-configuration",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "API health endpoint  \nBoth DocReader and Face API support the /api/ping endpoint to verify that your credentials and our \nbackend are functioning correctly.",
+      "page": 12,
+      "section_path": "API health endpoint",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "For example:",
+      "page": 12,
+      "section_path": "For example:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nTEST DocReader Ping URL: https://test-gateway.zignsec.com/mobilesdk/docreader/api/ping",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nPROD Face API Ping URL: https://gateway.zignsec.com/mobilesdk/faceapi/api/ping",
+      "page": 12,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication \nOAuth2 Authentication \nZignSec Mobile-SDK uses OAuth2 for secure authentication. Clients must obtain an access token \nbefore making API requests using the token endpoint (the endpoint address to be taken from the \nproper OpenID configuration)",
+      "page": 12,
+      "section_path": "Authentication",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Introspection endpoint (and https://jwt.io site) can be used to view token information",
+      "page": 12,
+      "section_path": "Introspection endpoint (and https://jwt.io site) can be used to view token infor…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Credentials for authentication are supplied by ZignSec support. Contact support@zignsec.com to \nobtain access credentials.",
+      "page": 12,
+      "section_path": "Credentials for authentication are supplied by ZignSec support. Contact support@…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "For detailed API requests and sample usage, refer to the Postman collection: \nZignSec Mobile-SDK Examples",
+      "page": 12,
+      "section_path": "For detailed API requests and sample usage, refer to the Postman collection:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication headers \n2 headers are required to authenticate calls – Authorization header should contain Bearer jwt \ntoken (received from oauth token endpoint), and Zs-Product-Key header should contain product \nid (subscription key) you receive from our support",
+      "page": 12,
+      "section_path": "2 headers are required to authenticate calls – Authorization header should contain Bearer jwt",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "It's recommended to implement a retry policy and retry if 401 or 403 status code returned with a \ndifferent key. This way we'll be able to rotate keys zero-downtime.",
+      "page": 12,
+      "section_path": "It's recommended to implement a retry policy and retry if 401 or 403 status code…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Please also keep in mind that access token is a short-lived token, its lifetime is 20 minutes by default",
+      "page": 12,
+      "section_path": "Please also keep in mind that access token is a short-lived token, its lifetime …",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n12 (21)",
+      "page": 13,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 13,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 13,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 13,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 13,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 13,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 13,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 13,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 13,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n12 (21)",
+      "page": 13,
+      "section_path": "12 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The recommended flow \nWe recommend following zero-trust concept and do not rely on any results returned from the \nmobile sdk, and transaction ids that can be used to initiate the verification on the backend.",
+      "page": 13,
+      "section_path": "The recommended flow",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Here is the sequence diagram for the most complex scenario (doc + bio) explained in the first part of \nthis document (rfid part is optional)",
+      "page": 13,
+      "section_path": "Here is the sequence diagram for the most complex scenario (doc + bio) explained…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Pre-requisites",
+      "page": 13,
+      "section_path": "Pre-requisites",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/getting-\nstarted/installation/",
+      "page": 13,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace API https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-\nstarted/installation/#platform-specific-installation-guides",
+      "page": 13,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Auto-update documents db \nWe recommend using auto-update on app start, Use the “Full” database for the recommended flow.  \nIt’s described in suppliers documentation “Using runAutoUpdate method” – find more examples \nthere",
+      "page": 13,
+      "section_path": "Auto-update documents db",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.runAutoUpdate(\"Full\", \n  (response) => { console.log(response); }, \n  (error) => { console.error(error); });",
+      "page": 13,
+      "section_path": "DocumentReader.runAutoUpdate(\"Full\",",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ console.log(response); }, \n  (error) => { console.error(error); }"
+    },
+    {
+      "text": "Initialize DocumentReader \nYou need a valid license on this step (to be provided by our support), see the documentation for \nmore examples.",
+      "page": 13,
+      "section_path": "Initialize DocumentReader",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "const secret = ''; \nDocumentReader.initializeReader({ license: secret },  \n  (response) => { /* do something useful */ }, \n  error => console.log(error));",
+      "page": 13,
+      "section_path": "const secret = '';",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ license: secret },  \n  (response) => { /* do something useful */ }"
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n13 (21) \n \n  Zs-Product-Key: your-subscription-key \n  Authorization: Bearer eyJ…x1w",
+      "page": 14,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 14,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 14,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 14,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 14,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 14,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 14,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 14,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 14,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n13 (21)",
+      "page": 14,
+      "section_path": "13 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Initialize FaceSDK \nDo not pass any license, we use Core Basic mode (details here)",
+      "page": 14,
+      "section_path": "Initialize FaceSDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "FaceSDK.initialize(null, \n    (response) => { console.log(response); }, \n    (error) => { console.error(error); });",
+      "page": 14,
+      "section_path": "FaceSDK.initialize(null,",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ console.log(response); }, \n    (error) => { console.error(error); }"
+    },
+    {
+      "text": "Issue access token \nPlease implement a backend service to issue authentication tokens (as client credentials shouldn’t \nbe shared with mobile and should only be securely stored on your servers).",
+      "page": 14,
+      "section_path": "Issue access token",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "We rely on the oauth2 client credentials flow to issue a short-lived access token that can safely be \nused from the device (or any other frontend application). The default token lifetime is 20 minutes \n(please contact our support if you’d like another configuration).",
+      "page": 14,
+      "section_path": "We rely on the oauth2 client credentials flow to issue a short-lived access toke…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "We recommend using oidc discovery to get a proper url for the token endpoint, for TEST \nenvironment run",
+      "page": 14,
+      "section_path": "We recommend using oidc discovery to get a proper url for the token endpoint, fo…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "GET https://test-gateway.zignsec.com/auth/realms/zignsec/.well-\nknown/openid-configuration",
+      "page": 14,
+      "section_path": "GET https://test-gateway.zignsec.com/auth/realms/zignsec/.well-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "and use its main output to get the access token",
+      "page": 14,
+      "section_path": "and use its main output to get the access token",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "{ \n  \"issuer\": \"https://test-gateway.zignsec.com/auth/realms/zignsec\", \n  \"token_endpoint\": \"https://test-\ngateway.zignsec.com/auth/realms/zignsec/protocol/openid-connect/token\", \n  ... \n}",
+      "page": 14,
+      "section_path": "{",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n  \"issuer\": \"https://test-gateway.zignsec.com/auth/realms/zignsec\", \n  \"token_endpoint\": \"https://test-\ngateway.zignsec.com/auth/realms/zignsec/protocol/openid-connect/token\", \n  ... \n}"
+    },
+    {
+      "text": "And then post to the token endpoint:",
+      "page": 14,
+      "section_path": "And then post to the token endpoint:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "POST https://test-gateway.zignsec.com/auth/realms/zignsec/protocol/openid-\nconnect/token  \nContent-Type: application/x-www-form-urlencoded \n \ngrant_type: \"client_credentials\" \nclient_id: \" your_client_id\" \nclient_secret: \"your_client_secret\"",
+      "page": 14,
+      "section_path": "POST https://test-gateway.zignsec.com/auth/realms/zignsec/protocol/openid-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "You’ll get an access token in response:",
+      "page": 14,
+      "section_path": "You’ll get an access token in response:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "{ \n    \"access_token\": \"eyJ...XYpkg\", \n    \"expires_in\": 1200, \n    \"refresh_expires_in\": 0, \n    \"token_type\": \"Bearer\", \n    \"not-before-policy\": 0, \n    \"scope\": \"api\" \n}",
+      "page": 14,
+      "section_path": "{",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n    \"access_token\": \"eyJ...XYpkg\", \n    \"expires_in\": 1200, \n    \"refresh_expires_in\": 0, \n    \"token_type\": \"Bearer\", \n    \"not-before-policy\": 0, \n    \"scope\": \"api\" \n}"
+    },
+    {
+      "text": "At this point you’re all set to start authorizing your user.",
+      "page": 14,
+      "section_path": "At this point you’re all set to start authorizing your user.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Create (authorization) session \nUse the following request to create a session:",
+      "page": 14,
+      "section_path": "Use the following request to create a session:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "POST https://test-gateway.zignsec.com/mobilesdk/sessions \nHeaders:  \n  Zs-Product-Key: your-subscription-key \n  Authorization: Bearer eyJ…x1w",
+      "page": 14,
+      "section_path": "Headers:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n14 (21) \n \n• \nError handling – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#error-handling",
+      "page": 15,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 15,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 15,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 15,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 15,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 15,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 15,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 15,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 15,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n14 (21)",
+      "page": 15,
+      "section_path": "14 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "And it returns a session id to be used to identify a current authorization attempt (other fields are \ninformational):",
+      "page": 15,
+      "section_path": "informational):",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "{ \n    \"id\": \"sy89z8wWF0moddTGa0S3dAP8gZm2B2kXlOie\", \n    \"clientId\": \"sy89z8wWF0moddTGa0S3dA\", \n    \"clientIdLong\": \"cf3d2fb3-16cc-4917-a875-d4c66b44b774\", \n    \"uniqueId\": \"P8gZm2B2kXlOie\" \n}",
+      "page": 15,
+      "section_path": "{",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n    \"id\": \"sy89z8wWF0moddTGa0S3dAP8gZm2B2kXlOie\", \n    \"clientId\": \"sy89z8wWF0moddTGa0S3dA\", \n    \"clientIdLong\": \"cf3d2fb3-16cc-4917-a875-d4c66b44b774\", \n    \"uniqueId\": \"P8gZm2B2kXlOie\" \n}"
+    },
+    {
+      "text": "This session groups all the necessary verifications (liveness, document, rfid, face match) for a single \nauthorization flow.",
+      "page": 15,
+      "section_path": "This session groups all the necessary verifications (liveness, document, rfid, f…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Start liveness \nStart liveness setting tag to sessionId and specifying the liveness type (see more about liveness \ntypes: https://docs.regulaforensics.com/develop/face-sdk/overview/introduction/#liveness-\nassessment)",
+      "page": 15,
+      "section_path": "Start liveness",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "FaceSDK.startLiveness( \n    { \n        tag: sessionId, \n        copyright: false, \n        livenessType: passiveLiveness ? LivenessType.PASSIVE : \nLivenessType.ACTIVE, \n    }, \n    (jsonResponse: string) => { \n        console.log(jsonResponse); \n        const response = \nLivenessResponse.fromJson(JSON.parse(jsonResponse))!; \n        if (response) { \n            const livenessTransactionId = response.transactionId; \n            console.log(`LivenessTransactionId: ${livenessTransactionId}`); \n            if (response.liveness == LivenessStatus.PASSED) { \nconsole.log(\"Liveness passed\"); } \n \n            if (response.error) { \n                console.error(`Liveness error: ${response.error.code} - \n${response.error.message}`); \n                if (response.error.code == LivenessErrorCode.CANCELLED) { \nreturn; } \n            } \n        } \n    }, \n    (error) => { console.error(error); } \n);",
+      "page": 15,
+      "section_path": "livenessType: passiveLiveness ? LivenessType.PASSIVE :",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n        tag: sessionId, \n        copyright: false, \n        livenessType: passiveLiveness ? LivenessType.PASSIVE : \nLivenessType.ACTIVE, \n    }, \n    (jsonResponse: string) => { \n        console.log(jsonResponse); \n        const response = \nLivenessResponse.fromJson(JSON.parse(jsonResponse))!; \n        if (response) { \n            const livenessTransactionId = response.transactionId; \n            console.log(`LivenessTransactionId: ${livenessTransactionId}`); \n            if (response.liveness == LivenessStatus.PASSED) { \nconsole.log(\"Liveness passed\"); } \n \n            if (response.error) { \n                console.error(`Liveness error: ${response.error.code} - \n${response.error.message}`); \n                if (response.error.code == LivenessErrorCode.CANCELLED) { \nreturn; } \n            } \n        } \n    }, \n    (error) => { console.error(error); }"
+    },
+    {
+      "text": "Remember the livenessTransactionId here – we’ll use it later to compare the face with the document \nduring server-side reprocessing",
+      "page": 15,
+      "section_path": "Remember the livenessTransactionId here – we’ll use it later to compare the face…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Please see online documentation for",
+      "page": 15,
+      "section_path": "Please see online documentation for",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nMore examples – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#display-liveness",
+      "page": 15,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nUI customization – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#ui-customization",
+      "page": 15,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nError handling – https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#error-handling",
+      "page": 15,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n15 (21) \n \n        (_) > {} \n    );",
+      "page": 16,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 16,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 16,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 16,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 16,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 16,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 16,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 16,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 16,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n15 (21)",
+      "page": 16,
+      "section_path": "15 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Add liveness transaction to the session \nTo properly restrict access to the transaction, use the following endpoint to add transaction to the \nsession",
+      "page": 16,
+      "section_path": "Add liveness transaction to the session",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "POST https://test-\ngateway.zignsec.com/mobilesdk/sessions/{sessionId}/liveness/transactions/{t\nransactionId} \nHeaders:  \n  Zs-Product-Key: your-subscription-key \n  Authorization: Bearer eyJ…x1w",
+      "page": 16,
+      "section_path": "Headers:",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{sessionId}/liveness/transactions/{t\nransactionId}"
+    },
+    {
+      "text": "And it returns 204 if all good",
+      "page": 16,
+      "section_path": "And it returns 204 if all good",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Scan document \nStart from setting sessionId for DocumentReader",
+      "page": 16,
+      "section_path": "Scan document",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.setTag(sessionId, (_) => {}, (_) => {} );",
+      "page": 16,
+      "section_path": "DocumentReader.setTag(sessionId, (_) => {}, (_) => {} );",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{}, (_) => {}"
+    },
+    {
+      "text": "Customize widget (see documentation https://docs.regulaforensics.com/develop/doc-reader-\nsdk/mobile/customization/#customize-user-interface)",
+      "page": 16,
+      "section_path": "Customize widget (see documentation https://docs.regulaforensics.com/develop/doc…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.setCustomization( \n        { \n        showResultStatusMessages: true, \n        showStatusMessages: true, \n        showNextPageAnimation: true, \n        showHelpAnimation: true, \n        }, \n        (_) => {}, \n        (_) => {} \n    );",
+      "page": 16,
+      "section_path": "DocumentReader.setCustomization(",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n        showResultStatusMessages: true, \n        showStatusMessages: true, \n        showNextPageAnimation: true, \n        showHelpAnimation: true, \n        }, \n        (_) => {}, \n        (_) => {}"
+    },
+    {
+      "text": "Set default processing parameters (see documentation \nhttps://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/configuration/#configure-\ndocument-processing)",
+      "page": 16,
+      "section_path": "Set default processing parameters (see documentation",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.setProcessParams( \n        { \n        multipageProcessing: true, \n        backendProcessingConfig: { \n            url: 'https://test-gateway.zignsec.com/mobilesdk/docreader', \n            httpHeaders: { \n            Authorization: `Bearer ${accessToken}`, \n            'Zs-Product-Key': subscriptionKey \n            }, \n        }, \n        logs: true, \n        logLevel: LogLevel.Warning, \n \n        // debugging options, not for production \n        debugSaveLogs: true, \n        debugSaveCroppedImages: true, \n        debugSaveRFIDSession: true, \n        }, \n        (_) => {}, \n        (_) => {} \n    );",
+      "page": 16,
+      "section_path": "DocumentReader.setProcessParams(",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n        multipageProcessing: true, \n        backendProcessingConfig: { \n            url: 'https://test-gateway.zignsec.com/mobilesdk/docreader', \n            httpHeaders: { \n            Authorization: `Bearer ${accessToken}`, \n            'Zs-Product-Key': subscriptionKey \n            }, \n        }, \n        logs: true, \n        logLevel: LogLevel.Warning, \n \n        // debugging options, not for production \n        debugSaveLogs: true, \n        debugSaveCroppedImages: true, \n        debugSaveRFIDSession: true, \n        }, \n        (_) => {}, \n        (_) => {}"
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n16 (21)",
+      "page": 17,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 17,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 17,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 17,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 17,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 17,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 17,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 17,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 17,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n16 (21)",
+      "page": 17,
+      "section_path": "16 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Setup scanner events listener to handle completion",
+      "page": 17,
+      "section_path": "Setup scanner events listener to handle completion",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "const eventManager = new NativeEventEmitter(RNRegulaDocumentReader); \neventManager.addListener(\"completion\", (e) => { \n    const data = DocumentReaderCompletion.fromJson(e); \n    const action = data?.action \n \n    console.log(`Scanning completion event received: ${action}`, e); \n \n    switch (action) { \n        case DocReaderAction.COMPLETE: \n            console.log('Scanning completed'); // todo: go to the next step \n            break; \n        case DocReaderAction.TIMEOUT: \n            console.error('Scanning timeout'); // todo: handle timeout \n            break; \n        case DocReaderAction.ERROR: \n            console.error(`Scanning error. Error code:\"${e.error?.code}\" \nMessage: \"${e.error?.message}\"`); // todo: handle error \n            break; \n        case DocReaderAction.MORE_PAGES_AVAILABLE: \n            console.log('More pages available');  // todo: handle \n            break; \n        case DocReaderAction.CANCEL: \n            console.log('Scanning cancelled'); // todo: handle cancellation \n            break; \n        case DocReaderAction.PROCESS: \n        case DocReaderAction.PROCESS_WHITE_FLASHLIGHT: \n        case DocReaderAction.NOTIFICATION: \n        case DocReaderAction.PROCESS_WHITE_UV_IMAGES: \n        case DocReaderAction.PROCESS_IR_FRAME: \n        case DocReaderAction.PROCESSING_ON_SERVICE: \n        default: \n            // nothing to do, wait for the next event \n            break;     \n    }     \n});",
+      "page": 17,
+      "section_path": "const eventManager = new NativeEventEmitter(RNRegulaDocumentReader);",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n    const data = DocumentReaderCompletion.fromJson(e); \n    const action = data?.action \n \n    console.log(`Scanning completion event received: ${action}`, e); \n \n    switch (action) { \n        case DocReaderAction.COMPLETE: \n            console.log('Scanning completed'); // todo: go to the next step \n            break; \n        case DocReaderAction.TIMEOUT: \n            console.error('Scanning timeout'); // todo: handle timeout \n            break; \n        case DocReaderAction.ERROR: \n            console.error(`Scanning error. Error code:\"${e.error?.code}\" \nMessage: \"${e.error?.message}\"`); // todo: handle error \n            break; \n        case DocReaderAction.MORE_PAGES_AVAILABLE: \n            console.log('More pages available');  // todo: handle \n            break; \n        case DocReaderAction.CANCEL: \n            console.log('Scanning cancelled'); // todo: handle cancellation \n            break; \n        case DocReaderAction.PROCESS: \n        case DocReaderAction.PROCESS_WHITE_FLASHLIGHT: \n        case DocReaderAction.NOTIFICATION: \n        case DocReaderAction.PROCESS_WHITE_UV_IMAGES: \n        case DocReaderAction.PROCESS_IR_FRAME: \n        case DocReaderAction.PROCESSING_ON_SERVICE: \n        default: \n            // nothing to do, wait for the next event \n            break;     \n    }     \n}"
+    },
+    {
+      "text": "And then show scanner",
+      "page": 17,
+      "section_path": "And then show scanner",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "const config = new ScannerConfig(); \n        config.scenario = ScenarioIdentifier.SCENARIO_FULL_PROCESS; \n        config.onlineProcessingConfig = { \n          processParams: {}, \n        }; \n        DocumentReader.scan( \n          config, \n          (_) => {}, \n          (e) => console.log(e) \n        );",
+      "page": 17,
+      "section_path": "const config = new ScannerConfig();",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n          processParams: {}, \n        }; \n        DocumentReader.scan( \n          config, \n          (_) => {}"
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n17 (21) \n \n        faceApi: { \n            mode: \"match\", \n            threshold: 75,",
+      "page": 18,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 18,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 18,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 18,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 18,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 18,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 18,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 18,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 18,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n17 (21)",
+      "page": 18,
+      "section_path": "17 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Finalize package \nWhen a user document is scanned, we’re sending all the data as a single package to our server for \nre-processing on backend implementing zero-trust to mobile concept:",
+      "page": 18,
+      "section_path": "re-processing on backend implementing zero-trust to mobile concept:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.finalizePackage( \n    (rawResponse) => { \n        const response = JSON.parse(rawResponse); \n        if (response.error != null) { \n            console.error(response.error);  \n            throw new Error(\"Error sending package for processing\"); \n        }; \n        if (response.action == DocReaderAction.COMPLETE) { \n            const transactionId = response.info.transactionId; \n            console.log('Transaction id:', transactionId); \n        } \n    }, \n    (_) => {} \n);",
+      "page": 18,
+      "section_path": "DocumentReader.finalizePackage(",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n        const response = JSON.parse(rawResponse); \n        if (response.error != null) { \n            console.error(response.error);  \n            throw new Error(\"Error sending package for processing\"); \n        }; \n        if (response.action == DocReaderAction.COMPLETE) { \n            const transactionId = response.info.transactionId; \n            console.log('Transaction id:', transactionId); \n        } \n    }, \n    (_) => {}"
+    },
+    {
+      "text": "Read more: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integration/server-\nside-verification/#step-3-finalize-package",
+      "page": 18,
+      "section_path": "Read more: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integr…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Add (document reader) transaction to the session \nLike the liveness transaction, add the document reader transaction to the session too:",
+      "page": 18,
+      "section_path": "Like the liveness transaction, add the document reader transaction to the session too:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "POST https://test-\ngateway.zignsec.com/mobilesdk/sessions/{sessionId}/transactions/{transactio\nnId} \nHeaders:  \n  Zs-Product-Key: your-subscription-key \n  Authorization: Bearer eyJ…x1w",
+      "page": 18,
+      "section_path": "Headers:",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{sessionId}/transactions/{transactio\nnId}"
+    },
+    {
+      "text": "And it returns 204. This information is used to restrict access to the transaction/session data.",
+      "page": 18,
+      "section_path": "And it returns 204. This information is used to restrict access to the transacti…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Reprocess \nNow we’re ready to reprocess the package on the backend. Let’s setup the client first (see \nhttps://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/clients/ to find \na proper one for your tech stack)",
+      "page": 18,
+      "section_path": "Reprocess",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "const api = new DocumentReaderApi({ \n    basePath: \"https://test-gateway.zignsec.com/mobilesdk/docreader\", \n    baseOptions: {  \n        headers: { \n            Authorization: `Bearer ${accessToken}`, \n            \"Zs-Product-Key\": subscriptionKey, \n        } \n    }, \n});",
+      "page": 18,
+      "section_path": "const api = new DocumentReaderApi({",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ \n    basePath: \"https://test-gateway.zignsec.com/mobilesdk/docreader\", \n    baseOptions: {  \n        headers: { \n            Authorization: `Bearer ${accessToken}`, \n            \"Zs-Product-Key\": subscriptionKey, \n        } \n    }, \n}"
+    },
+    {
+      "text": "And post a reprocessing request sending transactionId, livenessTransactionId and scenario to use:",
+      "page": 18,
+      "section_path": "And post a reprocessing request sending transactionId, livenessTransactionId and scenario to use:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "api.reprocessTransaction(transactionId, { \n    processParam: { \n        scenario: fullAuth ? Scenario.FULL_AUTH : Scenario.FULL_PROCESS, \n        useFaceApi: true, \n        faceApi: { \n            mode: \"match\", \n            threshold: 75,",
+      "page": 18,
+      "section_path": "api.reprocessTransaction(transactionId, {",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n18 (21) \n \n• \nStatus – processing status information",
+      "page": 19,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 19,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 19,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 19,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 19,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 19,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 19,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 19,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 19,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n18 (21)",
+      "page": 19,
+      "section_path": "18 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "serviceTimeout: 30000 \n        }, \n        dateFormat: \"yyyy-MM-dd\", \n        log: true, // turn off for production         \n    }, \n    livePortrait: livenessTransactionId \n}).then((response) => { console.log(`reprocessed: `, response);  \n  return response;}).catch((error) => { console.error(error); });",
+      "page": 19,
+      "section_path": "serviceTimeout: 30000",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{ console.log(`reprocessed: `, response);  \n  return response;}).catch((error) => { console.error(error); }"
+    },
+    {
+      "text": "NOTE: Current version of the Regula documentation (https://docs.regulaforensics.com/develop/doc-\nreader-sdk/mobile/integration/integration-with-face-sdk/#integration-with-face-sdk) only describes \nlivePortrait as a base64 string, but it’s highly recommended to send the liveness transaction id there \ninstead of the image itself to properly follow the zero-trust to mobile concept.",
+      "page": 19,
+      "section_path": "NOTE: Current version of the Regula documentation (https://docs.regulaforensics.…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "See also: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integration/server-side-\nverification/#step-5-reprocessing-on-web-service",
+      "page": 19,
+      "section_path": "See also: https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/integra…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Analyze results \nWhen all processing is done you need to analyze responses and make a final decision authorize the \nuser or not. It can be simple mapping from the response or can involve complex logic (for instance \nfor some document types errors in fields could be ignored, or you can validate the number of \nscanned pages/sides depending on the document type and implement retry)",
+      "page": 19,
+      "section_path": "Analyze results",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocReader results \nResults are described here: https://docs.regulaforensics.com/develop/doc-reader-\nsdk/mobile/getting-started/results/",
+      "page": 19,
+      "section_path": "DocReader results",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "We recommend trying one of the online examples here https://api.regulaforensics.com/ and explore \nthe Response tab",
+      "page": 19,
+      "section_path": "We recommend trying one of the online examples here https://api.regulaforensics.…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The basic approach – is to check the Status container, overallStatus: 1 indicates success. The main \nresult containers are:",
+      "page": 19,
+      "section_path": "result containers are:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nStatus – processing status information",
+      "page": 19,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n19 (21)",
+      "page": 20,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 20,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 20,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 20,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 20,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 20,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 20,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 20,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 20,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n19 (21)",
+      "page": 20,
+      "section_path": "19 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nImages (Graphic fields tab) – contains (cropped) images extracted from the document \n(pages, portraits, signature, etc.)",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nText – shows all the extracted texts with all kind of details (source, probability, etc.)",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nOneCandidate (Document type tab) – holds information about the recognized document \ntype",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nImageQualityCheckList (Image quality tab) – everything about source images quality",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAuthenticityCheckList (Security checks tab) – details about security checks done during the \nverification process (face comparison results – see the following chapter – are also added to \nthis container, but to another tab)",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Face Comparison Results \nTo see an example of face comparison results, try a Driver License sample, or upload your own \ndocument + photo and check the AuthenticityCheckList container data shown on the Portrait \ncomparison tab.",
+      "page": 20,
+      "section_path": "Face Comparison Results",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Freeing resources \nDon’t forget to free up resources after usage",
+      "page": 20,
+      "section_path": "Freeing resources",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/getting-\nstarted/deinitialization/)",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/getting-\nstarted/initialization/#deinitialization",
+      "page": 20,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DocumentReader.deinitializeReader(_ => {}, _ => {}); \nFaceSDK.deinitialize(_ => {}, _ => {});",
+      "page": 20,
+      "section_path": "DocumentReader.deinitializeReader(_ => {}, _ => {});",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{}, _ => {}); \nFaceSDK.deinitialize(_ => {}, _ => {}"
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n20 (21) \n \n- \nhttps://docs.regulaforensics.com/develop/face-sdk/mobile/getting-\nstarted/samples/",
+      "page": 21,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 21,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 21,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 21,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 21,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 21,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 21,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 21,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 21,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n20 (21)",
+      "page": 21,
+      "section_path": "20 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "More technical information \nSupplier documentation \nFor more technical details please check supplier documentation",
+      "page": 21,
+      "section_path": "More technical information",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Online demo services",
+      "page": 21,
+      "section_path": "Online demo services",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://api.regulaforensics.com/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace API https://faceapi.regulaforensics.com/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Calling API directly \nClient libraries for different tech stacks",
+      "page": 21,
+      "section_path": "Calling API directly",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-sdk/web-\nservice/development/clients/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace API https://docs.regulaforensics.com/develop/face-sdk/web-\nservice/development/clients/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "OpenAPI definitions",
+      "page": 21,
+      "section_path": "OpenAPI definitions",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://dev.regulaforensics.com/DocumentReader-web-openapi/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFace API https://dev.regulaforensics.com/FaceSDK-web-openapi/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "UI Customization",
+      "page": 21,
+      "section_path": "UI Customization",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-\nsdk/mobile/customization/#customize-user-interface",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#ui-customization",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Logging",
+      "page": 21,
+      "section_path": "Logging",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader https://docs.regulaforensics.com/develop/doc-reader-\nsdk/mobile/configuration/logging/",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Error handling",
+      "page": 21,
+      "section_path": "Error handling",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFaceSDK https://docs.regulaforensics.com/develop/face-sdk/mobile/feature-\nusage/liveness/#error-handling",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Samples",
+      "page": 21,
+      "section_path": "Samples",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDocReader",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nAndroid https://github.com/regulaforensics/DocumentReader-Android",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \niOS https://github.com/regulaforensics/DocumentReader-iOS",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nReact Native https://github.com/regulaforensics/react-native-document-reader",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nFlutter https://github.com/regulaforensics/DocumentReader-\nFlutter/tree/master/example",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nCordova https://github.com/regulaforensics/DocumentReader-Cordova-\nPlugin/tree/master/example",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nIonic https://github.com/regulaforensics/DocumentReader-Ionic-\nPlugin/tree/master/example",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \n.NET MAUI https://github.com/regulaforensics/Xamarin-DocumentReader",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFaceSDK",
+      "page": 21,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "- \nhttps://docs.regulaforensics.com/develop/face-sdk/mobile/getting-\nstarted/samples/",
+      "page": 21,
+      "section_path": "-",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0 \n \nVolodymyr Levchuk \nZignSec  \nPublished \n \n \nID & Bio Verification Mobile SDK \n \nPage \n© ZignSec AB \nIntegration guidelines \n2025-03-06 \n21 (21)",
+      "page": 22,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 22,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZIGNSEC ID & BIO VERIFICATION \nMOBILE SDK",
+      "page": 22,
+      "section_path": "ZIGNSEC ID & BIO VERIFICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidential",
+      "page": 22,
+      "section_path": "Confidential",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 22,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \nID scan \nIntegration guidelines",
+      "page": 22,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by:  \nDocument Name \nVersion 1.0",
+      "page": 22,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \nPublished",
+      "page": 22,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ID & Bio Verification Mobile SDK \n \nPage",
+      "page": 22,
+      "section_path": "ID & Bio Verification Mobile SDK",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB \nIntegration guidelines \n2025-03-06 \n21 (21)",
+      "page": 22,
+      "section_path": "21 (21)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Change History",
+      "page": 22,
+      "section_path": "Change History",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Date of Change  \nVersion Changed By  \nSummary of Change",
+      "page": 22,
+      "section_path": "Date of Change",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "February 2025 \n1.0 \nMartin Heikkilä, Volodymyr Levchuk First version",
+      "page": 22,
+      "section_path": "February 2025",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    }
+  ],
+  "pages": 22,
+  "metadata": {
+    "extractor": "pymupdf_v2_enhanced",
+    "total_items": 444,
+    "version": "2.1"
+  }
+}

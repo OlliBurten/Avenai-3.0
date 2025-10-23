@@ -1,0 +1,1302 @@
+
+=== Page 1 | paragraph | Martin Heikkilä ===
+Martin Heikkilä
+
+
+=== Page 1 | header | BANKID NORWAY V5.1 ===
+BANKID NORWAY V5.1
+
+
+=== Page 1 | paragraph | Integration guidelines ===
+Integration guidelines
+
+
+=== Page 1 | table | PUBLISHED ===
+ZignSec AB (publ) 
+Version 1.1 |October. 2024 
+PUBLISHED
+
+
+=== Page 2 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+1 (9)
+
+
+=== Page 2 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 2 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 2 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 2 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 2 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 2 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 2 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 2 | paragraph | 1 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+1 (9)
+
+
+=== Page 2 | paragraph | BankID Norway v5.1 Integration ===
+BankID Norway v5.1 Integration 
+guidelines
+
+
+=== Page 2 | paragraph | Code: ===
+Code:
+
+
+=== Page 2 | paragraph | Version: ===
+Version: 
+1.1
+
+
+=== Page 2 | paragraph | Date of version: ===
+Date of version: 
+2024-Oct-04
+
+
+=== Page 2 | paragraph | Created by: ===
+Created by: 
+Martin Heikkilä Customer Service Manager
+
+
+=== Page 2 | paragraph | Approved by: ===
+Approved by: 
+Jason Coombes, Head of Risk and Compliance
+
+
+=== Page 2 | paragraph | Confidentiality level: ===
+Confidentiality level: 
+PUBLIC
+
+
+=== Page 3 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+2 (9)
+
+
+=== Page 3 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 3 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 3 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 3 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 3 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 3 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 3 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 3 | paragraph | 2 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+2 (9)
+
+
+=== Page 3 | paragraph | Table of Contents ===
+Table of Contents
+
+
+=== Page 3 | paragraph | Table of Contents ..............................................................… ===
+Table of Contents ................................................................................................................................................................................... 2
+
+
+=== Page 3 | paragraph | BankID Overview ===
+BankID Overview 
+.................................................................................................................................................................................... 3
+
+
+=== Page 3 | paragraph | Identification .................................................................… ===
+Identification ....................................................................................................................................... 3
+
+
+=== Page 3 | paragraph | Authentication with BankID .....................................................… ===
+Authentication with BankID ............................................................................................................ 3
+
+
+=== Page 3 | paragraph | Using BankID APIs for Authentication ===
+Using BankID APIs for Authentication 
+............................................................................................. 3
+
+
+=== Page 3 | paragraph | End User Data returned .........................................................… ===
+End User Data returned .................................................................................................................. 4
+
+
+=== Page 3 | paragraph | Scopes .........................................................................… ===
+Scopes ............................................................................................................................................. 4
+
+
+=== Page 3 | paragraph | User Experience Guidelines for BankID Integration ..............................… ===
+User Experience Guidelines for BankID Integration ....................................................................... 4
+
+
+=== Page 3 | paragraph | Digital onboarding ===
+Digital onboarding 
+............................................................................................................................... 5
+
+
+=== Page 3 | paragraph | Using BankID in the Onboarding Process ===
+Using BankID in the Onboarding Process 
+........................................................................................ 5
+
+
+=== Page 3 | paragraph | Storing NNIN from End-Users ....................................................… ===
+Storing NNIN from End-Users ......................................................................................................... 5
+
+
+=== Page 3 | paragraph | Error Handling .................................................................… ===
+Error Handling ................................................................................................................................. 5
+
+
+=== Page 3 | paragraph | API Overview ...................................................................… ===
+API Overview ....................................................................................................................................... 7
+
+
+=== Page 3 | paragraph | Core Functionalities ...........................................................… ===
+Core Functionalities ........................................................................................................................ 7
+
+
+=== Page 3 | paragraph | REST API .......................................................................................................................................... 7 ===
+REST API .......................................................................................................................................... 7
+
+
+=== Page 3 | paragraph | Testing ===
+Testing 
+................................................................................................................................................. 8
+
+
+=== Page 3 | paragraph | Production testing ===
+Production testing 
+............................................................................................................................... 9
+
+
+=== Page 3 | paragraph | Change History ===
+Change History 
+........................................................................................................................................................................................ 9
+
+
+=== Page 4 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+3 (9) 
+ 
+ 
+Conducting High Risk Transactions: Especially for transactions involving large sums or high 
+risk to the user or service provider.
+
+
+=== Page 4 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 4 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 4 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 4 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 4 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 4 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 4 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 4 | paragraph | 3 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+3 (9)
+
+
+=== Page 4 | paragraph | BankID Overview ===
+BankID Overview
+
+
+=== Page 4 | paragraph | Norwegian BankID is a widely utilized electronic identification (eID) and digita… ===
+Norwegian BankID is a widely utilized electronic identification (eID) and digital signature solution 
+developed by a consortium of Norwegian banks. It offers a secure and convenient way for citizens, 
+businesses, and public institutions to authenticate online. BankID enables access to a broad range of 
+services, including banking, e-commerce, and government portals.
+
+
+=== Page 4 | paragraph | The service combines a unique user ID, a personal password, and one-time codes g… ===
+The service combines a unique user ID, a personal password, and one-time codes generated through 
+a physical code device or the BankID mobile app. With its robust security features and widespread 
+adoption, BankID plays a crucial role in safeguarding users' online transactions in Norway.
+
+
+=== Page 4 | paragraph | BankID services encompass two main scopes: ===
+BankID services encompass two main scopes:
+
+
+=== Page 4 | paragraph | • ===
+• 
+Identification
+
+
+=== Page 4 | paragraph | • ===
+• 
+Digital Onboarding
+
+
+=== Page 4 | paragraph | The BankID OIDC (eID) solution is an OpenID Connect-based service that provides … ===
+The BankID OIDC (eID) solution is an OpenID Connect-based service that provides users with 
+authentication and verification using BankID and mobile BankID as identity providers.
+
+
+=== Page 4 | paragraph | Identification ===
+Identification 
+Authentication with BankID 
+BankID provides means to authenticate users at High or Substantial levels of assurance, making it the 
+preferred method for accessing public services, banking, and various business applications. With 
+over 4 million users, BankID ensures a secure and reliable authentication process that complies with 
+Norwegian and EU regulations.
+
+
+=== Page 4 | paragraph | Using BankID APIs for Authentication ===
+Using BankID APIs for Authentication 
+By integrating BankID's API, you can authenticate users and receive their identity details. These 
+details can be used to match and verify the user against an existing customer profile, ensuring 
+secure access.
+
+
+=== Page 4 | paragraph | Levels of Assurance Supported by the eID Scheme: ===
+Levels of Assurance Supported by the eID Scheme:
+
+
+=== Page 4 | paragraph | • ===
+• 
+High (Standard)
+
+
+=== Page 4 | paragraph | • ===
+• 
+Substantial (Biometric)
+
+
+=== Page 4 | paragraph | When to Use High Assurance: ===
+When to Use High Assurance:
+
+
+=== Page 4 | paragraph | • ===
+• 
+Accessing Sensitive Information: Ideal for viewing or managing personal data, whether it’s 
+your own or someone else’s.
+
+
+=== Page 4 | paragraph | • ===
+• 
+Signing Documents: Required when official signatures are necessary.
+
+
+=== Page 4 | paragraph | • ===
+• 
+Updating Critical Personal Information: Such as changing a registered address or other vital 
+details.
+
+
+=== Page 4 | paragraph | • ===
+• 
+Performing High-Impact Actions: For activities that require strong user confirmation, like 
+canceling a subscription or changing transaction limits.
+
+
+=== Page 4 | paragraph | • ===
+• 
+Conducting High-Risk Transactions: Especially for transactions involving large sums or high 
+risk to the user or service provider.
+
+
+=== Page 5 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+4 (9) 
+ 
+2. BankID Substantial: This method allows for biometric authentication directly on the user's 
+mobile device.
+
+
+=== Page 5 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 5 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 5 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 5 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 5 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 5 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 5 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 5 | paragraph | 4 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+4 (9)
+
+
+=== Page 5 | paragraph | When to Use BankID with Biometrics: ===
+When to Use BankID with Biometrics:
+
+
+=== Page 5 | paragraph | • ===
+• 
+Authentication: Secure login for various applications.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Low-Sum Payments: Ideal for transactions involving smaller amounts.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Age Verification: For services that require proof of age.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Customer Service Authentication: To confirm user identity during customer service 
+interactions.
+
+
+=== Page 5 | paragraph | • ===
+• 
+Seamless App Login: Enables users to log in effortlessly using face recognition, fingerprint, or 
+PIN, enhancing trust in the service.
+
+
+=== Page 5 | paragraph | Note: This is a general guideline. Businesses should conduct their own risk asse… ===
+Note: This is a general guideline. Businesses should conduct their own risk assessments to determine 
+the most appropriate BankID method for their specific use cases.
+
+
+=== Page 5 | paragraph | The following data fields are returned directly from the eID scheme: ===
+End User Data returned 
+The following data fields are returned directly from the eID scheme:
+
+
+=== Page 5 | paragraph | • ===
+• 
+NNIN (if legally permitted)
+
+
+=== Page 5 | paragraph | • ===
+• 
+Full Name
+
+
+=== Page 5 | paragraph | • ===
+• 
+Date of Birth (DoB)
+
+
+=== Page 5 | paragraph | • ===
+• 
+Gender
+
+
+=== Page 5 | paragraph | • ===
+• 
+Age
+
+
+=== Page 5 | paragraph | GUID ===
+• 
+GUID
+
+
+=== Page 5 | paragraph | Merchants may also request additional user data, such as NNIN, address, email, a… ===
+Merchants may also request additional user data, such as NNIN, address, email, and phone number. 
+This will prompt the user to consent to share this information after authentication. Users may 
+decline to share any information requiring consent.
+
+
+=== Page 5 | paragraph | Scopes ===
+Scopes 
+A scope is a way for the OIDC Client to indicate to the OIDC Provider what service it requests access 
+to, or in technical terms which resources at pertinent Resource Servers. The response from a 
+Resource Server consists of datasets with attributes on the user and/or the authentication event.
+
+
+=== Page 5 | paragraph | You find a complete description here at the supplier: Link to Scopes documentati… ===
+You find a complete description here at the supplier: Link to Scopes documentation
+
+
+=== Page 5 | paragraph | User Experience Guidelines for BankID Integration ===
+User Experience Guidelines for BankID Integration 
+This section covers user experience design, offering guidance on presenting BankID to end users and 
+tips for implementing it effectively.
+
+
+=== Page 5 | paragraph | Identity Providers ===
+Identity Providers
+
+
+=== Page 5 | paragraph | BankID currently offers two identity verification methods for end users: ===
+BankID currently offers two identity verification methods for end users:
+
+
+=== Page 5 | paragraph | 1. BankID Netcentric: This method requires a code device issued by the user's ba… ===
+1. BankID Netcentric: This method requires a code device issued by the user's bank or the 
+BankID app, along with a personal password that the user sets up through their online 
+banking platform. Some banks have developed their own mobile apps that can be used 
+instead of the code device.
+
+
+=== Page 5 | paragraph | 2. BankID Substantial: This method allows for biometric authentication directly … ===
+2. BankID Substantial: This method allows for biometric authentication directly on the user's 
+mobile device.
+
+
+=== Page 6 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+5 (9) 
+ 
+The merchant application must be prepared to handle this callback and respond appropriately.
+
+
+=== Page 6 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 6 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 6 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 6 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 6 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 6 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 6 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 6 | paragraph | 5 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+5 (9)
+
+
+=== Page 6 | paragraph | The end user interacts with BankID through three stages, depending on the service requested: ===
+Basic Flow: End-User Interactions 
+The end user interacts with BankID through three stages, depending on the service requested:
+
+
+=== Page 6 | paragraph | 1. NNIN Input and BankID Method Selection: The user enters their National Identi… ===
+1. NNIN Input and BankID Method Selection: The user enters their National Identity Number 
+(NNIN) or Social Security Number (SSN) and selects the desired BankID method, depending 
+on the information provided in the login_hint parameter.
+
+
+=== Page 6 | paragraph | 2. Authentication/Signing: The user signs in and/or provides credentials for the… ===
+2. Authentication/Signing: The user signs in and/or provides credentials for the selected 
+BankID method.
+
+
+=== Page 6 | paragraph | 3. (Optional) Consent Dialogues: If requested by the merchant, the user provides… ===
+3. (Optional) Consent Dialogues: If requested by the merchant, the user provides consent to 
+share their data.
+
+
+=== Page 6 | paragraph | For detailed information on designing the user experience for BankID authenticat… ===
+For detailed information on designing the user experience for BankID authentication, including the 
+flow of interactions, method selection, and consent management, please refer to the official BankID 
+User Experience Documentation. This resource provides comprehensive guidelines on ensuring a 
+seamless and secure experience for end users across different authentication methods.
+
+
+=== Page 6 | paragraph | Customization ===
+Customization 
+BankID offers various customization options for the user interface presented to end users. These 
+include the ability to add a custom logo and merchant name, control display modes for different 
+devices (like mobile apps or popups), and adjust the user interface to ensure a consistent experience 
+across platforms. The logo should meet specific size and format requirements (300 x 60 px, max 
+10kB, PNG/SVG). Customization is managed via parameters during the provisioning process. You can 
+find more details here.
+
+
+=== Page 6 | paragraph | Digital onboarding ===
+Digital onboarding 
+Using BankID in the Onboarding Process 
+We offer products that simplify the onboarding process while adhering to regulatory requirements. 
+Businesses may use BankID products in various ways, depending on their needs.
+
+
+=== Page 6 | paragraph | Storing NNIN from End-Users ===
+Storing NNIN from End-Users
+
+
+=== Page 6 | paragraph | • ===
+• 
+Consent Required: To store a user's National Identity Number (NNIN), consent must be 
+obtained.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Merchant Responsibilities: Merchants must handle consent storage, with BankID offering a 
+UX flow for this process.
+
+
+=== Page 6 | paragraph | • ===
+• 
+Technical Details: Merchants must be provisioned to access nnin_altsub and nnin scopes
+
+
+=== Page 6 | paragraph | Please note, merchants must be provisioned to get access to the nnin_altsub and … ===
+Please note, merchants must be provisioned to get access to the nnin_altsub and nnin scopes. You'll 
+need a legal reason to store and use national identity numbers. This access is given as a part of the 
+commercial agreement process.
+
+
+=== Page 6 | paragraph | Error Handling ===
+Error Handling 
+Handling User Cancellation 
+The end-user can cancel an ongoing authentication or signing session at any time. If this happens, 
+the user will be redirected back to the specified redirect URL provided by the merchant application.
+
+
+=== Page 6 | paragraph | The merchant application must be prepared to handle this callback and respond ap… ===
+The merchant application must be prepared to handle this callback and respond appropriately.
+
+
+=== Page 7 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+6 (9)
+
+
+=== Page 7 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 7 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 7 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 7 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 7 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 7 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 7 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 7 | paragraph | 6 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+6 (9)
+
+
+=== Page 7 | paragraph | take place: ===
+Handling Errors 
+If an error occurs during an ongoing authentication or signing session, the following scenarios may 
+take place:
+
+
+=== Page 7 | paragraph | • ===
+• 
+The end-user might be shown an error message, often accompanied by an error code, with 
+options to retry or return to the merchant application.
+
+
+=== Page 7 | paragraph | • ===
+• 
+If the error occurs under the "right conditions," the user can be redirected back to the 
+merchant application, using the same parameters as when a user cancels the session.
+
+
+=== Page 7 | paragraph | • ===
+• 
+In rare cases, an error other than access_denied might be returned, along with an 
+error_description parameter, depending on the situation.
+
+
+=== Page 7 | paragraph | • ===
+• 
+In severe cases, the user might be stuck on the BankID platform with no option to return to 
+the merchant application.
+
+
+=== Page 7 | paragraph | Here’s an example of how an error message might be displayed in the browser ===
+Here’s an example of how an error message might be displayed in the browser
+
+
+=== Page 8 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+7 (9)
+
+
+=== Page 8 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 8 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 8 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 8 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 8 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 8 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 8 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 8 | paragraph | 7 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+7 (9)
+
+
+=== Page 8 | paragraph | We maintain environments you can use: ===
+API Overview 
+Core Functionalities 
+Environments 
+We maintain environments you can use:
+
+
+=== Page 8 | paragraph | • ===
+• 
+Test (TEST) environment: https://test-gateway.zignsec.com/api/v5/sessions
+
+
+=== Page 8 | paragraph | • ===
+• 
+Production (PROD) environment: https://gateway.zignsec.com/api/v5/sessions
+
+
+=== Page 8 | paragraph | Authentication ===
+Authentication 
+Each request to our API should be authenticated by sending your subscription key in the 
+“Authorization” header. Our support creates subscription keys for you (a pair for each environment), 
+and it’s highly recommended to regularly rotate the keys (currently it’s done by sending a support 
+request, but please let us know if you’d like to automate it).
+
+
+=== Page 8 | paragraph | If you need different configurations, it’s possible to register multiple tenants… ===
+If you need different configurations, it’s possible to register multiple tenants and configure them 
+differently.
+
+
+=== Page 8 | header | REST API ===
+REST API 
+Headers
+
+
+=== Page 8 | paragraph | Header ===
+Header  
+Description 
+Required
+
+
+=== Page 8 | paragraph | Authorization ===
+Authorization
+
+
+=== Page 8 | paragraph | ZignSec during the registration process. Example: Authorization: ===
+This header parameter is the subscription key you received from 
+ZignSec during the registration process. Example: Authorization: 
+123456add0cff22873c428e987654321 
+Yes
+
+
+=== Page 8 | paragraph | Content-Type ===
+Content-Type
+
+
+=== Page 8 | paragraph | Specifies the media type of the request body data. Set to ===
+Specifies the media type of the request body data. Set to 
+application/json if JSON object. 
+Yes
+
+
+=== Page 8 | paragraph | OpenAPI specification and documentation ===
+OpenAPI specification and documentation
+
+
+=== Page 8 | header | LIVE DOCUMENTATION ===
+LIVE DOCUMENTATION
+
+
+=== Page 8 | paragraph | • ===
+• 
+https://test-gateway.zignsec.com/api/v5/openapi/bankidno/#/
+
+
+=== Page 8 | paragraph | BankId Norway Examples ===
+BankId Norway Examples
+
+
+=== Page 8 | paragraph | API Endpoints ===
+API Endpoints
+
+
+=== Page 8 | header | AUTHENTICATION ===
+AUTHENTICATION 
+The choice of BankID Authentication endpoints is driven by the key needs of your business and use 
+case. Please refer to the scopes documentation to understand the differences better. The endpoints 
+utilise OIDC protocol.
+
+
+=== Page 8 | header | DEFAULT ENDPOINT ===
+DEFAULT ENDPOINT 
+Endpoint: POST /bankidno/auth - Swagger UI (zignsec.com)
+
+
+=== Page 9 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+8 (9) 
+ 
+[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]
+
+
+=== Page 9 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 9 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 9 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 9 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 9 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 9 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 9 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 9 | paragraph | 8 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+8 (9)
+
+
+=== Page 9 | paragraph | Description: Standard endpoint. This API endpoint is to authenticate users with … ===
+Description: Standard endpoint. This API endpoint is to authenticate users with minimal 
+requirements to the user data (see the Scopes documentation). Default scopes openid + 
+profile (these scopes are requested in all endpoints listed here).
+
+
+=== Page 9 | header | NEW USERS ONBOARDING (ASKING FOR NNIN) ===
+NEW USERS ONBOARDING (ASKING FOR NNIN) 
+Endpoint: POST /bankidno/auth/register - Swagger UI (zignsec.com)
+
+
+=== Page 9 | paragraph | Description: This API endpoint is used to onboard a new user by requesting an ac… ===
+Description: This API endpoint is used to onboard a new user by requesting an access to the end 
+user's National Identification Number (NNIN). It prompts the end users to provide consent for 
+sharing their data. Technically it uses nnin additional scope.
+
+
+=== Page 9 | header | AUTHENTICATE ALREADY REGISTERED USERS (NNIN ALREADY POSSESSED) ===
+AUTHENTICATE ALREADY REGISTERED USERS (NNIN ALREADY POSSESSED) 
+Endpoint: POST /bankidno/auth/member - Swagger UI (zignsec.com)
+
+
+=== Page 9 | paragraph | Description: This endpoint will work for users you already possess their nationa… ===
+Description: This endpoint will work for users you already possess their national identity number 
+and does not ask customer for the consent to retrieve the end user's National Identification Number 
+(NNIN). Technically it uses nnin_altsub additional scope.
+
+
+=== Page 9 | code | GET SESSION DETAILS ===
+GET SESSION DETAILS 
+Endpoint: GET /bankidno/auth/{sessionId} - Swagger UI (zignsec.com)
+
+[VERBATIM BLOCK]:
+{sessionId}
+
+
+
+=== Page 9 | paragraph | Description: This API endpoint retrieves the status and details of a BankID iden… ===
+Description: This API endpoint retrieves the status and details of a BankID identity verification 
+session in Norway. It allows you to check the outcome of a previously initiated verification request.
+
+
+=== Page 9 | paragraph | Settings and scopes can be changed upon request just contact ZignSec support. ===
+Settings and scopes can be changed upon request just contact ZignSec support.
+
+
+=== Page 9 | paragraph | Use either of the following test user: ===
+Testing 
+Use either of the following test user:
+
+
+=== Page 9 | paragraph | Name ===
+Name 
+Personal Number 
+Entry Passcode 
+Personal Password
+
+
+=== Page 9 | paragraph | Aksel Herseth ===
+Aksel Herseth 
+06046517928 
+otp 
+qwer1234
+
+
+=== Page 9 | paragraph | Ole Bramserud ===
+Ole Bramserud 
+11920287974 
+otp 
+qwer1234
+
+
+=== Page 9 | paragraph | Sanna Hansen ===
+Sanna Hansen 
+12829025475 
+otp 
+qwer1234
+
+
+=== Page 9 | paragraph | Test Testsen ===
+Test Testsen 
+20872329758 
+otp 
+qwer1234
+
+
+=== Page 9 | paragraph | information should be formatted as follows: ===
+Or you can request your own BankID test users or test Apps by emailing support@zignsec.com. 
+Please include the name and fødselsnummer (personal identification number) for each test user. The 
+information should be formatted as follows:
+
+
+=== Page 9 | paragraph | • ===
+• 
+For characters 'æøå' to be accepted, save file as Unicode-text in Excel .
+
+
+=== Page 9 | paragraph | • ===
+• 
+Accepted line format is shown below. Use either comma ',' or semicolon ';' as field delimiter.
+
+
+=== Page 9 | code | [Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly… ===
+[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]
+
+[VERBATIM BLOCK]:
+[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]
+
+
+
+=== Page 10 | footer | Footer ===
+Last changed by: 
+Document Name 
+Version 1.1 
+ 
+Volodymyr Levchuk 
+ZignSec  
+published 
+ 
+ 
+BankID Norway v5.1 
+ 
+Page 
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+9 (9)
+
+
+=== Page 10 | paragraph | Product ===
+Product 
+Confidentiality Level
+
+
+=== Page 10 | paragraph | BankID Norway ===
+BankID Norway 
+Public
+
+
+=== Page 10 | paragraph | Author ===
+Author 
+Area
+
+
+=== Page 10 | paragraph | Martin Heikkilä ===
+Martin Heikkilä 
+eid 
+Integration guidelines
+
+
+=== Page 10 | paragraph | Last changed by: ===
+Last changed by: 
+Document Name 
+Version 1.1
+
+
+=== Page 10 | paragraph | Volodymyr Levchuk ===
+Volodymyr Levchuk 
+ZignSec  
+published
+
+
+=== Page 10 | paragraph | BankID Norway v5.1 ===
+BankID Norway v5.1 
+ 
+Page
+
+
+=== Page 10 | paragraph | 9 (9) ===
+© ZignSec AB (publ) 
+Integration guidelines 
+2024-10-02  
+9 (9)
+
+
+=== Page 10 | paragraph | Alternatively, you can create your own test user on the following page: BankID R… ===
+Alternatively, you can create your own test user on the following page: BankID RA 1.6.6-SNAPSHOT - 
+BankID Norge
+
+
+=== Page 10 | paragraph | For guidance on using the page, refer to the RA Light User Guide - BankID Norway… ===
+For guidance on using the page, refer to the RA Light User Guide - BankID Norway Developer Portal
+
+
+=== Page 10 | paragraph | Production testing ===
+Production testing 
+Currently, there are no test users available for the production environment. Merchants who wish to 
+conduct tests in staging areas using the production environment will need to use real BankID users.
+
+
+=== Page 10 | paragraph | Change History ===
+Change History
+
+
+=== Page 10 | paragraph | Date of Change ===
+Date of Change  
+Changed By  
+Summary of Change
+
+
+=== Page 10 | paragraph | February 2024 ===
+February 2024 
+Jason Coombes 
+First version
+
+
+=== Page 10 | paragraph | September 2024 ===
+September 2024 
+Martin Heikkilä 
+1.1

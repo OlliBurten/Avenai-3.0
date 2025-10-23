@@ -1,0 +1,1722 @@
+{
+  "items": [
+    {
+      "text": "Martin Heikkilä",
+      "page": 1,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BANKID NORWAY V5.1",
+      "page": 1,
+      "section_path": "BANKID NORWAY V5.1",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Integration guidelines",
+      "page": 1,
+      "section_path": "Integration guidelines",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "ZignSec AB (publ) \nVersion 1.1 |October. 2024 \nPUBLISHED",
+      "page": 1,
+      "section_path": "PUBLISHED",
+      "element_type": "table",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n1 (9)",
+      "page": 2,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 2,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 2,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 2,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 2,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 2,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 2,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 2,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n1 (9)",
+      "page": 2,
+      "section_path": "1 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 Integration \nguidelines",
+      "page": 2,
+      "section_path": "BankID Norway v5.1 Integration",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Code:",
+      "page": 2,
+      "section_path": "Code:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Version: \n1.1",
+      "page": 2,
+      "section_path": "Version:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Date of version: \n2024-Oct-04",
+      "page": 2,
+      "section_path": "Date of version:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Created by: \nMartin Heikkilä Customer Service Manager",
+      "page": 2,
+      "section_path": "Created by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Approved by: \nJason Coombes, Head of Risk and Compliance",
+      "page": 2,
+      "section_path": "Approved by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Confidentiality level: \nPUBLIC",
+      "page": 2,
+      "section_path": "Confidentiality level:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n2 (9)",
+      "page": 3,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 3,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 3,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 3,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 3,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 3,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 3,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 3,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n2 (9)",
+      "page": 3,
+      "section_path": "2 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Table of Contents",
+      "page": 3,
+      "section_path": "Table of Contents",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Table of Contents ................................................................................................................................................................................... 2",
+      "page": 3,
+      "section_path": "Table of Contents ..............................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Overview \n.................................................................................................................................................................................... 3",
+      "page": 3,
+      "section_path": "BankID Overview",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Identification ....................................................................................................................................... 3",
+      "page": 3,
+      "section_path": "Identification .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication with BankID ............................................................................................................ 3",
+      "page": 3,
+      "section_path": "Authentication with BankID .....................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Using BankID APIs for Authentication \n............................................................................................. 3",
+      "page": 3,
+      "section_path": "Using BankID APIs for Authentication",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "End User Data returned .................................................................................................................. 4",
+      "page": 3,
+      "section_path": "End User Data returned .........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Scopes ............................................................................................................................................. 4",
+      "page": 3,
+      "section_path": "Scopes .........................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "User Experience Guidelines for BankID Integration ....................................................................... 4",
+      "page": 3,
+      "section_path": "User Experience Guidelines for BankID Integration ..............................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Digital onboarding \n............................................................................................................................... 5",
+      "page": 3,
+      "section_path": "Digital onboarding",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Using BankID in the Onboarding Process \n........................................................................................ 5",
+      "page": 3,
+      "section_path": "Using BankID in the Onboarding Process",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Storing NNIN from End-Users ......................................................................................................... 5",
+      "page": 3,
+      "section_path": "Storing NNIN from End-Users ....................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Error Handling ................................................................................................................................. 5",
+      "page": 3,
+      "section_path": "Error Handling .................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "API Overview ....................................................................................................................................... 7",
+      "page": 3,
+      "section_path": "API Overview ...................................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Core Functionalities ........................................................................................................................ 7",
+      "page": 3,
+      "section_path": "Core Functionalities ...........................................................…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "REST API .......................................................................................................................................... 7",
+      "page": 3,
+      "section_path": "REST API .......................................................................................................................................... 7",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Testing \n................................................................................................................................................. 8",
+      "page": 3,
+      "section_path": "Testing",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Production testing \n............................................................................................................................... 9",
+      "page": 3,
+      "section_path": "Production testing",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Change History \n........................................................................................................................................................................................ 9",
+      "page": 3,
+      "section_path": "Change History",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n3 (9) \n \n \nConducting High Risk Transactions: Especially for transactions involving large sums or high \nrisk to the user or service provider.",
+      "page": 4,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 4,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 4,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 4,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 4,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 4,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 4,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 4,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n3 (9)",
+      "page": 4,
+      "section_path": "3 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Overview",
+      "page": 4,
+      "section_path": "BankID Overview",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Norwegian BankID is a widely utilized electronic identification (eID) and digital signature solution \ndeveloped by a consortium of Norwegian banks. It offers a secure and convenient way for citizens, \nbusinesses, and public institutions to authenticate online. BankID enables access to a broad range of \nservices, including banking, e-commerce, and government portals.",
+      "page": 4,
+      "section_path": "Norwegian BankID is a widely utilized electronic identification (eID) and digita…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The service combines a unique user ID, a personal password, and one-time codes generated through \na physical code device or the BankID mobile app. With its robust security features and widespread \nadoption, BankID plays a crucial role in safeguarding users' online transactions in Norway.",
+      "page": 4,
+      "section_path": "The service combines a unique user ID, a personal password, and one-time codes g…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID services encompass two main scopes:",
+      "page": 4,
+      "section_path": "BankID services encompass two main scopes:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nIdentification",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDigital Onboarding",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The BankID OIDC (eID) solution is an OpenID Connect-based service that provides users with \nauthentication and verification using BankID and mobile BankID as identity providers.",
+      "page": 4,
+      "section_path": "The BankID OIDC (eID) solution is an OpenID Connect-based service that provides …",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Identification \nAuthentication with BankID \nBankID provides means to authenticate users at High or Substantial levels of assurance, making it the \npreferred method for accessing public services, banking, and various business applications. With \nover 4 million users, BankID ensures a secure and reliable authentication process that complies with \nNorwegian and EU regulations.",
+      "page": 4,
+      "section_path": "Identification",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Using BankID APIs for Authentication \nBy integrating BankID's API, you can authenticate users and receive their identity details. These \ndetails can be used to match and verify the user against an existing customer profile, ensuring \nsecure access.",
+      "page": 4,
+      "section_path": "Using BankID APIs for Authentication",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Levels of Assurance Supported by the eID Scheme:",
+      "page": 4,
+      "section_path": "Levels of Assurance Supported by the eID Scheme:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nHigh (Standard)",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nSubstantial (Biometric)",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "When to Use High Assurance:",
+      "page": 4,
+      "section_path": "When to Use High Assurance:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAccessing Sensitive Information: Ideal for viewing or managing personal data, whether it’s \nyour own or someone else’s.",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nSigning Documents: Required when official signatures are necessary.",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nUpdating Critical Personal Information: Such as changing a registered address or other vital \ndetails.",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nPerforming High-Impact Actions: For activities that require strong user confirmation, like \ncanceling a subscription or changing transaction limits.",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nConducting High-Risk Transactions: Especially for transactions involving large sums or high \nrisk to the user or service provider.",
+      "page": 4,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n4 (9) \n \n2. BankID Substantial: This method allows for biometric authentication directly on the user's \nmobile device.",
+      "page": 5,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 5,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 5,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 5,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 5,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 5,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 5,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 5,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n4 (9)",
+      "page": 5,
+      "section_path": "4 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "When to Use BankID with Biometrics:",
+      "page": 5,
+      "section_path": "When to Use BankID with Biometrics:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAuthentication: Secure login for various applications.",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nLow-Sum Payments: Ideal for transactions involving smaller amounts.",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAge Verification: For services that require proof of age.",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nCustomer Service Authentication: To confirm user identity during customer service \ninteractions.",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nSeamless App Login: Enables users to log in effortlessly using face recognition, fingerprint, or \nPIN, enhancing trust in the service.",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Note: This is a general guideline. Businesses should conduct their own risk assessments to determine \nthe most appropriate BankID method for their specific use cases.",
+      "page": 5,
+      "section_path": "Note: This is a general guideline. Businesses should conduct their own risk asse…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "End User Data returned \nThe following data fields are returned directly from the eID scheme:",
+      "page": 5,
+      "section_path": "The following data fields are returned directly from the eID scheme:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nNNIN (if legally permitted)",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFull Name",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nDate of Birth (DoB)",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nGender",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAge",
+      "page": 5,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nGUID",
+      "page": 5,
+      "section_path": "GUID",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Merchants may also request additional user data, such as NNIN, address, email, and phone number. \nThis will prompt the user to consent to share this information after authentication. Users may \ndecline to share any information requiring consent.",
+      "page": 5,
+      "section_path": "Merchants may also request additional user data, such as NNIN, address, email, a…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Scopes \nA scope is a way for the OIDC Client to indicate to the OIDC Provider what service it requests access \nto, or in technical terms which resources at pertinent Resource Servers. The response from a \nResource Server consists of datasets with attributes on the user and/or the authentication event.",
+      "page": 5,
+      "section_path": "Scopes",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "You find a complete description here at the supplier: Link to Scopes documentation",
+      "page": 5,
+      "section_path": "You find a complete description here at the supplier: Link to Scopes documentati…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "User Experience Guidelines for BankID Integration \nThis section covers user experience design, offering guidance on presenting BankID to end users and \ntips for implementing it effectively.",
+      "page": 5,
+      "section_path": "User Experience Guidelines for BankID Integration",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Identity Providers",
+      "page": 5,
+      "section_path": "Identity Providers",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID currently offers two identity verification methods for end users:",
+      "page": 5,
+      "section_path": "BankID currently offers two identity verification methods for end users:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "1. BankID Netcentric: This method requires a code device issued by the user's bank or the \nBankID app, along with a personal password that the user sets up through their online \nbanking platform. Some banks have developed their own mobile apps that can be used \ninstead of the code device.",
+      "page": 5,
+      "section_path": "1. BankID Netcentric: This method requires a code device issued by the user's ba…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "2. BankID Substantial: This method allows for biometric authentication directly on the user's \nmobile device.",
+      "page": 5,
+      "section_path": "2. BankID Substantial: This method allows for biometric authentication directly …",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n5 (9) \n \nThe merchant application must be prepared to handle this callback and respond appropriately.",
+      "page": 6,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 6,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 6,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 6,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 6,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 6,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 6,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 6,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n5 (9)",
+      "page": 6,
+      "section_path": "5 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Basic Flow: End-User Interactions \nThe end user interacts with BankID through three stages, depending on the service requested:",
+      "page": 6,
+      "section_path": "The end user interacts with BankID through three stages, depending on the service requested:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "1. NNIN Input and BankID Method Selection: The user enters their National Identity Number \n(NNIN) or Social Security Number (SSN) and selects the desired BankID method, depending \non the information provided in the login_hint parameter.",
+      "page": 6,
+      "section_path": "1. NNIN Input and BankID Method Selection: The user enters their National Identi…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "2. Authentication/Signing: The user signs in and/or provides credentials for the selected \nBankID method.",
+      "page": 6,
+      "section_path": "2. Authentication/Signing: The user signs in and/or provides credentials for the…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "3. (Optional) Consent Dialogues: If requested by the merchant, the user provides consent to \nshare their data.",
+      "page": 6,
+      "section_path": "3. (Optional) Consent Dialogues: If requested by the merchant, the user provides…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "For detailed information on designing the user experience for BankID authentication, including the \nflow of interactions, method selection, and consent management, please refer to the official BankID \nUser Experience Documentation. This resource provides comprehensive guidelines on ensuring a \nseamless and secure experience for end users across different authentication methods.",
+      "page": 6,
+      "section_path": "For detailed information on designing the user experience for BankID authenticat…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Customization \nBankID offers various customization options for the user interface presented to end users. These \ninclude the ability to add a custom logo and merchant name, control display modes for different \ndevices (like mobile apps or popups), and adjust the user interface to ensure a consistent experience \nacross platforms. The logo should meet specific size and format requirements (300 x 60 px, max \n10kB, PNG/SVG). Customization is managed via parameters during the provisioning process. You can \nfind more details here.",
+      "page": 6,
+      "section_path": "Customization",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Digital onboarding \nUsing BankID in the Onboarding Process \nWe offer products that simplify the onboarding process while adhering to regulatory requirements. \nBusinesses may use BankID products in various ways, depending on their needs.",
+      "page": 6,
+      "section_path": "Digital onboarding",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Storing NNIN from End-Users",
+      "page": 6,
+      "section_path": "Storing NNIN from End-Users",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nConsent Required: To store a user's National Identity Number (NNIN), consent must be \nobtained.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nMerchant Responsibilities: Merchants must handle consent storage, with BankID offering a \nUX flow for this process.",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nTechnical Details: Merchants must be provisioned to access nnin_altsub and nnin scopes",
+      "page": 6,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Please note, merchants must be provisioned to get access to the nnin_altsub and nnin scopes. You'll \nneed a legal reason to store and use national identity numbers. This access is given as a part of the \ncommercial agreement process.",
+      "page": 6,
+      "section_path": "Please note, merchants must be provisioned to get access to the nnin_altsub and …",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Error Handling \nHandling User Cancellation \nThe end-user can cancel an ongoing authentication or signing session at any time. If this happens, \nthe user will be redirected back to the specified redirect URL provided by the merchant application.",
+      "page": 6,
+      "section_path": "Error Handling",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "The merchant application must be prepared to handle this callback and respond appropriately.",
+      "page": 6,
+      "section_path": "The merchant application must be prepared to handle this callback and respond ap…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n6 (9)",
+      "page": 7,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 7,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 7,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 7,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 7,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 7,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 7,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 7,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n6 (9)",
+      "page": 7,
+      "section_path": "6 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Handling Errors \nIf an error occurs during an ongoing authentication or signing session, the following scenarios may \ntake place:",
+      "page": 7,
+      "section_path": "take place:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nThe end-user might be shown an error message, often accompanied by an error code, with \noptions to retry or return to the merchant application.",
+      "page": 7,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nIf the error occurs under the \"right conditions,\" the user can be redirected back to the \nmerchant application, using the same parameters as when a user cancels the session.",
+      "page": 7,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nIn rare cases, an error other than access_denied might be returned, along with an \nerror_description parameter, depending on the situation.",
+      "page": 7,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nIn severe cases, the user might be stuck on the BankID platform with no option to return to \nthe merchant application.",
+      "page": 7,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Here’s an example of how an error message might be displayed in the browser",
+      "page": 7,
+      "section_path": "Here’s an example of how an error message might be displayed in the browser",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n7 (9)",
+      "page": 8,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 8,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 8,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 8,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 8,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 8,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 8,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 8,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n7 (9)",
+      "page": 8,
+      "section_path": "7 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "API Overview \nCore Functionalities \nEnvironments \nWe maintain environments you can use:",
+      "page": 8,
+      "section_path": "We maintain environments you can use:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nTest (TEST) environment: https://test-gateway.zignsec.com/api/v5/sessions",
+      "page": 8,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nProduction (PROD) environment: https://gateway.zignsec.com/api/v5/sessions",
+      "page": 8,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authentication \nEach request to our API should be authenticated by sending your subscription key in the \n“Authorization” header. Our support creates subscription keys for you (a pair for each environment), \nand it’s highly recommended to regularly rotate the keys (currently it’s done by sending a support \nrequest, but please let us know if you’d like to automate it).",
+      "page": 8,
+      "section_path": "Authentication",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "If you need different configurations, it’s possible to register multiple tenants and configure them \ndifferently.",
+      "page": 8,
+      "section_path": "If you need different configurations, it’s possible to register multiple tenants…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "REST API \nHeaders",
+      "page": 8,
+      "section_path": "REST API",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Header  \nDescription \nRequired",
+      "page": 8,
+      "section_path": "Header",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Authorization",
+      "page": 8,
+      "section_path": "Authorization",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "This header parameter is the subscription key you received from \nZignSec during the registration process. Example: Authorization: \n123456add0cff22873c428e987654321 \nYes",
+      "page": 8,
+      "section_path": "ZignSec during the registration process. Example: Authorization:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Content-Type",
+      "page": 8,
+      "section_path": "Content-Type",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Specifies the media type of the request body data. Set to \napplication/json if JSON object. \nYes",
+      "page": 8,
+      "section_path": "Specifies the media type of the request body data. Set to",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "OpenAPI specification and documentation",
+      "page": 8,
+      "section_path": "OpenAPI specification and documentation",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "LIVE DOCUMENTATION",
+      "page": 8,
+      "section_path": "LIVE DOCUMENTATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nhttps://test-gateway.zignsec.com/api/v5/openapi/bankidno/#/",
+      "page": 8,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankId Norway Examples",
+      "page": 8,
+      "section_path": "BankId Norway Examples",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "API Endpoints",
+      "page": 8,
+      "section_path": "API Endpoints",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "AUTHENTICATION \nThe choice of BankID Authentication endpoints is driven by the key needs of your business and use \ncase. Please refer to the scopes documentation to understand the differences better. The endpoints \nutilise OIDC protocol.",
+      "page": 8,
+      "section_path": "AUTHENTICATION",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "DEFAULT ENDPOINT \nEndpoint: POST /bankidno/auth - Swagger UI (zignsec.com)",
+      "page": 8,
+      "section_path": "DEFAULT ENDPOINT",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n8 (9) \n \n[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]",
+      "page": 9,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 9,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 9,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 9,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 9,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 9,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 9,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 9,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n8 (9)",
+      "page": 9,
+      "section_path": "8 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Description: Standard endpoint. This API endpoint is to authenticate users with minimal \nrequirements to the user data (see the Scopes documentation). Default scopes openid + \nprofile (these scopes are requested in all endpoints listed here).",
+      "page": 9,
+      "section_path": "Description: Standard endpoint. This API endpoint is to authenticate users with …",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "NEW USERS ONBOARDING (ASKING FOR NNIN) \nEndpoint: POST /bankidno/auth/register - Swagger UI (zignsec.com)",
+      "page": 9,
+      "section_path": "NEW USERS ONBOARDING (ASKING FOR NNIN)",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Description: This API endpoint is used to onboard a new user by requesting an access to the end \nuser's National Identification Number (NNIN). It prompts the end users to provide consent for \nsharing their data. Technically it uses nnin additional scope.",
+      "page": 9,
+      "section_path": "Description: This API endpoint is used to onboard a new user by requesting an ac…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "AUTHENTICATE ALREADY REGISTERED USERS (NNIN ALREADY POSSESSED) \nEndpoint: POST /bankidno/auth/member - Swagger UI (zignsec.com)",
+      "page": 9,
+      "section_path": "AUTHENTICATE ALREADY REGISTERED USERS (NNIN ALREADY POSSESSED)",
+      "element_type": "header",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Description: This endpoint will work for users you already possess their national identity number \nand does not ask customer for the consent to retrieve the end user's National Identification Number \n(NNIN). Technically it uses nnin_altsub additional scope.",
+      "page": 9,
+      "section_path": "Description: This endpoint will work for users you already possess their nationa…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "GET SESSION DETAILS \nEndpoint: GET /bankidno/auth/{sessionId} - Swagger UI (zignsec.com)",
+      "page": 9,
+      "section_path": "GET SESSION DETAILS",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "{sessionId}"
+    },
+    {
+      "text": "Description: This API endpoint retrieves the status and details of a BankID identity verification \nsession in Norway. It allows you to check the outcome of a previously initiated verification request.",
+      "page": 9,
+      "section_path": "Description: This API endpoint retrieves the status and details of a BankID iden…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Settings and scopes can be changed upon request just contact ZignSec support.",
+      "page": 9,
+      "section_path": "Settings and scopes can be changed upon request just contact ZignSec support.",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Testing \nUse either of the following test user:",
+      "page": 9,
+      "section_path": "Use either of the following test user:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Name \nPersonal Number \nEntry Passcode \nPersonal Password",
+      "page": 9,
+      "section_path": "Name",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Aksel Herseth \n06046517928 \notp \nqwer1234",
+      "page": 9,
+      "section_path": "Aksel Herseth",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Ole Bramserud \n11920287974 \notp \nqwer1234",
+      "page": 9,
+      "section_path": "Ole Bramserud",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Sanna Hansen \n12829025475 \notp \nqwer1234",
+      "page": 9,
+      "section_path": "Sanna Hansen",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Test Testsen \n20872329758 \notp \nqwer1234",
+      "page": 9,
+      "section_path": "Test Testsen",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Or you can request your own BankID test users or test Apps by emailing support@zignsec.com. \nPlease include the name and fødselsnummer (personal identification number) for each test user. The \ninformation should be formatted as follows:",
+      "page": 9,
+      "section_path": "information should be formatted as follows:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nFor characters 'æøå' to be accepted, save file as Unicode-text in Excel .",
+      "page": 9,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "• \nAccepted line format is shown below. Use either comma ',' or semicolon ';' as field delimiter.",
+      "page": 9,
+      "section_path": "•",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]",
+      "page": 9,
+      "section_path": "[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly…",
+      "element_type": "code",
+      "has_verbatim": true,
+      "verbatim_block": "[Personal ID Number] [BankID Friendly Name] [Last Name] [First Name and possibly Middle Name]"
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1 \n \nVolodymyr Levchuk \nZignSec  \npublished \n \n \nBankID Norway v5.1 \n \nPage \n© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n9 (9)",
+      "page": 10,
+      "section_path": "Footer",
+      "element_type": "footer",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Product \nConfidentiality Level",
+      "page": 10,
+      "section_path": "Product",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway \nPublic",
+      "page": 10,
+      "section_path": "BankID Norway",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Author \nArea",
+      "page": 10,
+      "section_path": "Author",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Martin Heikkilä \neid \nIntegration guidelines",
+      "page": 10,
+      "section_path": "Martin Heikkilä",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Last changed by: \nDocument Name \nVersion 1.1",
+      "page": 10,
+      "section_path": "Last changed by:",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Volodymyr Levchuk \nZignSec  \npublished",
+      "page": 10,
+      "section_path": "Volodymyr Levchuk",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "BankID Norway v5.1 \n \nPage",
+      "page": 10,
+      "section_path": "BankID Norway v5.1",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "© ZignSec AB (publ) \nIntegration guidelines \n2024-10-02  \n9 (9)",
+      "page": 10,
+      "section_path": "9 (9)",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Alternatively, you can create your own test user on the following page: BankID RA 1.6.6-SNAPSHOT - \nBankID Norge",
+      "page": 10,
+      "section_path": "Alternatively, you can create your own test user on the following page: BankID R…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "For guidance on using the page, refer to the RA Light User Guide - BankID Norway Developer Portal",
+      "page": 10,
+      "section_path": "For guidance on using the page, refer to the RA Light User Guide - BankID Norway…",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Production testing \nCurrently, there are no test users available for the production environment. Merchants who wish to \nconduct tests in staging areas using the production environment will need to use real BankID users.",
+      "page": 10,
+      "section_path": "Production testing",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Change History",
+      "page": 10,
+      "section_path": "Change History",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "Date of Change  \nChanged By  \nSummary of Change",
+      "page": 10,
+      "section_path": "Date of Change",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "February 2024 \nJason Coombes \nFirst version",
+      "page": 10,
+      "section_path": "February 2024",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    },
+    {
+      "text": "September 2024 \nMartin Heikkilä \n1.1",
+      "page": 10,
+      "section_path": "September 2024",
+      "element_type": "paragraph",
+      "has_verbatim": false,
+      "verbatim_block": null
+    }
+  ],
+  "pages": 10,
+  "metadata": {
+    "extractor": "pymupdf_v2_enhanced",
+    "total_items": 214,
+    "version": "2.1"
+  }
+}

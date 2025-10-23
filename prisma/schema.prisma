@@ -1,0 +1,495 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id                    String             @id @default(cuid())
+  name                  String
+  slug                  String             @unique
+  domain                String?
+  logoUrl               String?
+  subscriptionTier      SubscriptionTier   @default(FREE)
+  subscriptionStatus    SubscriptionStatus @default(ACTIVE)
+  apiKeyHash            String?
+  webhookUrl            String?
+  settings              Json               @default("{}")
+  stripeCustomerId      String?            @unique
+  stripeSubscriptionId  String?
+  stripePriceId         String?
+  currentPeriodStart    DateTime?
+  currentPeriodEnd      DateTime?
+  cancelAtPeriodEnd     Boolean            @default(false)
+  createdAt             DateTime           @default(now())
+  updatedAt             DateTime           @updatedAt
+  ssoSettings           Json               @default("{}")
+  widgetSettings        Json               @default("{}")
+  ownerId               String?
+  onboardingCompleted   Boolean            @default(false)
+  onboardingConsentAt   DateTime?
+  onboardingSuccessGoal String?
+  onboardingUseCase     String?
+  analyticsEvents       AnalyticsEvent[]
+  apiKeys               ApiKey[]
+  auditLogs             AuditLog[]
+  chatFeedback          ChatFeedback[]
+  chatMessages          ChatMessage[]
+  chatSessions          ChatSession[]
+  copilotResponses      CopilotResponse[]
+  datasets              Dataset[]
+  documentChunks        DocumentChunk[]
+  documents             Document[]
+  memberships           Memberships[]
+  owner                 User?              @relation("OrganizationOwner", fields: [ownerId], references: [id])
+  users                 User[]
+
+  @@index([stripeCustomerId])
+  @@index([stripeSubscriptionId])
+  @@index([slug])
+  @@map("organizations")
+}
+
+model User {
+  id                    String                 @id @default(cuid())
+  organizationId        String?
+  email                 String?                @unique
+  passwordHash          String?
+  firstName             String?
+  lastName              String?
+  role                  UserRole               @default(MEMBER)
+  avatarUrl             String?
+  lastLoginAt           DateTime?
+  isActive              Boolean                @default(true)
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  emailVerifiedAt       DateTime?
+  image                 String?
+  name                  String?
+  emailVerified         DateTime?
+  accounts              Account[]
+  apiKeys               ApiKey[]
+  auditLogs             AuditLog[]
+  chatFeedback          ChatFeedback[]
+  collaborationSessions CollaborationSession[]
+  sharedDocuments       DocumentShare[]        @relation("SharedByUser")
+  sharedWithMe          DocumentShare[]        @relation("SharedWithUser")
+  documents             Document[]
+  memberships           Memberships[]
+  ownedOrganizations    Organization[]         @relation("OrganizationOwner")
+  sessions              Session[]
+  organization          Organization?          @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([email])
+  @@index([isActive])
+  @@map("users")
+}
+
+model Dataset {
+  id                    String       @id @default(cuid())
+  organizationId        String
+  name                  String
+  description           String?
+  type                  DatasetType  @default(SERVICE)
+  tags                  String[]     @default([])
+  isActive              Boolean      @default(true)
+  showResponseMetadata  Boolean      @default(false)  // Show dev badge (JSON/Fallback indicator)
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  chatFeedback          ChatFeedback[]
+  organization          Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  documents             Document[]
+
+  @@unique([organizationId, name])
+  @@index([organizationId])
+  @@index([isActive])
+  @@index([type])
+  @@map("datasets")
+}
+
+model Document {
+  id                    String                 @id @default(cuid())
+  organizationId        String
+  userId                String?
+  title                 String
+  contentType           String
+  filePath              String?
+  fileSize              BigInt?
+  fileHash              String?
+  storageUrl            String?  // S3/R2 public URL
+  storageKey            String?  // S3/R2 object key
+  storageProvider       String?  // 's3', 'r2', etc.
+  status                DocumentStatus         @default(UPLOADING)
+  metadata              Json                   @default("{}")
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  datasetId             String?
+  tags                  String[]               @default([])
+  coverage              Int?
+  errorMessage          String?
+  extractor             String?
+  indexedChunks         Int?                   @default(0)
+  pages                 Int?
+  warnings              Int?                   @default(0)
+  collaborationSessions CollaborationSession[]
+  documentChunks        DocumentChunk[]
+  shares                DocumentShare[]
+  dataset               Dataset?               @relation(fields: [datasetId], references: [id])
+  organization          Organization           @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user                  User?                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([datasetId])
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([organizationId, status])
+  @@index([organizationId, datasetId])
+  @@map("documents")
+}
+
+model DocumentChunk {
+  id             String                         @id @default(cuid())
+  documentId     String
+  organizationId String
+  content        String
+  embeddingId    String?
+  embedding      Unsupported("vector(1536)")?   // pgvector embedding
+  chunkIndex     Int
+  metadata       Json                           @default("{}")
+  sectionPath    String?                        @map("section_path") // Hierarchy: "Introduction > Authentication > OAuth 2.0"
+  createdAt      DateTime                       @default(now())
+  document       Document                       @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  organization   Organization                   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([documentId])
+  @@index([organizationId])
+  @@index([embeddingId])
+  @@index([documentId, chunkIndex])
+  @@index([sectionPath])
+  @@map("document_chunks")
+}
+
+model ChatSession {
+  id             String        @id @default(cuid())
+  organizationId String
+  sessionId      String        @unique
+  userIdentifier String?
+  context        Json          @default("{}")
+  startedAt      DateTime      @default(now())
+  lastActivityAt DateTime      @default(now())
+  chatMessages   ChatMessage[]
+  organization   Organization  @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([sessionId])
+  @@index([userIdentifier])
+  @@index([lastActivityAt])
+  @@map("chat_sessions")
+}
+
+model ChatMessage {
+  id             String       @id @default(cuid())
+  sessionId      String
+  organizationId String
+  role           MessageRole
+  content        String
+  metadata       Json         @default("{}")
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  session        ChatSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId])
+  @@index([organizationId])
+  @@index([role])
+  @@index([createdAt])
+  @@map("chat_messages")
+}
+
+model AnalyticsEvent {
+  id             String       @id @default(cuid())
+  organizationId String
+  eventType      String
+  eventData      Json
+  userIdentifier String?
+  sessionId      String?
+  ipAddress      String?
+  userAgent      String?
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([eventType])
+  @@index([userIdentifier])
+  @@index([sessionId])
+  @@index([createdAt])
+  @@index([organizationId, eventType])
+  @@map("analytics_events")
+}
+
+model DocumentShare {
+  id           String          @id @default(cuid())
+  documentId   String
+  userId       String
+  sharedBy     String
+  permission   SharePermission @default(READ)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  document     Document        @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  sharedByUser User            @relation("SharedByUser", fields: [sharedBy], references: [id], onDelete: Cascade)
+  user         User            @relation("SharedWithUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([documentId, userId])
+  @@index([documentId])
+  @@index([userId])
+  @@index([sharedBy])
+  @@index([permission])
+  @@map("document_shares")
+}
+
+model CollaborationSession {
+  id           String   @id @default(cuid())
+  documentId   String
+  userId       String
+  sessionId    String   @unique
+  participants Json     @default("[]")
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  document     Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([documentId])
+  @@index([userId])
+  @@index([sessionId])
+  @@index([isActive])
+  @@map("collaboration_sessions")
+}
+
+model AuditLog {
+  id             String       @id @default(cuid())
+  organizationId String
+  userId         String?
+  eventType      String
+  description    String
+  metadata       Json         @default("{}")
+  ipAddress      String?
+  userAgent      String?
+  timestamp      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User?        @relation(fields: [userId], references: [id])
+
+  @@index([organizationId])
+  @@index([userId])
+  @@index([eventType])
+  @@index([timestamp])
+  @@index([organizationId, timestamp])
+  @@map("audit_logs")
+}
+
+model Memberships {
+  id        String       @id @default(cuid())
+  userId    String
+  orgId     String
+  role      OrgRole      @default(MEMBER)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  org       Organization @relation(fields: [orgId], references: [id])
+  user      User         @relation(fields: [userId], references: [id])
+
+  @@unique([userId, orgId])
+  @@index([userId])
+  @@index([orgId])
+  @@map("memberships")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id])
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model TelemetryEvent {
+  id        String   @id @default(cuid())
+  orgId     String
+  userId    String
+  kind      String
+  data      Json?
+  createdAt DateTime @default(now())
+
+  @@index([orgId])
+  @@index([userId])
+  @@index([kind])
+  @@map("telemetry_events")
+}
+
+enum UserRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+  SUPER_ADMIN
+}
+
+enum OrgRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+enum SubscriptionTier {
+  FREE
+  PRO
+  FOUNDER
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  PAST_DUE
+  CANCELLED
+  SUSPENDED
+}
+
+enum DocumentStatus {
+  PROCESSING
+  COMPLETED
+  FAILED
+  UPLOADING
+  INDEXING
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+enum SharePermission {
+  READ
+  WRITE
+  ADMIN
+}
+
+enum DatasetType {
+  SERVICE
+  PRODUCT
+  INTEGRATION
+  SDK
+  API_GUIDE
+  DOCUMENTATION
+  TUTORIAL
+  REFERENCE
+}
+
+model ChatFeedback {
+  id             String   @id @default(cuid())
+  organizationId String
+  userId         String
+  datasetId      String
+  messageContent String   @db.Text  // The copilot's response
+  userQuery      String   @db.Text  // The user's question
+  rating         FeedbackRating  // thumbs up/down
+  comment        String?  @db.Text  // Optional detailed feedback
+  sources        Json?    // Which documents were cited
+  metadata       Json?    // Additional context (retrieval scores, model used, etc.)
+  createdAt      DateTime @default(now())
+  
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  dataset        Dataset      @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  
+  @@index([organizationId])
+  @@index([datasetId])
+  @@index([userId])
+  @@index([rating])
+  @@index([createdAt])
+  @@map("chat_feedback")
+}
+
+enum FeedbackRating {
+  POSITIVE  // thumbs up
+  NEGATIVE  // thumbs down
+}
+
+model CopilotResponse {
+  id              String   @id @default(cuid())
+  organizationId  String
+  datasetId       String?
+  sessionId       String
+  messageId       String   // Assistant message ID for linking with feedback
+  prompt          String   @db.Text  // User's query
+  intent          String   // JSON, ENDPOINT, TABLE, etc.
+  confidenceLevel String   // high, medium, low
+  confidenceScore Float    // Numeric score (0-1)
+  latencyMs       Int      // Response time in milliseconds
+  createdAt       DateTime @default(now())
+  
+  organization    Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  
+  @@index([organizationId])
+  @@index([datasetId])
+  @@index([sessionId])
+  @@index([messageId])
+  @@index([confidenceLevel])
+  @@index([createdAt])
+  @@index([organizationId, createdAt])
+  @@map("copilot_responses")
+}
+
+model ApiKey {
+  id             String   @id @default(cuid())
+  organizationId String
+  keyHash        String   // SHA-256 hash of the actual key
+  keyPrefix      String   // First 8 characters for identification (e.g., "avenai_")
+  name           String?  // Optional name for the key
+  isActive       Boolean  @default(true)
+  lastUsedAt     DateTime?
+  createdAt      DateTime @default(now())
+  createdBy      String   // User ID who created it
+  
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdByUser  User         @relation(fields: [createdBy], references: [id])
+  
+  @@index([organizationId])
+  @@index([keyHash])
+  @@index([isActive])
+  @@index([createdAt])
+  @@map("api_keys")
+}

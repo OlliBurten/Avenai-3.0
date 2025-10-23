@@ -1,0 +1,530 @@
+diff --git a/.env.example b/.env.example
+index 1111111..2222222 100644
+--- a/.env.example
++++ b/.env.example
+@@ -30,6 +30,15 @@ NEXT_PUBLIC_APP_URL="http://localhost:3000"
+ # Feature Flags
+ UNIFIED_WORKSPACE=true
+ NEXT_PUBLIC_ENABLE_EMBED_WIDGET=true
++
++# Phase 4: ChatGPT-Level Intelligence (Gradual Rollout)
++DOC_WORKER_V2_1=true          # Enable enhanced extraction (footer, email, JSON, endpoints)
++HYBRID_FUSION=true            # Enable hybrid retrieval (vector + FTS fusion)
++MMR_RERANK=true               # Enable MMR diversity (max 2/page, min 3 sections)
++FALLBACK_EXPAND=true          # Enable confidence-based fallback (auto-widen loop)
++CROSS_DOC_MERGE=true          # Enable balanced multi-document retrieval
++PROMPT_ROUTER_V2=true         # Enable strict mode templates (JSON/ENDPOINT/etc.)
++ENABLE_METRICS_DB=false       # Enable metrics persistence (optional - uses in-memory by default)
+ 
+ # Email Service (Resend)
+ RESEND_API_KEY="your-resend-api-key"
+diff --git a/package.json b/package.json
+index 3333333..4444444 100644
+--- a/package.json
++++ b/package.json
+@@ -30,6 +30,9 @@
+     "seed:admin": "tsx scripts/seed-admin.ts",
+     "test:golden": "tsx scripts/test-golden.ts",
++    "eval:smoke": "tsx scripts/eval/run-smoke.ts",
++    "eval:golden": "tsx scripts/eval/run-golden.ts",
++    "db:add-fts": "./scripts/add-fts-column.sh",
+     "reingest": "tsx scripts/reingest-dataset.ts",
+     "smoke-tests": "tsx scripts/smoke-tests.ts",
+diff --git a/prisma/migrations/add_fts_column.sql b/prisma/migrations/add_fts_column.sql
+new file mode 100644
+index 0000000..5555555
+--- /dev/null
++++ b/prisma/migrations/add_fts_column.sql
+@@ -0,0 +1,15 @@
++-- Add Full-Text Search (FTS) support to document_chunks
++-- This enables hybrid semantic + keyword retrieval
++
++-- Add tsvector column (generated from content + endpoint + section_path)
++ALTER TABLE document_chunks
++  ADD COLUMN IF NOT EXISTS fts tsvector
++  GENERATED ALWAYS AS (
++    to_tsvector('simple',
++      coalesce(content,'') || ' ' ||
++      coalesce((metadata->>'endpoint')::text,'') || ' ' ||
++      coalesce(section_path,'')
++    )
++  ) STORED;
++
++CREATE INDEX IF NOT EXISTS idx_chunks_fts ON document_chunks USING GIN (fts);
+diff --git a/scripts/add-fts-column.sh b/scripts/add-fts-column.sh
+new file mode 100755
+index 0000000..6666666
+--- /dev/null
++++ b/scripts/add-fts-column.sh
+@@ -0,0 +1,25 @@
++#!/bin/bash
++
++# Add Full-Text Search column to document_chunks table
++
++set -e
++
++echo "🔧 Adding FTS column to document_chunks table..."
++
++# Source environment variables
++if [ -f .env.local ]; then
++  export $(grep -v '^#' .env.local | xargs)
++fi
++
++if [ -z "$DATABASE_URL" ]; then
++  echo "❌ DATABASE_URL not set"
++  exit 1
++fi
++
++# Run migration
++psql "$DATABASE_URL" -f prisma/migrations/add_fts_column.sql
++
++echo "✅ FTS column added successfully!"
++echo ""
++echo "🧪 Test: psql \"\$DATABASE_URL\" -c \"SELECT COUNT(fts) FROM document_chunks;\""
+diff --git a/lib/config/feature-flags.ts b/lib/config/feature-flags.ts
+new file mode 100644
+index 0000000..7777777
+--- /dev/null
++++ b/lib/config/feature-flags.ts
+@@ -0,0 +1,39 @@
++/**
++ * Feature Flags - Phase 4
++ */
++
++export interface Phase4FeatureFlags {
++  DOC_WORKER_V2_1: boolean;
++  HYBRID_FUSION: boolean;
++  MMR_RERANK: boolean;
++  FALLBACK_EXPAND: boolean;
++  CROSS_DOC_MERGE: boolean;
++  PROMPT_ROUTER_V2: boolean;
++  ENABLE_METRICS_DB: boolean;
++}
++
++export function getPhase4Flags(): Phase4FeatureFlags {
++  return {
++    DOC_WORKER_V2_1: process.env.DOC_WORKER_V2_1 === 'true',
++    HYBRID_FUSION: process.env.HYBRID_FUSION === 'true',
++    MMR_RERANK: process.env.MMR_RERANK === 'true',
++    FALLBACK_EXPAND: process.env.FALLBACK_EXPAND === 'true',
++    CROSS_DOC_MERGE: process.env.CROSS_DOC_MERGE === 'true',
++    PROMPT_ROUTER_V2: process.env.PROMPT_ROUTER_V2 === 'true',
++    ENABLE_METRICS_DB: process.env.ENABLE_METRICS_DB === 'true'
++  };
++}
++
++export function logFeatureFlags(): void {
++  const flags = getPhase4Flags();
++  const enabled = Object.values(flags).filter(Boolean).length;
++  const total = Object.keys(flags).length;
++  const rollout = Math.round((enabled / total) * 100);
++
++  console.log(`\n🎚️  [Phase 4] ${rollout}% enabled (${enabled}/${total} features)`);
++  console.log(`   HYBRID_FUSION: ${flags.HYBRID_FUSION ? '✅' : '❌'}`);
++  console.log(`   PROMPT_ROUTER_V2: ${flags.PROMPT_ROUTER_V2 ? '✅' : '❌'}`);
++  console.log(`   MMR_RERANK: ${flags.MMR_RERANK ? '✅' : '❌'}`);
++  console.log(`   FALLBACK_EXPAND: ${flags.FALLBACK_EXPAND ? '✅' : '❌'}\n`);
++}
+diff --git a/lib/retrieval/hybrid.ts b/lib/retrieval/hybrid.ts
+new file mode 100644
+index 0000000..8888888
+--- /dev/null
++++ b/lib/retrieval/hybrid.ts
+@@ -0,0 +1,68 @@
++/**
++ * Hybrid Retrieval - Postgres FTS Fusion
++ */
++
++import { prisma } from '@/lib/prisma';
++
++export type Candidate = {
++  id: string;
++  content: string;
++  section_path: string | null;
++  page: number | null;
++  document_id: string;
++  chunk_index: number;
++  cosine: number;
++  textScore: number;
++  finalScore: number;
++};
++
++export async function hybridSearch({
++  orgId,
++  datasetId,
++  queryEmbedding,
++  queryText,
++  k = 40
++}: {
++  orgId: string;
++  datasetId: string;
++  queryEmbedding: number[];
++  queryText: string;
++  k?: number;
++}): Promise<Candidate[]> {
++  // Vector head
++  const vec = await prisma.$queryRaw<Candidate[]>`
++    SELECT id, content, section_path, (metadata->>'page')::int as page,
++           document_id, chunk_index,
++           (1 - (embedding <=> ${queryEmbedding}::vector)) AS cosine,
++           0.0::float AS "textScore", 0.0::float AS "finalScore"
++    FROM document_chunks
++    WHERE organization_id = ${orgId}::uuid AND document_id IN (
++      SELECT id FROM documents WHERE dataset_id = ${datasetId}::uuid AND status = 'READY'
++    ) AND embedding IS NOT NULL
++    ORDER BY embedding <=> ${queryEmbedding}::vector
++    LIMIT ${k}
++  `;
++
++  // Text head (FTS)
++  const fts = await prisma.$queryRaw<Candidate[]>`
++    SELECT id, content, section_path, (metadata->>'page')::int as page,
++           document_id, chunk_index,
++           0.0::float AS cosine,
++           ts_rank_cd(fts, plainto_tsquery('simple', ${queryText})) AS "textScore",
++           0.0::float AS "finalScore"
++    FROM document_chunks
++    WHERE organization_id = ${orgId}::uuid AND document_id IN (
++      SELECT id FROM documents WHERE dataset_id = ${datasetId}::uuid AND status = 'READY'
++    ) AND fts @@ plainto_tsquery('simple', ${queryText})
++    ORDER BY "textScore" DESC
++    LIMIT ${k}
++  `;
++
++  // Fuse
++  const map = new Map<string, Candidate>();
++  vec.forEach(r => map.set(r.id, r));
++  fts.forEach(t => { const m = map.get(t.id); if (m) m.textScore = Math.max(m.textScore, t.textScore); else map.set(t.id, t); });
++  const fused = [...map.values()].map(r => ({ ...r, finalScore: 0.7 * (r.cosine || 0) + 0.3 * (r.textScore || 0) }));
++  fused.sort((a, b) => b.finalScore - a.finalScore);
++  return fused.slice(0, k);
++}
+diff --git a/lib/retrieval/mmr.ts b/lib/retrieval/mmr.ts
+new file mode 100644
+index 0000000..9999999
+--- /dev/null
++++ b/lib/retrieval/mmr.ts
+@@ -0,0 +1,20 @@
++/**
++ * MMR Diversity - Page/Section Constraints
++ */
++
++import type { Candidate } from './hybrid';
++
++export function mmrDiverse(cands: Candidate[], maxReturn = 12): Candidate[] {
++  const out: Candidate[] = [];
++  const perPage = new Map<number, number>();
++  const sections = new Set<string>();
++
++  for (const c of cands) {
++    const pg = c.page ?? -1;
++    const cnt = perPage.get(pg) ?? 0;
++    if (cnt >= 2) continue;
++    out.push(c);
++    perPage.set(pg, cnt + 1);
++    if (c.section_path) sections.add(c.section_path);
++    if (out.length >= maxReturn && sections.size >= 3) break;
++  }
++  return out;
++}
+diff --git a/lib/retrieval/policy.ts b/lib/retrieval/policy.ts
+new file mode 100644
+index 0000000..AAAAAAA
+--- /dev/null
++++ b/lib/retrieval/policy.ts
+@@ -0,0 +1,36 @@
++/**
++ * Soft-Filter Policy - Intent-Aware Boosting
++ */
++
++import type { Candidate } from './hybrid';
++
++export type Intent = 'JSON' | 'TABLE' | 'CONTACT' | 'ENDPOINT' | 'WORKFLOW' | 'DEFAULT';
++
++export function applyPolicy(intent: Intent, cands: Candidate[]): Candidate[] {
++  const prefer = (pred: (c: Candidate) => boolean) => {
++    const hit = cands.filter(pred);
++    if (hit.length >= 3) {
++      return hit.concat(cands.filter(c => !pred(c)).slice(0, 6));
++    }
++    // Soft fallback: boost matching, keep all
++    return cands.map(c => (pred(c) ? { ...c, finalScore: c.finalScore + 0.15 } : c));
++  };
++
++  switch (intent) {
++    case 'JSON':
++      return prefer(c => /"[:\w\-\s]+"\s*:/.test(c.content) || /\{[\s\S]*\}/.test(c.content));
++    case 'TABLE':
++      return prefer(c => /\|.+\|/.test(c.content));
++    case 'CONTACT':
++      return cands.map(c =>
++        /@/.test(c.content) || /Contact|Support/i.test(c.content)
++          ? { ...c, finalScore: c.finalScore + 0.2 }
++          : c
++      );
++    case 'ENDPOINT':
++      return cands.map(c =>
++        /^(GET|POST|PUT|PATCH|DELETE)\s+/m.test(c.content) ? { ...c, finalScore: c.finalScore + 0.12 } : c
++      );
++    default:
++      return cands;
++  }
++}
+diff --git a/lib/retrieval/crossDoc.ts b/lib/retrieval/crossDoc.ts
+new file mode 100644
+index 0000000..BBBBBBB
+--- /dev/null
++++ b/lib/retrieval/crossDoc.ts
+@@ -0,0 +1,21 @@
++/**
++ * Cross-Document Merge - Balanced Distribution
++ */
++
++import type { Candidate } from './hybrid';
++
++export function perDocCapMerge(cands: Candidate[], perDoc = 5, total = 14): Candidate[] {
++  const byDoc = new Map<string, Candidate[]>();
++
++  for (const c of cands) {
++    const key = c.document_id ?? 'unknown';
++    const arr = byDoc.get(key) ?? [];
++    if (arr.length < perDoc) {
++      arr.push(c);
++      byDoc.set(key, arr);
++    }
++  }
++
++  const merged = [...byDoc.values()].flat().sort((a, b) => b.finalScore - a.finalScore);
++  return merged.slice(0, total);
++}
+diff --git a/lib/generation/promptRouter.ts b/lib/generation/promptRouter.ts
+new file mode 100644
+index 0000000..CCCCCCC
+--- /dev/null
++++ b/lib/generation/promptRouter.ts
+@@ -0,0 +1,27 @@
++/**
++ * Prompt Router - Deterministic Answer Shapes
++ */
++
++import type { Intent } from '@/lib/retrieval/policy';
++
++export function buildPrompt(intent: Intent): string {
++  switch (intent) {
++    case 'JSON':
++      return `Return the JSON verbatim from the provided context (no commentary). If none exists, reply exactly: "No JSON sample available in docs."`;
++    case 'ENDPOINT':
++      return `Answer with short bullets: "METHOD /path — brief purpose". Up to 6 lines. If unknown, list nearest related endpoints.`;
++    case 'WORKFLOW':
++      return `Provide 5–9 numbered steps. Cite two distinct sections by title in parentheses. Keep under 200 words.`;
++    case 'CONTACT':
++      return `Return the support email verbatim and add "(found in footer)". If multiple, list one per line.`;
++    case 'TABLE':
++      return `Return a markdown table from the context. If table text is fragmented, reconstruct headers + 3–10 rows from the provided content only.`;
++    case 'ENDPOINT':
++      return `Answer with short bullets: "METHOD /path — brief purpose". Up to 6 lines. If unknown, list nearest related endpoints.`;
++    default:
++      return `Be concise (≤180 words), grounded strictly in the provided context. Prefer exact strings for endpoints, headers, and codes.`;
++  }
++}
+diff --git a/lib/telemetry/retrieval-metrics.ts b/lib/telemetry/retrieval-metrics.ts
+new file mode 100644
+index 0000000..DDDDDDD
+--- /dev/null
++++ b/lib/telemetry/retrieval-metrics.ts
+@@ -0,0 +1,27 @@
++/**
++ * Retrieval Metrics - Lightweight Telemetry
++ */
++
++export function logRetrievalMetrics({
++  intent,
++  topScore,
++  uniqueSections,
++  fallbackTriggered,
++  endpointFound,
++  verbatimFound,
++  retrievalTimeMs
++}: {
++  intent: string;
++  topScore: number;
++  uniqueSections: number;
++  fallbackTriggered: boolean;
++  endpointFound: boolean;
++  verbatimFound?: boolean;
++  retrievalTimeMs?: number;
++}) {
++  console.log('[retrieval-metrics]', {
++    intent,
++    topScore: topScore.toFixed(4),
++    sections: uniqueSections,
++    fallback: fallbackTriggered,
++    endpoint: endpointFound,
++    verbatim: verbatimFound,
++    time: retrievalTimeMs ? `${retrievalTimeMs}ms` : undefined
++  });
++}
+diff --git a/scripts/eval/run-smoke.ts b/scripts/eval/run-smoke.ts
+new file mode 100644
+index 0000000..EEEEEEE
+--- /dev/null
++++ b/scripts/eval/run-smoke.ts
+@@ -0,0 +1,85 @@
++/**
++ * Smoke Test Runner - Live API Validation
++ */
++
++type TestCase = {
++  id: string;
++  question: string;
++  expect?: { exact?: string[]; regex?: string[] };
++};
++
++async function ask(question: string): Promise<string> {
++  const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
++  const datasetId = process.env.DATASET_ID || 'eu-test-dataset';
++
++  const response = await fetch(`${baseUrl}/api/chat`, {
++    method: 'POST',
++    headers: { 'Content-Type': 'application/json' },
++    body: JSON.stringify({ message: question, datasetId })
++  });
++
++  const text = await response.text();
++  const lines = text.split('\n').filter(line => line.startsWith('data: '));
++  let fullAnswer = '';
++
++  for (const line of lines) {
++    const data = line.replace('data: ', '');
++    if (!data.trim()) continue;
++    try {
++      const json = JSON.parse(data);
++      if (json.content) fullAnswer += json.content;
++    } catch {}
++  }
++
++  return fullAnswer || text;
++}
++
++function score(answer: string, testCase: TestCase): boolean {
++  const exact = testCase.expect?.exact?.every(s => answer.includes(s)) ?? true;
++  const regex = testCase.expect?.regex?.every(rx => new RegExp(rx, 'i').test(answer)) ?? true;
++  return exact && regex;
++}
++
++async function main() {
++  console.log('🧪 Avenai Smoke Tests\n');
++
++  const cases: TestCase[] = [
++    {
++      id: 'auth-headers',
++      question: 'Which authentication headers are required for BankID Sweden?',
++      expect: { exact: ['Authorization: Bearer', 'Zs-Product-Key'] }
++    },
++    {
++      id: 'start-sweden',
++      question: 'What endpoint/method starts BankID auth in Sweden?',
++      expect: { regex: ['POST.*?/bankidse/auth'] }
++    },
++    {
++      id: 'collect',
++      question: 'Which endpoint do I call to poll authentication status?',
++      expect: { regex: ['GET.*?/collect', 'orderRef'] }
++    },
++    {
++      id: 'cancel',
++      question: 'What is the cancel endpoint?',
++      expect: { regex: ['POST.*?/cancel'] }
++    },
++    {
++      id: 'json-sample',
++      question: 'Show me sample JSON for sign request',
++      expect: { regex: ['\\{[\\s\\S]*\\}', 'personal_number'] }
++    }
++  ];
++
++  let pass = 0;
++  for (const c of cases) {
++    const a = await ask(c.question);
++    const ok = score(a, c);
++    console.log(`${ok ? '✅' : '❌'} ${c.id} :: ${a.slice(0, 120).replace(/\n/g, ' ')}…`);
++    if (ok) pass++;
++  }
++
++  const passRate = pass / cases.length;
++  console.log(`\nResult: ${pass}/${cases.length} (${Math.round(passRate * 100)}%)`);
++
++  if (passRate >= 0.95) {
++    console.log('🎉 PASS');
++    process.exit(0);
++  } else {
++    console.log('⚠️  FAIL - Below 95%');
++    process.exit(1);
++  }
++}
++
++main().catch(e => {
++  console.error(e);
++  process.exit(1);
++});
+diff --git a/app/api/debug/snapshot/route.ts b/app/api/debug/snapshot/route.ts
+new file mode 100644
+index 0000000..FFFFFFF
+--- /dev/null
++++ b/app/api/debug/snapshot/route.ts
+@@ -0,0 +1,54 @@
++/**
++ * Debug Snapshot - Runtime Configuration
++ */
++
++import { NextResponse } from 'next/server';
++import { getPhase4Flags } from '@/lib/config/feature-flags';
++import { prisma } from '@/lib/prisma';
++
++export const runtime = 'nodejs';
++export const dynamic = 'force-dynamic';
++
++export async function GET() {
++  try {
++    const flags = getPhase4Flags();
++
++    // Check FTS column exists
++    let ftsStatus = 'unknown';
++    try {
++      const result = await prisma.$queryRaw<Array<{ count: number }>>`
++        SELECT COUNT(*) as count FROM document_chunks WHERE fts IS NOT NULL LIMIT 1
++      `;
++      ftsStatus = result.length > 0 ? 'exists' : 'missing';
++    } catch {
++      ftsStatus = 'not_created';
++    }
++
++    // Get chunk stats
++    const stats = await prisma.documentChunk.groupBy({
++      by: ['organizationId'],
++      _count: { id: true },
++      take: 10
++    });
++
++    const totalChunks = stats.reduce((sum, s) => sum + s._count.id, 0);
++
++    return NextResponse.json({
++      timestamp: new Date().toISOString(),
++      phase4: {
++        flags,
++        rollout: Object.values(flags).filter(Boolean).length + '/' + Object.keys(flags).length,
++        fts_status: ftsStatus
++      },
++      database: {
++        total_chunks: totalChunks,
++        organizations: stats.length
++      }
++    });
++  } catch (error: any) {
++    return NextResponse.json(
++      { error: error.message },
++      { status: 500 }
++    );
++  }
++}
+

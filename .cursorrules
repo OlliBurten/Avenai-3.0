@@ -1,0 +1,147 @@
+# Avenai Cursor Rules
+# AI-optimized codebase structure and conventions
+
+## Component Organization
+
+### Single Source of Truth
+- **Chat State:** All chat logic lives in `components/workspace/SharedChatState.tsx`
+- **Chat UI:** Render-only components in `components/chat/*`
+- **Copilot UI:** Copilot-specific components in `components/copilot/*`
+- **Base UI:** Design system atoms in `components/ui/*`
+
+### Component Hierarchy
+```
+components/
+├── ui/           # Base design system (Button, Card, Badge)
+├── workspace/    # Smart containers (SharedChatState, WorkspaceShell)
+├── chat/         # Dumb chat UI (MessageItem, MessageBubble)
+├── copilot/      # Copilot-specific UI (FeedbackButtons, SourceChips)
+├── sidebar/      # Sidebar components
+├── brand/        # Brand/logo components
+├── theme/        # Theme provider
+├── documents/    # Document management UI
+├── datasets/     # Dataset management UI
+├── admin/        # Admin panel
+└── hooks/        # Custom React hooks
+```
+
+## Import Conventions
+
+### Use Path Aliases
+```typescript
+// ✅ Good
+import { Button } from '@/components/ui/button'
+import { SharedChatState } from '@/components/workspace'
+import { getEmbedding } from '@/lib/embeddings'
+
+// ❌ Bad
+import { Button } from '../../../components/ui/button'
+```
+
+### Use Barrel Exports
+```typescript
+// ✅ Good
+import { Button, Card, Badge } from '@/components/ui'
+
+// ❌ Bad
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+```
+
+## Styling Rules
+
+### One Place for Styles
+- **Design Tokens:** `styles/tokens.css` for colors, spacing, shadows
+- **Component Styling:** Tailwind classes ONLY (no separate CSS files)
+- **Global Styles:** `app/globals.css` for Tailwind imports only
+
+```typescript
+// ✅ Good - Tailwind classes
+<div className="bg-primary text-white px-4 py-2 rounded-lg">
+
+// ❌ Bad - Inline styles or imported CSS
+<div style={{ backgroundColor: '#7F56D9' }}>
+```
+
+### Design Token Usage
+```css
+/* Use these variables from styles/tokens.css */
+--color-primary: #7F56D9
+--color-primary-light: #9E77ED
+--color-primary-dark: #6941C6
+```
+
+## File Naming
+
+- **Components:** `PascalCase.tsx` (MessageItem.tsx, CopilotPanel.tsx)
+- **Utilities:** `camelCase.ts` (formatConfidence.ts, parseMarkdown.ts)
+- **Hooks:** `useThing.ts` (useAuth.ts, usePersistentState.ts)
+- **Types:** `types.ts` or inline in component
+
+## Database & Backend
+
+- **ORM:** Use Prisma for all database operations
+- **Vector Search:** Use `lib/pgvector.ts` for semantic search
+- **Auth:** Use NextAuth.js via `lib/auth/*`
+- **RAG Pipeline:** Use `lib/rag/*` for retrieval logic
+
+## Forbidden Patterns
+
+### ❌ Never Create Duplicate Components
+```typescript
+// ❌ Bad - duplicating chat logic
+// DON'T create another ChatClient, ChatPane, ChatWidget
+// ALWAYS use SharedChatState from components/workspace
+```
+
+### ❌ Never Mix Component Locations
+```typescript
+// ❌ Bad - components should ONLY live in /components
+// /app/(components)/* is DELETED
+// /app/widget/* is DELETED (use /preview only)
+```
+
+### ❌ Never Import Across Domains Without Barrel
+```typescript
+// ❌ Bad - deep imports without barrel
+import { MessageItem } from '@/components/chat/MessageItem'
+import { MessageBubble } from '@/components/chat/MessageBubble'
+
+// ✅ Good - use barrel exports
+import { MessageItem, MessageBubble } from '@/components/chat'
+```
+
+## Testing & Verification
+
+- **Before Editing:** Check if component exists in `/components` (not `/app`)
+- **After Editing:** Verify imports use path aliases (@/components/*)
+- **Chat Changes:** Always edit `SharedChatState.tsx`, never create new chat containers
+
+## Code Generation Rules
+
+When generating or modifying code:
+
+1. **Check Location First:** Is this component in `/components`?
+2. **Use Path Aliases:** Always use `@/components/*`, never relative imports
+3. **Follow Hierarchy:** UI atoms in `/ui`, smart containers in `/workspace`
+4. **One Chat System:** Never create new chat components, extend SharedChatState
+5. **Tailwind Only:** No inline styles, no CSS imports in components
+
+## Special Routes
+
+- **Dev Routes:** `/app/_dev/*` - Only accessible in development
+- **Public Routes:** `/app/preview/*` - Widget demo
+- **Dashboard Routes:** `/app/(dashboard)/*` - Main pilot interface
+- **API Routes:** `/app/api/*` - Backend endpoints
+
+## Documentation
+
+- **README.md:** Project overview (in root)
+- **CONTRIBUTING.md:** Developer guide (in root)
+- **docs/:** All documentation organized by category
+
+---
+
+**Last Updated:** October 21, 2025
+**Maintained by:** Avenai Development Team

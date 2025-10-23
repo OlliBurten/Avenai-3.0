@@ -1,0 +1,485 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Avenai Design Tokens */
+@import '../styles/tokens.css';
+
+/* Markdown renderer tokens */
+:root{
+  --foreground: #0a0a0a;
+  --muted: #f2f3f5;
+  --border: #e5e7eb;
+}
+:root.dark{
+  --foreground: #f5f5f5;
+  --muted: #111317;
+  --border: #2a2e37;
+}
+
+/* Avenai Theme - Trust & Intelligence */
+:root {
+  --background: 255 255 255;     /* Pure white */
+  --foreground: 26 26 26;        /* Charcoal #1A1A1A */
+  --card: 255 255 255;           /* White cards */
+  --popover: 255 255 255;
+  --muted: 243 244 246;          /* Light gray #F3F4F6 */
+  --muted-foreground: 156 163 175; /* Mid gray #9CA3AF */
+  --border: 229 231 235;         /* Subtle border */
+  --ring: 109 94 249;            /* Avenai primary #6D5EF9 */
+  --brand: 109 94 249;           /* Avenai indigo/purple */
+  --brand-light: 167 139 250;    /* Gradient accent #A78BFA */
+}
+
+.dark {
+  --background: 15 15 18;        /* Dark mode bg #0F0F12 */
+  --foreground: 255 255 255;     /* White text */
+  --card: 26 26 26;              /* Charcoal cards */
+  --popover: 26 26 26;
+  --muted: 38 38 38;             /* Dark muted */
+  --muted-foreground: 163 163 163; /* Light gray */
+  --border: 64 64 64;            /* Dark border */
+  --ring: 109 94 249;            /* Avenai primary */
+  --brand: 109 94 249;
+  --brand-light: 167 139 250;
+}
+
+html, body { 
+  height: 100%; 
+  -webkit-font-smoothing: antialiased; 
+  text-rendering: optimizeLegibility; 
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Typing dots animation */
+.typing-dots {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.typing-dots > i {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #94a3b8;
+  opacity: 0.35;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+.typing-dots > i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots > i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  40% {
+    transform: translateY(-3px);
+    opacity: 0.7;
+  }
+}
+
+/* Chat markdown reset - prevent conflicting styles */
+.chat :where(pre) {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+.chat :where(pre) code {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+.chat :where(code:not(pre *)) {
+  /* inline code chip */
+  background: #f1f5f9; /* slate-100 */
+  border-radius: 6px;
+  padding: 0.125rem 0.375rem;
+}
+.chat :where(code) {
+  color: inherit;
+}
+.chat :where(a) {
+  text-underline-offset: 2px;
+}
+
+/* CSS guard — flattens any stragglers */
+.chat .prose .not-prose pre,
+.chat .prose .not-prose pre code {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Prism pre/code safety net - force transparent background */
+.chat :where(pre.prism-code),
+.chat :where(pre[class*="language-"]),
+.chat :where(code[class*="language-"]),
+.chat :where(pre[class*="prism-"]),
+.chat :where(code[class*="prism-"]) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Kill any residual Prism/Tailwind bg inside chat */
+.chat :where(pre[class*="language-"]),
+.chat :where(code[class*="language-"]),
+.chat :where(pre.prism-code) {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Chat typography */
+.prose-chat {
+  @apply max-w-none;
+}
+
+/* PrismJS base (light) */
+code[class*="language-"], pre[class*="language-"] { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+pre[class*="language-"] { background: #0b1020; color: #e5e7eb; padding: 1rem 1.25rem; border-radius: .75rem; overflow:auto; position:relative; }
+code[class*="language-"] { background: transparent; }
+
+.prose { color: #0f172a; }
+.prose p { font-weight: 400 !important; } /* Force normal weight for paragraphs */
+.prose h1,h2,h3 { color:#0b1220; }
+.prose h1 { font-weight:800; letter-spacing:-0.01em; }
+.prose h2 { font-weight:700; }
+.prose h3 { font-weight:600; }
+.prose h4 { font-weight:600 !important; } /* H4 should be semibold */
+.prose a { color:#4f46e5; text-decoration:underline; }
+.prose strong { color:#0b1220; font-weight: 600; }
+.prose code { background:#f1f5f9; color:#0b1220; padding:.125rem .375rem; border-radius:.375rem; }
+.prose pre code { background:transparent; padding:0; }
+.prose ul>li::marker { color:#4f46e5; }
+.prose ul, .prose ol, .prose li { font-weight: 400 !important; } /* Force normal weight for lists */
+
+/* Chat-specific: Force normal weight for all text except headings */
+.chat p, .chat div:not(h1):not(h2):not(h3):not(h4) {
+  font-weight: 400 !important;
+}
+
+/* Ensure H4 headings in chat are semibold */
+.chat h4 {
+  font-weight: 600 !important;
+}
+
+/* Force light mode for chat (override system dark mode) */
+.light, .light * {
+  color-scheme: light !important;
+}
+
+.light .text-gray-900 {
+  color: #111827 !important;
+}
+
+.light .text-gray-100 {
+  color: #111827 !important;
+}
+
+.light .bg-zinc-100 {
+  background-color: #f4f4f5 !important;
+}
+
+.light .bg-zinc-800 {
+  background-color: #f4f4f5 !important;
+  color: #27272a !important;
+}
+.prose ol>li::marker { color:#4f46e5; }
+.prose blockquote { border-left-color:#c7d2fe; color:#1f2937; }
+.prose hr { border-color:#e5e7eb; }
+
+.badge { display:inline-flex; align-items:center; gap:.25rem; font-size:.75rem; line-height:1; padding:.25rem .5rem; border-radius:999px; background:#eef2ff; color:#3730a3; border:1px solid #e0e7ff; }
+.badge--md { background:#ecfeff; color:#0e7490; border-color:#cffafe; }
+.badge--pdf { background:#fff7ed; color:#9a3412; border-color:#ffedd5; }
+.badge--code { background:#eff6ff; color:#1d4ed8; border-color:#dbeafe; }
+
+.copy-btn { position:absolute; top:.5rem; right:.5rem; background:#111827; color:#e5e7eb; border:1px solid #1f2937; border-radius:.5rem; padding:.25rem .5rem; font-size:.75rem; }
+.copy-btn:hover { filter:brightness(1.1); }
+
+/* ========== AVENAI DESIGN TOKENS ========== */
+:root{
+  /* Brand tokens */
+  --brand-from:#5B5CEB;
+  --brand-to:#8A5BEE;
+  
+  /* Brand (indigo) */
+  --brand-50:#eef2ff; --brand-100:#e0e7ff; --brand-200:#c7d2fe; --brand-300:#a5b4fc;
+  --brand-400:#818cf8; --brand-500:#6366f1; --brand-600:#4f46e5; --brand-700:#4338ca;
+  --brand-800:#3730a3; --brand-900:#312e81;
+
+  /* Blue fallback */
+  --blue-50:#eff6ff; --blue-100:#dbeafe; --blue-600:#2563eb; --blue-700:#1d4ed8;
+
+  /* Greys */
+  --g-50:#f9fafb; --g-100:#f3f4f6; --g-200:#e5e7eb; --g-300:#d1d5db;
+  --g-500:#6b7280; --g-700:#374151; --g-900:#111827;
+
+  /* Layout widths */
+  --max-chat:768px;     /* max-w-3xl */
+  --max-bubble:780px;   /* ~65ch */
+}
+
+/* Marketing: never underline links/buttons */
+.marketing :where(a, a:hover, a:focus, button, button:hover, button:focus){
+  text-decoration: none !important;
+}
+
+/* Optional: prevent prose plugins from adding underlines on links */
+.marketing .prose a{
+  text-decoration: none !important;
+}
+
+/* Terminal caret animation */
+@keyframes caret { 0%, 49% { opacity: 1 } 50%, 100% { opacity: 0 } }
+.animate-caret { animation: caret 1s steps(1, end) infinite; }
+
+/* Gentle bob for the scroll cue chevron */
+@keyframes bob { 0% { transform: translateY(0) } 50% { transform: translateY(6px) } 100% { transform: translateY(0) } }
+.animate-bob { animation: bob 2.2s ease-in-out infinite; }
+
+/* Subtle fade-in animation for typing effect */
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+    transform: translateY(2px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Continuous typing fade effect - subtle pulsing during generation */
+@keyframes typing-fade {
+  0%, 100% { 
+    opacity: 0.95; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+.typing-fade-in {
+  animation: typing-fade 1.5s ease-in-out infinite;
+}
+
+/* No underlines anywhere (site-wide) */
+a { text-decoration: none !important; }
+
+/* ========== BASE TYPOGRAPHY POLISH ========== */
+@layer base{
+  h1{@apply text-5xl font-bold text-gray-900 mb-6;}
+  h2{@apply text-3xl font-bold text-gray-900 mb-12;}
+  h3{@apply text-xl font-semibold text-gray-900 mb-3;}
+  p{@apply text-gray-600 leading-7 mb-4;}
+  a{@apply text-indigo-600 underline hover:text-indigo-700;}
+}
+
+/* ========== COMPONENT LEVEL UTILITIES ========== */
+@layer components{
+  /* Chat container */
+  .chat-container{ max-width:var(--max-chat); margin-inline:auto; @apply px-4 sm:px-6 lg:px-0; }
+
+  /* Message bubbles */
+  .user-message{
+    max-width:80%;
+    margin-left:auto;
+    @apply rounded-2xl px-4 py-3 text-white shadow-md;
+    background:var(--blue-600);
+  }
+  .user-message:hover{ background:var(--blue-700); }
+
+  .assistant-message{
+    max-width:80%;
+    margin-right:auto;
+    @apply rounded-2xl px-4 py-3 bg-white text-gray-900 border border-gray-200 shadow-sm;
+  }
+
+  /* Buttons */
+  .btn-primary{
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium text-white transition-colors;
+    background:var(--blue-600);
+  }
+  .btn-primary:hover{ background:var(--blue-700); }
+
+  .btn-secondary{
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium transition-colors border-2;
+    color:var(--blue-600); border-color:var(--blue-600); background:white;
+  }
+  .btn-secondary:hover{ background:var(--blue-50); }
+
+  /* Cards */
+  .card{ @apply bg-white rounded-xl shadow-xl border border-gray-200 p-8; }
+
+  /* Page background */
+  .page-bg{
+    background:linear-gradient(to bottom right,var(--blue-50),var(--blue-100));
+    min-height:100vh;
+  }
+
+  /* Badges */
+  .badge{ @apply inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full border;
+    background:var(--brand-50); color:var(--brand-800); border-color:var(--brand-100);
+  }
+  .badge--md{ background:#ecfeff; color:#0e7490; border-color:#cffafe; }
+  .badge--pdf{ background:#fff7ed; color:#9a3412; border-color:#ffedd5; }
+
+  /* Code/Markdown */
+  .code-block{ @apply rounded-lg p-4 overflow-x-auto text-sm;
+    background:#111827; color:#f3f4f6; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas;
+  }
+  .inline-code{ @apply rounded px-1.5 py-0.5 text-sm;
+    background:#f3f4f6; color:#111827; font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas;
+  }
+
+  /* Prose tweaks (when using @tailwindcss/typography) */
+  .prose a{ @apply text-indigo-600 no-underline hover:underline; }
+  .prose :where(table){ display:block; overflow-x:auto; }
+}
+
+/* ========== CODE BLOCK FIXES ========== */
+/* Ensure code blocks in chat are readable */
+.prose pre {
+  background: #f9fafb !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.prose pre code {
+  background: transparent !important;
+  color: #111827 !important;
+}
+
+.prose code:not(pre code) {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+/* Chat message specific overrides */
+.chat-message pre {
+  background: #f9fafb !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.chat-message pre code {
+  background: transparent !important;
+  color: #111827 !important;
+}
+
+/* Tour highlight fixes - disable blur for crisp highlights */
+.driver-overlay {
+  backdrop-filter: none !important;
+}
+
+.driver-highlighted-element {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.35), 0 0 0 1px rgba(99,102,241,0.55) !important;
+  border-radius: 12px !important;
+}
+
+.shepherd-modal-overlay-container {
+  backdrop-filter: none !important;
+}
+
+/* Tour spotlight component */
+.tour-spotlight {
+  backdrop-filter: none !important;
+}
+
+.tour-spotlight .tour-ring {
+  box-shadow: 0 0 0 3px rgba(99,102,241,.9), 0 0 0 8px rgba(99,102,241,.35) !important;
+  border-radius: 12px !important;
+}
+
+/* Safe-area helper so composer never hugs the bottom edge on iOS/macOS */
+:root { --safe-bottom: env(safe-area-inset-bottom); }
+.safe-bottom { padding-bottom: max(16px, var(--safe-bottom)); }
+
+/* Remove any leftover inner card wrappers for chat */
+.chat-answer, .assistant-content, .markdown-box {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Ensure proper paragraph spacing in chat messages */
+.prose p {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.prose p:first-child {
+  margin-top: 0 !important;
+}
+
+.prose p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure proper spacing for line breaks */
+.prose br {
+  margin: 0.5rem 0 !important;
+  display: block !important;
+}
+
+/* Better list spacing */
+.prose ul, .prose ol {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.prose li {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Better heading spacing */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.prose h1:first-child, .prose h2:first-child, .prose h3:first-child {
+  margin-top: 0 !important;
+}

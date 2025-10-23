@@ -1,0 +1,192 @@
+diff --git a/lib/chat/retrieval-simple.ts b/lib/chat/retrieval-simple.ts
+index 4b2dabc..7d9ceef 100644
+--- a/lib/chat/retrieval-simple.ts
++++ b/lib/chat/retrieval-simple.ts
+@@ -1,8 +1,30 @@
+ import { prisma } from '@/lib/prisma';
++import { hybridSearchPG, fuseScores } from '@/lib/retrieval/hybrid';
++import { computeConfidence, shouldAutoWiden, makeSoftFilter } from '@/lib/retrieval/fallback';
++import { applyMMR } from '@/lib/retrieval/mmr';
++import type { RetrieverPolicyOutput } from '@/lib/retrieval/policy';
+ 
+ // NOTE: This file previously did pure vector (or ad-hoc hybrid) and some light boosting.
+ // We wire in Phase-4 safeguards directly (soft filters, auto-widen, MMR) with minimal edits.
+ 
++function enforceDiversityCaps<T extends { sectionPath?: string | null; metadata?: any }>(
++  items: T[],
++  maxPerPage = Number(process.env.RETRIEVER_MAX_PER_PAGE ?? '2'),
++  minSections = Number(process.env.RETRIEVER_MIN_SECTIONS ?? '3'),
++) {
++  // Cap per page/section; do not over-prune if already diverse
++  const bySection = new Map<string, T[]>();
++  for (const it of items) {
++    const key = (it.sectionPath ?? '∅').slice(0, 256);
++    const arr = bySection.get(key) ?? [];
++    if (arr.length < maxPerPage) arr.push(it);
++    bySection.set(key, arr);
++  }
++  const flattened = Array.from(bySection.values()).flat();
++  const uniqSections = new Set(flattened.map(i => i.sectionPath ?? '∅')).size;
++  return uniqSections >= minSections ? flattened : items;
++}
++
+ export type RetrievalInput = {
+   orgId: string;
+   datasetId?: string;
+@@ -12,46 +34,141 @@ export type RetrievalInput = {
+   k?: number;
+   intent?: 'TABLE'|'JSON'|'ENDPOINT'|'IDKEY'|'WORKFLOW'|'CONTACT'|'DEFAULT';
+-  // ...other legacy fields
++  policy?: RetrieverPolicyOutput;
+ };
+ 
+ export type RetrievalResult = {
+   items: Array<{
+     id: string;
+     content: string;
+     sectionPath: string | null;
+     metadata: any;
+-    score: number;
++    fusion_score: number;
+     embedding?: number[] | null;
+   }>;
+-  // legacy scoring fields omitted
++  confidence: {
++    level: 'high'|'medium'|'low';
++    scoreGap: number;
++    diversity: number;
++  };
+ };
+ 
+-export async function retrieveSimple(input: RetrievalInput): Promise<RetrievalResult> {
+-  const {
+-    orgId, datasetId, normalizedQueryEmbedding, normalizedQueryText, k = 12, intent = 'DEFAULT'
+-  } = input;
+-
+-  // 1) Fetch candidates (legacy logic) — kept as fallback for safety
+-  // const legacy = await prisma.$queryRawUnsafe<any[]>(`...`);
+-  // TODO: remove once hybrid path below is fully validated
+-
+-  // 2) New: Hybrid + policy-aware prefilter
+-  const prefilter =
+-    intent === 'JSON'   ? { hasVerbatim: true } :
+-    intent === 'TABLE'  ? { elementType: 'table' } :
+-                          null;
+-
+-  let rows = await hybridSearchPG({
+-    orgId,
+-    datasetId,
+-    queryEmbedding: normalizedQueryEmbedding,
+-    textQuery: normalizedQueryText,
+-    k: Math.max(k, 12),
+-    prefilter
+-  });
+-
+-  // 3) Soft-filter safety: if prefilter nukes everything, relax it
+-  if (process.env.RETRIEVER_SOFT_FILTERS === 'true' && rows.length === 0 && prefilter) {
+-    rows = await hybridSearchPG({
+-      orgId, datasetId, queryEmbedding: normalizedQueryEmbedding, textQuery: normalizedQueryText, k: Math.max(k, 12), prefilter: null
+-    });
+-  }
++export async function retrieveSimple(input: RetrievalInput): Promise<RetrievalResult> {
++  const {
++    orgId,
++    datasetId,
++    normalizedQueryEmbedding,
++    normalizedQueryText,
++    k = 12,
++    intent = 'DEFAULT',
++    policy
++  } = input;
++
++  // ---- Phase-4: policy-aware prefilter (but SAFE by default) ----
++  const wantHasVerbatim = intent === 'JSON' || policy?.filters?.hasVerbatim === true;
++  const wantTables      = intent === 'TABLE' || policy?.filters?.elementType === 'table';
++  const prefilter = wantHasVerbatim ? { hasVerbatim: true } :
++                   wantTables      ? { elementType: 'table' } : null;
++
++  // ---- Primary pass: hybrid fusion from Postgres ----
++  let rows = await hybridSearchPG({
++    orgId,
++    datasetId,
++    queryEmbedding: normalizedQueryEmbedding,
++    textQuery: normalizedQueryText,
++    k: Math.max(k, policy?.k ?? 12),
++    prefilter
++  });
++
++  // ---- Soft-filter safety: if we zeroed out, relax filter automatically ----
++  if (process.env.RETRIEVER_SOFT_FILTERS === 'true' && rows.length === 0 && prefilter) {
++    rows = await hybridSearchPG({
++      orgId,
++      datasetId,
++      queryEmbedding: normalizedQueryEmbedding,
++      textQuery: normalizedQueryText,
++      k: Math.max(k, policy?.k ?? 12),
++      prefilter: null
++    });
++  }
++
++  // ---- Confidence calc & auto-widen fallback (increase k / add text-only bias) ----
++  let conf = computeConfidence(
++    rows.map(r => r.fusion_score ?? fuseScores((r as any).vector_score ?? 0, (r as any).text_score ?? 0)),
++    rows.map(r => r.sectionPath ?? null)
++  );
++
++  if (shouldAutoWiden(conf)) {
++    // 1st widen: bump k and drop filters
++    const widened = await hybridSearchPG({
++      orgId,
++      datasetId,
++      queryEmbedding: normalizedQueryEmbedding,
++      textQuery: normalizedQueryText,
++      k: Math.max(k + 20, (policy?.k ?? 12) + 20),
++      prefilter: null
++    });
++    if (widened.length > rows.length) rows = widened;
++
++    // Recompute confidence
++    conf = computeConfidence(
++      rows.map(r => r.fusion_score ?? fuseScores((r as any).vector_score ?? 0, (r as any).text_score ?? 0)),
++      rows.map(r => r.sectionPath ?? null)
++    );
++  }
++
++  // ---- MMR diversity (optional via flag) ----
++  if (process.env.MMR_ENABLED === 'true' && rows.length > 0) {
++    const K = Math.min(rows.length, policy?.k ?? k);
++    const idx = applyMMR(
++      rows.map(r => (r as any).embedding ?? []),
++      rows.map(r => r.fusion_score ?? 0),
++      K
++    );
++    rows = idx.map(i => rows[i]);
++  } else {
++    // If not using MMR, still trim to desired K
++    rows = rows.slice(0, policy?.k ?? k);
++  }
++
++  // ---- Enforce min-section diversity & cap per page/section ----
++  rows = enforceDiversityCaps(
++    rows,
++    Number(process.env.RETRIEVER_MAX_PER_PAGE ?? (policy?.maxPerPage ?? 2)),
++    Number(process.env.RETRIEVER_MIN_SECTIONS ?? (policy?.minSections ?? 3))
++  );
+ 
+-  // 4) Return legacy shape
+-  return {
+-    items: rows.map(r => ({ id: r.id, content: r.content, sectionPath: r.sectionPath, metadata: r.metadata, score: r.fusion_score ?? 0, embedding: r.embedding })),
+-  };
++  return {
++    items: rows.map(r => ({
++      id: r.id,
++      content: r.content,
++      sectionPath: r.sectionPath,
++      metadata: r.metadata,
++      fusion_score: r.fusion_score ?? fuseScores((r as any).vector_score ?? 0, (r as any).text_score ?? 0),
++      embedding: (r as any).embedding ?? null
++    })),
++    confidence: conf
++  };
+ }
+
